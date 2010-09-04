@@ -72,13 +72,7 @@ SET(LIB_DESTINATION "lib${LIB_SUFFIX}")
 ####################################
 # PLATFORM specific options
 ####################################
-#todo, this shouldn't be necessary
-ADD_DEFINITIONS("-m32")
-SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -m32")
-SET(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -m32")
-SET(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -m32")
-
-#add a debug build postfix
+add a debug build postfix
 if(WIN32)
  set(CMAKE_DEBUG_POSTFIX "d")
 endif(WIN32)
