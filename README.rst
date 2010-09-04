@@ -24,6 +24,13 @@ Official `Java Lucene <http://lucene.apache.org/java/docs/index.html>`_ - useful
 `Lucene in Action <http://www.amazon.com/Lucene-Action-Otis-Gospodnetic/dp/1932394281/ref=sr_1_1?ie=UTF8&s=books&qid=1261343174&sr=8-1>`_ by Otis Gospodnetic and Erik Hatcher.
 
 
+Build Instructions using CMake
+------------------------------
+You'll need boost installed somewhere. On Debian systems, the following
+packages are required:
+
+libboost-date-time-dev libboost-filesystem-dev libboost-regex-dev libboost-thread-dev libboost-iostreams-dev libboost-test-dev
+
 Build Instructions for POSIX systems
 ------------------------------------
 
