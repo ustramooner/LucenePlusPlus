@@ -72,7 +72,7 @@ SET(LIB_DESTINATION "lib${LIB_SUFFIX}")
 ####################################
 # PLATFORM specific options
 ####################################
-add a debug build postfix
+#add a debug build postfix
 if(WIN32)
  set(CMAKE_DEBUG_POSTFIX "d")
 endif(WIN32)
