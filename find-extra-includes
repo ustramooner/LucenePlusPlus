@@ -1,0 +1,94 @@
+#!/usr/bin/env php
+<?
+$includes = array();
+$paths = array();
+
+$ff = $argv;
+array_shift($ff);
+if ( sizeof($ff) == 0 ) $ff[] = '.';
+
+function wanted($f){
+  global $includes, $paths;
+  foreach ( new DirectoryIterator($f) as $it ){
+    if ( $it->isDot() ) continue;
+    $f = $it->getBaseName();
+    if ( $f[0] == '.' ) continue;
+    if ( $it->isDir() ) 
+      wanted($it->getPathName());
+    else if ( preg_match('/\.(h|cpp|c|mm|m)$/', $f) ){
+      $includes[$it->getPathName()] = array();
+      foreach ( file($it->getPathName()) as $line ){
+        preg_match('/^\s*#\s*(include|import)\s+["<](.*)[">]/', $line, $arr);
+        if ( sizeof($arr) >= 3 ){
+          if ( !isset($includes[$it->getBaseName()][$arr[2]]) )
+            $includes[$it->getBaseName()][$arr[2]] = 1;
+          else
+            $includes[$it->getBaseName()][$arr[2]] ++;
+          $paths[$it->getBaseName()] = $it->getPathName();
+        }
+      }
+    }
+  }
+}
+foreach ( $ff as $f )
+  wanted($f);
+  
+$totalIncludes = array();
+function fillOut($file){
+  global $totalIncludes, $includes;
+  if ( isset($totalIncludes[$file]) )
+    return;
+  $totalIncludes[$file] = array();
+  
+  if ( !isset($includes[$file]) ) return;
+  
+  foreach( $includes[$file] as $include=>$v) {
+        $totalIncludes[$file][$include] = 1;
+        fillOut($include);
+        foreach ( $totalIncludes[$include] as $i )
+          $totalIncludes[$file][$i] = 1;
+    }
+}
+function check($file){
+    global $includes, $totalIncludes, $paths;
+    foreach( $includes[$file] as $include=>$v ) {
+        fillOut($include);
+    }
+    
+    $keys = array_keys($includes[$file]);
+    sort($keys);
+    foreach ($keys as $i1){
+      foreach ($keys as $i2 ){
+        if ($i1 == $i2) continue;
+        if ( !empty($totalIncludes[$i2][$i1]) ){
+          $b1 = substr($i1, 0, strrpos($i1, '.'));
+          $b2 = substr($file, 0, strrpos($file, '.'));
+          
+          if ( $b1 != $b2 ){
+            print "${paths[$file]} does not need to include $i1, because $i2 does\n";
+            break;
+          }
+        }
+      }
+    }
+    
+    /*
+    foreach my $i1 (sort keys %{ $includes{$file} }) {
+        for my $i2 (keys %{ $includes{$file} }) {
+            next if $i1 eq $i2;
+            if ($totalIncludes{$i2}{$i1}) {
+                my $b1 = $i1;
+                my $b2 = $file;
+                $b1 =~ s/\..+$//;
+                $b2 =~ s/\..+$//;
+                print $paths[$file] . " does not need to include $i1, because $i2 does\n" if $b1 ne $b2;
+                last;
+            }
+        }
+    }*/
+}
+
+ksort($includes);
+foreach ( $includes as $file=>$v ){
+  check($file);
+}
