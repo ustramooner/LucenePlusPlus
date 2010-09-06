@@ -12,6 +12,7 @@
 #include "Document.h"
 #include "Field.h"
 #include "Random.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

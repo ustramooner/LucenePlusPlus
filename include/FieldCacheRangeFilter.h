@@ -8,8 +8,8 @@
 
 #include "Filter.h"
 #include "DocIdSet.h"
-#include "DocIdSetIterator.h"
 #include "FieldCache.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

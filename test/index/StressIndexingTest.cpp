@@ -6,8 +6,11 @@
 
 #include "stdafx.h"
 #include "LuceneTestFixture.h"
+#include "StringUtils.h"
 #include "TestUtils.h"
 #include "MockRAMDirectory.h"
+#include "FileUtils.h"
+#include "MiscUtils.h"
 #include "ConcurrentMergeScheduler.h"
 #include "FSDirectory.h"
 #include "IndexWriter.h"

@@ -21,6 +21,8 @@
 #include "RawPostingList.h"
 #include "FieldInvertState.h"
 #include "UnicodeUtils.h"
+#include "MiscUtils.h"
+#include <boost/bind.hpp>
 
 namespace Lucene
 {

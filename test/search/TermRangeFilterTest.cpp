@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/blank.hpp>
 #include "BaseTestRangeFilterFixture.h"
 #include "IndexReader.h"
 #include "IndexSearcher.h"

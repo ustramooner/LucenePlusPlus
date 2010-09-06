@@ -6,6 +6,8 @@
 
 #include "stdafx.h"
 #include "TimeLimitingCollector.h"
+#include "StringUtils.h"
+#include "CycleCheck.h"
 
 namespace Lucene
 {

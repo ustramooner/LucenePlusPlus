@@ -17,6 +17,7 @@
 #include "Collector.h"
 #include "BitSet.h"
 #include "TimeLimitingCollector.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

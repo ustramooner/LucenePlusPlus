@@ -8,6 +8,8 @@
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "Payload.h"
+#include "FileUtils.h"
+#include "MiscUtils.h"
 #include "RAMDirectory.h"
 #include "Analyzer.h"
 #include "WhitespaceTokenizer.h"

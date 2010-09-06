@@ -8,6 +8,7 @@
 #include "MockRAMDirectory.h"
 #include "RAMFile.h"
 #include "MockRAMOutputStream.h"
+#include "MiscUtils.h"
 #include "MockRAMInputStream.h"
 #include "TestPoint.h"
 #include "Random.h"

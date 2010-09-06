@@ -22,6 +22,7 @@
 #include "SegmentMergeInfo.h"
 #include "Lock.h"
 #include "FieldCache.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

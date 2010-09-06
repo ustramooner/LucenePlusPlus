@@ -8,6 +8,7 @@
 
 #include "FSDirectory.h"
 #include "IndexInput.h"
+#include <boost/iostreams/device/mapped_file.hpp>
 
 namespace Lucene
 {

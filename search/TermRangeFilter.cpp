@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/blank.hpp>
 #include "TermRangeFilter.h"
 #include "TermRangeQuery.h"
 

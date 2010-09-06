@@ -12,7 +12,10 @@
 #include "PositionIncrementAttribute.h"
 #include "PayloadAttribute.h"
 #include "FlagsAttribute.h"
+#include "CycleCheck.h"
 #include "TypeAttribute.h"
+#include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/regex.hpp>
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "DefaultSimilarity.h"

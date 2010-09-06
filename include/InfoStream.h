@@ -6,8 +6,6 @@
 
 #pragma once
 
-#include "Lucene.h"
-
 namespace Lucene
 {
 	/// Utility class to support streaming info messages.

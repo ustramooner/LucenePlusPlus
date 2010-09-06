@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "SegmentInfo.h"
+#include "StringUtils.h"
 #include "SegmentInfos.h"
 #include "Directory.h"
 #include "IndexInput.h"

@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "QueryParser.h"
+#include "StringUtils.h"
 #include "QueryParserTokenManager.h"
 #include "QueryParserToken.h"
 #include "QueryParseError.h"
@@ -27,6 +28,7 @@
 #include "MatchAllDocsQuery.h"
 #include "SimpleAnalyzer.h"
 #include "DateField.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

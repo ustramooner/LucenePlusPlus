@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "MultiPhraseQuery.h"
 #include "Searcher.h"
+#include "StringUtils.h"
 #include "Term.h"
 #include "TermQuery.h"
 #include "MultipleTermPositions.h"
@@ -17,6 +18,7 @@
 #include "ComplexExplanation.h"
 #include "BooleanQuery.h"
 #include "BooleanClause.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

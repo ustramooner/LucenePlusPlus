@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "TeeSinkTokenFilter.h"
 #include "Attribute.h"
+#include "CycleCheck.h"
 
 namespace Lucene
 {

@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "TopDocsCollector.h"
 #include "TopDocs.h"
+#include "CycleCheck.h"
 #include "HitQueueBase.h"
 
 namespace Lucene

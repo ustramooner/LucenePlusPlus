@@ -24,6 +24,8 @@
 #include "TopFieldDocs.h"
 #include "MultiSearcher.h"
 #include "Random.h"
+#include "StringUtils.h"
+#include "MiscUtils.h"
 
 using namespace Lucene;
 

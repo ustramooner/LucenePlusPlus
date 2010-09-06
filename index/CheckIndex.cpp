@@ -11,13 +11,13 @@
 #include "SegmentReader.h"
 #include "Directory.h"
 #include "IndexInput.h"
-#include "BitVector.h"
 #include "Term.h"
 #include "TermEnum.h"
 #include "TermPositions.h"
 #include "Document.h"
 #include "FSDirectory.h"
 #include "InfoStream.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "VariantUtils.h"
 #include "MultiSearcher.h"
 #include "Term.h"
 #include "ReaderUtil.h"

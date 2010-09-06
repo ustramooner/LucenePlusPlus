@@ -7,6 +7,7 @@
 #pragma once
 
 #include "Analyzer.h"
+#include "Constants.h"
 
 namespace Lucene
 {

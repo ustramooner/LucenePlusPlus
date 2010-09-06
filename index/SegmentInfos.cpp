@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "SegmentInfos.h"
+#include "StringUtils.h"
 #include "SegmentInfo.h"
 #include "IndexFileNames.h"
 #include "Directory.h"
@@ -14,6 +15,7 @@
 #include "IndexCommit.h"
 #include "InfoStream.h"
 #include "TestPoint.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

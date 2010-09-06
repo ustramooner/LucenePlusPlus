@@ -6,7 +6,9 @@
 
 #include "stdafx.h"
 #include "Similarity.h"
+#include "StringUtils.h"
 #include "DefaultSimilarity.h"
+#include "CycleCheck.h"
 #include "FieldInvertState.h"
 #include "Searcher.h"
 #include "Term.h"

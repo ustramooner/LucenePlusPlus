@@ -8,6 +8,7 @@
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "MockIndexInput.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

@@ -5,6 +5,8 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/blank.hpp>
+#include "VariantUtils.h"
 #include "Field.h"
 
 namespace Lucene

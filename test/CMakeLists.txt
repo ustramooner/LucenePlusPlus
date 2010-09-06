@@ -20,7 +20,7 @@ SET_TARGET_PROPERTIES(lucene++-tester PROPERTIES
     VERSION ${LUCENE++_VERSION}
     SOVERSION ${LUCENE++_SOVERSION}
 )
-TARGET_LINK_LIBRARIES(lucene++-tester lucene++ ${CMAKE_THREAD_LIBS_INIT})
+TARGET_LINK_LIBRARIES(lucene++-tester lucene++ lucene++-contrib ${CMAKE_THREAD_LIBS_INIT})
 
 ENABLE_TESTING()
 ADD_TEST(Lucene++Tester lucene++-tester)

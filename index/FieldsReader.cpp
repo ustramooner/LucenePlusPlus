@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "VariantUtils.h"
 #include "FieldsReader.h"
 #include "BufferedIndexInput.h"
 #include "IndexFileNames.h"
@@ -16,6 +17,7 @@
 #include "Document.h"
 #include "Field.h"
 #include "CompressionTools.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

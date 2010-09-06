@@ -6,8 +6,10 @@
 
 #include "stdafx.h"
 #include "RAMInputStream.h"
+#include "StringUtils.h"
 #include "RAMFile.h"
 #include "RAMOutputStream.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

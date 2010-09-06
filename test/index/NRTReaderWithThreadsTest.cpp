@@ -7,6 +7,8 @@
 #include "stdafx.h"
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
+#include "MiscUtils.h"
+#include "StringUtils.h"
 #include "MockRAMDirectory.h"
 #include "IndexWriter.h"
 #include "WhitespaceAnalyzer.h"

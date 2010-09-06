@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "QueryParserTokenManager.h"
+#include "StringUtils.h"
 #include "QueryParserCharStream.h"
 #include "QueryParserToken.h"
 #include "QueryParseError.h"

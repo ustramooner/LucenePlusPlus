@@ -10,6 +10,7 @@
 #include "ScoreDoc.h"
 #include "Scorer.h"
 #include "TopDocs.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

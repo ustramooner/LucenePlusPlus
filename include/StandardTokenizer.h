@@ -7,6 +7,7 @@
 #pragma once
 
 #include "Tokenizer.h"
+#include "Constants.h"
 
 namespace Lucene
 {

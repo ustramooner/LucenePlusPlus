@@ -8,6 +8,7 @@
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "MMapDirectory.h"
+#include "FileUtils.h"
 #include "FSDirectory.h"
 #include "StandardAnalyzer.h"
 #include "IndexWriter.h"

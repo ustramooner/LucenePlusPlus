@@ -7,6 +7,8 @@
 #include "stdafx.h"
 #include "ByteFieldSource.h"
 #include "FieldCache.h"
+#include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

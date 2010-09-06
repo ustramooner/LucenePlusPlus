@@ -21,6 +21,7 @@
 #include "ConstantScoreQuery.h"
 #include "MatchAllDocsQuery.h"
 #include "MultiPhraseQuery.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

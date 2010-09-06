@@ -5,6 +5,8 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "StringUtils.h"
+#include "FileUtils.h"
 
 using namespace Lucene;
 

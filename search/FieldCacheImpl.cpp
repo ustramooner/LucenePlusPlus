@@ -12,6 +12,7 @@
 #include "TermEnum.h"
 #include "TermDocs.h"
 #include "Term.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

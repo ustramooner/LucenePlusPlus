@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "FormatPostingsTermsConsumer.h"
 #include "UnicodeUtils.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

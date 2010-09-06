@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "PositionIncrementAttribute.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

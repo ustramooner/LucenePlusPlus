@@ -7,7 +7,6 @@
 #pragma once
 
 #include "TokenFilter.h"
-#include "TokenStream.h"
 
 namespace Lucene
 {

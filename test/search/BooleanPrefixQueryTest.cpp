@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "LuceneTestFixture.h"
+#include "MiscUtils.h"
 #include "RAMDirectory.h"
 #include "IndexWriter.h"
 #include "WhitespaceAnalyzer.h"

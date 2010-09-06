@@ -6,7 +6,7 @@
 
 #include "stdafx.h"
 #include "SegmentReader.h"
-#include "BufferedIndexInput.h"
+#include "StringUtils.h"
 #include "IndexFileNames.h"
 #include "DirectoryReader.h"
 #include "CompoundFileReader.h"
@@ -20,13 +20,13 @@
 #include "ReadOnlySegmentReader.h"
 #include "BitVector.h"
 #include "SegmentTermEnum.h"
-#include "SegmentTermDocs.h"
 #include "SegmentTermPositions.h"
 #include "SegmentInfo.h"
 #include "SegmentMerger.h"
 #include "AllTermDocs.h"
 #include "DefaultSimilarity.h"
 #include "FieldCache.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

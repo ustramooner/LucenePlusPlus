@@ -8,6 +8,7 @@
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "SimpleAnalyzer.h"
+#include "FileUtils.h"
 #include "IndexWriter.h"
 #include "Document.h"
 #include "Field.h"
@@ -19,6 +20,7 @@
 #include "SerialMergeScheduler.h"
 #include "ConcurrentMergeScheduler.h"
 #include "FSDirectory.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

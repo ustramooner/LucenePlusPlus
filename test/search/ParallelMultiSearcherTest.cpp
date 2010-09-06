@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "StringUtils.h"
 #include "LuceneTestFixture.h"
 #include "MockRAMDirectory.h"
 #include "Document.h"

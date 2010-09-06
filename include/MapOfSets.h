@@ -6,8 +6,6 @@
 
 #pragma once
 
-#include "Lucene.h"
-
 namespace Lucene
 {
 	/// Helper class for keeping Lists of Objects associated with keys.

@@ -16,6 +16,7 @@
 #include "PayloadAttribute.h"
 #include "Payload.h"
 #include "IndexWriter.h"
+#include "MiscUtils.h"
 #include "Document.h"
 #include "Field.h"
 #include "PayloadTermQuery.h"

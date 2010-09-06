@@ -6,7 +6,9 @@
 
 #include "stdafx.h"
 #include "ReverseOrdFieldSource.h"
+#include "StringUtils.h"
 #include "FieldCache.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

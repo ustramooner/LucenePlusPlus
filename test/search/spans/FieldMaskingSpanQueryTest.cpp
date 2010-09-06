@@ -19,6 +19,7 @@
 #include "Term.h"
 #include "QueryUtils.h"
 #include "CheckHits.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

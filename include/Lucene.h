@@ -7,56 +7,44 @@
 #pragma once
 
 #include "Config.h"
+#include <iostream>
+#include <stdexcept>
+//threading and shared pointers used in this header and LuceneObject
+#include <boost/thread/thread.hpp>
+#include <boost/shared_ptr.hpp>
+#include <boost/make_shared.hpp>
+#include <boost/weak_ptr.hpp>
+#include <boost/enable_shared_from_this.hpp>
+//standard intger types used here in header
+#include <boost/cstdint.hpp>
+
+namespace boost {
+	class blank;
+	class thread;
+	namespace interprocess{
+		class file_lock;
+	}
+}
+
 #include <wctype.h>
 #include <wchar.h>
 #include <float.h>
 #include <sys/types.h>
 #include <sstream>
-#include <iostream>
+#include <typeinfo>
 #include <fstream>
 #include <string>
-#include <vector>
-#include <set>
-#include <map>
 #include <algorithm>
 #include <limits>
-#include <stdexcept>
-#include <typeinfo>
-#include <boost/cstdint.hpp>
-#include <boost/algorithm/string.hpp>
-#include <boost/variant.hpp>
-#include <boost/any.hpp>
-#include <boost/blank.hpp>
-#include <boost/dynamic_bitset.hpp>
-#include <boost/multi_index_container.hpp>
-#include <boost/multi_index/hashed_index.hpp>
-#include <boost/multi_index/identity.hpp>
-#include <boost/multi_index/member.hpp> 
-#include <boost/multi_index/sequenced_index.hpp>
-#include <boost/unordered_map.hpp>
-#include <boost/unordered_set.hpp>
-#include <boost/regex.hpp>
-#include <boost/shared_ptr.hpp>
-#include <boost/weak_ptr.hpp>
-#include <boost/make_shared.hpp>
-#include <boost/enable_shared_from_this.hpp>
+
 #include <boost/thread/recursive_mutex.hpp>
-#include <boost/thread/condition.hpp>
-#include <boost/thread/thread.hpp>
-#include <boost/date_time/gregorian/gregorian.hpp>
+
+#include <boost/algorithm/string.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
-#include <boost/bind.hpp>
 #include <boost/mem_fn.hpp>
-#include <boost/bind/protect.hpp>
-#include <boost/function.hpp>
-#include <boost/filesystem/convenience.hpp>
-#include <boost/filesystem/operations.hpp>
-#include <boost/filesystem/path.hpp>
 #include <boost/archive/tmpdir.hpp>
 #include <boost/interprocess/sync/file_lock.hpp>
-#include <boost/iostreams/device/mapped_file.hpp>
 #include <boost/crc.hpp>
-#include <boost/asio.hpp>
 
 #define DECLARE_SHARED_PTR(Type) \
 	class Type; \
@@ -67,7 +55,6 @@ namespace Lucene
 {
 	typedef boost::shared_ptr<boost::interprocess::file_lock> filelockPtr;
 	typedef boost::shared_ptr<boost::thread> threadPtr;
-	typedef boost::shared_ptr<boost::asio::io_service::work> workPtr;
 		
 	typedef boost::shared_ptr<std::ofstream> ofstreamPtr;
 	typedef boost::shared_ptr<std::ifstream> ifstreamPtr;
@@ -641,16 +628,15 @@ namespace Lucene
 	typedef std::basic_ostringstream< wchar_t, std::char_traits<wchar_t>, Allocator<wchar_t> > StringStream;
 }
 
+#include <boost/variant.hpp>
 #include "Array.h"
-#include "Collection.h"
 #include "Map.h"
 #include "Set.h"
 #include "HashMap.h"
 #include "HashSet.h"
-#include "FileUtils.h"
-#include "MiscUtils.h"
+#include "Collection.h"
+#include <boost/function.hpp>
 #include "LuceneException.h"
-#include "Constants.h"
 
 namespace Lucene
 {		
@@ -794,9 +780,7 @@ namespace Lucene
 	typedef boost::variant<Collection<uint8_t>, Collection<int32_t>, Collection<double>, Blank> CollectionValue;
 }
 
-#include "StringUtils.h"
-#include "CycleCheck.h"
-#include "VariantUtils.h"
+#include "Synchronize.h" //SyncLock used throughout...
 
 #ifndef LPP_BUILDING_LIB
 

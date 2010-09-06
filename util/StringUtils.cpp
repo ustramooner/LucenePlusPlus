@@ -8,7 +8,7 @@
 #include "StringUtils.h"
 #include "UnicodeUtils.h"
 #include "CharFolder.h"
-#include "utf8.h"
+#include "utf8/utf8.h"
 
 namespace Lucene
 {

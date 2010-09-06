@@ -10,6 +10,7 @@
 #include "Filter.h"
 #include "OpenBitSet.h"
 #include "IndexWriter.h"
+#include "IndexReader.h"
 #include "WhitespaceAnalyzer.h"
 #include "Document.h"
 #include "Field.h"
@@ -19,6 +20,7 @@
 #include "IndexSearcher.h"
 #include "ScoreDoc.h"
 #include "TopDocs.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

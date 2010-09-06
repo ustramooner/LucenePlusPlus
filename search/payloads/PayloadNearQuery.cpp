@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "PayloadNearQuery.h"
+#include "StringUtils.h"
 #include "AveragePayloadFunction.h"
 #include "IndexReader.h"
 #include "NearSpansOrdered.h"
@@ -13,6 +14,7 @@
 #include "Similarity.h"
 #include "SpanQuery.h"
 #include "Explanation.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

@@ -6,7 +6,9 @@
 
 #include "stdafx.h"
 #include "LuceneTestFixture.h"
+#include "MiscUtils.h"
 #include "TestUtils.h"
+#include "FileUtils.h"
 #include "MockRAMDirectory.h"
 #include "IndexWriter.h"
 #include "IndexReader.h"
@@ -49,6 +51,7 @@
 #include "TeeSinkTokenFilter.h"
 #include "StopAnalyzer.h"
 #include "Random.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

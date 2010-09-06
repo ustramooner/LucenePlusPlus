@@ -6,9 +6,6 @@
 
 #pragma once
 
-#include "Config.h"
-#include <boost/cstdint.hpp>
-
 namespace Lucene
 {
 	/// Allocate block of memory.

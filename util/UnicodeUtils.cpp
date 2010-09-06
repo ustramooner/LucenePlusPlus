@@ -6,10 +6,9 @@
 
 #include "stdafx.h"
 #include "UnicodeUtils.h"
-
 extern "C"
 {
-#include "wcwidth.h"
+	#include "ucs/wcwidth.h"
 }
 
 namespace Lucene

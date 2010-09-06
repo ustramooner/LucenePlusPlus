@@ -7,7 +7,6 @@
 #pragma once
 
 #include "QueryParser.h"
-#include "BooleanClause.h"
 
 namespace Lucene
 {

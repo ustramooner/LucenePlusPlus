@@ -6,6 +6,8 @@
 
 #include "stdafx.h"
 #include "FileReader.h"
+#include "StringUtils.h"
+#include "FileUtils.h"
 
 namespace Lucene
 {

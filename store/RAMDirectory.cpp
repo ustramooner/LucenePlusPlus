@@ -10,6 +10,7 @@
 #include "RAMInputStream.h"
 #include "RAMOutputStream.h"
 #include "SingleInstanceLockFactory.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

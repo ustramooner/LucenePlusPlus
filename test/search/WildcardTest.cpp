@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "MiscUtils.h"
 #include "LuceneTestFixture.h"
 #include "WildcardQuery.h"
 #include "Term.h"

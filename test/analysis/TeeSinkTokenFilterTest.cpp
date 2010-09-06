@@ -7,6 +7,8 @@
 #include "stdafx.h"
 #include "BaseTokenStreamFixture.h"
 #include "TestUtils.h"
+#include "MiscUtils.h"
+#include "StringUtils.h"
 #include "TeeSinkTokenFilter.h"
 #include "WhitespaceTokenizer.h"
 #include "TokenStream.h"

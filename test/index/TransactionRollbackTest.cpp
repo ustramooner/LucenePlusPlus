@@ -16,6 +16,7 @@
 #include "Field.h"
 #include "BitSet.h"
 #include "IndexCommit.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

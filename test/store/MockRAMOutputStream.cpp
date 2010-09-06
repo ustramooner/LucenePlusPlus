@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "MockRAMOutputStream.h"
 #include "MockRAMDirectory.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

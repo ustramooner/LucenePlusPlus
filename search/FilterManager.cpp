@@ -7,6 +7,8 @@
 #include "stdafx.h"
 #include "FilterManager.h"
 #include "Filter.h"
+#include "MiscUtils.h"
+#include "CycleCheck.h"
 
 namespace Lucene
 {

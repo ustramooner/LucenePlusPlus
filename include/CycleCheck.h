@@ -6,9 +6,6 @@
 
 #pragma once
 
-#include "Lucene.h"
-#include "Synchronize.h"
-
 namespace Lucene
 {
 	/// Debug utility to track shared_ptr utilization.

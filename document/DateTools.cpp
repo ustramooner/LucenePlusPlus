@@ -5,8 +5,10 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/date_time/gregorian/gregorian.hpp>
 #include "DateTools.h"
-#include "CharFolder.h"
+#include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

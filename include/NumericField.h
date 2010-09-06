@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include "AbstractField.h"
 #include "Field.h"
 
 namespace Lucene

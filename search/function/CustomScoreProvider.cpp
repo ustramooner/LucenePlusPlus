@@ -6,7 +6,6 @@
 
 #include "stdafx.h"
 #include "CustomScoreProvider.h"
-#include "ComplexExplanation.h"
 
 namespace Lucene
 {

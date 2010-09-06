@@ -7,6 +7,7 @@
 #pragma once
 
 #include "LuceneObject.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

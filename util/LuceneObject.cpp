@@ -8,6 +8,7 @@
 #include "LuceneObject.h"
 #include "Synchronize.h"
 #include "LuceneSignal.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {
@@ -31,7 +32,7 @@ namespace Lucene
     
     int32_t LuceneObject::hashCode()
     {
-        return (int32_t)this;
+        return (int64_t)this;
     }
     
     bool LuceneObject::equals(LuceneObjectPtr other)

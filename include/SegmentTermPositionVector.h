@@ -7,7 +7,6 @@
 #pragma once
 
 #include "SegmentTermVector.h"
-#include "TermPositionVector.h"
 
 namespace Lucene
 {

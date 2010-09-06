@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "StringUtils.h"
 #include "FilterIndexReader.h"
 
 using namespace Lucene;

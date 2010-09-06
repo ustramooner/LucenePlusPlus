@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "SpanWeight.h"
 #include "SpanScorer.h"
+#include "StringUtils.h"
 #include "SpanQuery.h"
 #include "IndexReader.h"
 #include "ComplexExplanation.h"

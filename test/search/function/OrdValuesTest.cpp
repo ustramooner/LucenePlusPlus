@@ -5,8 +5,10 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/blank.hpp>
 #include "FunctionFixture.h"
 #include "IndexSearcher.h"
+#include "StringUtils.h"
 #include "ValueSource.h"
 #include "OrdFieldSource.h"
 #include "ReverseOrdFieldSource.h"

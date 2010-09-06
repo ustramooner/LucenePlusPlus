@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "NumericField.h"
 #include "Field.h"
+#include "StringUtils.h"
 #include "NumericUtils.h"
 #include "NumericTokenStream.h"
 

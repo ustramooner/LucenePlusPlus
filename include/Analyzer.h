@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include "LuceneObject.h"
 #include "CloseableThreadLocal.h"
 
 namespace Lucene

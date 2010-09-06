@@ -7,11 +7,13 @@
 #include "stdafx.h"
 #include "TermInfosWriter.h"
 #include "Directory.h"
+#include "StringUtils.h"
 #include "IndexOutput.h"
 #include "Term.h"
 #include "TermInfo.h"
 #include "FieldInfos.h"
 #include "UnicodeUtils.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

@@ -10,6 +10,7 @@
 #include "Document.h"
 #include "Field.h"
 #include "DateTools.h"
+#include "FileUtils.h"
 #include "FileReader.h"
 #include "MockRAMDirectory.h"
 #include "IndexWriter.h"
@@ -35,6 +36,7 @@
 #include "FieldCache.h"
 #include "ReadOnlyDirectoryReader.h"
 #include "ReadOnlySegmentReader.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "IndexInput.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

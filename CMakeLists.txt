@@ -63,6 +63,10 @@ OPTION(ENABLE_COMPILE_TESTS
 OPTION(ENABLE_PACKAGING
   "create build scripts for creating lucene++ packages"
   OFF)
+OPTION(ENABLE_NEDMALLOC
+  "use nedmalloc for memory allocations"
+  OFF)
+  
 #install path options
 SET(LIB_SUFFIX "" CACHE STRING "Define suffix of directory name (32/64)" )
 SET(LIB_DESTINATION "lib${LIB_SUFFIX}")
@@ -126,12 +130,11 @@ ENDIF ( NOT BOOST_DATE_TIME_FOUND OR
 
 #set global include paths
 INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/include)
-INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/includesrc)
-INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/util/md5)
-INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/util/nedmalloc)
-INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/util/zlib)
-INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/util/utf8)
-INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/util/ucs)
+#INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/util/md5)
+#INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/util/nedmalloc)
+#INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/util/zlib)
+#INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/util/utf8)
+#INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/util/ucs)
 INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIRS} )
 
 #include sub-projects

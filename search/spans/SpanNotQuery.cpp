@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "SpanNotQuery.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

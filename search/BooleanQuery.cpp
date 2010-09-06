@@ -11,6 +11,8 @@
 #include "BooleanScorer2.h"
 #include "ComplexExplanation.h"
 #include "Similarity.h"
+#include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

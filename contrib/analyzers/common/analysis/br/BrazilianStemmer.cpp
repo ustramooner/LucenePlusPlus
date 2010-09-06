@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "BrazilianStemmer.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

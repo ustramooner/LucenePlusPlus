@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "FastCharStream.h"
 #include "Reader.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

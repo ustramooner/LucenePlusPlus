@@ -7,6 +7,8 @@
 #include "stdafx.h"
 #include "TestUtils.h"
 #include "FileUtils.h"
+#include "StringUtils.h"
+#include "MiscUtils.h"
 
 #define BOOST_TEST_MODULE "Lucene"
 #define BOOST_TEST_NO_MAIN

@@ -8,6 +8,8 @@
 #include "FieldCache.h"
 #include "FieldCacheImpl.h"
 #include "NumericUtils.h"
+#include "StringUtils.h"
+#include "CycleCheck.h"
 
 namespace Lucene
 {

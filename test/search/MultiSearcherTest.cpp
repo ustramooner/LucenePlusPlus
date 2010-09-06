@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "LuceneTestFixture.h"
 #include "MockRAMDirectory.h"
+#include "StringUtils.h"
 #include "Document.h"
 #include "Field.h"
 #include "IndexWriter.h"
