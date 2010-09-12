@@ -5,6 +5,8 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <iostream>
+#include <boost/algorithm/string.hpp>
 #include "QueryParser.h"
 #include "StringUtils.h"
 #include "QueryParserTokenManager.h"

@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/algorithm/string.hpp>
 #include "SegmentInfo.h"
 #include "StringUtils.h"
 #include "SegmentInfos.h"

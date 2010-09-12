@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <iostream>
 #include "TestUtils.h"
 #include "FileUtils.h"
 #include "StringUtils.h"

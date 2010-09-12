@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <iostream>
 #include "IndexReader.h"
 #include "DirectoryReader.h"
 #include "IndexDeletionPolicy.h"

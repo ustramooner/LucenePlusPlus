@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/algorithm/string.hpp>
 #include "WildcardQuery.h"
 #include "WildcardTermEnum.h"
 #include "Term.h"

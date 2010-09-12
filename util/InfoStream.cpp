@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <iostream>
 #include "InfoStream.h"
 #include "StringUtils.h"
 

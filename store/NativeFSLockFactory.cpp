@@ -9,6 +9,7 @@
 #include "Random.h"
 #include "StringUtils.h"
 #include "FileUtils.h"
+#include <boost/interprocess/sync/file_lock.hpp>
 
 namespace Lucene
 {

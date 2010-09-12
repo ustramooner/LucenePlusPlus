@@ -7,10 +7,12 @@
 #pragma once
 
 #include "Config.h"
-#include <iostream>
 #include <stdexcept>
 //threading and shared pointers used in this header and LuceneObject
 #include <boost/thread/thread.hpp>
+#include <boost/thread/recursive_mutex.hpp>
+
+//shared pointers used in this header and LuceneObject
 #include <boost/shared_ptr.hpp>
 #include <boost/make_shared.hpp>
 #include <boost/weak_ptr.hpp>
@@ -36,15 +38,6 @@ namespace boost {
 #include <string>
 #include <algorithm>
 #include <limits>
-
-#include <boost/thread/recursive_mutex.hpp>
-
-#include <boost/algorithm/string.hpp>
-#include <boost/date_time/posix_time/posix_time.hpp>
-#include <boost/mem_fn.hpp>
-#include <boost/archive/tmpdir.hpp>
-#include <boost/interprocess/sync/file_lock.hpp>
-#include <boost/crc.hpp>
 
 #define DECLARE_SHARED_PTR(Type) \
 	class Type; \

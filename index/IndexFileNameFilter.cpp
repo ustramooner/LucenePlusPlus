@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/algorithm/string.hpp>
 #include "IndexFileNameFilter.h"
 #include "IndexFileNames.h"
 #include "CycleCheck.h"

@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/algorithm/string.hpp>
 #include <boost/bind/protect.hpp>
 #include "IndexFileDeleter.h"
 #include "IndexFileNameFilter.h"

@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/algorithm/string.hpp>
 #include "LuceneTestFixture.h"
 #include "MiscUtils.h"
 #include "TestUtils.h"

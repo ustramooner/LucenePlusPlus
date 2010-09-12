@@ -9,6 +9,7 @@
 #include "UnicodeUtils.h"
 #include "CharFolder.h"
 #include "utf8/utf8.h"
+#include <boost/algorithm/string.hpp>
 
 namespace Lucene
 {
