@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/algorithm/string.hpp>
 #include "BaseTokenStreamFixture.h"
 #include "Highlighter.h"
 #include "RAMDirectory.h"
@@ -25,6 +26,9 @@
 #include "StringReader.h"
 #include "TokenSources.h"
 #include "MultiTermQuery.h"
+#include "PhraseQuery.h"
+#include "SpanNotQuery.h"
+#include "FilteredQuery.h"
 #include "WhitespaceAnalyzer.h"
 #include "TokenGroup.h"
 #include "NumericRangeQuery.h"
@@ -45,6 +49,7 @@
 #include "TextFragment.h"
 #include "SimpleHTMLEncoder.h"
 #include "MultiSearcher.h"
+#include "FileUtils.h"
 
 using namespace Lucene;
 class HighlighterTestFixture;

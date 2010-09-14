@@ -47,12 +47,12 @@ namespace Lucene
 	}
 	bool ThreadId::operator== (const ThreadId& other) const
 	{
-	  return internal->id == other.internal->id || (!internal->initialised && !other.internal->initialised);
+	  return (!internal->initialised && !other.internal->initialised) || internal->id == other.internal->id;
 	}
 
 	bool ThreadId::operator!= (const ThreadId& other) const
 	{
-	  return !(internal->id == other.internal->id || (!internal->initialised && !other.internal->initialised));
+	  return !((!internal->initialised && !other.internal->initialised) || internal->id == other.internal->id );
 	}
 
 	ThreadId ThreadId::currentId(){

@@ -9,6 +9,7 @@
 #include "FileReader.h"
 #include "StringUtils.h"
 #include "FileUtils.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {
@@ -44,7 +45,8 @@ namespace Lucene
             if (length > fileBuffer.length())
                 fileBuffer.resize(length);
             file->read((char*)fileBuffer.get(), length);
-            int32_t readLength = StringUtils::toUnicode(fileBuffer.get(), file->gcount(), buffer + offset);
+            int32_t readLength = file->gcount();
+            MiscUtils::arrayCopy(fileBuffer.get(), 0, buffer, offset, readLength);
             return readLength == 0 ? FILE_EOF : readLength;
         }
         catch (...)
@@ -65,6 +67,7 @@ namespace Lucene
     
     void FileReader::reset()
     {
+        file->clear();
         file->seekg((std::streamoff)0);
     }
     

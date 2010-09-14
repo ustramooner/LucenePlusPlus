@@ -8,6 +8,7 @@
 #include "FormatPostingsTermsConsumer.h"
 #include "UnicodeUtils.h"
 #include "MiscUtils.h"
+#include "UTF8Stream.h"
 
 namespace Lucene
 {
@@ -23,7 +24,7 @@ namespace Lucene
         if (termBuffer.length() < len + 1)
             termBuffer.resize(MiscUtils::getNextSize(len + 1));
         MiscUtils::arrayCopy(text.begin(), 0, termBuffer.get(), 0, len);
-        termBuffer[len] = UnicodeUtil::UNICODE_TERMINATOR;
+        termBuffer[len] = UTF8Stream::UNICODE_TERMINATOR;
         return addTerm(termBuffer, 0);
     }
 }

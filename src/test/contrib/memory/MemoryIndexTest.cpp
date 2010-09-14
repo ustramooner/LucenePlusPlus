@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/algorithm/string.hpp>
 #include "TestUtils.h"
 #include "BaseTokenStreamFixture.h"
 #include "BufferedReader.h"
@@ -20,6 +21,8 @@
 #include "RAMDirectory.h"
 #include "IndexWriter.h"
 #include "QueryParser.h"
+#include "FileUtils.h"
+#include "MiscUtils.h"
 
 using namespace Lucene;
 
