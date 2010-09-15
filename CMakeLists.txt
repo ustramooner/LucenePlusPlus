@@ -33,6 +33,7 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 INCLUDE (Lucene++Docs)
 INCLUDE (FindThreads)
 INCLUDE (TestCXXAcceptsFlag)
+ENABLE_TESTING()
 
 #Single output directory for building all executables and libraries.
 SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin CACHE PATH "Executable Output Directory" FORCE)
@@ -66,7 +67,10 @@ OPTION(ENABLE_PACKAGING
 OPTION(ENABLE_NEDMALLOC
   "use nedmalloc for memory allocations"
   OFF)
-  
+OPTION(LUCENE_USE_STATIC_BOOST_LIBS
+  "use static boost libraries "
+  ON)
+
 #install path options
 SET(LIB_SUFFIX "" CACHE STRING "Define suffix of directory name (32/64)" )
 SET(LIB_DESTINATION "lib${LIB_SUFFIX}")
@@ -80,6 +84,10 @@ SET(LIB_DESTINATION "lib${LIB_SUFFIX}")
 if(WIN32)
  set(CMAKE_DEBUG_POSTFIX "d")
 endif(WIN32)
+
+if(NOT MSVC AND NOT CMAKE_SYSTEM MATCHES "SunOS-5*.")
+        add_definitions(-fPIC)
+endif(NOT MSVC AND NOT CMAKE_SYSTEM MATCHES "SunOS-5*.")
 
 IF(CYGWIN)
   ADD_DEFINITIONS(-D__LARGE64_FILES)
@@ -104,29 +112,9 @@ ENDIF(CMAKE_COMPILER_IS_GNUCC)
 ####################################
 #find boost
 ####################################
-SET(BOOST_USE_DATE_TIME ON) #     Link against the date_time Library
-SET(BOOST_USE_FILESYSTEM ON) #     Link against the filesystem Library
-SET(BOOST_USE_IOSTREAMS ON) #     Link against the iostreams Library
-SET(BOOST_USE_REGEX ON) #     Link against the regex Library
-SET(BOOST_USE_THREAD ON) #     Link against the thread Library
-SET(BOOST_USE_UNIT_TEST_FRAMEWORK ON) #     Link against the  unit_test_framework Library
-SET(BOOST_LIBRARIES_SUFFIX "")
-SET(BOOST_CURRENT_VERSION "")
-INCLUDE(MXAFindBoost)
-
-IF ( NOT BOOST_DATE_TIME_FOUND OR
-     NOT BOOST_FILESYSTEM_FOUND OR
-     NOT BOOST_IOSTREAMS_FOUND OR
-     NOT BOOST_REGEX_FOUND OR
-     NOT BOOST_THREAD_FOUND OR
-     NOT BOOST_UNIT_TEST_FRAMEWORK_FOUND )
-     MESSAGE(FATAL_ERROR "A required boost library was not found")
-ENDIF ( NOT BOOST_DATE_TIME_FOUND OR
-     NOT BOOST_FILESYSTEM_FOUND OR
-     NOT BOOST_IOSTREAMS_FOUND OR
-     NOT BOOST_REGEX_FOUND OR
-     NOT BOOST_THREAD_FOUND OR
-     NOT BOOST_UNIT_TEST_FRAMEWORK_FOUND )
+SET(Boost_USE_STATIC_LIBS   ${LUCENE_USE_STATIC_BOOST_LIBS})
+SET(Boost_USE_MULTITHREADED ON)
+find_package( Boost 1.36.0 COMPONENTS date_time filesystem iostreams regex thread unit_test_framework REQUIRED)
 
 #set global include paths
 INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/include)

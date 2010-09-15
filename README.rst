@@ -26,10 +26,26 @@ Official `Java Lucene <http://lucene.apache.org/java/docs/index.html>`_ - useful
 
 Build Instructions using CMake
 ------------------------------
-You'll need boost installed somewhere. On Debian systems, the following
-packages are required:
+You'll need boost installed somewhere.
 
+On Debian systems, the following packages are required:
 libboost-date-time-dev libboost-filesystem-dev libboost-regex-dev libboost-thread-dev libboost-iostreams-dev libboost-test-dev
+
+On Windows, you'll need boost installed. http://www.boostpro.com/ has some precompiled windows packages.
+You'll need the following extras installed. Y
+- boost::system
+- boost::thread
+- boost::filesystem
+- boost::regex
+- boost::date_time
+- boost::iostreams
+- boost::unit_test_framework
+
+Building Performance
+--------------------
+Use of ccache will speed up build times a lot. I found it easiest to add the /usr/lib/ccache directory to the beginning of your paths. This works for most common compilers.
+
+PATH=/usr/lib/ccache:$PATH
 
 Build Instructions for POSIX systems
 ------------------------------------
