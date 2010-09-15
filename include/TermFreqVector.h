@@ -17,28 +17,27 @@ namespace Lucene
 	class LPPAPI TermFreqVector
 	{
 	public:
-		virtual ~TermFreqVector();		
 		LUCENE_INTERFACE(TermFreqVector);
 			
 	public:
 		/// The {@link Fieldable} name. 
 		/// @return The name of the field this vector is associated with.
-		virtual String getField();
+		virtual String getField() = 0;
 		
 		/// @return The number of terms in the term vector.
-		virtual int32_t size();
+		virtual int32_t size() = 0;
 		
 		/// @return An Array of term texts in ascending order.
-		virtual Collection<String> getTerms();
+		virtual Collection<String> getTerms() = 0;
 		
 		/// Array of term frequencies. Locations of the array correspond one to one to the terms in the array obtained from 
 		/// getTerms method. Each location in the array contains the number of times this term occurs in the document or the
 		/// document field.
-		virtual Collection<int32_t> getTermFrequencies();
+		virtual Collection<int32_t> getTermFrequencies() = 0;
 		
 		/// Return an index in the term numbers array returned from getTerms at which the term with the specified term appears. 
 		/// If this term does not appear in the array, return -1.
-		virtual int32_t indexOf(const String& term);
+		virtual int32_t indexOf(const String& term) = 0;
 		
 		/// Just like indexOf(int) but searches for a number of terms at the same time. Returns an array that has the same size 
 		/// as the number of terms searched for, each slot containing the result of searching for that term number.
@@ -46,6 +45,6 @@ namespace Lucene
 		/// @param terms array containing terms to look for
 		/// @param start index in the array where the list of terms starts
 		/// @param length the number of terms in the list
-		virtual Collection<int32_t> indexesOf(Collection<String> terms, int32_t start, int32_t length);
+		virtual Collection<int32_t> indexesOf(Collection<String> terms, int32_t start, int32_t length) = 0;
 	};
 }

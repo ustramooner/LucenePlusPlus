@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "WhitespaceTokenizer.h"
+#include <locale>
 
 namespace Lucene
 {

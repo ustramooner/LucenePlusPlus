@@ -14,6 +14,9 @@ namespace Lucene
 {
     boost::mutex LuceneObject::lockMutex;
     
+    LuceneObject::LuceneObject()
+    {
+    }
     LuceneObject::~LuceneObject()
     {
     }

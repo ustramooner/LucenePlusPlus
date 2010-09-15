@@ -48,6 +48,9 @@ namespace Lucene
     };
     Collection<String> QueryParserConstants::tokenImage = Collection<String>::newInstance(_tokenImage, _tokenImage + (sizeof(_tokenImage) / sizeof(_tokenImage[0])));
     
+    QueryParserConstants::QueryParserConstants()
+    {
+    }
     QueryParserConstants::~QueryParserConstants()
     {
     }

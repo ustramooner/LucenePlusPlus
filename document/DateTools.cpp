@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include <boost/date_time/gregorian/gregorian.hpp>
+#include <boost/date_time/posix_time/posix_time.hpp>
 #include "DateTools.h"
 #include "MiscUtils.h"
 #include "StringUtils.h"
@@ -18,7 +19,7 @@ namespace Lucene
     {
     }
     
-    String DateTools::dateToString(boost::posix_time::ptime date, Resolution resolution)
+    String DateTools::dateToString(const boost::posix_time::ptime& date, Resolution resolution)
     {
         return timeToString(MiscUtils::getTimeMillis(date), resolution);
     }
@@ -81,7 +82,7 @@ namespace Lucene
         return date;
     }
     
-    boost::posix_time::ptime DateTools::round(boost::posix_time::ptime date, Resolution resolution)
+    boost::posix_time::ptime DateTools::round(const boost::posix_time::ptime& date, Resolution resolution)
     {
         boost::posix_time::ptime roundDate;
         

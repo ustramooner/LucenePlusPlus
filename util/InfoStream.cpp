@@ -11,6 +11,11 @@
 
 namespace Lucene
 {
+    InfoStream::InfoStream()
+    {
+	//private
+    }
+    
     InfoStream::~InfoStream()
     {
     }

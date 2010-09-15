@@ -30,6 +30,7 @@ namespace Lucene
 		virtual ~LuceneObject();
 	
 	protected:
+		LuceneObject();
 		static boost::mutex lockMutex;
 		
 		SynchronizePtr objectLock;

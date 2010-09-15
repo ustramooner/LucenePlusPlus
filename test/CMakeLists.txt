@@ -22,6 +22,5 @@ SET_TARGET_PROPERTIES(lucene++-tester PROPERTIES
 )
 TARGET_LINK_LIBRARIES(lucene++-tester lucene++ lucene++-contrib ${CMAKE_THREAD_LIBS_INIT})
 
-ENABLE_TESTING()
-ADD_TEST(Lucene++Tester lucene++-tester)
+ADD_TEST(${EXECUTABLE_OUTPUT_PATH}/lucene++-tester ${EXECUTABLE_OUTPUT_PATH}/lucene++-tester -p)
 

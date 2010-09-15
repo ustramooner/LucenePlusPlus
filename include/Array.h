@@ -65,6 +65,10 @@ namespace Lucene
 			return instance;
 		}
 		
+		TYPE* array(){
+		  return container->array; 
+		}
+		
 		void reset()
 		{
 			resize(0);

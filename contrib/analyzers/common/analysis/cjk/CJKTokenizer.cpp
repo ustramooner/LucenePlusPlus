@@ -11,6 +11,7 @@
 #include "TypeAttribute.h"
 #include "Reader.h"
 #include "CharFolder.h"
+#include <locale>
 
 namespace Lucene
 {

@@ -21,7 +21,7 @@
 #include <boost/cstdint.hpp>
 
 namespace boost {
-	class blank;
+	struct blank;
 	class thread;
 	namespace interprocess{
 		class file_lock;
@@ -618,6 +618,7 @@ namespace Lucene
 	
 	typedef std::basic_string< char, std::char_traits<char>, Allocator<char> > SingleString;
 	typedef std::basic_string< wchar_t, std::char_traits<wchar_t>, Allocator<wchar_t> > String;
+	const std::basic_string< wchar_t, std::char_traits<wchar_t>, Allocator<wchar_t> > EmptyString;
 	typedef std::basic_ostringstream< wchar_t, std::char_traits<wchar_t>, Allocator<wchar_t> > StringStream;
 }
 
@@ -773,6 +774,9 @@ namespace Lucene
 	typedef boost::variant<Collection<uint8_t>, Collection<int32_t>, Collection<double>, Blank> CollectionValue;
 }
 
+#ifdef _DEBUG
+  #include "CycleCheck.h"
+#endif
 #include "Synchronize.h" //SyncLock used throughout...
 
 #ifndef LPP_BUILDING_LIB

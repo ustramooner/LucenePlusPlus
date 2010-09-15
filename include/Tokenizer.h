@@ -18,7 +18,7 @@ namespace Lucene
 	/// before setting attributes.
 	class LPPAPI Tokenizer : public TokenStream
 	{
-	public:
+	protected:
 		/// Construct a tokenizer with null input.
 		Tokenizer();
 		
@@ -37,6 +37,7 @@ namespace Lucene
 		/// Construct a token stream processing the given input using the given AttributeSource.
 		Tokenizer(AttributeSourcePtr source, ReaderPtr input);
 		
+	public:
 		virtual ~Tokenizer();
 		
 		LUCENE_CLASS(Tokenizer);

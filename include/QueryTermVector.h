@@ -26,6 +26,7 @@ namespace Lucene
 		Collection<int32_t> termFreqs;
 	
 	public:
+		String getField();
 		virtual String toString();
 		
 		int32_t size();

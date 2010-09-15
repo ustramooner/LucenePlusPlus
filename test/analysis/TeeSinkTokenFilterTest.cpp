@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/algorithm/string.hpp>
 #include "BaseTokenStreamFixture.h"
 #include "TestUtils.h"
 #include "MiscUtils.h"

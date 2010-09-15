@@ -43,7 +43,7 @@ namespace Lucene
 			UnsupportedOperation
 		};
 		
-		LuceneException(const String& error = L"", LuceneException::ExceptionType type = Null) throw();
+		LuceneException(const String& error = EmptyString, LuceneException::ExceptionType type = Null) throw();
 		~LuceneException() throw();
 	
 	protected:
@@ -61,7 +61,7 @@ namespace Lucene
 	class ExceptionTemplate : public ParentException
 	{
 	public:
-		ExceptionTemplate(const String& error = L"", LuceneException::ExceptionType type = Type) : ParentException(error, type)
+		ExceptionTemplate(const String& error = EmptyString, LuceneException::ExceptionType type = Type) : ParentException(error, type)
 		{
 		}
 	};

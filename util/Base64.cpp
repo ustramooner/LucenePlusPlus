@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "Base64.h"
+#include <locale>
 
 namespace Lucene
 {

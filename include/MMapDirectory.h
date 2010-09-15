@@ -41,7 +41,7 @@ namespace Lucene
 	class LPPAPI MMapIndexInput : public IndexInput
 	{
 	public:
-		MMapIndexInput(const String& path = L"");
+		MMapIndexInput(const String& path = EmptyString);
 		virtual ~MMapIndexInput();
 		
 		LUCENE_CLASS(MMapIndexInput);
