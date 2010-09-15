@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "ReusableStringReader.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

@@ -7,6 +7,8 @@
 #include "stdafx.h"
 #include "LuceneTestFixture.h"
 #include "DocValues.h"
+#include "StringUtils.h"
+#include "MiscUtils.h"
 
 using namespace Lucene;
 

@@ -8,6 +8,7 @@
 #include "LuceneTestFixture.h"
 #include "AttributeSource.h"
 #include "TermAttribute.h"
+#include "MiscUtils.h"
 #include "TypeAttribute.h"
 #include "FlagsAttribute.h"
 #include "OffsetAttribute.h"

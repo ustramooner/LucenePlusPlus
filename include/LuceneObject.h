@@ -6,8 +6,6 @@
 
 #pragma once
 
-#include "Lucene.h"
-
 #ifdef _DEBUG
 #define LUCENE_INTERFACE(Name) \
 	static String _getClassName() { return L###Name; } \
@@ -32,6 +30,7 @@ namespace Lucene
 		virtual ~LuceneObject();
 	
 	protected:
+		LuceneObject();
 		static boost::mutex lockMutex;
 		
 		SynchronizePtr objectLock;

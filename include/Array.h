@@ -7,6 +7,7 @@
 #pragma once
 
 #include "LuceneObject.h"
+#include <cstring>
 
 namespace Lucene
 {
@@ -64,6 +65,10 @@ namespace Lucene
 			return instance;
 		}
 		
+		TYPE* array(){
+		  return container->array; 
+		}
+		
 		void reset()
 		{
 			resize(0);
@@ -98,7 +103,7 @@ namespace Lucene
 		
 		int32_t hashCode() const
 		{
-			return (int32_t)container.get();
+			return (int64_t)container.get();
 		}
 		
 		TYPE& operator[] (int32_t i) const

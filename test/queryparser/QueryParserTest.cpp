@@ -5,7 +5,10 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/date_time/gregorian/gregorian.hpp>
+#include "MiscUtils.h"
 #include "LuceneTestFixture.h"
+#include "StringUtils.h"
 #include "QueryParser.h"
 #include "WhitespaceAnalyzer.h"
 #include "KeywordAnalyzer.h"

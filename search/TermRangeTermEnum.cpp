@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "VariantUtils.h"
 #include "TermRangeTermEnum.h"
 #include "IndexReader.h"
 #include "Term.h"

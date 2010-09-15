@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "ParallelReader.h"
+#include "StringUtils.h"
 #include "Document.h"
 #include "FieldSelector.h"
 #include "Term.h"

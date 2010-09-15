@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "FlagsAttribute.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

@@ -5,8 +5,11 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/blank.hpp>
 #include "DocValues.h"
 #include "Explanation.h"
+#include "StringUtils.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

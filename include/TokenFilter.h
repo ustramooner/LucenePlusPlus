@@ -17,13 +17,14 @@ namespace Lucene
 	class LPPAPI TokenFilter : public TokenStream
 	{
 	public:
-		/// Construct a token stream filtering the given input.
-		TokenFilter(TokenStreamPtr input);
 		virtual ~TokenFilter();
 		
 		LUCENE_CLASS(TokenFilter);
 	
 	protected:
+		/// Construct a token stream filtering the given input.
+		TokenFilter(TokenStreamPtr input);
+
 		/// The source of tokens for this filter.
 		TokenStreamPtr input;
 	

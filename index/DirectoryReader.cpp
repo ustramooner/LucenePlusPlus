@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/algorithm/string.hpp>
 #include "Directory.h"
 #include "DirectoryReader.h"
 #include "ReadOnlyDirectoryReader.h"
@@ -22,6 +23,7 @@
 #include "SegmentMergeInfo.h"
 #include "Lock.h"
 #include "FieldCache.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

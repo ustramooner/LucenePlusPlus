@@ -5,11 +5,13 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/algorithm/string.hpp>
 #include "WildcardQuery.h"
 #include "WildcardTermEnum.h"
 #include "Term.h"
 #include "PrefixQuery.h"
 #include "SingleTermEnum.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

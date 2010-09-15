@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "BaseTestRangeFilterFixture.h"
 #include "RAMDirectory.h"
+#include "StringUtils.h"
 #include "IndexWriter.h"
 #include "WhitespaceAnalyzer.h"
 #include "Document.h"

@@ -5,8 +5,10 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/blank.hpp>
 #include "LuceneTestFixture.h"
 #include "RAMDirectory.h"
+#include "StringUtils.h"
 #include "IndexSearcher.h"
 #include "TermRangeQuery.h"
 #include "WhitespaceAnalyzer.h"

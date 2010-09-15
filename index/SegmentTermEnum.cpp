@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "SegmentTermEnum.h"
+#include "StringUtils.h"
 #include "TermInfosWriter.h"
 #include "IndexInput.h"
 #include "TermBuffer.h"

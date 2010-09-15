@@ -5,8 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #pragma once
-
-#include "Lucene.h"
+#include <boost/date_time/posix_time/ptime.hpp>
 
 namespace Lucene
 {

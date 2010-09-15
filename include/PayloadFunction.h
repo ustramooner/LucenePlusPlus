@@ -16,6 +16,8 @@ namespace Lucene
 	/// @see PayloadTermQuery for more information
 	class LPPAPI PayloadFunction : public LuceneObject
 	{
+	protected:
+		PayloadFunction();
 	public:
 		virtual ~PayloadFunction();
 		LUCENE_CLASS(PayloadFunction);

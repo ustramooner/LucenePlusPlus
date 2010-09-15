@@ -8,6 +8,7 @@
 #include "IndexOutput.h"
 #include "IndexInput.h"
 #include "UnicodeUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

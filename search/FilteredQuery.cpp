@@ -9,6 +9,7 @@
 #include "Explanation.h"
 #include "Filter.h"
 #include "DocIdSet.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

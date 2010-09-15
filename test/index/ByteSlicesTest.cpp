@@ -5,8 +5,10 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <iostream>
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
+#include "MiscUtils.h"
 #include "ByteBlockPool.h"
 #include "DocumentsWriter.h"
 #include "ByteBlockPool.h"

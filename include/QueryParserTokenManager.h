@@ -21,10 +21,10 @@ namespace Lucene
 		
 		LUCENE_CLASS(QueryParserTokenManager);
 	
-	public:
 		/// Debug output.
 		InfoStreamPtr debugStream;
 		
+	protected:
 		static const int64_t jjbitVec0[];
 		static const int64_t jjbitVec1[];
 		static const int64_t jjbitVec3[];
@@ -49,7 +49,6 @@ namespace Lucene
 		int32_t jjmatchedPos;
 		int32_t jjmatchedKind;
 	
-	protected:
 		QueryParserCharStreamPtr input_stream;
 		IntArray jjrounds;
 		IntArray jjstateSet;

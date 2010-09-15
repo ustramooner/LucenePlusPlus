@@ -5,7 +5,11 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "StringUtils.h"
 #include "FileUtils.h"
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/filesystem/convenience.hpp>
 
 #ifdef _WIN32
 #include <io.h>

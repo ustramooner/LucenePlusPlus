@@ -7,6 +7,9 @@
 #include "stdafx.h"
 #include "MMapDirectory.h"
 #include "SimpleFSDirectory.h"
+#include "MiscUtils.h"
+#include "FileUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

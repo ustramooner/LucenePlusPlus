@@ -7,6 +7,7 @@
 #pragma once
 
 #include "IndexInput.h"
+#include <boost/crc.hpp>
 
 namespace Lucene
 {
@@ -23,7 +24,6 @@ namespace Lucene
 	protected:
 		IndexInputPtr main;
 		boost::crc_32_type checksum;
-	
 	public:
 		/// Reads and returns a single byte.
 		/// @see IndexOutput#writeByte(uint8_t)

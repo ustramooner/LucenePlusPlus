@@ -6,7 +6,9 @@
 
 #include "stdafx.h"
 #include "SimpleFSDirectory.h"
+#include "StringUtils.h"
 #include "IndexOutput.h"
+#include "FileUtils.h"
 #include "FileReader.h"
 
 namespace Lucene

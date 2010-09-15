@@ -20,6 +20,7 @@
 #include "LogByteSizeMergePolicy.h"
 #include "SerialMergeScheduler.h"
 #include "SegmentInfo.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

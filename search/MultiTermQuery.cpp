@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "MultiTermQuery.h"
 #include "ConstantScoreQuery.h"
+#include "CycleCheck.h"
 #include "MultiTermQueryWrapperFilter.h"
 #include "QueryWrapperFilter.h"
 #include "BooleanQuery.h"
@@ -17,6 +18,7 @@
 #include "TermDocs.h"
 #include "FilteredTermEnum.h"
 #include "IndexReader.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

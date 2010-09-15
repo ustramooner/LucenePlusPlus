@@ -5,8 +5,10 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/algorithm/string.hpp>
 #include "IndexFileNames.h"
 #include "SegmentInfo.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

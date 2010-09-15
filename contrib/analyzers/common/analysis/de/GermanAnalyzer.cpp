@@ -11,6 +11,7 @@
 #include "LowerCaseFilter.h"
 #include "StopFilter.h"
 #include "GermanStemFilter.h"
+#include <boost/algorithm/string.hpp>
 
 namespace Lucene
 {

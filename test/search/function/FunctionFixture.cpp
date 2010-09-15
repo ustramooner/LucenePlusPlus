@@ -5,12 +5,14 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "VariantUtils.h"
 #include "FunctionFixture.h"
 #include "RAMDirectory.h"
 #include "StandardAnalyzer.h"
 #include "IndexWriter.h"
 #include "Document.h"
 #include "Field.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

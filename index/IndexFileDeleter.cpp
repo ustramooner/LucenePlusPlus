@@ -5,6 +5,8 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/algorithm/string.hpp>
+#include <boost/bind/protect.hpp>
 #include "IndexFileDeleter.h"
 #include "IndexFileNameFilter.h"
 #include "IndexFileNames.h"
@@ -14,6 +16,7 @@
 #include "Directory.h"
 #include "DocumentsWriter.h"
 #include "InfoStream.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

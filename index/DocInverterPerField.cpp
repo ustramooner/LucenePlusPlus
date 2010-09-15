@@ -11,7 +11,6 @@
 #include "InvertedDocEndConsumerPerThread.h"
 #include "InvertedDocConsumerPerField.h"
 #include "InvertedDocEndConsumerPerField.h"
-#include "FieldInvertState.h"
 #include "Fieldable.h"
 #include "FieldInfo.h"
 #include "FieldInvertState.h"
@@ -24,6 +23,7 @@
 #include "OffsetAttribute.h"
 #include "AttributeSource.h"
 #include "InfoStream.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

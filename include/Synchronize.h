@@ -6,8 +6,6 @@
 
 #pragma once
 
-#include "Lucene.h"
-
 namespace Lucene
 {
 	/// Utility class to support locking via a mutex.

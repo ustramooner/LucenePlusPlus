@@ -6,9 +6,8 @@
 
 #include "stdafx.h"
 #include "SegmentMerger.h"
-#include "MergePolicy.h"
+#include "StringUtils.h"
 #include "IndexWriter.h"
-#include "IndexReader.h"
 #include "IndexOutput.h"
 #include "FieldInfos.h"
 #include "FieldInfo.h"
@@ -22,13 +21,13 @@
 #include "TermVectorsReader.h"
 #include "TermVectorsWriter.h"
 #include "FormatPostingsDocsConsumer.h"
-#include "FormatPostingsFieldsConsumer.h"
 #include "FormatPostingsFieldsWriter.h"
 #include "FormatPostingsPositionsConsumer.h"
 #include "FormatPostingsTermsConsumer.h"
 #include "SegmentMergeInfo.h"
 #include "SegmentMergeQueue.h"
 #include "SegmentWriteState.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

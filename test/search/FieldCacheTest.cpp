@@ -13,6 +13,7 @@
 #include "Field.h"
 #include "IndexReader.h"
 #include "FieldCache.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

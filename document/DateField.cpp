@@ -6,6 +6,8 @@
 
 #include "stdafx.h"
 #include "DateField.h"
+#include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {
@@ -24,7 +26,7 @@ namespace Lucene
         return _DATE_LEN;
     }
     
-    String& DateField::MIN_DATE_STRING()
+    const String& DateField::MIN_DATE_STRING()
     {
         static String _MIN_DATE_STRING;
         if (_MIN_DATE_STRING.empty())
@@ -32,7 +34,7 @@ namespace Lucene
         return _MIN_DATE_STRING;
     }
     
-    String& DateField::MAX_DATE_STRING()
+    const String& DateField::MAX_DATE_STRING()
     {
         static String _MAX_DATE_STRING;
         if (_MAX_DATE_STRING.empty())
@@ -43,7 +45,7 @@ namespace Lucene
         return _MAX_DATE_STRING;
     }
     
-    String DateField::dateToString(boost::posix_time::ptime date)
+    String DateField::dateToString(const boost::posix_time::ptime& date)
     {
         return timeToString(MiscUtils::getTimeMillis(date));
     }

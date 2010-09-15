@@ -7,6 +7,8 @@
 #include "stdafx.h"
 #include "FrenchStemmer.h"
 #include "UnicodeUtils.h"
+#include "StringUtils.h"
+#include <boost/algorithm/string.hpp>
 
 namespace Lucene
 {

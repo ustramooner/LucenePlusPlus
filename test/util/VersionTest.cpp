@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "LuceneTestFixture.h"
+#include "Constants.h"
 
 using namespace Lucene;
 

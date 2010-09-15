@@ -8,6 +8,8 @@
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "BufferedIndexInput.h"
+#include "FileUtils.h"
+#include "MiscUtils.h"
 #include "SimpleFSDirectory.h"
 #include "MockFSDirectory.h"
 #include "IndexWriter.h"
@@ -21,6 +23,7 @@
 #include "ScoreDoc.h"
 #include "TopDocs.h"
 #include "Random.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

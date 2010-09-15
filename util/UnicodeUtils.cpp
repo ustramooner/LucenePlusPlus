@@ -6,8 +6,8 @@
 
 #include "stdafx.h"
 #include "UnicodeUtils.h"
-#include "utf8.h"
-#include "guniprop.h"
+#include "utf8/utf8.h"
+#include "unicode/guniprop.h"
 
 namespace Lucene
 {

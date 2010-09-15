@@ -30,10 +30,9 @@ namespace Lucene
 		
 		LUCENE_CLASS(Document);
 	
-	public:
-		Collection<FieldablePtr> fields;
-	
 	protected:
+		Collection<FieldablePtr> fields;
+
 		double boost;
 	
 	public:

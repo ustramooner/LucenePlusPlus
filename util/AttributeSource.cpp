@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "AttributeSource.h"
 #include "Attribute.h"
+#include "CycleCheck.h"
 
 namespace Lucene
 {

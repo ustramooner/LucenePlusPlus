@@ -6,13 +6,13 @@
 
 #pragma once
 
-#include "Lucene.h"
-
 namespace Lucene
 {
 	/// Utility class to support streaming info messages.
 	class LPPAPI InfoStream : public LuceneObject
 	{
+	protected:
+		InfoStream();
 	public:
 		virtual ~InfoStream();
 		LUCENE_CLASS(InfoStream);

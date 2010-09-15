@@ -5,9 +5,11 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/algorithm/string.hpp>
 #include "CheckHits.h"
 #include "Searcher.h"
 #include "Explanation.h"
+#include "MiscUtils.h"
 #include "QueryUtils.h"
 #include "Collector.h"
 #include "Query.h"
@@ -16,6 +18,7 @@
 #include "MultiSearcher.h"
 #include "IndexSearcher.h"
 #include "Scorer.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

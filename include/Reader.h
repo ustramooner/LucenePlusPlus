@@ -13,14 +13,14 @@ namespace Lucene
 	/// Abstract class for reading character streams.
 	class LPPAPI Reader : public LuceneObject
 	{
+	protected:
+		Reader();
 	public:
 		virtual ~Reader();
 		LUCENE_CLASS(Reader);
 	
-	public:
 		static const int32_t READER_EOF;
 		
-	public:
 		/// Read a single character.
 		virtual int32_t read();
 

@@ -8,6 +8,7 @@
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "FSDirectory.h"
+#include "FileUtils.h"
 #include "MockRAMDirectory.h"
 #include "SnapshotDeletionPolicy.h"
 #include "KeepOnlyLastCommitDeletionPolicy.h"
@@ -18,6 +19,7 @@
 #include "LuceneThread.h"
 #include "IndexFileDeleter.h"
 #include "IndexInput.h"
+#include "MiscUtils.h"
 
 using namespace Lucene;
 

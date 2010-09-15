@@ -8,6 +8,7 @@
 
 #include "LuceneContrib.h"
 #include "Analyzer.h"
+#include "Constants.h"
 
 namespace Lucene
 {

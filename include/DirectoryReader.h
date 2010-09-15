@@ -7,9 +7,7 @@
 #pragma once
 
 #include "IndexReader.h"
-#include "SegmentInfos.h"
 #include "TermEnum.h"
-#include "TermDocs.h"
 #include "TermPositions.h"
 #include "IndexCommit.h"
 #include "SegmentMergeQueue.h"

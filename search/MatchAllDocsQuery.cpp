@@ -11,6 +11,7 @@
 #include "TermDocs.h"
 #include "ComplexExplanation.h"
 #include "Searcher.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

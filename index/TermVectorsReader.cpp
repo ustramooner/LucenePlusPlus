@@ -7,12 +7,13 @@
 #include "stdafx.h"
 #include "TermVectorsReader.h"
 #include "BufferedIndexInput.h"
-#include "TermVectorMapper.h"
 #include "IndexFileNames.h"
 #include "Directory.h"
 #include "FieldInfos.h"
 #include "SegmentTermPositionVector.h"
 #include "TermVectorOffsetInfo.h"
+#include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

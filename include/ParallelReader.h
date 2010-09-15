@@ -8,7 +8,6 @@
 
 #include "IndexReader.h"
 #include "TermEnum.h"
-#include "TermDocs.h"
 #include "TermPositions.h"
 
 namespace Lucene

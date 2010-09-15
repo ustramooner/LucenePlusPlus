@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "PersianNormalizer.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

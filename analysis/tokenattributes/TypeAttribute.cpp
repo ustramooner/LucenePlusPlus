@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "TypeAttribute.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

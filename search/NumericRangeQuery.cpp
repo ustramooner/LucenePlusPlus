@@ -5,9 +5,12 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "VariantUtils.h"
 #include "NumericRangeQuery.h"
 #include "Term.h"
+#include "StringUtils.h"
 #include "IndexReader.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

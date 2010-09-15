@@ -7,6 +7,9 @@
 #pragma once
 
 #include "LuceneObject.h"
+#include <set>
+#include <map>
+#include <vector>
 
 namespace Lucene
 {
@@ -204,7 +207,7 @@ namespace Lucene
 		
 		virtual int32_t hashCode()
 		{
-			return (int32_t)container.get();
+			return (int64_t)container.get();
 		}
 		
 		void swap(this_type& other)

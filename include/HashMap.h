@@ -7,6 +7,7 @@
 #pragma once
 
 #include "LuceneObject.h"
+#include <boost/unordered_map.hpp>
 
 namespace Lucene
 {
@@ -78,7 +79,7 @@ namespace Lucene
 		
 		virtual int32_t hashCode()
 		{
-			return (int32_t)mapContainer.get();
+			return (int64_t)mapContainer.get();
 		}
 		
 		operator bool() const

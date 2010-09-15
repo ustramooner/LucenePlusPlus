@@ -6,6 +6,8 @@
 
 #include "stdafx.h"
 #include "QueryUtils.h"
+#include "MiscUtils.h"
+#include "StringUtils.h"
 #include "Query.h"
 #include "CheckHits.h"
 #include "IndexSearcher.h"

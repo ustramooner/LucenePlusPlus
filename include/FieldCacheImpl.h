@@ -7,7 +7,6 @@
 #pragma once
 
 #include "FieldCache.h"
-#include "LuceneObject.h"
 
 namespace Lucene
 {

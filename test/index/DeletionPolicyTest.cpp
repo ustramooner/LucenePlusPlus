@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
+#include "MiscUtils.h"
 #include "IndexCommit.h"
 #include "SegmentInfos.h"
 #include "IndexDeletionPolicy.h"

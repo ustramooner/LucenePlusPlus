@@ -8,6 +8,7 @@
 
 #include "FSDirectory.h"
 #include "IndexInput.h"
+#include <boost/iostreams/device/mapped_file.hpp>
 
 namespace Lucene
 {
@@ -40,7 +41,7 @@ namespace Lucene
 	class LPPAPI MMapIndexInput : public IndexInput
 	{
 	public:
-		MMapIndexInput(const String& path = L"");
+		MMapIndexInput(const String& path = EmptyString);
 		virtual ~MMapIndexInput();
 		
 		LUCENE_CLASS(MMapIndexInput);

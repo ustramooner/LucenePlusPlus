@@ -5,8 +5,10 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/algorithm/string.hpp>
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
+#include "FileUtils.h"
 #include "FileReader.h"
 
 using namespace Lucene;

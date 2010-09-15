@@ -7,6 +7,7 @@
 #pragma once
 
 #include "IndexOutput.h"
+#include <boost/crc.hpp>
 
 namespace Lucene
 {

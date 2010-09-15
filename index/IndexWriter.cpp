@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/bind/protect.hpp>
 #include "IndexWriter.h"
 #include "IndexReader.h"
 #include "Directory.h"
@@ -31,6 +32,7 @@
 #include "Constants.h"
 #include "InfoStream.h"
 #include "TestPoint.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

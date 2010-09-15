@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include "LuceneObject.h"
 #include "Term.h"
 
 namespace Lucene

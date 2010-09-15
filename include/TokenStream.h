@@ -42,7 +42,7 @@ namespace Lucene
 	/// AttributeSource#restoreState} can be used.
 	class LPPAPI TokenStream : public AttributeSource
 	{
-	public:
+	protected:
 		/// A TokenStream using the default attribute factory.
 		TokenStream();
 		
@@ -52,11 +52,11 @@ namespace Lucene
 		/// A TokenStream using the supplied AttributeFactory for creating new {@link Attribute} instances.
 		TokenStream(AttributeFactoryPtr factory);
 		
+	public:
 		virtual ~TokenStream();
 		
 		LUCENE_CLASS(TokenStream);
 	
-	public:
 		/// Consumers (ie., {@link IndexWriter}) use this method to advance the stream to the next token. Implementing 
 		/// classes must implement this method and update the appropriate {@link Attribute}s with the attributes of
 		/// the next token.

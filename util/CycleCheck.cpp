@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "CycleCheck.h"
+#include <iostream>
 
 namespace Lucene
 {

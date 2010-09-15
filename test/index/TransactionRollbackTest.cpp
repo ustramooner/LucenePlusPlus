@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/algorithm/string.hpp>
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "MockRAMDirectory.h"
@@ -16,6 +17,7 @@
 #include "Field.h"
 #include "BitSet.h"
 #include "IndexCommit.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

@@ -12,13 +12,12 @@
 #include "TermsHashPerField.h"
 #include "TermsHashPerThread.h"
 #include "RAMOutputStream.h"
-#include "IndexOutput.h"
 #include "IndexWriter.h"
 #include "IndexFileNames.h"
-#include "RawPostingList.h"
-#include "DocumentsWriter.h"
 #include "SegmentWriteState.h"
 #include "Directory.h"
+#include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

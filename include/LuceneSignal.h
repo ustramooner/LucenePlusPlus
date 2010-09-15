@@ -6,23 +6,17 @@
 
 #pragma once
 
-#include "Lucene.h"
-
 namespace Lucene
 {
 	/// Utility class to support signaling notifications.
 	class LPPAPI LuceneSignal
 	{
+		class Internal;
+		Internal* intern;
 	public:
 		LuceneSignal(SynchronizePtr objectLock = SynchronizePtr());
 		virtual ~LuceneSignal();
-	
-	protected:
-		boost::mutex waitMutex;
-		boost::condition signalCondition;
-		SynchronizePtr objectLock;
-	
-	public:
+
 		/// Wait for signal using an optional timeout.
 		void wait(int32_t timeout = 0);
 		

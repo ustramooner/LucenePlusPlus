@@ -7,9 +7,11 @@
 #include "stdafx.h"
 #include "FSDirectory.h"
 #include "NativeFSLockFactory.h"
+#include "FileUtils.h"
 #include "SimpleFSDirectory.h"
 #include "BufferedIndexInput.h"
-#include "md5.h"
+#include "../util/md5/md5.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "Payload.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

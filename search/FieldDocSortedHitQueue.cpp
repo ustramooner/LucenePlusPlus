@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "VariantUtils.h"
 #include "FieldDocSortedHitQueue.h"
 #include "FieldDoc.h"
 #include "SortField.h"

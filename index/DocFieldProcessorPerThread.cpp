@@ -22,6 +22,8 @@
 #include "IndexWriter.h"
 #include "Document.h"
 #include "InfoStream.h"
+#include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

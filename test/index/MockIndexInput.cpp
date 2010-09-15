@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "MockIndexInput.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

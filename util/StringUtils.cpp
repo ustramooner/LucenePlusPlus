@@ -8,6 +8,7 @@
 #include "StringUtils.h"
 #include "UnicodeUtils.h"
 #include "CharFolder.h"
+#include <boost/algorithm/string.hpp>
 
 namespace Lucene
 {

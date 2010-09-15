@@ -21,6 +21,7 @@
 #include "IndexFileDeleter.h"
 #include "KeepOnlyLastCommitDeletionPolicy.h"
 #include "TestPoint.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

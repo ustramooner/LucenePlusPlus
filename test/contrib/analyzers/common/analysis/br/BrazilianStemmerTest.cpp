@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "BaseTokenStreamFixture.h"
 #include "BrazilianAnalyzer.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

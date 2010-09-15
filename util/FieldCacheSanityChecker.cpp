@@ -8,6 +8,8 @@
 #include "FieldCacheSanityChecker.h"
 #include "FieldCache.h"
 #include "IndexReader.h"
+#include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {
@@ -54,7 +56,7 @@ namespace Lucene
                 continue;
             
             ReaderFieldPtr rf(newLucene<ReaderField>(item->getReaderKey(), item->getFieldName()));
-            int32_t valId = (int32_t)val.get();
+            int32_t valId = (int64_t)val.get();
             
             // indirect mapping, so the MapOfSet will dedup identical valIds for us
             valIdToItems.put(valId, item);

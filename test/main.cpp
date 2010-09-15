@@ -5,13 +5,17 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <iostream>
 #include "TestUtils.h"
 #include "FileUtils.h"
+#include "StringUtils.h"
+#include "MiscUtils.h"
 
 #define BOOST_TEST_MODULE "Lucene"
 #define BOOST_TEST_NO_MAIN
 
 #include <boost/test/included/unit_test.hpp>
+#include <boost/algorithm/string.hpp>
 
 using namespace Lucene;
 

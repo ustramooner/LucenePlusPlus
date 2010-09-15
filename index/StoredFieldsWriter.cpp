@@ -7,12 +7,14 @@
 #include "stdafx.h"
 #include "StoredFieldsWriter.h"
 #include "StoredFieldsWriterPerThread.h"
+#include "StringUtils.h"
 #include "RAMOutputStream.h"
 #include "SegmentWriteState.h"
 #include "FieldsWriter.h"
 #include "IndexFileNames.h"
 #include "IndexWriter.h"
 #include "Directory.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

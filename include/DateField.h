@@ -7,6 +7,7 @@
 #pragma once
 
 #include "LuceneObject.h"
+#include <boost/date_time/posix_time/ptime.hpp>
 
 namespace Lucene
 {
@@ -38,11 +39,11 @@ namespace Lucene
 		static int32_t DATE_LEN();
 	
 	public:
-		static String& MIN_DATE_STRING();
-		static String& MAX_DATE_STRING();
+		static const String& MIN_DATE_STRING();
+		static const String& MAX_DATE_STRING();
 		
 		/// Converts a Date to a string suitable for indexing.
-		static String dateToString(boost::posix_time::ptime date);
+		static String dateToString(const boost::posix_time::ptime& date);
 		
 		/// Converts a millisecond time to a string suitable for indexing.
 		static String timeToString(int64_t time);

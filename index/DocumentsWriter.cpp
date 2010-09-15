@@ -36,6 +36,9 @@
 #include "Weight.h"
 #include "Scorer.h"
 #include "TestPoint.h"
+#include "MiscUtils.h"
+#include "StringUtils.h"
+#include "CycleCheck.h"
 
 namespace Lucene
 {

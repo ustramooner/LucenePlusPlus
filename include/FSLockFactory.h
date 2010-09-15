@@ -21,6 +21,7 @@ namespace Lucene
 	protected:
 		/// Directory for the lock files.
 		String lockDir;
+		FSLockFactory();
 	
 	public:
 		/// Set the lock directory. This method can be only called once to 

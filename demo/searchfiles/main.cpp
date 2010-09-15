@@ -5,6 +5,10 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <iostream>
+#include <boost/algorithm/string.hpp>
+#include "StringUtils.h"
+#include "MiscUtils.h"
 #include "FilterIndexReader.h"
 
 using namespace Lucene;

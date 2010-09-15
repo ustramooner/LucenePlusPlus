@@ -11,6 +11,8 @@
 #include "LowerCaseFilter.h"
 #include "StopFilter.h"
 #include "PersianNormalizationFilter.h"
+#include "StringUtils.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

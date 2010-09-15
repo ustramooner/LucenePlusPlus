@@ -12,7 +12,10 @@
 #include "PositionIncrementAttribute.h"
 #include "PayloadAttribute.h"
 #include "FlagsAttribute.h"
+#include "CycleCheck.h"
 #include "TypeAttribute.h"
+#include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {
@@ -76,7 +79,7 @@ namespace Lucene
         this->positionIncrement = 1;
     }
     
-    String& Token::DEFAULT_TYPE()
+    const String& Token::DEFAULT_TYPE()
     {
         static String _DEFAULT_TYPE(L"word");
         return _DEFAULT_TYPE;

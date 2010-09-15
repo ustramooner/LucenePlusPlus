@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "NumberTools.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {
@@ -17,7 +18,7 @@ namespace Lucene
     {
     }
     
-    String& NumberTools::MIN_STRING_VALUE()
+    const String& NumberTools::MIN_STRING_VALUE()
     {
         static String _MIN_STRING_VALUE;
         if (_MIN_STRING_VALUE.empty())
@@ -28,7 +29,7 @@ namespace Lucene
         return _MIN_STRING_VALUE;
     }
     
-    String& NumberTools::MAX_STRING_VALUE()
+    const String& NumberTools::MAX_STRING_VALUE()
     {
         static String _MAX_STRING_VALUE;
         if (_MAX_STRING_VALUE.empty())

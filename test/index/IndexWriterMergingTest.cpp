@@ -13,6 +13,7 @@
 #include "Document.h"
 #include "Field.h"
 #include "IndexReader.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

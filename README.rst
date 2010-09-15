@@ -24,6 +24,29 @@ Official `Java Lucene <http://lucene.apache.org/java/docs/index.html>`_ - useful
 `Lucene in Action <http://www.amazon.com/Lucene-Action-Otis-Gospodnetic/dp/1932394281/ref=sr_1_1?ie=UTF8&s=books&qid=1261343174&sr=8-1>`_ by Otis Gospodnetic and Erik Hatcher.
 
 
+Build Instructions using CMake
+------------------------------
+You'll need boost installed somewhere.
+
+On Debian systems, the following packages are required:
+libboost-date-time-dev libboost-filesystem-dev libboost-regex-dev libboost-thread-dev libboost-iostreams-dev libboost-test-dev
+
+On Windows, you'll need boost installed. http://www.boostpro.com/ has some precompiled windows packages.
+You'll need the following extras installed. Y
+- boost::system
+- boost::thread
+- boost::filesystem
+- boost::regex
+- boost::date_time
+- boost::iostreams
+- boost::unit_test_framework
+
+Building Performance
+--------------------
+Use of ccache will speed up build times a lot. I found it easiest to add the /usr/lib/ccache directory to the beginning of your paths. This works for most common compilers.
+
+PATH=/usr/lib/ccache:$PATH
+
 Build Instructions for POSIX systems
 ------------------------------------
 

@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "QueryParseError.h"
+#include "StringUtils.h"
 #include "QueryParserToken.h"
 
 namespace Lucene

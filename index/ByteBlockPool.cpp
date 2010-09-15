@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "ByteBlockPool.h"
 #include "DocumentsWriter.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

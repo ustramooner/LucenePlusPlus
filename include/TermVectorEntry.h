@@ -14,7 +14,7 @@ namespace Lucene
 	class LPPAPI TermVectorEntry : public LuceneObject
 	{
 	public:
-		TermVectorEntry(const String& field = L"", const String& term = L"", int32_t frequency = 0, 
+		TermVectorEntry(const String& field = EmptyString, const String& term = EmptyString, int32_t frequency = 0, 
 						Collection<TermVectorOffsetInfoPtr> offsets = Collection<TermVectorOffsetInfoPtr>(),
 						Collection<int32_t> positions = Collection<int32_t>());
 		virtual ~TermVectorEntry();

@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
+#include "FileUtils.h"
 #include "DefaultSimilarity.h"
 #include "StandardAnalyzer.h"
 #include "FSDirectory.h"
@@ -18,6 +19,7 @@
 #include "LogDocMergePolicy.h"
 #include "WhitespaceAnalyzer.h"
 #include "SegmentReader.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

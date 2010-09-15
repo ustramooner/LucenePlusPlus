@@ -9,6 +9,10 @@
 
 namespace Lucene
 {
+    PayloadFunction::PayloadFunction()
+    {
+	//private
+    }
     PayloadFunction::~PayloadFunction()
     {
     }

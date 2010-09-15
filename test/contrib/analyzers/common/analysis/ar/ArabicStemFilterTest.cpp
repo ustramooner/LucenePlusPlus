@@ -9,6 +9,7 @@
 #include "ArabicStemFilter.h"
 #include "ArabicLetterTokenizer.h"
 #include "StringReader.h"
+#include "StringUtils.h"
 
 using namespace Lucene;
 

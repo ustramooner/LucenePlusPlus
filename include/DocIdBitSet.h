@@ -7,7 +7,6 @@
 #pragma once
 
 #include "DocIdSet.h"
-#include "DocIdSetIterator.h"
 
 namespace Lucene
 {

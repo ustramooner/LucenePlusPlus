@@ -9,6 +9,7 @@
 #include "QueryParserConstants.h"
 #include "DateTools.h"
 #include "BooleanClause.h"
+#include "Constants.h"
 
 namespace Lucene
 {

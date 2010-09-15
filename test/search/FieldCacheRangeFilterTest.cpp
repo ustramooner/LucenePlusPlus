@@ -16,6 +16,7 @@
 #include "TopDocs.h"
 #include "IndexWriter.h"
 #include "SimpleAnalyzer.h"
+#include "StringUtils.h"
 #include "Document.h"
 #include "Field.h"
 

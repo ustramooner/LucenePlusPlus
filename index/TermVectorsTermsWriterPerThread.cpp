@@ -9,7 +9,6 @@
 #include "TermVectorsTermsWriterPerField.h"
 #include "TermVectorsTermsWriter.h"
 #include "TermsHashPerThread.h"
-#include "DocumentsWriter.h"
 #include "ByteSliceReader.h"
 #include "FieldInfo.h"
 #include "UnicodeUtils.h"
