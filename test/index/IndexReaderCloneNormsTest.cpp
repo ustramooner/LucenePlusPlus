@@ -19,7 +19,7 @@
 #include "LogDocMergePolicy.h"
 #include "WhitespaceAnalyzer.h"
 #include "SegmentReader.h"
-#include "StringUtils.h"
+
 
 using namespace Lucene;
 

@@ -7,7 +7,7 @@
 #include "stdafx.h"
 #include "CompressionTools.h"
 #include "UnicodeUtils.h"
-#include "zlib.h"
+#include "../util/zlib/zlib.h"
 #include "StringUtils.h"
 
 namespace Lucene

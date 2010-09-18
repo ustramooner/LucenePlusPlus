@@ -12,7 +12,7 @@
 #include "IndexWriter.h"
 #include "Document.h"
 #include "Field.h"
-#include "StringUtils.h"
+
 
 namespace Lucene
 {

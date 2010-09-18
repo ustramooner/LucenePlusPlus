@@ -7,7 +7,7 @@
 #include "stdafx.h"
 #include "LuceneTestFixture.h"
 #include "QueryParser.h"
-#include "StringUtils.h"
+
 #include "IndexSearcher.h"
 #include "WhitespaceAnalyzer.h"
 #include "RAMDirectory.h"

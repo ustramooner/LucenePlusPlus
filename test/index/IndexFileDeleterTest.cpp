@@ -20,7 +20,7 @@
 #include "FieldInfo.h"
 #include "IndexInput.h"
 #include "IndexOutput.h"
-#include "StringUtils.h"
+
 
 using namespace Lucene;
 

@@ -53,7 +53,7 @@
 #include "StopAnalyzer.h"
 #include "Random.h"
 #include "UnicodeUtils.h"
-#include "StringUtils.h"
+
 
 using namespace Lucene;
 

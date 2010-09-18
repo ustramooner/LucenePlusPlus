@@ -16,7 +16,7 @@
 #include "IndexReader.h"
 #include "ValueSource.h"
 #include "DocValues.h"
-#include "StringUtils.h"
+
 
 using namespace Lucene;
 

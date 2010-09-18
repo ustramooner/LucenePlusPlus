@@ -9,7 +9,6 @@
 #include "TestUtils.h"
 #include "RAMFile.h"
 #include "FileUtils.h"
-#include "RAMDirectory.h"
 #include "RAMOutputStream.h"
 #include "RAMInputStream.h"
 #include "FSDirectory.h"

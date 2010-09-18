@@ -8,7 +8,7 @@
 #include "BaseTokenStreamFixture.h"
 #include "CJKTokenizer.h"
 #include "CJKAnalyzer.h"
-#include "StringUtils.h"
+
 
 using namespace Lucene;
 

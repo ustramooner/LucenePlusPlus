@@ -6,7 +6,7 @@
 
 #include "stdafx.h"
 #include "LuceneTestFixture.h"
-#include "StringUtils.h"
+
 #include "Analyzer.h"
 #include "TokenStream.h"
 #include "PositionIncrementAttribute.h"

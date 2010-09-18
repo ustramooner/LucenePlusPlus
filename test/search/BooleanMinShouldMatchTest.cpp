@@ -22,7 +22,7 @@
 #include "QueryUtils.h"
 #include "WildcardQuery.h"
 #include "Random.h"
-#include "StringUtils.h"
+
 
 using namespace Lucene;
 

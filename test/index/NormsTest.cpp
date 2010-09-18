@@ -7,7 +7,7 @@
 #include "stdafx.h"
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
-#include "StringUtils.h"
+
 #include "FileUtils.h"
 #include "FSDirectory.h"
 #include "IndexWriter.h"

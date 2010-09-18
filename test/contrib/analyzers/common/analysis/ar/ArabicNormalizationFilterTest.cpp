@@ -8,7 +8,7 @@
 #include "BaseTokenStreamFixture.h"
 #include "ArabicLetterTokenizer.h"
 #include "ArabicNormalizationFilter.h"
-#include "StringUtils.h"
+
 #include "StringReader.h"
 
 using namespace Lucene;

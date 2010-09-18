@@ -9,14 +9,13 @@
 #include "TestUtils.h"
 #include "FileUtils.h"
 #include "MiscUtils.h"
-#include "SimpleFSDirectory.h"
 #include "IndexOutput.h"
 #include "IndexInput.h"
 #include "CompoundFileWriter.h"
 #include "CompoundFileReader.h"
 #include "SimpleFSDirectory.h"
 #include "Random.h"
-#include "StringUtils.h"
+
 
 using namespace Lucene;
 

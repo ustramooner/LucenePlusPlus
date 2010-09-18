@@ -15,7 +15,7 @@
 #include "FieldCacheSanityChecker.h"
 #include "Document.h"
 #include "Field.h"
-#include "StringUtils.h"
+
 
 using namespace Lucene;
 

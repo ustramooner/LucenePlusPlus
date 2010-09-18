@@ -7,7 +7,7 @@
 #include "stdafx.h"
 #include "LuceneTestFixture.h"
 #include "TermQuery.h"
-#include "StringUtils.h"
+
 #include "MiscUtils.h"
 #include "Term.h"
 #include "Sort.h"

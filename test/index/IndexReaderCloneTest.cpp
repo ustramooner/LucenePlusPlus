@@ -22,7 +22,7 @@
 #include "Similarity.h"
 #include "Term.h"
 #include "MultiReader.h"
-#include "StringUtils.h"
+
 
 using namespace Lucene;
 

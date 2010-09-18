@@ -14,7 +14,7 @@
 #include "ConcurrentMergeScheduler.h"
 #include "IndexWriter.h"
 #include "Random.h"
-#include "StringUtils.h"
+
 
 namespace Lucene
 {

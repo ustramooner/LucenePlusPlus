@@ -17,7 +17,7 @@
 #include "IndexReader.h"
 #include "MockRAMDirectory.h"
 #include "Random.h"
-#include "StringUtils.h"
+
 
 using namespace Lucene;
 

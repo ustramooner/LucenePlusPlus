@@ -28,7 +28,7 @@
 #include "TopDocs.h"
 #include "CompoundFileReader.h"
 #include "NumericField.h"
-#include "StringUtils.h"
+
 
 using namespace Lucene;
 

@@ -7,7 +7,7 @@
 #include "stdafx.h"
 #include "LuceneTestFixture.h"
 #include "NumericRangeQuery.h"
-#include "StringUtils.h"
+
 #include "NumericRangeFilter.h"
 #include "TopDocs.h"
 #include "MultiTermQuery.h"

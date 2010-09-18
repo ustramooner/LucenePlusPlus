@@ -36,7 +36,7 @@
 #include "FieldCache.h"
 #include "ReadOnlyDirectoryReader.h"
 #include "ReadOnlySegmentReader.h"
-#include "StringUtils.h"
+
 
 using namespace Lucene;
 

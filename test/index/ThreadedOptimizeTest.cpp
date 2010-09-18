@@ -14,13 +14,12 @@
 #include "Field.h"
 #include "LuceneThread.h"
 #include "Term.h"
-#include "IndexWriter.h"
 #include "IndexReader.h"
 #include "MockRAMDirectory.h"
 #include "SerialMergeScheduler.h"
 #include "ConcurrentMergeScheduler.h"
 #include "FSDirectory.h"
-#include "StringUtils.h"
+
 
 using namespace Lucene;
 

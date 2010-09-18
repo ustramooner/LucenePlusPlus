@@ -16,11 +16,12 @@ namespace Lucene
 	/// @see IndexReader#termPositions()
 	class LPPAPI TermPositions : public TermDocs
 	{
+	protected:
+		TermPositions(){};	
 	public:
 		virtual ~TermPositions();		
 		LUCENE_INTERFACE(TermPositions);
-				
-	public:
+		
 		/// Returns next position in the current document.  It is an error to call this more than {@link #freq()} 
 		/// times without calling {@link #next()}.  This is invalid until {@link #next()} is called for
 		// the first time.

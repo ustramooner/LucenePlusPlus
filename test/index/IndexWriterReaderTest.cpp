@@ -22,7 +22,7 @@
 #include "IndexSearcher.h"
 #include "TopDocs.h"
 #include "Random.h"
-#include "StringUtils.h"
+
 
 using namespace Lucene;
 

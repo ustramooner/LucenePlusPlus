@@ -6,7 +6,6 @@
 
 #include "stdafx.h"
 #include "LuceneTestFixture.h"
-#include "RAMDirectory.h"
 #include "IndexWriter.h"
 #include "IndexReader.h"
 #include "WhitespaceAnalyzer.h"
@@ -20,7 +19,7 @@
 #include "LogByteSizeMergePolicy.h"
 #include "SerialMergeScheduler.h"
 #include "SegmentInfo.h"
-#include "StringUtils.h"
+
 
 using namespace Lucene;
 

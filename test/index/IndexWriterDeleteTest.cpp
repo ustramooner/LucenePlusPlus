@@ -20,7 +20,7 @@
 #include "KeepOnlyLastCommitDeletionPolicy.h"
 #include "IndexFileDeleter.h"
 #include "TestPoint.h"
-#include "StringUtils.h"
+
 
 using namespace Lucene;
 

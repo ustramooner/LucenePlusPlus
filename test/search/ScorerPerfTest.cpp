@@ -7,7 +7,7 @@
 #include "stdafx.h"
 #include "LuceneTestFixture.h"
 #include "Random.h"
-#include "StringUtils.h"
+
 #include "RAMDirectory.h"
 #include "IndexWriter.h"
 #include "WhitespaceAnalyzer.h"

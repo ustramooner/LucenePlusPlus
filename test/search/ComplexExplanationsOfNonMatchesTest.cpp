@@ -22,7 +22,7 @@
 #include "MatchAllDocsQuery.h"
 #include "MultiPhraseQuery.h"
 #include "CheckHits.h"
-#include "StringUtils.h"
+
 
 using namespace Lucene;
 

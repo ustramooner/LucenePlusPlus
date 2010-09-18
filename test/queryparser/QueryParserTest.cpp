@@ -8,13 +8,11 @@
 #include <boost/date_time/gregorian/gregorian.hpp>
 #include "MiscUtils.h"
 #include "LuceneTestFixture.h"
-#include "StringUtils.h"
 #include "QueryParser.h"
 #include "WhitespaceAnalyzer.h"
 #include "KeywordAnalyzer.h"
 #include "Query.h"
 #include "SimpleAnalyzer.h"
-#include "BooleanQuery.h"
 #include "TermQuery.h"
 #include "PhraseQuery.h"
 #include "FuzzyQuery.h"
