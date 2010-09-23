@@ -56,4 +56,7 @@ namespace Lucene
 	DECLARE_SHARED_PTR(RussianLowerCaseFilter)
 	DECLARE_SHARED_PTR(RussianStemFilter)
 	DECLARE_SHARED_PTR(RussianStemmer)
+	DECLARE_SHARED_PTR(SnowballFilter)
+	DECLARE_SHARED_PTR(SnowballAnalyzer)
+	DECLARE_SHARED_PTR(SnowballAnalyzerSavedStreams)
 }

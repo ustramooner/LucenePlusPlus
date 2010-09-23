@@ -1451,6 +1451,14 @@
 					</Filter>
 				</Filter>
 			</Filter>
+			<Filter
+				Name="snowball"
+				>
+				<File
+					RelativePath="..\contrib\snowball\SnowballTest.cpp"
+					>
+				</File>
+			</Filter>
 		</Filter>
 	</Files>
 	<Globals>
