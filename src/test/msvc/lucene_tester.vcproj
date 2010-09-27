@@ -1459,6 +1459,10 @@
 					>
 				</File>
 			</Filter>
+			<Filter
+				Name="highlighter"
+				>
+			</Filter>
 		</Filter>
 	</Files>
 	<Globals>

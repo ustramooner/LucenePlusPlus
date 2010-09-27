@@ -9,6 +9,7 @@ file(GLOB_RECURSE HEADERS ${lucene++-tester_SOURCE_DIR}/../include/*.h)
 file(GLOB_RECURSE HEADERS ${lucene++-tester_SOURCE_DIR}/include/*.h)
 
 INCLUDE_DIRECTORIES(${lucene++-lib_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${lucene++-contrib_SOURCE_DIR}/include)
 INCLUDE_DIRECTORIES(${lucene++-tester_SOURCE_DIR}/include)
 ADD_DEFINITIONS(-DLPP_EXPOSE_INTERNAL)
 

@@ -4,11 +4,15 @@ project(lucene++-contrib)
 # THE lucene++-contrib library
 ####################################
 file(GLOB_RECURSE lucene_sources
-  ${lucene++-contrib_SOURCE_DIR}/*.cpp)
+  ${lucene++-contrib_SOURCE_DIR}/*.cpp
+  ${lucene++-contrib_SOURCE_DIR}/snowball/libstemmer_c/libstemmer/*.c
+  ${lucene++-contrib_SOURCE_DIR}/snowball/libstemmer_c/src_c/*.c
+  ${lucene++-contrib_SOURCE_DIR}/snowball/libstemmer_c/runtime/*.c)
 file(GLOB_RECURSE HEADERS ${lucene++-contrib_SOURCE_DIR}/*.h)
 
 ADD_DEFINITIONS(-DLPP_BUILDING_LIB)
 INCLUDE_DIRECTORIES(${lucene++-lib_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${lucene++-contrib_SOURCE_DIR}/include)
 
 
 #################################

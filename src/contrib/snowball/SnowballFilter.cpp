@@ -8,7 +8,8 @@
 #include "SnowballFilter.h"
 #include "TermAttribute.h"
 #include "UnicodeUtils.h"
-#include "libstemmer.h"
+#include "StringUtils.h"
+#include "libstemmer_c/include/libstemmer.h"
 
 namespace Lucene
 {
@@ -29,7 +30,7 @@ namespace Lucene
     {
         if (input->incrementToken())
         {
-            StringUtils::toUTF8(termAtt->termBuffer().get(), termAtt->termLength(), utf8Result);
+            StringUtils::toUTF8((uint8_t*)termAtt->termBuffer().get(), termAtt->termLength(), utf8Result);
             const sb_symbol* stemmed = sb_stemmer_stem(stemmer, utf8Result->result.get(), utf8Result->length);
             if (stemmed == NULL)
                 boost::throw_exception(RuntimeException(L"exception stemming word:" + termAtt->term()));
