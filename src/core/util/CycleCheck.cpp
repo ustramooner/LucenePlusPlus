@@ -33,6 +33,15 @@ namespace Lucene
         }
     }
     
+    void CycleCheck::addStatic(LuceneObjectPtr* staticRef)
+    {
+        #ifdef _DEBUG
+        if (!staticRefs)
+            staticRefs = Set<LuceneObjectPtr*>::newInstance();
+        staticRefs.add(staticRef);
+        #endif
+    }
+    
     void CycleCheck::dumpRefs()
     {
         SyncLock lockRef(&cycleMap);
