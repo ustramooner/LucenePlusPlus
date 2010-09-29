@@ -7,16 +7,33 @@ file(GLOB_RECURSE lucene_sources
   ${lucene++-contrib_SOURCE_DIR}/*.cpp)
 file(GLOB_RECURSE HEADERS ${lucene++-contrib_SOURCE_DIR}/*.h)
 
+ADD_DEFINITIONS(-DLPP_BUILDING_LIB)
+INCLUDE_DIRECTORIES(${lucene++-lib_SOURCE_DIR}/include)
+
+
+#################################
+# lucene++ shared library
+#################################
 ADD_LIBRARY(lucene++-contrib SHARED EXCLUDE_FROM_ALL
 	${lucene_sources} ${HEADERS}
 )
-ADD_DEFINITIONS(-DLPP_BUILDING_LIB)
-ADD_DEFINITIONS(-DLPP_HAVE_GXXCLASSVISIBILITY)
-
 #set properties on the libraries
 SET_TARGET_PROPERTIES(lucene++-contrib PROPERTIES
     VERSION ${LUCENE++_VERSION}
     SOVERSION ${LUCENE++_SOVERSION}
 )
-TARGET_LINK_LIBRARIES(lucene++-contrib ${CMAKE_THREAD_LIBS_INIT})
+TARGET_LINK_LIBRARIES(lucene++-contrib 
+  ${CMAKE_THREAD_LIBS_INIT})
+
+#################################
+# lucene++ static library
+#################################
+ADD_LIBRARY(lucene++-contrib-static STATIC EXCLUDE_FROM_ALL
+	${lucene_sources} ${HEADERS}
+)
+#set properties on the libraries
+SET_TARGET_PROPERTIES(lucene++-contrib-static PROPERTIES
+    VERSION ${LUCENE++_VERSION}
+    SOVERSION ${LUCENE++_SOVERSION}
+)
 

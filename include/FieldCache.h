@@ -210,18 +210,6 @@ namespace Lucene
 		virtual uint8_t parseByte(const String& string);
 	};
 	
-	/// @see FieldCache#DEFAULT_BYTE_PARSER()
-	class LPPAPI DefaultByteParser : public ByteParser
-	{
-	public:
-		virtual ~DefaultByteParser();
-		LUCENE_CLASS(DefaultByteParser);
-	
-	public:
-		virtual uint8_t parseByte(const String& string);
-		virtual String toString();
-	};
-	
 	/// Interface to parse ints from document fields.
 	/// @see FieldCache#getInts(IndexReaderPtr, String, IntParserPtr)
 	class LPPAPI IntParser : public Parser
@@ -233,30 +221,6 @@ namespace Lucene
 	public:
 		/// Return a integer representation of this field's value.
 		virtual int32_t parseInt(const String& string);
-	};
-	
-	/// @see FieldCache#DEFAULT_INT_PARSER()
-	class LPPAPI DefaultIntParser : public IntParser
-	{
-	public:
-		virtual ~DefaultIntParser();
-		LUCENE_CLASS(DefaultIntParser);
-	
-	public:
-		virtual int32_t parseInt(const String& string);
-		virtual String toString();
-	};
-	
-	/// @see FieldCache#NUMERIC_UTILS_INT_PARSER()
-	class LPPAPI NumericUtilsIntParser : public IntParser
-	{
-	public:
-		virtual ~NumericUtilsIntParser();
-		LUCENE_CLASS(NumericUtilsIntParser);
-	
-	public:
-		virtual int32_t parseInt(const String& string);
-		virtual String toString();
 	};
 	
 	/// Interface to parse longs from document fields.
@@ -272,30 +236,6 @@ namespace Lucene
 		virtual int64_t parseLong(const String& string);
 	};
 	
-	/// @see FieldCache#DEFAULT_LONG_PARSER()
-	class LPPAPI DefaultLongParser : public LongParser
-	{
-	public:
-		virtual ~DefaultLongParser();
-		LUCENE_CLASS(DefaultLongParser);
-	
-	public:
-		virtual int64_t parseLong(const String& string);
-		virtual String toString();
-	};
-	
-	/// @see FieldCache#NUMERIC_UTILS_LONG_PARSER()
-	class LPPAPI NumericUtilsLongParser : public LongParser
-	{
-	public:
-		virtual ~NumericUtilsLongParser();
-		LUCENE_CLASS(NumericUtilsLongParser);
-	
-	public:
-		virtual int64_t parseLong(const String& string);
-		virtual String toString();
-	};
-	
 	/// Interface to parse doubles from document fields.
 	/// @see FieldCache#getDoubles(IndexReaderPtr, String, DoubleParserPtr)
 	class LPPAPI DoubleParser : public Parser
@@ -307,30 +247,6 @@ namespace Lucene
 	public:
 		/// Return a double representation of this field's value.
 		virtual double parseDouble(const String& string);
-	};
-	
-	/// @see FieldCache#DEFAULT_DOUBLE_PARSER()
-	class LPPAPI DefaultDoubleParser : public DoubleParser
-	{
-	public:
-		virtual ~DefaultDoubleParser();
-		LUCENE_CLASS(DefaultDoubleParser);
-	
-	public:
-		virtual double parseDouble(const String& string);
-		virtual String toString();
-	};
-	
-	/// @see FieldCache#NUMERIC_UTILS_DOUBLE_PARSER()
-	class LPPAPI NumericUtilsDoubleParser : public DoubleParser
-	{
-	public:
-		virtual ~NumericUtilsDoubleParser();
-		LUCENE_CLASS(NumericUtilsDoubleParser);
-	
-	public:
-		virtual double parseDouble(const String& string);
-		virtual String toString();
 	};
 	
 	/// A unique Identifier/Description for each item in the FieldCache.  Can be useful for logging/debugging.

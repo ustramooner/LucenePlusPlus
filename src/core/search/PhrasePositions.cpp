@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <limits.h>
 #include "PhrasePositions.h"
 #include "TermPositions.h"
 

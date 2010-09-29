@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include <boost/algorithm/string.hpp>
+#include <boost/thread/thread.hpp>
 #include "LuceneTestFixture.h"
 #include "MiscUtils.h"
 #include "TestUtils.h"
@@ -3289,7 +3290,7 @@ namespace TestExceptionDocumentsWriterInit
         bool doFail;
     
     public:
-        virtual bool testPoint(const String& name)
+        virtual bool testPoint(const wchar_t* name)
         {
             if (doFail && name == L"DocumentsWriter.ThreadState.init start")
                 boost::throw_exception(RuntimeException(L"intentionally failing"));
@@ -3334,7 +3335,7 @@ namespace TestExceptionJustBeforeFlush
         bool doFail;
     
     public:
-        virtual bool testPoint(const String& name)
+        virtual bool testPoint(const wchar_t* name)
         {
             if (doFail && name == L"DocumentsWriter.ThreadState.init start")
                 boost::throw_exception(RuntimeException(L"intentionally failing"));
@@ -3403,7 +3404,7 @@ namespace TestExceptionOnMergeInit
         bool failed;
     
     public:
-        virtual bool testPoint(const String& name)
+        virtual bool testPoint(const wchar_t* name)
         {
             if (doFail && name == L"startMergeInit")
             {
@@ -4001,7 +4002,7 @@ namespace TestRollbackExceptionHang
         bool doFail;
     
     public:
-        virtual bool testPoint(const String& name)
+        virtual bool testPoint(const wchar_t* name)
         {
             if (doFail && name == L"rollback before checkpoint")
                 boost::throw_exception(RuntimeException(L"intentionally failing"));

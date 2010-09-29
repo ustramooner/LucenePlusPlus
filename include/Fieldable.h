@@ -21,7 +21,6 @@ namespace Lucene
 	public:
 		LUCENE_INTERFACE(Fieldable);
 	
-	public:
 		/// Sets the boost factor hits on this field.  This value will be multiplied into the score of all 
 		/// hits on this this field of this document.
 		///

@@ -5,8 +5,9 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include "VariantUtils.h"
 #include "MultiSearcher.h"
+#include "_MultiSearcher.h"
+#include "VariantUtils.h"
 #include "Term.h"
 #include "ReaderUtil.h"
 #include "HitQueue.h"
@@ -120,7 +121,7 @@ namespace Lucene
         {
             TopFieldDocsPtr docs(newLucene<MultiSearcherCallableWithSort>(SynchronizePtr(), searchables[i], weight, filter, n, hq, sort, i, starts)->call());
             totalHits += docs->totalHits; // update totalHits
-            maxScore = std::max(maxScore, docs->getMaxScore());
+            maxScore = std::max(maxScore, docs->maxScore);
         }
         
         Collection<ScoreDocPtr> scoreDocs(Collection<ScoreDocPtr>::newInstance(hq->size()));

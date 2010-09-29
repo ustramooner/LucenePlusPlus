@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <limits.h>
 #include "RAMInputStream.h"
 #include "StringUtils.h"
 #include "RAMFile.h"

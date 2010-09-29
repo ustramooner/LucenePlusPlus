@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include <boost/bind/protect.hpp>
 #include "IndexWriter.h"
+#include "_IndexWriter.h"
 #include "Directory.h"
 #include "Analyzer.h"
 #include "KeepOnlyLastCommitDeletionPolicy.h"
@@ -3506,7 +3507,7 @@ namespace Lucene
         return OutOfMemoryError();
     }
     
-    bool IndexWriter::testPoint(const String& name)
+    bool IndexWriter::testPoint(const wchar_t* name)
     {
         return true;
     }

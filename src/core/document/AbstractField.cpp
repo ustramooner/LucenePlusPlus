@@ -9,7 +9,6 @@
 #include "VariantUtils.h"
 #include "AbstractField.h"
 #include "Field.h"
-#include "StringUtils.h"
 
 namespace Lucene
 {

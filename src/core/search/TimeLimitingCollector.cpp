@@ -5,7 +5,9 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/thread/thread.hpp>
 #include "TimeLimitingCollector.h"
+#include "_TimeLimitingCollector.h"
 #include "StringUtils.h"
 #include "CycleCheck.h"
 

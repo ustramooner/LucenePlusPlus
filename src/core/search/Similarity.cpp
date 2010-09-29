@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "Similarity.h"
+#include "_Similarity.h"
 #include "StringUtils.h"
 #include "DefaultSimilarity.h"
 #include "CycleCheck.h"

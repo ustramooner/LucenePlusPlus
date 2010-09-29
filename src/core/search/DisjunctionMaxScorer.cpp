@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <limits.h>
 #include "DisjunctionMaxScorer.h"
 
 namespace Lucene

@@ -5,7 +5,9 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/thread/thread.hpp>
 #include "ConcurrentMergeScheduler.h"
+#include "_ConcurrentMergeScheduler.h"
 #include "IndexWriter.h"
 #include "TestPoint.h"
 #include "StringUtils.h"

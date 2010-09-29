@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "PhraseQuery.h"
+#include "_PhraseQuery.h"
 #include "StringUtils.h"
 #include "Similarity.h"
 #include "Term.h"

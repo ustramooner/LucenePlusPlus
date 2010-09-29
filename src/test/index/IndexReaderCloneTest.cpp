@@ -9,6 +9,7 @@
 #include "TestUtils.h"
 #include "MiscUtils.h"
 #include "IndexReader.h"
+#include "_SegmentReader.h"
 #include "MockRAMDirectory.h"
 #include "IndexWriter.h"
 #include "WhitespaceAnalyzer.h"

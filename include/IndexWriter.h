@@ -93,13 +93,14 @@ namespace Lucene
 		IndexWriter(DirectoryPtr d, AnalyzerPtr a, int32_t mfl);
 		IndexWriter(DirectoryPtr d, AnalyzerPtr a, IndexDeletionPolicyPtr deletionPolicy, int32_t mfl);
 		IndexWriter(DirectoryPtr d, AnalyzerPtr a, bool create, IndexDeletionPolicyPtr deletionPolicy, int32_t mfl);
-		IndexWriter(DirectoryPtr d, AnalyzerPtr a, bool create, IndexDeletionPolicyPtr deletionPolicy, int32_t mfl, IndexingChainPtr indexingChain, IndexCommitPtr commit);
 		IndexWriter(DirectoryPtr d, AnalyzerPtr a, IndexDeletionPolicyPtr deletionPolicy, int32_t mfl, IndexCommitPtr commit);
 		virtual ~IndexWriter();
 		
 		LUCENE_CLASS(IndexWriter);
 			
 	protected:
+		IndexWriter(DirectoryPtr d, AnalyzerPtr a, bool create, IndexDeletionPolicyPtr deletionPolicy, int32_t mfl, IndexingChainPtr indexingChain, IndexCommitPtr commit);
+		
 		int64_t writeLockTimeout;
 		
 		/// The normal read buffer size defaults to 1024, but increasing this during merging seems to 
@@ -193,7 +194,13 @@ namespace Lucene
 		
 		/// Used only by commit; lock order is commitLock -> IW
 		SynchronizePtr commitLock;
+
+	INTERNAL:
+		SegmentInfosPtr pendingCommit; // set when a commit is pending (after prepareCommit() & before commit())
+		int64_t pendingCommitChangeCount;
 		
+		ReaderPoolPtr readerPool;
+
 	public:
 		/// Default value for the write lock timeout (1,000).
 		/// @see #setDefaultWriteLockTimeout
@@ -226,11 +233,6 @@ namespace Lucene
 		/// this length, it is skipped and a message is printed to infoStream, if set (see {@link 
 		/// #setInfoStream}).
 		static int32_t MAX_TERM_LENGTH();
-		
-		SegmentInfosPtr pendingCommit; // set when a commit is pending (after prepareCommit() & before commit())
-		int64_t pendingCommitChangeCount;
-		
-		ReaderPoolPtr readerPool;
 		
 		/// Sets the maximum field length to INT_MAX
 		static const int32_t MaxFieldLengthUNLIMITED;
@@ -943,7 +945,7 @@ namespace Lucene
 		///   startApplyDeletes
 		///   startMergeInit
 		///   startMergeInit
-		virtual bool testPoint(const String& name);
+		virtual bool testPoint(const wchar_t* name);
 		
 		virtual bool nrtIsCurrent(SegmentInfosPtr infos);
 		virtual bool isClosed();
@@ -1084,58 +1086,6 @@ namespace Lucene
 		virtual LuceneException handleOOM(const std::bad_alloc& oom, const String& location);
 		
 		friend class ReaderPool;
-	};
-	
-	/// Holds shared SegmentReader instances. IndexWriter uses SegmentReaders for 1) applying deletes, 
-	/// 2) doing merges, 3) handing out a real-time reader.  This pool reuses instances of the SegmentReaders 
-	/// in all these places if it is in "near real-time mode" (getReader() has been called on this instance).
-	class LPPAPI ReaderPool : public LuceneObject
-	{
-	public:
-		ReaderPool(IndexWriterPtr writer);
-		virtual ~ReaderPool();
-		
-		LUCENE_CLASS(ReaderPool);
-			
-	protected:
-		IndexWriterWeakPtr _indexWriter;
-		MapSegmentInfoSegmentReader readerMap;
-		
-	public:
-		/// Forcefully clear changes for the specified segments, and remove from the pool.   
-		/// This is called on successful merge.
-		void clear(SegmentInfosPtr infos);
-		
-		/// used only by asserts
-		bool infoIsLive(SegmentInfoPtr info);
-		SegmentInfoPtr mapToLive(SegmentInfoPtr info);
-		
-		/// Release the segment reader (i.e. decRef it and close if there are no more references.
-		void release(SegmentReaderPtr sr);
-		
-		/// Release the segment reader (i.e. decRef it and close if there are no more references.
-		void release(SegmentReaderPtr sr, bool drop);
-		
-		/// Remove all our references to readers, and commits any pending changes.
-		void close();
-		
-		/// Commit all segment reader in the pool.
-		void commit();
-		
-		/// Returns a ref to a clone.  NOTE: this clone is not enrolled in the pool, so you should 
-		/// simply close() it when you're done (ie, do not call release()).
-		IndexReaderPtr getReadOnlyClone(const SegmentInfoPtr info, bool doOpenStores, int32_t termInfosIndexDivisor);
-		
-		/// Obtain a SegmentReader from the readerPool.  The reader must be returned by calling 
-		/// {@link #release(SegmentReader)}
-		SegmentReaderPtr get(SegmentInfoPtr info, bool doOpenStores);
-		
-		/// Obtain a SegmentReader from the readerPool.  The reader must be returned by calling 
-		/// {@link #release(SegmentReader)}
-		SegmentReaderPtr get(SegmentInfoPtr info, bool doOpenStores, int32_t readBufferSize, int32_t termsIndexDivisor);
-		
-		/// Returns a ref
-		SegmentReaderPtr getIfExists(SegmentInfoPtr info);
 	};
 	
 	/// If {@link #getReader} has been called (ie, this writer is in near real-time mode), then after 

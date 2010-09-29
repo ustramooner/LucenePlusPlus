@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <limits.h>
 #include "TermScorer.h"
 #include "TermDocs.h"
 #include "Similarity.h"

@@ -31,16 +31,8 @@ namespace Lucene
 		
 		/// The top hits for the query.
 		Collection<ScoreDocPtr> scoreDocs;
-		
+	
 		/// Stores the maximum score value encountered, needed for normalizing.
 		double maxScore;
-	
-	public:
-		/// Returns the maximum score value encountered. Note that in case scores are not tracked, 
-		/// this returns NaN.
-		double getMaxScore();
-		
-		/// Sets the maximum score value encountered.
-		void setMaxScore(double maxScore);
 	};
 }

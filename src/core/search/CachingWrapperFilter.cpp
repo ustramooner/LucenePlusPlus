@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "CachingWrapperFilter.h"
+#include "_CachingWrapperFilter.h"
 #include "OpenBitSetDISI.h"
 #include "IndexReader.h"
 

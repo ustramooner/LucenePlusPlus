@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "OrdFieldSource.h"
+#include "_OrdFieldSource.h"
 #include "FieldCache.h"
 #include "StringUtils.h"
 #include "MiscUtils.h"

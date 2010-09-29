@@ -9,6 +9,7 @@
 #include "DocumentsWriterThreadState.h"
 #include "LuceneThread.h"
 #include "IndexWriter.h"
+#include "_IndexWriter.h"
 #include "IndexReader.h"
 #include "IndexSearcher.h"
 #include "DocFieldProcessor.h"
@@ -42,10 +43,10 @@
 
 namespace Lucene
 {
-    /// Max # ThreadState instances; if there are more threads than this they share ThreadStates
-    const int32_t DocumentsWriter::MAX_THREAD_STATE = 5;
+	/// Max # ThreadState instances; if there are more threads than this they share ThreadStates
+	const int32_t DocumentsWriter::MAX_THREAD_STATE = 5;
     
-    /// Coarse estimates used to measure RAM usage of buffered deletes
+	/// Coarse estimates used to measure RAM usage of buffered deletes
 	const int32_t DocumentsWriter::OBJECT_HEADER_BYTES = 8;
 	#ifdef LPP_BUILD_64
 	const int32_t DocumentsWriter::POINTER_NUM_BYTE = 8;
@@ -1333,7 +1334,7 @@ namespace Lucene
     {
     }
     
-    bool DocState::testPoint(const String& name)
+    bool DocState::testPoint(const wchar_t* name)
     {
         return IndexWriterPtr(DocumentsWriterPtr(_docWriter)->_writer)->testPoint(name);
     }

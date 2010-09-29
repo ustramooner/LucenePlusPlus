@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "LuceneThread.h"
+#include <boost/thread/thread.hpp>
 
 namespace Lucene
 {
@@ -104,19 +105,11 @@ namespace Lucene
     
     ThreadId LuceneThread::nullId()
     {
-        #ifdef _WIN32
-        return 0;
-        #else
-        return ThreadId();
-        #endif
+      	return ThreadId::nullId();
     }
     
     ThreadId LuceneThread::currentId()
     {
-        #ifdef _WIN32
-        return ::GetCurrentThreadId();
-        #else
-        return boost::this_thread::get_id();
-        #endif
+        return ThreadId::currentId();
     }
 }

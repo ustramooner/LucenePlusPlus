@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <limits.h>
 #include "TermSpans.h"
 #include "TermPositions.h"
 #include "Term.h"

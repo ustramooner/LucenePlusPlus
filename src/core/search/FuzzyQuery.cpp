@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "FuzzyQuery.h"
+#include "_FuzzyQuery.h"
 #include "FuzzyTermEnum.h"
 #include "Term.h"
 #include "TermQuery.h"

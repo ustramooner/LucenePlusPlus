@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "FilteredQuery.h"
+#include "_FilteredQuery.h"
 #include "Explanation.h"
 #include "Filter.h"
 #include "DocIdSet.h"

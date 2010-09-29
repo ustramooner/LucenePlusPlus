@@ -37,7 +37,8 @@ namespace Lucene
 		virtual int32_t hashCode();
 		virtual LuceneObjectPtr clone(LuceneObjectPtr other = LuceneObjectPtr());
 	};
-	
+
+
 	class LPPAPI DocIdBitSetIterator : public DocIdSetIterator
 	{
 	public:
@@ -54,5 +55,5 @@ namespace Lucene
 		virtual int32_t docID();
 		virtual int32_t nextDoc();
 		virtual int32_t advance(int32_t target);
-	};
+	};	
 }

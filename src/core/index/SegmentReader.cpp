@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include <boost/algorithm/string.hpp>
 #include "SegmentReader.h"
+#include "_SegmentReader.h"
 #include "StringUtils.h"
 #include "IndexFileNames.h"
 #include "DirectoryReader.h"

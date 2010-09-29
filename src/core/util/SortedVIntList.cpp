@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include "SortedVIntList.h"
+#include "_SortedVIntList.h"
 #include "BitSet.h"
 #include "OpenBitSet.h"
 #include "DocIdSetIterator.h"

@@ -20,7 +20,7 @@ namespace Lucene
 		
 		LUCENE_CLASS(RAMFile);
 				
-	public:
+	INTERNAL:
 		int64_t length;
 		RAMDirectoryWeakPtr _directory;
 	

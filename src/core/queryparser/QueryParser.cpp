@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include <boost/thread/thread.hpp>
 #include <boost/algorithm/string.hpp>
 #include "QueryParser.h"
 #include "StringUtils.h"

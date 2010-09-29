@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/thread/thread.hpp>
 #include "LuceneObject.h"
 #include "Synchronize.h"
 #include "LuceneSignal.h"
@@ -12,8 +13,9 @@
 
 namespace Lucene
 {
-    boost::mutex LuceneObject::lockMutex;
-    
+
+    boost::mutex LuceneObjectLockMutex;
+
     LuceneObject::LuceneObject()
     {
     }
@@ -55,7 +57,7 @@ namespace Lucene
     
     SynchronizePtr LuceneObject::getSync()
     {
-        boost::mutex::scoped_lock syncLock(lockMutex);
+        boost::mutex::scoped_lock syncLock(LuceneObjectLockMutex);
         if (!objectLock)
             objectLock = newInstance<Synchronize>();
         return objectLock;

@@ -7,17 +7,21 @@
 #pragma once
 
 #include "LuceneObject.h"
-#include <boost/unordered_set.hpp>
+#ifdef USE_TR1
+	#include <tr1/unordered_set>
+#else
+	#include <boost/unordered_set.hpp>
+#endif
 
 namespace Lucene
 {
     /// Utility template class to handle hash set collections that can be safely copied and shared
-	template < class TYPE, class HASH = boost::hash<TYPE>, class EQUAL = std::equal_to<TYPE> >
+	template < class TYPE, class HASH = USE_TR1_PREFIX::hash<TYPE>, class EQUAL = std::equal_to<TYPE> >
 	class HashSet : public LuceneObject
 	{
 	public:
 		typedef HashSet<TYPE, HASH, EQUAL> this_type;
-		typedef boost::unordered_set< TYPE, HASH, EQUAL, Allocator<TYPE> > set_type;
+		typedef USE_TR1_PREFIX::unordered_set< TYPE, HASH, EQUAL, Allocator<TYPE> > set_type;
 		typedef typename set_type::iterator iterator;
 		typedef typename set_type::const_iterator const_iterator;
 	

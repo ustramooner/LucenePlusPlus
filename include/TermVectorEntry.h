@@ -26,8 +26,6 @@ namespace Lucene
 		String term;
 		int32_t frequency;
 		Collection<TermVectorOffsetInfoPtr> offsets;
-	
-	public:
 		Collection<int32_t> positions;
 	
 	public:

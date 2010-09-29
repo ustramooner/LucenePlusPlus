@@ -5,7 +5,9 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <fstream>
 #include "SimpleFSLockFactory.h"
+#include "_SimpleFSLockFactory.h"
 #include "StringUtils.h"
 #include "FileUtils.h"
 

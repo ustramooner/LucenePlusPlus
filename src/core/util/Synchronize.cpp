@@ -5,36 +5,46 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/thread/thread.hpp>
+#include <boost/thread/recursive_mutex.hpp>
 #include "Synchronize.h"
 #include "LuceneThread.h"
 
 namespace Lucene
 {
+    class Synchronize::RecursiveMutexContainer {
+    public:
+        boost::recursive_timed_mutex mutexSynchronize;
+        ThreadId lockThread;
+    };
+
     Synchronize::Synchronize()
     {
-        lockThread = LuceneThread::nullId();
+        recursiveMutexContainer = new RecursiveMutexContainer;
+        recursiveMutexContainer->lockThread = LuceneThread::nullId();
         recursionCount = 0;
     }
     
     Synchronize::~Synchronize()
     {
+        delete recursiveMutexContainer;
     }
     
     void Synchronize::lock(int32_t timeout)
     {
         if (timeout > 0)
-            mutexSynchronize.timed_lock(boost::posix_time::milliseconds(timeout));
+            recursiveMutexContainer->mutexSynchronize.timed_lock(boost::posix_time::milliseconds(timeout));
         else
-            mutexSynchronize.lock();
-        lockThread = LuceneThread::currentId();
+            recursiveMutexContainer->mutexSynchronize.lock();
+        recursiveMutexContainer->lockThread = LuceneThread::currentId();
         ++recursionCount;
     }
     
     void Synchronize::unlock()
     {
         if (--recursionCount == 0)
-            lockThread = LuceneThread::nullId();
-        mutexSynchronize.unlock();        
+            recursiveMutexContainer->lockThread = LuceneThread::nullId();
+        recursiveMutexContainer->mutexSynchronize.unlock();        
     }
     
     int32_t Synchronize::unlockAll()
@@ -47,7 +57,7 @@ namespace Lucene
     
     bool Synchronize::holdsLock()
     {
-        return (lockThread == LuceneThread::currentId() && recursionCount > 0);
+        return (recursiveMutexContainer->lockThread == LuceneThread::currentId() && recursionCount > 0);
     }
     
     SyncLock::SyncLock(SynchronizePtr sync, int32_t timeout)

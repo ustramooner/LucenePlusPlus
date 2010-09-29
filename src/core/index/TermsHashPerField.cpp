@@ -15,13 +15,11 @@
 #include "DocInverterPerField.h"
 #include "DocumentsWriter.h"
 #include "IntBlockPool.h"
-#include "ByteBlockPool.h"
 #include "CharBlockPool.h"
 #include "ByteSliceReader.h"
 #include "RawPostingList.h"
 #include "FieldInvertState.h"
 #include "UnicodeUtils.h"
-#include "MiscUtils.h"
 #include <boost/bind.hpp>
 
 namespace Lucene

@@ -5,6 +5,8 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <limits.h>
+#include <float.h>
 #include "LogByteSizeMergePolicy.h"
 
 namespace Lucene

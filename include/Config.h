@@ -76,3 +76,12 @@
 
 // Make internal bitset storage public
 #define BOOST_DYNAMIC_BITSET_DONT_USE_FRIENDS
+
+//use tr1 for hash map & hash set
+//#define USE_TR1
+#ifdef USE_TR1
+	#define USE_TR1_PREFIX std::tr1
+#else
+	#define USE_TR1_PREFIX boost
+#endif
+

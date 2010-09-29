@@ -35,6 +35,10 @@ namespace Lucene
 		bool _useCompoundFile;
 		bool _useCompoundDocStore;
 	
+		int64_t minMergeSize;
+		int64_t maxMergeSize;
+		int32_t maxMergeDocs;
+
 	public:
 		/// Defines the allowed range of log(size) for each level.  A level is computed by taking the max segment
 		/// log size, minus LEVEL_LOG_SPAN, and finding all segments falling within that range.
@@ -47,10 +51,6 @@ namespace Lucene
 		/// @see setMaxMergeDocs
 		static const int32_t DEFAULT_MAX_MERGE_DOCS;
 		
-		int64_t minMergeSize;
-		int64_t maxMergeSize;
-		int32_t maxMergeDocs;
-	
 	public:
 		/// Returns the number of segments that are merged at once and also controls the total number of segments
 		/// allowed to accumulate in the index.

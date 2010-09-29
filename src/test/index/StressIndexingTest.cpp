@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/thread/thread.hpp>
 #include "LuceneTestFixture.h"
 
 #include "TestUtils.h"
@@ -69,7 +70,7 @@ protected:
     RandomPtr rand;
 
 public:
-    virtual bool testPoint(const String& name)
+    virtual bool testPoint(const wchar_t* name)
     {
         if (rand->nextInt(4) == 2)
             boost::this_thread::yield();

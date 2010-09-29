@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "NearSpansUnordered.h"
+#include "_NearSpansUnordered.h"
 #include "NearSpansOrdered.h"
 #include "StringUtils.h"
 #include "SpanNearQuery.h"

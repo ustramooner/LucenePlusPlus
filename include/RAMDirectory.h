@@ -36,7 +36,7 @@ namespace Lucene
 		
 		LUCENE_CLASS(RAMDirectory);
 				
-	public:
+	INTERNAL:
 		int64_t _sizeInBytes;
 		MapStringRAMFile fileMap;
 		

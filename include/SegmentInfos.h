@@ -53,15 +53,17 @@ namespace Lucene
   
 		/// This must always point to the most recent file format.
 		static const int32_t CURRENT_FORMAT;
-		
+
+	private:
 		/// Advanced configuration of retry logic in loading segments_N file.
 		static int32_t defaultGenFileRetryCount;
 		static int32_t defaultGenFileRetryPauseMsec;
 		static int32_t defaultGenLookaheadCount;
 		
-		int32_t counter; // used to name new segments
-	
-	protected:
+		/// Counts how often the index has been changed by adding or deleting docs.
+		/// Starting with the current time in milliseconds forces to create unique version numbers.
+		int64_t version;
+		
 		int64_t generation; // generation of the "segments_N" for the next commit
 		
 		int64_t lastGeneration; // generation of the "segments_N" file we last successfully read
@@ -72,14 +74,12 @@ namespace Lucene
 		
 		static MapStringString singletonUserData;
 		
-		/// Counts how often the index has been changed by adding or deleting docs.
-		/// Starting with the current time in milliseconds forces to create unique version numbers.
-		int64_t version;
-		
 		static InfoStreamPtr infoStream;
 		ChecksumIndexOutputPtr pendingSegnOutput;
 	
 	public:
+		int32_t counter; // used to name new segments
+	
 		SegmentInfoPtr info(int32_t i);
 		String getCurrentSegmentFileName();
 		String getNextSegmentFileName();
@@ -174,6 +174,8 @@ namespace Lucene
 		
 	protected:
 		void write(DirectoryPtr directory);
+
+		friend class FindSegmentsFile;
 	};
 	
 	/// Utility class for executing code that needs to do something with the current segments file.
@@ -219,18 +221,4 @@ namespace Lucene
 		virtual TYPE doBody(const String& segmentFileName) = 0;
 	};
 	
-	/// Utility class for executing code that needs to do something with the current segments file.  This is necessary with 
-	/// lock-less commits because from the time you locate the current segments file name, until you actually open it, read 
-	/// its contents, or check modified time, etc., it could have been deleted due to a writer commit finishing.
-	class LPPAPI FindSegmentsRead : public FindSegmentsFileT<int64_t>
-	{
-	public:
-		FindSegmentsRead(SegmentInfosPtr infos, DirectoryPtr directory);
-		virtual ~FindSegmentsRead();
-		
-		LUCENE_CLASS(FindSegmentsRead);
-				
-	public:
-		virtual int64_t doBody(const String& segmentFileName);
-	};
 }

@@ -10,6 +10,7 @@
 #include "DirectoryReader.h"
 #include "ReadOnlyDirectoryReader.h"
 #include "IndexWriter.h"
+#include "_IndexWriter.h"
 #include "IndexCommit.h"
 #include "IndexDeletionPolicy.h"
 #include "IndexFileDeleter.h"

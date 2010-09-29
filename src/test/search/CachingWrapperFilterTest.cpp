@@ -18,7 +18,7 @@
 #include "TermQuery.h"
 #include "Term.h"
 #include "NumericRangeFilter.h"
-#include "FieldCacheRangeFilter.h"
+#include "_FieldCacheRangeFilter.h"
 #include "OpenBitSet.h"
 #include "DocIdSet.h"
 #include "OpenBitSetDISI.h"

@@ -6,7 +6,9 @@
 
 #include "stdafx.h"
 #include <boost/algorithm/string.hpp>
+#include <boost/thread/thread.hpp>
 #include "SegmentInfos.h"
+#include "_SegmentInfos.h"
 #include "StringUtils.h"
 #include "SegmentInfo.h"
 #include "IndexFileNames.h"

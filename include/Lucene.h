@@ -7,10 +7,10 @@
 #pragma once
 
 #include "Config.h"
+
+//general includes...
+#include <sstream>
 #include <stdexcept>
-//threading and shared pointers used in this header and LuceneObject
-#include <boost/thread/thread.hpp>
-#include <boost/thread/recursive_mutex.hpp>
 
 //shared pointers used in this header and LuceneObject
 #include <boost/shared_ptr.hpp>
@@ -20,9 +20,8 @@
 //standard intger types used here in header
 #include <boost/cstdint.hpp>
 
-//used in this header
+//typdefs used in this header
 #include <boost/variant.hpp>
-#include <boost/function.hpp>
 
 namespace boost {
 	struct blank;
@@ -32,16 +31,6 @@ namespace boost {
 	}
 }
 
-#include <wctype.h>
-#include <wchar.h>
-#include <float.h>
-#include <sys/types.h>
-#include <sstream>
-#include <typeinfo>
-#include <fstream>
-#include <string>
-#include <algorithm>
-#include <limits>
 
 #define DECLARE_SHARED_PTR(Type) \
 	class Type; \
@@ -635,15 +624,10 @@ namespace Lucene
 #include "HashSet.h"
 #include "Collection.h"
 #include "LuceneException.h"
+#include "ThreadId.h"
 
 namespace Lucene
-{		
-	#ifdef _WIN32
-	typedef int64_t ThreadId;
-	#else
-	typedef boost::thread::id ThreadId;
-	#endif
-	
+{	
 	typedef Array<uint8_t> ByteArray;
 	typedef Array<int32_t> IntArray;
 	typedef Array<int64_t> LongArray;
@@ -764,8 +748,6 @@ namespace Lucene
 	typedef Map< String, IndexReaderPtr > MapStringIndexReader;
 	typedef Map< TermPtr, NumPtr, luceneCompare<TermPtr> > MapTermNum;
 	
-	typedef boost::function<bool (const TermVectorEntryPtr&, const TermVectorEntryPtr&)> TermVectorEntryComparator;
-	
 	template <typename KEY, typename VALUE> class SimpleLRUCache;
 	typedef SimpleLRUCache<TermPtr, TermInfoPtr> TermInfoCache;
 	typedef boost::shared_ptr<TermInfoCache> TermInfoCachePtr;
@@ -782,4 +764,10 @@ namespace Lucene
   #include "CycleCheck.h"
 #endif
 #include "Synchronize.h" //SyncLock used throughout...
+
+#if defined(LPP_BUILDING_LIB) || defined(LPP_EXPOSE_INTERNAL)
+	#define INTERNAL public
+#else
+	#define INTERNAL protected
+#endif
 

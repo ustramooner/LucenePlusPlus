@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "TopScoreDocCollector.h"
+#include "_TopScoreDocCollector.h"
 #include "HitQueue.h"
 #include "ScoreDoc.h"
 #include "Scorer.h"

@@ -16,8 +16,8 @@ namespace Lucene
 		virtual ~Synchronize();
 	
 	protected:
-		boost::recursive_timed_mutex mutexSynchronize;
-		ThreadId lockThread;
+		class RecursiveMutexContainer;
+		RecursiveMutexContainer* recursiveMutexContainer;
 		int32_t recursionCount;
 	
 	public:

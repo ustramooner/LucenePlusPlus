@@ -6,8 +6,6 @@
 
 #pragma once
 
-#include "SegmentTermDocs.h"
-
 namespace Lucene
 {
 	/// Basic tool and API to check the health of an index and write a new segments file that removes reference to
@@ -313,21 +311,5 @@ namespace Lucene
 		
 		/// Exception thrown during term vector test (null on success)
 		LuceneException error;
-	};
-	
-	class LPPAPI MySegmentTermDocs : public SegmentTermDocs
-	{
-	public:
-		MySegmentTermDocs(SegmentReaderPtr p);
-		virtual ~MySegmentTermDocs();
-		
-		LUCENE_CLASS(MySegmentTermDocs);
-	
-	public:
-		int32_t delCount;
-	
-	public:
-		virtual void seek(TermPtr term);
-		virtual void skippingDoc();
 	};
 }

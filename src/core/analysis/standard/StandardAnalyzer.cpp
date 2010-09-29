@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "StandardAnalyzer.h"
+#include "_StandardAnalyzer.h"
 #include "StandardTokenizer.h"
 #include "StandardFilter.h"
 #include "LowerCaseFilter.h"

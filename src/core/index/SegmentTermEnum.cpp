@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <limits.h>
 #include "SegmentTermEnum.h"
 #include "StringUtils.h"
 #include "TermInfosWriter.h"

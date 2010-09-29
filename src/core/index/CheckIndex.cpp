@@ -6,7 +6,9 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include <boost/thread/thread.hpp>
 #include "CheckIndex.h"
+#include "_CheckIndex.h"
 #include "SegmentInfos.h"
 #include "SegmentInfo.h"
 #include "SegmentReader.h"

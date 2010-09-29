@@ -5,6 +5,8 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <limits.h>
+#include <cmath>
 #include "LogMergePolicy.h"
 #include "IndexWriter.h"
 #include "SegmentInfo.h"

@@ -5,8 +5,10 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/thread/thread.hpp>
 #include <boost/bind/protect.hpp>
 #include "ParallelMultiSearcher.h"
+#include "_MultiSearcher.h"
 #include "HitQueue.h"
 #include "FieldDocSortedHitQueue.h"
 #include "FieldDoc.h"
@@ -55,7 +57,7 @@ namespace Lucene
         {
             TopDocsPtr topDocs(searchThreads[i]->get<TopDocsPtr>());
             totalHits += topDocs->totalHits;
-            maxScore = std::max(maxScore, topDocs->getMaxScore());
+            maxScore = std::max(maxScore, topDocs->maxScore);
         }
         
         Collection<ScoreDocPtr> scoreDocs(Collection<ScoreDocPtr>::newInstance(hq->size()));
@@ -87,7 +89,7 @@ namespace Lucene
         {
             TopFieldDocsPtr topDocs(searchThreads[i]->get<TopFieldDocsPtr>());
             totalHits += topDocs->totalHits;
-            maxScore = std::max(maxScore, topDocs->getMaxScore());
+            maxScore = std::max(maxScore, topDocs->maxScore);
         }
         
         Collection<ScoreDocPtr> scoreDocs(Collection<ScoreDocPtr>::newInstance(hq->size()));

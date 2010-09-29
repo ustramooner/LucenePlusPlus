@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "SegmentMerger.h"
+#include "_SegmentReader.h"
 #include "StringUtils.h"
 #include "IndexWriter.h"
 #include "IndexOutput.h"

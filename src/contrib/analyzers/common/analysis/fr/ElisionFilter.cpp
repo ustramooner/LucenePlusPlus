@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <limits.h>
 #include "ElisionFilter.h"
 #include "CharArraySet.h"
 #include "TermAttribute.h"

@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "ByteFieldSource.h"
+#include "_ByteFieldSource.h"
 #include "FieldCache.h"
 #include "MiscUtils.h"
 #include "StringUtils.h"

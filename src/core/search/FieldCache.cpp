@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "FieldCache.h"
+#include "_FieldCache.h"
 #include "FieldCacheImpl.h"
 #include "NumericUtils.h"
 #include "StringUtils.h"

@@ -5,7 +5,9 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <fstream>
 #include "NativeFSLockFactory.h"
+#include "_NativeFSLockFactory.h"
 #include "Random.h"
 #include "StringUtils.h"
 #include "FileUtils.h"

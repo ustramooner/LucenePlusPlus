@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <fstream>
 #include "FileReader.h"
 #include "StringUtils.h"
 #include "FileUtils.h"

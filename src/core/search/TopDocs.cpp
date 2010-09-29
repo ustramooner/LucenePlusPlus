@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <limits>
 #include "TopDocs.h"
 
 namespace Lucene
@@ -27,13 +28,4 @@ namespace Lucene
     {
     }
     
-    double TopDocs::getMaxScore()
-    {
-        return maxScore;
-    }
-    
-    void TopDocs::setMaxScore(double maxScore)
-    {
-        this->maxScore = maxScore;
-    }
 }

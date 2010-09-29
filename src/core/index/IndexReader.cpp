@@ -6,14 +6,13 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include <fstream>
 #include "IndexReader.h"
+#include "_IndexReader.h"
 #include "DirectoryReader.h"
 #include "IndexDeletionPolicy.h"
 #include "FileUtils.h"
-#include "IndexCommit.h"
 #include "FSDirectory.h"
-#include "TermDocs.h"
-#include "TermPositions.h"
 #include "FieldSelector.h"
 #include "Similarity.h"
 #include "CompoundFileReader.h"

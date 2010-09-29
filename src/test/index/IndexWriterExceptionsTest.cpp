@@ -129,10 +129,11 @@ protected:
     RandomPtr r;
 
 public:
-    virtual bool testPoint(const String& name)
+    virtual bool testPoint(const wchar_t* name)
     {
-        if (doFail.get() && name != L"startDoFlush" && r->nextInt(20) == 17)
-            boost::throw_exception(RuntimeException(L"intentionally failing at " + name));
+        if (doFail.get() && wcscmp(name, L"startDoFlush") != 0 && r->nextInt(20) == 17){
+            boost::throw_exception(RuntimeException(String(L"intentionally failing at ") + name));
+        }
         return true;
     }
 };

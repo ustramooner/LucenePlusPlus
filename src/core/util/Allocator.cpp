@@ -9,7 +9,7 @@
 #ifdef LPP_USE_NEDMALLOC
 extern "C"
 {
-#include "nedmalloc.h"
+#include "nedmalloc/nedmalloc.h"
 }
 #endif
 

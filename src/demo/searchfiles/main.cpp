@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "LuceneHeaders.h"
 #include <iostream>
 #include <boost/algorithm/string.hpp>
 #include "StringUtils.h"
@@ -45,7 +46,7 @@ public:
 /// When the query is executed for the first time, then only enough results are collected to fill 5 result 
 /// pages. If the user wants to page beyond this limit, then the query is executed another time and all 
 /// hits are collected.
-static void doPagingSearch(SearcherPtr searcher, QueryPtr query, int32_t hitsPerPage, bool raw)
+static void doPagingSearch(SearcherPtr searcher, QueryPtr query, int32_t hitsPerPage, bool raw, bool interactive)
 {
 	// Collect enough docs to show 5 pages
 	TopScoreDocCollectorPtr collector = TopScoreDocCollector::create(5 * hitsPerPage, false);
@@ -99,6 +100,10 @@ static void doPagingSearch(SearcherPtr searcher, QueryPtr query, int32_t hitsPer
 				std::wcout << StringUtils::toString(i + 1) + L". No path for this document\n";
 		}
 		
+		if (!interactive) {
+			break;
+		}
+
 		if (numTotalHits >= end)
 		{
 			bool quit = false;
@@ -211,7 +216,7 @@ int main(int argc, char* argv[])
 {
 	if (argc == 1 || strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "-help") == 0)
 	{
-		std::wcout << L"Usage: searchfiles.exe [-index dir] [-field f] [-repeat n] [-raw] ";
+		std::wcout << L"Usage: searchfiles.exe [-index dir] [-field f] [-repeat n] [-queries file] [-raw] ";
 		std::wcout << L"[-norms field] [-paging hitsPerPage]\n\n";
 		std::wcout << L"Specify 'false' for hitsPerPage to use streaming instead of paging search.\n";
 		return 1;
@@ -221,6 +226,7 @@ int main(int argc, char* argv[])
 	{
 		String index = L"index";
 		String field = L"contents";
+		String queries = L"";
 		int32_t repeat = 0;
 		bool raw = false;
 		String normsField;
@@ -238,6 +244,9 @@ int main(int argc, char* argv[])
 			{
 				field = StringUtils::toUnicode(argv[i + 1]);
 				++i;
+			}else if (strcmp(argv[i], "-queries") == 0) {
+				queries = StringUtils::toUnicode(argv[i + 1]);
+				i++;
 			}
 			else if (strcmp(argv[i], "-repeat") == 0)
 			{
@@ -274,13 +283,27 @@ int main(int argc, char* argv[])
 		SearcherPtr searcher = newLucene<IndexSearcher>(reader);
 		AnalyzerPtr analyzer = newLucene<StandardAnalyzer>(LuceneVersion::LUCENE_CURRENT);
 		QueryParserPtr parser = newLucene<QueryParser>(LuceneVersion::LUCENE_CURRENT, field, analyzer);
-		
+
+		ReaderPtr in;		
+		if (queries != L"") {
+		      in = newLucene<FileReader>(queries);
+		}
+
 		while (true)
 		{
-			std::wcout << L"Enter query: ";
-			
 			String line;
-			std::wcin >> line;
+
+			if (queries != L"") {
+				wchar_t c = in->read();
+				while ( c != '\n' && c != '\r' && c != Reader::READER_EOF ) {
+					line += c;
+					c = in->read();
+				}
+			}else{
+				std::wcout << L"Enter query: ";
+			
+				std::wcin >> line;
+			}
 			boost::trim(line);
 			
 			if (line.empty())
@@ -298,7 +321,7 @@ int main(int argc, char* argv[])
 			}
 			
 			if (paging)
-				doPagingSearch(searcher, query, hitsPerPage, raw);
+				doPagingSearch(searcher, query, hitsPerPage, raw, queries == L"");
 			else
 				doStreamingSearch(searcher, query);
 		}

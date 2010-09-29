@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "BaseCharFilter.h"
+#include "_BaseCharFilter.h"
 
 namespace Lucene
 {

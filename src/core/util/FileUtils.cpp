@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "StringUtils.h"
 #include "FileUtils.h"
+#include <boost/thread/thread.hpp>
 #include <boost/filesystem/operations.hpp>
 #include <boost/filesystem/path.hpp>
 #include <boost/filesystem/convenience.hpp>

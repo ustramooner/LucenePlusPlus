@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/thread/thread.hpp>
 #include "LuceneTestFixture.h"
 #include "LuceneThread.h"
 #include "RAMDirectory.h"

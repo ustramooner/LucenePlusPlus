@@ -31,7 +31,6 @@ namespace Lucene
 	
 	protected:
 		LuceneObject();
-		static boost::mutex lockMutex;
 		
 		SynchronizePtr objectLock;
 		LuceneSignalPtr objectSignal;

@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "CachingSpanFilter.h"
+#include "_CachingSpanFilter.h"
 #include "SpanFilterResult.h"
 #include "IndexReader.h"
 

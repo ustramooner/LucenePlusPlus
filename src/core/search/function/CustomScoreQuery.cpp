@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "CustomScoreQuery.h"
+#include "_CustomScoreQuery.h"
 #include "ValueSourceQuery.h"
 #include "ComplexExplanation.h"
 #include "MiscUtils.h"

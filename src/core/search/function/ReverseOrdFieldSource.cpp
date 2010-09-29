@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "ReverseOrdFieldSource.h"
+#include "_ReverseOrdFieldSource.h"
 #include "StringUtils.h"
 #include "FieldCache.h"
 #include "MiscUtils.h"

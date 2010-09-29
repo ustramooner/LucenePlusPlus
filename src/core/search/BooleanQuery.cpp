@@ -6,11 +6,10 @@
 
 #include "stdafx.h"
 #include "BooleanQuery.h"
-#include "BooleanClause.h"
+#include "_BooleanQuery.h"
 #include "BooleanScorer.h"
 #include "BooleanScorer2.h"
 #include "ComplexExplanation.h"
-#include "Similarity.h"
 #include "MiscUtils.h"
 #include "StringUtils.h"
 

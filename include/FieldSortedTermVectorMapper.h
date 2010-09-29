@@ -7,9 +7,12 @@
 #pragma once
 
 #include "TermVectorMapper.h"
+#include <boost/function.hpp>
 
 namespace Lucene
 {
+	typedef boost::function<bool (const TermVectorEntryPtr&, const TermVectorEntryPtr&)> TermVectorEntryComparator;
+
 	/// For each Field, store a sorted collection of {@link TermVectorEntry}s
 	/// This is not thread-safe.
 	class LPPAPI FieldSortedTermVectorMapper : public TermVectorMapper

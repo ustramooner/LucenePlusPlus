@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/thread/thread.hpp>
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "MockRAMDirectory.h"
@@ -12,7 +13,7 @@
 #include "WhitespaceAnalyzer.h"
 #include "IndexWriter.h"
 #include "IndexReader.h"
-#include "ConcurrentMergeScheduler.h"
+#include "_ConcurrentMergeScheduler.h"
 #include "Document.h"
 #include "Field.h"
 #include "LogDocMergePolicy.h"

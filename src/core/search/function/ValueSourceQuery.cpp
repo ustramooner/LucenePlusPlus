@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "ValueSourceQuery.h"
+#include "_ValueSourceQuery.h"
 #include "ValueSource.h"
 #include "DocValues.h"
 #include "ComplexExplanation.h"

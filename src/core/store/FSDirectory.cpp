@@ -5,13 +5,20 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <limits.h>
+#include <fstream>
+#include <boost/thread/thread.hpp>
 #include "FSDirectory.h"
 #include "NativeFSLockFactory.h"
 #include "FileUtils.h"
 #include "SimpleFSDirectory.h"
 #include "BufferedIndexInput.h"
-#include "../util/md5/md5.h"
 #include "StringUtils.h"
+
+extern "C"
+{
+  #include "../util/md5/md5.h"
+}
 
 namespace Lucene
 {

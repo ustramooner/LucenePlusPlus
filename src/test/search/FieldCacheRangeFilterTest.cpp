@@ -5,13 +5,14 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <float.h>
 #include "BaseTestRangeFilterFixture.h"
 #include "RAMDirectory.h"
 #include "IndexReader.h"
 #include "IndexSearcher.h"
 #include "TermQuery.h"
 #include "Term.h"
-#include "FieldCacheRangeFilter.h"
+#include "_FieldCacheRangeFilter.h"
 #include "ScoreDoc.h"
 #include "TopDocs.h"
 #include "IndexWriter.h"

@@ -5,7 +5,9 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <fstream>
 #include "SimpleFSDirectory.h"
+#include "_SimpleFSDirectory.h"
 #include "StringUtils.h"
 #include "IndexOutput.h"
 #include "FileUtils.h"

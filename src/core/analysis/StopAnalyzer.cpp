@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "StopAnalyzer.h"
+#include "_StopAnalyzer.h"
 #include "StopFilter.h"
 #include "WordlistLoader.h"
 #include "Reader.h"

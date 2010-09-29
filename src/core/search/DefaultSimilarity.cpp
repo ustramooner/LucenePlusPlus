@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <cmath>
 #include "DefaultSimilarity.h"
 #include "FieldInvertState.h"
 

@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <float.h>
 #include "LuceneTestFixture.h"
 #include "IndexReader.h"
 #include "RAMDirectory.h"

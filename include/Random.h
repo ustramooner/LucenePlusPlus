@@ -8,6 +8,7 @@
 
 #include "LuceneObject.h"
 #include "MiscUtils.h"
+#include <limits.h>
 
 namespace Lucene
 {

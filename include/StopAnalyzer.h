@@ -39,26 +39,12 @@ namespace Lucene
 		bool enablePositionIncrements;
 	
 		static const wchar_t* _ENGLISH_STOP_WORDS_SET[];
-	
 	public:
 		/// An unmodifiable set containing some common English words that are usually not useful for searching.
 		static HashSet<String> ENGLISH_STOP_WORDS_SET();
 	
-	public:
 		virtual TokenStreamPtr tokenStream(const String& fieldName, ReaderPtr reader);
 		virtual TokenStreamPtr reusableTokenStream(const String& fieldName, ReaderPtr reader);
 	};
 	
-	/// Filters LowerCaseTokenizer with StopFilter.
-	class LPPAPI StopAnalyzerSavedStreams : public LuceneObject
-	{
-	public:
-		virtual ~StopAnalyzerSavedStreams();
-		
-		LUCENE_CLASS(StopAnalyzerSavedStreams);
-	
-	public:
-		TokenizerPtr source;
-		TokenStreamPtr result;
-	};
 }

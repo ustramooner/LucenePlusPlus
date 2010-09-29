@@ -22,9 +22,11 @@ namespace Lucene
 		
 		LUCENE_CLASS(NoLockFactory);
 			
+	private:
+		static NoLockPtr getSingletonLock();
+
 	public:
 		static NoLockFactoryPtr getNoLockFactory();
-		static NoLockPtr getSingletonLock();
 		
 		/// Return a new Lock instance identified by lockName.
 		virtual LockPtr makeLock(const String& lockName);
@@ -34,17 +36,4 @@ namespace Lucene
 		virtual void clearLock(const String& lockName);
 	};
 	
-	class LPPAPI NoLock : public Lock
-	{
-	public:
-		virtual ~NoLock();
-		
-		LUCENE_CLASS(NoLock);
-			
-	public:
-		virtual bool obtain();
-		virtual void release();
-		virtual bool isLocked();
-		virtual String toString();
-	};
 }

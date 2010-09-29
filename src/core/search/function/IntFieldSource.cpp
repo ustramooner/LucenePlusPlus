@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "IntFieldSource.h"
+#include "_IntFieldSource.h"
 #include "FieldCache.h"
 #include "MiscUtils.h"
 #include "StringUtils.h"

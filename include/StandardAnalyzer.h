@@ -81,14 +81,4 @@ namespace Lucene
 		
 		virtual TokenStreamPtr reusableTokenStream(const String& fieldName, ReaderPtr reader);
 	};
-	
-	class LPPAPI StandardAnalyzerSavedStreams : public LuceneObject
-	{
-	public:
-		virtual ~StandardAnalyzerSavedStreams();
-	
-	public:
-		StandardTokenizerPtr tokenStream;
-		TokenStreamPtr filteredTokenStream;
-	};
 }

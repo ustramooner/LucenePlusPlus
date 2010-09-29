@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "FilteredDocIdSet.h"
+#include "_FilteredDocIdSet.h"
 
 namespace Lucene
 {

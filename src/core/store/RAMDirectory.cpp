@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <boost/thread/thread.hpp>
 #include "RAMDirectory.h"
 #include "RAMFile.h"
 #include "RAMInputStream.h"

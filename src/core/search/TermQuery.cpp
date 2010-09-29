@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "TermQuery.h"
+#include "_TermQuery.h"
 #include "TermScorer.h"
 #include "StringUtils.h"
 #include "IndexReader.h"

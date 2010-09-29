@@ -1,4 +1,4 @@
-project(lucene++)
+project(lucene++-base)
 
 ####################################
 # VERSION information
@@ -69,7 +69,7 @@ OPTION(ENABLE_NEDMALLOC
   OFF)
 OPTION(LUCENE_USE_STATIC_BOOST_LIBS
   "use static boost libraries "
-  ON)
+  OFF)
 
 #install path options
 SET(LIB_SUFFIX "" CACHE STRING "Define suffix of directory name (32/64)" )
@@ -88,6 +88,12 @@ endif(WIN32)
 if(NOT MSVC AND NOT CMAKE_SYSTEM MATCHES "SunOS-5*.")
         add_definitions(-fPIC)
 endif(NOT MSVC AND NOT CMAKE_SYSTEM MATCHES "SunOS-5*.")
+
+#INCLUDE(MacroCheckGccVisibility)
+#MACRO_CHECK_GCC_VISIBILITY(LPP_HAVE_GXXCLASSVISIBILITY)
+#if ( LPP_HAVE_GXXCLASSVISIBILITY )
+#	ADD_DEFINITIONS(-DLPP_HAVE_GXXCLASSVISIBILITY)
+#endif()
 
 IF(CYGWIN)
   ADD_DEFINITIONS(-D__LARGE64_FILES)
@@ -116,20 +122,27 @@ SET(Boost_USE_STATIC_LIBS   ${LUCENE_USE_STATIC_BOOST_LIBS})
 SET(Boost_USE_MULTITHREADED ON)
 find_package( Boost 1.36.0 COMPONENTS date_time filesystem iostreams regex thread unit_test_framework REQUIRED)
 
+####################################
+# Pre-Compiled headers
+####################################
+INCLUDE(PCHSupport)
+
+#todo: make this optional and make it possible to add more headers - like boost threads
+
+
+####################################
+# The subdirs
+####################################
 #set global include paths
-INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/include)
-#INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/util/md5)
-#INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/util/nedmalloc)
-#INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/util/zlib)
-#INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/util/utf8)
-#INCLUDE_DIRECTORIES(${lucene++_SOURCE_DIR}/util/ucs)
+INCLUDE_DIRECTORIES(${lucene++-base_SOURCE_DIR}/include)
 INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIRS} )
 
 #include sub-projects
-ADD_SUBDIRECTORY (lib)
-ADD_SUBDIRECTORY (contrib EXCLUDE_FROM_ALL)
-ADD_SUBDIRECTORY (demo EXCLUDE_FROM_ALL)
-ADD_SUBDIRECTORY (test)
+ADD_SUBDIRECTORY (src/core)
+ADD_SUBDIRECTORY (src/contrib EXCLUDE_FROM_ALL)
+ADD_SUBDIRECTORY (src/demo EXCLUDE_FROM_ALL)
+ADD_SUBDIRECTORY (src/test)
+
 
 ####################################
 # Custom targets

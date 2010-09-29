@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "LuceneHeaders.h"
 #include <iostream>
 #include "StringUtils.h"
 #include "MiscUtils.h"

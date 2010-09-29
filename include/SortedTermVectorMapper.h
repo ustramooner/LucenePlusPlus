@@ -7,9 +7,12 @@
 #pragma once
 
 #include "TermVectorMapper.h"
+#include <boost/function.hpp>
 
 namespace Lucene
 {
+	typedef boost::function<bool (const TermVectorEntryPtr&, const TermVectorEntryPtr&)> TermVectorEntryComparator;
+
 	/// Store a sorted collection of {@link TermVectorEntry}s.  Collects all term information into a single, 
 	/// sorted set.
 	///
