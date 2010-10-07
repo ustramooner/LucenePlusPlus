@@ -1462,6 +1462,10 @@
 			<Filter
 				Name="highlighter"
 				>
+				<File
+					RelativePath="..\contrib\highlighter\HighlighterTest.cpp"
+					>
+				</File>
 			</Filter>
 			<Filter
 				Name="memory"

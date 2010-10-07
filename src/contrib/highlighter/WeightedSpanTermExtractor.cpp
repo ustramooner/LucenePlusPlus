@@ -38,7 +38,8 @@ namespace Lucene
         this->defaultField = defaultField;
         this->expandMultiTermQuery = false;
         this->cachedTokenStream = false;
-        this->wrapToCaching = false;
+        this->wrapToCaching = true;
+        this->readers = MapStringIndexReader::newInstance();
     }
     
     WeightedSpanTermExtractor::~WeightedSpanTermExtractor()
@@ -146,7 +147,7 @@ namespace Lucene
                         maxPosition = positions[i];
                 }
                 
-                Collection< Collection<SpanQueryPtr> > disjunctLists(Collection< Collection<SpanQueryPtr> >::newInstance());
+                Collection< Collection<SpanQueryPtr> > disjunctLists(Collection< Collection<SpanQueryPtr> >::newInstance(maxPosition + 1));
                 int32_t distinctPositions = 0;
                 for (int32_t i = 0; i < termArrays.size(); ++i)
                 {
@@ -192,7 +193,7 @@ namespace Lucene
         else
             fieldNames.add(fieldName);
         // To support the use of the default field name
-        if (defaultField.empty())
+        if (!defaultField.empty())
             fieldNames.add(defaultField);
         
         MapStringSpanQuery queries(MapStringSpanQuery::newInstance());
