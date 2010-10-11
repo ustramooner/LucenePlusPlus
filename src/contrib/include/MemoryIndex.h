@@ -12,7 +12,7 @@
 namespace Lucene
 {
     // todo
-    class LPPAPI MemoryIndex : public LuceneObject
+    class LPPCONTRIBAPI MemoryIndex : public LuceneObject
     {
     public:
         virtual ~MemoryIndex();

@@ -12,7 +12,7 @@
 namespace Lucene
 {
 	/// Low-level class used to record information about a section of a document with a score.
-	class LPPAPI TextFragment : public LuceneObject
+	class LPPCONTRIBAPI TextFragment : public LuceneObject
 	{
 	public:
 	    TextFragment(const String& markedUpText, int32_t textStartPos, int32_t fragNum);

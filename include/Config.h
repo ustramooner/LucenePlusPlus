@@ -6,14 +6,14 @@
 
 #pragma once
 
-#ifdef _WIN32
+#if defined(_WIN32) || defined(_WIN64)
 #pragma warning(disable:4251)
 #pragma warning(disable:4275)
 #pragma warning(disable:4005)
 #pragma warning(disable:4996)
 #endif
 
-#ifdef _WIN32
+#if defined(_WIN32) || defined(_WIN64)
 #define LPP_IMPORT __declspec(dllimport)
 #define LPP_EXPORT __declspec(dllexport)
 #else
@@ -27,18 +27,27 @@
 #endif
 
 // Define LPPAPI for dll builds
-#ifdef LPP_HAVE_DLL
-#ifdef LPP_BUILDING_LIB
-#define LPPAPI LPP_EXPORT
-#else
-#define LPPAPI LPP_IMPORT
+#if defined(LPP_HAVE_DLL)
+  #ifdef LPP_BUILDING_LIB
+  #define LPPAPI LPP_EXPORT
+  #else
+  #define LPPAPI LPP_IMPORT
+  #endif
+  #else
+  #define LPPAPI
 #endif
-#else
-#define LPPAPI
+#if defined(LPP_HAVE_DLL)
+  #ifdef LPP_BUILDING_LIB
+  #define LPPCONTRIBAPI LPP_EXPORT
+  #else
+  #define LPPCONTRIBAPI LPP_IMPORT
+  #endif
+  #else
+  #define LPPCONTRIBAPI
 #endif
 
 // Check windows
-#if defined(_WIN32) || defined(_WIN64)
+#if defined(_WIN32)
 #define LPP_UNICODE_CHAR_SIZE_2
 #if defined(_WIN64)
 #define LPP_BUILD_64

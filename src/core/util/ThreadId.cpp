@@ -6,7 +6,7 @@ namespace Lucene
 	class ThreadId::Internal {
 	public:
 		bool initialised;
-	#ifdef _WIN32
+	#if defined(_WIN32) || defined(_WIN64)
 		int64_t id;
 	#else
 		boost::thread::id id;

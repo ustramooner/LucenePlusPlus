@@ -26,11 +26,11 @@ SET(CPACK_COMPONENTS_ALL development runtime)
 SET(CPACK_GENERATOR "TGZ")
 SET(CPACK_PACKAGE_FILE_NAME "lucene++-${CPACK_PACKAGE_VERSION}-${CMAKE_SYSTEM_NAME}")
 
-IF(WIN32 AND NOT UNIX)
+IF( (WIN32 OR WIN64) AND NOT UNIX)
 	SET(CPACK_SOURCE_GENERATOR "ZIP")
-ELSE(WIN32 AND NOT UNIX)
+ELSE( (WIN32 OR WIN64) AND NOT UNIX)
 	SET(CPACK_SOURCE_GENERATOR "TBZ2;TGZ")
-ENDIF(WIN32 AND NOT UNIX)
+ENDIF( (WIN32 OR WIN64) AND NOT UNIX)
 SET(CPACK_SOURCE_PACKAGE_FILE_NAME "lucene++-${CPACK_PACKAGE_VERSION}-Source")
 
 #specific packaging requirements:
@@ -41,7 +41,7 @@ SET(CPACK_RPM_PACKAGE_GROUP "libs")
 SET(CPACK_RPM_PACKAGE_REQUIRES "libz")
 
 #don't include the current binary dir.
-get_filename_component(lucene++_BINARY_DIR_name ${lucene++_BINARY_DIR} NAME)
+get_filename_component(lucene++-base_BINARY_DIR_name ${lucene++-base_BINARY_DIR} NAME)
 SET(CPACK_SOURCE_IGNORE_FILES
   "/\\\\.svn/"
   "/\\\\.git/"
@@ -50,10 +50,10 @@ SET(CPACK_SOURCE_IGNORE_FILES
   ".*~"
   ".*\\\\.tmp"
   ".*\\\\.save"
-  "/${lucene++_BINARY_DIR_name}/"
+  "/${lucene++-base_BINARY_DIR_name}/"
 )
 
-IF(WIN32 AND NOT UNIX)
+IF( (WIN32 OR WIN64) AND NOT UNIX)
   # There is a bug in NSI that does not handle full unix paths properly. Make
   # sure there is at least one set of four (4) backlasshes.
   SET(CPACK_GENERATOR "${CPACK_GENERATOR};NSIS")
@@ -64,10 +64,10 @@ IF(WIN32 AND NOT UNIX)
   SET(CPACK_NSIS_URL_INFO_ABOUT "http:\\\\\\\\lucene++.sourceforge.net")
   SET(CPACK_NSIS_CONTACT "lucene++-developers@lists.sourceforge.net")
   #SET(CPACK_NSIS_MODIFY_PATH ON)
-ELSE(WIN32 AND NOT UNIX)
+ELSE( (WIN32 OR WIN64) AND NOT UNIX)
 #  SET(CPACK_STRIP_FILES "bin/xxx")
   SET(CPACK_SOURCE_STRIP_FILES "")
-ENDIF(WIN32 AND NOT UNIX)
+ENDIF( (WIN32 OR WIN64) AND NOT UNIX)
 #SET(CPACK_PACKAGE_EXECUTABLES "MyExecutable" "My Executable")
 
 

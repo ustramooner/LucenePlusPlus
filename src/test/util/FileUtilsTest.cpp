@@ -171,7 +171,7 @@ BOOST_AUTO_TEST_CASE(testListDirectoryFiles)
 
 BOOST_AUTO_TEST_CASE(testJoinPath)
 {
-    #ifdef _WIN32
+    #if defined(_WIN32) || defined(_WIN64)
     BOOST_CHECK_EQUAL(FileUtils::joinPath(L"c:\\test", L"\\testfile.txt"), L"c:\\test\\testfile.txt");
     BOOST_CHECK_EQUAL(FileUtils::joinPath(L"c:\\test", L"testfile.txt"), L"c:\\test\\testfile.txt");
     BOOST_CHECK_EQUAL(FileUtils::joinPath(L"", L"testfile.txt"), L"testfile.txt");
@@ -190,7 +190,7 @@ BOOST_AUTO_TEST_CASE(testJoinPath)
 
 BOOST_AUTO_TEST_CASE(testExtractPath)
 {
-    #ifdef _WIN32
+    #if defined(_WIN32) || defined(_WIN64)
     BOOST_CHECK_EQUAL(FileUtils::extractPath(L"c:\\test"), L"c:\\");
     BOOST_CHECK_EQUAL(FileUtils::extractPath(L"c:\\test\\testfile.txt"), L"c:\\test");
     BOOST_CHECK_EQUAL(FileUtils::extractPath(L""), L"");
@@ -205,7 +205,7 @@ BOOST_AUTO_TEST_CASE(testExtractPath)
 
 BOOST_AUTO_TEST_CASE(testExtractFile)
 {
-    #ifdef _WIN32
+    #if defined(_WIN32) || defined(_WIN64)
     BOOST_CHECK_EQUAL(FileUtils::extractFile(L"c:\\test"), L"test");
     BOOST_CHECK_EQUAL(FileUtils::extractFile(L"c:\\test\\testfile.txt"), L"testfile.txt");
     BOOST_CHECK_EQUAL(FileUtils::extractFile(L""), L"");

@@ -3,6 +3,7 @@
 #define LUCENE_PCH_H
 
 #include "Lucene.h"
+#include "LuceneHeaders.h"
 #include <limits.h>
 #include <fstream>
 #include <boost/algorithm/string.hpp>

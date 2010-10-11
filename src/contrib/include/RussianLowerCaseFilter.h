@@ -12,7 +12,7 @@
 namespace Lucene
 {
 	/// Normalizes token text to lower case.
-	class LPPAPI RussianLowerCaseFilter : public TokenFilter
+	class LPPCONTRIBAPI RussianLowerCaseFilter : public TokenFilter
 	{
 	public:
 		RussianLowerCaseFilter(TokenStreamPtr input);

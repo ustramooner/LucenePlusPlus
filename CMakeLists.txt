@@ -72,8 +72,7 @@ OPTION(LUCENE_USE_STATIC_BOOST_LIBS
   OFF)
 
 #install path options
-SET(LIB_SUFFIX "" CACHE STRING "Define suffix of directory name (32/64)" )
-SET(LIB_DESTINATION "lib${LIB_SUFFIX}")
+SET(LIB_DESTINATION "lib" CACHE STRING "Define lib output directory name")
 ####################################
 
 
@@ -81,19 +80,19 @@ SET(LIB_DESTINATION "lib${LIB_SUFFIX}")
 # PLATFORM specific options
 ####################################
 #add a debug build postfix
-if(WIN32)
+if(WIN32 OR WIN64)
  set(CMAKE_DEBUG_POSTFIX "d")
-endif(WIN32)
+endif(WIN32 OR WIN64)
 
 if(NOT MSVC AND NOT CMAKE_SYSTEM MATCHES "SunOS-5*.")
         add_definitions(-fPIC)
 endif(NOT MSVC AND NOT CMAKE_SYSTEM MATCHES "SunOS-5*.")
 
-#INCLUDE(MacroCheckGccVisibility)
-#MACRO_CHECK_GCC_VISIBILITY(LPP_HAVE_GXXCLASSVISIBILITY)
-#if ( LPP_HAVE_GXXCLASSVISIBILITY )
-#	ADD_DEFINITIONS(-DLPP_HAVE_GXXCLASSVISIBILITY)
-#endif()
+INCLUDE(MacroCheckGccVisibility)
+MACRO_CHECK_GCC_VISIBILITY(LPP_HAVE_GXXCLASSVISIBILITY)
+if ( LPP_HAVE_GXXCLASSVISIBILITY )
+	ADD_DEFINITIONS(-DLPP_HAVE_GXXCLASSVISIBILITY)
+endif()
 
 IF(CYGWIN)
   ADD_DEFINITIONS(-D__LARGE64_FILES)

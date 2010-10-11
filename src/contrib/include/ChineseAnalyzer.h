@@ -12,7 +12,7 @@
 namespace Lucene
 {
 	/// An {@link Analyzer} that tokenizes text with {@link ChineseTokenizer} and filters with {@link ChineseFilter}
-	class LPPAPI ChineseAnalyzer : public Analyzer
+	class LPPCONTRIBAPI ChineseAnalyzer : public Analyzer
 	{
 	public:
 	    virtual ~ChineseAnalyzer();
@@ -32,7 +32,7 @@ namespace Lucene
 	    virtual TokenStreamPtr reusableTokenStream(const String& fieldName, ReaderPtr reader);
 	};
 	
-	class LPPAPI ChineseAnalyzerSavedStreams : public LuceneObject
+	class LPPCONTRIBAPI ChineseAnalyzerSavedStreams : public LuceneObject
 	{
 	public:
 	    virtual ~ChineseAnalyzerSavedStreams();

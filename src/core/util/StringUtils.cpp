@@ -142,7 +142,7 @@ namespace Lucene
             boost::throw_exception(NumberFormatException());
         if (value[0] != L'-' && !UnicodeUtil::isDigit(value[0]))
             boost::throw_exception(NumberFormatException());
-        #ifdef _WIN32
+        #if defined(_WIN32) || defined(_WIN64)
         return _wcstoi64(value.c_str(), 0, 10);
         #else
         return wcstoll(value.c_str(), 0, 10);

@@ -20,7 +20,7 @@ namespace Lucene
 	/// <li> Removal of attached definite article, conjunction, and prepositions.
 	/// <li> Stemming of common suffixes.
 	/// </ul>
-	class LPPAPI ArabicStemmer : public LuceneObject
+	class LPPCONTRIBAPI ArabicStemmer : public LuceneObject
 	{
 	public:
 	    virtual ~ArabicStemmer();

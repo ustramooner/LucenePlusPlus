@@ -132,9 +132,9 @@ IF (ENABLE_DOCS)
         FIND_PACKAGE(UnixCommands)
         IF ( TAR AND GZIP )
             ADD_CUSTOM_TARGET(doc-tarz
-                COMMAND "${TAR}" "-cf" "doc/lucene++-doc.tar" "${PROJECT_BINARY_DIR}/doc/html/"
-                COMMAND "${GZIP}" "doc/lucene++-doc.tar"
-                #DEPENDS doc-doxygen
+                COMMAND "${TAR}" "-czf" "${PROJECT_BINARY_DIR}/doc/lucene++-doc.tar.gz" ./
+                WORKING_DIRECTORY "${PROJECT_BINARY_DIR}/doc/html/"
+                #DEPENDS doc
             )
         ENDIF ( TAR AND GZIP )
         

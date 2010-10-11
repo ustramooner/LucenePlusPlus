@@ -4,7 +4,7 @@ project(lucene++-demo)
 # THE lucene++demo applications
 ####################################
 file(GLOB_RECURSE HEADERS ${lucene++-demo_SOURCE_DIR}/../include/*.h)
-
+ADD_DEFINITIONS(-DLPP_HAVE_DLL)
 ADD_EXECUTABLE(indexfiles EXCLUDE_FROM_ALL
 	${lucene++-demo_SOURCE_DIR}/indexfiles/main.cpp ${HEADERS}
 )

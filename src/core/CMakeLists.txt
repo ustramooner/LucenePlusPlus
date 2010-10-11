@@ -12,7 +12,8 @@ file(GLOB_RECURSE lucene_sources
   ${lucene++-lib_SOURCE_DIR}/store/*.cpp
   ${lucene++-lib_SOURCE_DIR}/util/*.cpp)
 
-file(GLOB_RECURSE HEADERS ${lucene++-base_SOURCE_DIR}/include/*.h ${lucene++-libs_SOURCE_DIR}/include/*.h)
+file(GLOB_RECURSE INTERN_HEADERS ${lucene++-libs_SOURCE_DIR}/include/*.h)
+file(GLOB_RECURSE HEADERS ${lucene++-base_SOURCE_DIR}/include/*.h)
 
 #C sources...
 file(GLOB_RECURSE lucene_c_sources
@@ -25,31 +26,38 @@ ENDIF()
 
 INCLUDE_DIRECTORIES(${lucene++-lib_SOURCE_DIR}/include)
 ADD_DEFINITIONS(-DLPP_BUILDING_LIB)
-
 ADD_LIBRARY(lucene++-c STATIC
 	${lucene_c_sources}
 )
-
+install(FILES ${HEADERS}
+		        DESTINATION include/lucene++
+		        COMPONENT development)
 
 #################################
 # lucene++ shared library
 #################################
-ADD_LIBRARY(lucene++ SHARED EXCLUDE_FROM_ALL
-	${lucene_sources} ${HEADERS}
+ADD_LIBRARY(lucene++ SHARED
+	${lucene_sources} ${HEADERS} ${INTERN_HEADERS}
 )
+SET(PCH_ADDITIONAL_COMPILER_FLAGS_lucene++ -DLPP_HAVE_DLL)
+ADD_PRECOMPILED_HEADER(lucene++ ${lucene++-lib_SOURCE_DIR}/include/LucenePCH.h)
 #set properties on the libraries
 SET_TARGET_PROPERTIES(lucene++ PROPERTIES
     VERSION ${LUCENE++_VERSION}
     SOVERSION ${LUCENE++_SOVERSION}
 )
-TARGET_LINK_LIBRARIES(lucene++ ${CMAKE_THREAD_LIBS_INIT} ${Boost_LIBRARIES})
+TARGET_LINK_LIBRARIES(lucene++ lucene++-c ${CMAKE_THREAD_LIBS_INIT} ${Boost_LIBRARIES})
+install(TARGETS lucene++
+	        DESTINATION ${LIB_DESTINATION} 
+	        COMPONENT shared-runtime )
 
 #################################
 # lucene++ static library
 #################################
 ADD_LIBRARY(lucene++-static STATIC EXCLUDE_FROM_ALL
-	${lucene_sources} ${HEADERS}
+	${lucene_sources} ${HEADERS} ${INTERN_HEADERS}
 )
+ADD_PRECOMPILED_HEADER(lucene++-static ${lucene++-lib_SOURCE_DIR}/include/LucenePCH.h)
 #set properties on the libraries
 SET_TARGET_PROPERTIES(lucene++-static PROPERTIES
     VERSION ${LUCENE++_VERSION}

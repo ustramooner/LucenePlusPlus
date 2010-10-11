@@ -5,7 +5,7 @@
 #---------------------------------------------------------------------------
 
 PROJECT_NAME           = Lucene++
-PROJECT_NUMBER         = @CPACK_PACKAGE_VERSION@
+PROJECT_NUMBER         = @LUCENE++_SOVERSION@
 
 OUTPUT_DIRECTORY       = @PROJECT_BINARY_DIR@/doc
 OUTPUT_LANGUAGE        = English
@@ -13,10 +13,12 @@ OUTPUT_LANGUAGE        = English
 EXTRACT_ALL            = YES
 EXTRACT_PRIVATE        = NO
 EXTRACT_STATIC         = YES
-EXTRACT_LOCAL_CLASSES  = NO
+EXTRACT_LOCAL_CLASSES  = YES
+EXTRACT_LOCAL_METHODS  = YES
 HIDE_UNDOC_MEMBERS     = NO
 HIDE_UNDOC_CLASSES     = NO
-HIDE_FRIEND_COMPOUNDS  = NO
+HIDE_FRIEND_COMPOUNDS  = YES
+HIDE_IN_BODY_DOCS      = NO
 BRIEF_MEMBER_DESC      = YES
 REPEAT_BRIEF           = YES
 ALWAYS_DETAILED_SEC    = NO
@@ -31,7 +33,7 @@ HIDE_SCOPE_NAMES       = NO
 VERBATIM_HEADERS       = YES
 SHOW_INCLUDE_FILES     = YES
 JAVADOC_AUTOBRIEF      = YES
-MULTILINE_CPP_IS_BRIEF = NO
+MULTILINE_CPP_IS_BRIEF = YES
 DETAILS_AT_TOP         = NO
 INHERIT_DOCS           = YES
 INLINE_INFO            = YES
@@ -48,13 +50,31 @@ MAX_INITIALIZER_LINES  = 30
 OPTIMIZE_OUTPUT_FOR_C  = YES
 OPTIMIZE_OUTPUT_JAVA   = NO
 SHOW_USED_FILES        = YES
-
+DIRECTORY_GRAPH        = YES
+DOCSET_BUNDLE_ID       = org.doxygen.Project
+DOCSET_FEEDNAME        = "Doxygen generated docs"
+DOXYFILE_ENCODING      = UTF-8
+FORMULA_FONTSIZE       = 10
+TYPEDEF_HIDES_STRUCT   = YES
+ABBREVIATE_BRIEF       = "The $name class" \
+                         "The $name widget" \
+                         "The $name file" \
+                         is \
+                         provides \
+                         specifies \
+                         contains \
+                         represents \
+                         a \
+                         an \
+                         the
 #---------------------------------------------------------------------------
 # configuration options related to warning and progress messages
 #---------------------------------------------------------------------------
 QUIET                  = NO
 WARNINGS               = YES
 WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = NO
 WARN_FORMAT            = "$file:$line: $text"
 WARN_LOGFILE           = @PROJECT_BINARY_DIR@/doc/doxygen.warnings.log
 
@@ -67,7 +87,13 @@ FILE_PATTERNS          = *.h
 RECURSIVE              = YES
 EXCLUDE_SYMLINKS       = NO
 EXCLUDE_PATTERNS       = "**/.svn/**" \
-                         "**/.git/**"
+                         "**/.git/**" \
+                         "**/Lucene.h"
+                         "*/test/*" \
+                         "*/md5/*" \
+                         "*/nedmalloc/*" \
+                         "*/utf8/*" \
+                         "*/zlib/*"
 EXAMPLE_PATH           = 
 EXAMPLE_PATTERNS       = 
 EXAMPLE_RECURSIVE      = NO
@@ -103,6 +129,7 @@ HTML_HEADER            = @PROJECT_BINARY_DIR@/doc/helpheader.htm
 HTML_FOOTER            = @PROJECT_BINARY_DIR@/doc/helpfooter.htm
 HTML_STYLESHEET        = 
 HTML_ALIGN_MEMBERS     = YES
+HTML_DYNAMIC_SECTIONS  = YES
 
 GENERATE_HTMLHELP      = @DOCS_HTML_HELP@
 CHM_FILE               = ../lucene++.chm
@@ -127,7 +154,7 @@ COMPACT_LATEX          = NO
 PAPER_TYPE             = a4wide
 EXTRA_PACKAGES         = 
 LATEX_HEADER           = 
-PDF_HYPERLINKS         = NO
+PDF_HYPERLINKS         = YES
 USE_PDFLATEX           = NO
 LATEX_BATCHMODE        = NO
 
@@ -157,6 +184,8 @@ MAN_LINKS              = NO
 GENERATE_XML           = @DOCS_XML@
 XML_SCHEMA             = 
 XML_DTD                = 
+XML_OUTPUT             = xml
+XML_PROGRAMLISTING     = YES
 
 #---------------------------------------------------------------------------
 # configuration options for the AutoGen Definitions output
@@ -172,9 +201,7 @@ ENABLE_PREPROCESSING   = YES
 MACRO_EXPANSION        = YES
 EXPAND_ONLY_PREDEF     = NO
 SEARCH_INCLUDES        = YES
-INCLUDE_PATH           = @PROJECT_SOURCE_DIR@/src/core
-INCLUDE_PATH           += @PROJECT_SOURCE_DIR@/src/shared
-INCLUDE_PATH           += @PROJECT_BINARY_DIR@/src/shared
+INCLUDE_PATH           = 
 INCLUDE_FILE_PATTERNS  = 
 
 PREDEFINED             = ""
@@ -201,7 +228,7 @@ HIDE_UNDOC_RELATIONS   = YES
 HAVE_DOT               = @HAVE_DOT@
 CLASS_GRAPH            = YES
 COLLABORATION_GRAPH    = YES
-TEMPLATE_RELATIONS     = YES
+TEMPLATE_RELATIONS     = NO
 INCLUDE_GRAPH          = YES
 INCLUDED_BY_GRAPH      = YES
 GRAPHICAL_HIERARCHY    = YES
@@ -210,9 +237,15 @@ DOT_PATH               = @DOXYGEN_DOT_EXECUTABLE@
 DOTFILE_DIRS           = 
 GENERATE_LEGEND        = YES
 DOT_CLEANUP            = YES
+DOT_FONTNAME           = FreeSans
+DOT_FONTPATH           = 
+DOT_FONTSIZE           = 10
+DOT_GRAPH_MAX_NODES    = 50
+DOT_MULTI_TARGETS      = NO
+DOT_TRANSPARENT        = NO
 
 #---------------------------------------------------------------------------
 # Configuration::addtions related to the search engine   
 #---------------------------------------------------------------------------
 
-SEARCHENGINE           = NO
+SEARCHENGINE           = YES

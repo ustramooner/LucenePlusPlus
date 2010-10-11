@@ -6,7 +6,7 @@
 
 #include "stdafx.h"
 
-#if defined(_WIN32) && defined(LPP_HAVE_DLL)
+#if ( defined(_WIN32) || defined(_WIN64) ) && defined(LPP_HAVE_DLL)
 
 BOOL APIENTRY DllMain(HMODULE module, DWORD ul_reason_for_call, LPVOID lpReserved)
 {

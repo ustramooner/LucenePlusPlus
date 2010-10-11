@@ -12,7 +12,7 @@
 namespace Lucene
 {
 	/// A {@link TokenFilter} that applies {@link BrazilianStemmer}.
-	class LPPAPI BrazilianStemFilter : public TokenFilter
+	class LPPCONTRIBAPI BrazilianStemFilter : public TokenFilter
 	{
 	public:
 		BrazilianStemFilter(TokenStreamPtr input);

@@ -19,7 +19,7 @@ namespace Lucene
     {
         #if defined(LPP_USE_NEDMALLOC)
         return nedalloc::nedmalloc(size);
-        #elif defined(_WIN32) && defined(_DEBUG) 
+        #elif (defined(_WIN32) || defined(_WIN64)) && defined(_DEBUG) 
         return _malloc_dbg(size, _NORMAL_BLOCK, __FILE__, __LINE__);
         #else
         return malloc(size);

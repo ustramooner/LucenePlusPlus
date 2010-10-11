@@ -12,7 +12,7 @@
 namespace Lucene
 {
 	/// A {@link TokenFilter} that applies {@link ArabicStemmer} to stem Arabic words.
-	class LPPAPI ArabicStemFilter : public TokenFilter
+	class LPPCONTRIBAPI ArabicStemFilter : public TokenFilter
 	{
 	public:
 		ArabicStemFilter(TokenStreamPtr input);

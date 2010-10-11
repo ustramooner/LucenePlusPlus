@@ -11,7 +11,7 @@
 namespace Lucene
 {
 	/// Lightweight class to hold term, weight, and positions used for scoring this term.
-	class LPPAPI WeightedSpanTerm : public WeightedTerm
+	class LPPCONTRIBAPI WeightedSpanTerm : public WeightedTerm
 	{
 	public:
 	    WeightedSpanTerm(double weight, const String& term, bool positionSensitive = false);
@@ -38,7 +38,7 @@ namespace Lucene
 	};
 	
 	/// Utility class to store a Span
-	class LPPAPI PositionSpan : public LuceneObject
+	class LPPCONTRIBAPI PositionSpan : public LuceneObject
 	{
 	public:
 	    PositionSpan(int32_t start, int32_t end);

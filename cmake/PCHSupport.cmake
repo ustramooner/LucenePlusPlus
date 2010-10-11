@@ -7,6 +7,12 @@
 # Macro:
 #   ADD_PRECOMPILED_HEADER  _targetName _input  _dowarn
 #   ADD_PRECOMPILED_HEADER_TO_TARGET _targetName _input _pch_output_to_use _dowarn
+#
+# Since this macro set's COMPILER_FLAGS on a target, you must use the following
+# variables instead:
+# set PCH_ADDITIONAL_COMPILER_FLAGS to add extra COMPILER_FLAGS to targets
+# set PCH_ADDITIONAL_COMPILER_FLAGS_${targetName} to add extra COMPILER_FLAGS to a specific target
+# 
 
 IF(CMAKE_COMPILER_IS_GNUCXX)
 
@@ -14,7 +20,7 @@ IF(CMAKE_COMPILER_IS_GNUCXX)
     	${CMAKE_CXX_COMPILER}  
         ARGS 	${CMAKE_CXX_COMPILER_ARG1} -dumpversion 
         OUTPUT_VARIABLE gcc_compiler_version)
-    MESSAGE("GCC Version: ${gcc_compiler_version}")
+    #MESSAGE("GCC Version: ${gcc_compiler_version}")
     IF(gcc_compiler_version MATCHES "4\\.[0-9]\\.[0-9]")
         SET(PCHSupport_FOUND TRUE)
     ELSE(gcc_compiler_version MATCHES "4\\.[0-9]\\.[0-9]")
@@ -26,13 +32,13 @@ IF(CMAKE_COMPILER_IS_GNUCXX)
 	SET(_PCH_include_prefix "-I")
 	
 ELSE(CMAKE_COMPILER_IS_GNUCXX)
-  IF(WIN32)	
+  IF( (WIN32 || WIN64) )	
     #SET(PCHSupport_FOUND TRUE) # for experimental msvc support
     #SET(_PCH_include_prefix "/I")
     SET(PCHSupport_FOUND FALSE)
-  ELSE(WIN32)
+  ELSE( (WIN32 || WIN64) )
     SET(PCHSupport_FOUND FALSE)
-  ENDIF(WIN32)	
+  ENDIF( (WIN32 || WIN64) )	
 ENDIF(CMAKE_COMPILER_IS_GNUCXX)
 
 
@@ -117,10 +123,11 @@ ENDMACRO(_PCH_GET_COMPILE_COMMAND )
 
 
 
-MACRO(_PCH_GET_TARGET_COMPILE_FLAGS _cflags  _header_name _pch_path _dowarn )
+
+MACRO(_PCH_GET_TARGET_COMPILE_FLAGS _targetName _cflags  _header_name _pch_path _dowarn )
 
   FILE(TO_NATIVE_PATH ${_pch_path} _native_pch_path)
-  message(${_native_pch_path})
+  #message(${_native_pch_path})
   
   IF(CMAKE_COMPILER_IS_GNUCXX)
     # for use with distcc and gcc >4.0.1 if preprocessed files are accessible
@@ -130,9 +137,9 @@ MACRO(_PCH_GET_TARGET_COMPILE_FLAGS _cflags  _header_name _pch_path _dowarn )
     # if you have different versions of the headers for different build types
     # you may set _pch_dowarn
     IF (_dowarn)
-      SET(${_cflags} "${PCH_ADDITIONAL_COMPILER_FLAGS} -include ${CMAKE_CURRENT_BINARY_DIR}/${_header_name} -Winvalid-pch " )
+      SET(${_cflags} "${PCH_ADDITIONAL_COMPILER_FLAGS} ${PCH_ADDITIONAL_COMPILER_FLAGS_${_targetName}} -include ${CMAKE_CURRENT_BINARY_DIR}/${_header_name} -Winvalid-pch " )
     ELSE (_dowarn)
-      SET(${_cflags} "${PCH_ADDITIONAL_COMPILER_FLAGS} -include ${CMAKE_CURRENT_BINARY_DIR}/${_header_name} " )
+      SET(${_cflags} "${PCH_ADDITIONAL_COMPILER_FLAGS} ${PCH_ADDITIONAL_COMPILER_FLAGS_${_targetName}} -include ${CMAKE_CURRENT_BINARY_DIR}/${_header_name} " )
     ENDIF (_dowarn)
   ELSE(CMAKE_COMPILER_IS_GNUCXX)
     
@@ -162,8 +169,8 @@ MACRO(ADD_PRECOMPILED_HEADER_TO_TARGET _targetName _input _pch_output_to_use )
     ENDIF("${ARGN}" STREQUAL "0")
   
   
-    _PCH_GET_TARGET_COMPILE_FLAGS(_target_cflags ${_name} ${_pch_output_to_use} ${_dowarn})
-    #  MESSAGE("Add flags ${_target_cflags} to ${_targetName} " )
+    _PCH_GET_TARGET_COMPILE_FLAGS(${_targetName} _target_cflags ${_name} ${_pch_output_to_use} ${_dowarn})
+    #MESSAGE("Add flags ${_target_cflags} to ${_targetName} " )
     
     SET_TARGET_PROPERTIES(${_targetName} 
       PROPERTIES  
@@ -205,7 +212,7 @@ MACRO(ADD_PRECOMPILED_HEADER _targetName _input)
     GET_TARGET_PROPERTY(_targetType ${_PCH_current_target} TYPE)
      _PCH_WRITE_PCHDEP_CXX(${_targetName} ${_input} _pch_dephelp_cxx)
   
-     MESSAGE(${_pch_dephelp_cxx})
+     #MESSAGE(${_pch_dephelp_cxx})
     IF(${_targetType} STREQUAL SHARED_LIBRARY)
       ADD_LIBRARY(${_targetName}_pch_dephelp SHARED ${_pch_dephelp_cxx} )
     ELSE(${_targetType} STREQUAL SHARED_LIBRARY)
@@ -216,6 +223,8 @@ MACRO(ADD_PRECOMPILED_HEADER _targetName _input)
   
     
     _PCH_GET_COMPILE_FLAGS(_compile_FLAGS)
+    
+    SET(_compile_FLAGS ${_compile_FLAGS} ${PCH_ADDITIONAL_COMPILER_FLAGS} ${PCH_ADDITIONAL_COMPILER_FLAGS_${_targetName}})
     
     #MESSAGE("_compile_FLAGS: ${_compile_FLAGS}")
     #message("COMMAND ${CMAKE_CXX_COMPILER}	${_compile_FLAGS} -x c++-header -o ${_output} ${_input}")

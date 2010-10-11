@@ -11,7 +11,7 @@
 
 namespace Lucene
 {
-	class LPPAPI MapWeightedSpanTerm : public LuceneObject
+	class LPPCONTRIBAPI MapWeightedSpanTerm : public LuceneObject
 	{
 	public:
 	    virtual ~MapWeightedSpanTerm();
