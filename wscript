@@ -24,35 +24,37 @@ source_patterns = [
 ]
 
 lucene_source_dirs = [
-    'src/core/analysis',
-    'src/core/document',
-    'src/core/index',
-    'src/core/queryparser',
-    'src/core/search',
-    'src/core/store',
-    'src/core/util'
+    'analysis',
+    'document',
+    'index',
+    'queryparser',
+    'search',
+    'store',
+    'util'
 ]
 
 lucene_contrib_source_dirs = [
-    'src/contrib'
+    'contrib'
 ]
 
 lucene_include_dirs = [
-    'src/core/include',
     'include',
-    'src/contrib/include',
-    'src/contrib/snowball/libstemmer_c/include'
+    'contrib/include',
+    'contrib/snowball/libstemmer_c/include',
+    'util/md5',
+    'util/nedmalloc',
+    'util/zlib',
+    'util/unicode'
 ]
 
 tester_source_dirs = [
-    'src/test'
+    'test'
 ]
 
 tester_include_dirs = [
     'include',
-    'src/core/include',
-    'src/contrib/include',
-    'src/test/include'
+    'contrib/include',
+    'test/include'
 ]
 
 
@@ -91,10 +93,9 @@ def build(bld):
     target_type = 'cstaticlib' if Options.options.static else 'cshlib'
     debug_define = '_DEBUG' if Options.options.debug else 'NDEBUG'
     if Options.options.debug:
-         compile_flags = ['-O0', '-g', '-m32'] 
+         compile_flags = ['-O0', '-g'] 
     else:
-         compile_flags = ['-O2', '-m32']
-    link_flags = ['-m32']        
+         compile_flags = ['-O2']
     lucene_sources = []
     for source_dir in lucene_source_dirs:
         source_dir = bld.path.find_dir(source_dir)
@@ -108,7 +109,6 @@ def build(bld):
         includes = lucene_include_dirs + [bld.env["CPPPATH_BOOST"]],
         ccflags = compile_flags,
         cxxflags = compile_flags,
-        linkflags = link_flags,
         defines = ['LPP_BUILDING_LIB', 'LPP_HAVE_GXXCLASSVISIBILITY'] + [debug_define],
         uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD'
         )
@@ -126,7 +126,6 @@ def build(bld):
         includes = lucene_include_dirs + [bld.env["CPPPATH_BOOST"]],
         ccflags = compile_flags,
         cxxflags = compile_flags,
-        linkflags = link_flags,
         defines = ['LPP_BUILDING_LIB', 'LPP_HAVE_GXXCLASSVISIBILITY'] + [debug_define],
         uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD',
         uselib_local = 'lucene++'
@@ -145,8 +144,7 @@ def build(bld):
         includes = tester_include_dirs + [bld.env["CPPPATH_BOOST"]],
         ccflags = compile_flags,
         cxxflags = compile_flags,
-        linkflags = link_flags,
-        defines = ['LPP_EXPOSE_INTERNAL', 'LPP_HAVE_GXXCLASSVISIBILITY'] + [debug_define],
+        defines = ['LPP_HAVE_GXXCLASSVISIBILITY'] + [debug_define],
         uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS BOOST_UNIT_TEST_FRAMEWORK PTHREAD',
         uselib_local = 'lucene++ lucene_contrib'
         )
@@ -154,12 +152,11 @@ def build(bld):
     bld(
         name = 'deletefiles',
         features = ['cxx', 'cc', 'cprogram'],
-        source = bld.path.find_resource('src/demo/deletefiles/main.cpp').relpath_gen(bld.path),
+        source = bld.path.find_resource('demo/deletefiles/main.cpp').relpath_gen(bld.path),
         target = 'deletefiles',
         includes = ['include'] + [bld.env["CPPPATH_BOOST"]],
         ccflags = compile_flags,
         cxxflags = compile_flags,
-        linkflags = link_flags,
         defines = ['LPP_HAVE_GXXCLASSVISIBILITY'] + [debug_define],
         uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD',
         uselib_local = 'lucene++'
@@ -168,12 +165,11 @@ def build(bld):
     bld(
         name = 'indexfiles',
         features = ['cxx', 'cc', 'cprogram'],
-        source = bld.path.find_resource('src/demo/indexfiles/main.cpp').relpath_gen(bld.path),
+        source = bld.path.find_resource('demo/indexfiles/main.cpp').relpath_gen(bld.path),
         target = 'indexfiles',
         includes = ['include'] + [bld.env["CPPPATH_BOOST"]],
         ccflags = compile_flags,
         cxxflags = compile_flags,
-        linkflags = link_flags,
         defines = ['LPP_HAVE_GXXCLASSVISIBILITY'] + [debug_define],
         uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD',
         uselib_local = 'lucene++'
@@ -182,12 +178,11 @@ def build(bld):
     bld(
         name = 'searchfiles',
         features = ['cxx', 'cc', 'cprogram'],
-        source = bld.path.find_resource('src/demo/searchfiles/main.cpp').relpath_gen(bld.path),
+        source = bld.path.find_resource('demo/searchfiles/main.cpp').relpath_gen(bld.path),
         target = 'searchfiles',
         includes = ['include'] + [bld.env["CPPPATH_BOOST"]],
         ccflags = compile_flags,
         cxxflags = compile_flags,
-        linkflags = link_flags,
         defines = ['LPP_HAVE_GXXCLASSVISIBILITY'] + [debug_define],
         uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD',
         uselib_local = 'lucene++'
