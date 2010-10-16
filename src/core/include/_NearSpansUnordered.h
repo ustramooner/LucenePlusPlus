@@ -14,7 +14,7 @@ namespace Lucene
 		LUCENE_CLASS(SpansCell);
 	
 	protected:
-		NearSpansUnorderedWeakPtr unordered;
+		NearSpansUnorderedWeakPtr _unordered;
 		SpansPtr spans;
 		SpansCellPtr _next;
 		int32_t length;
