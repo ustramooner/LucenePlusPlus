@@ -6,7 +6,7 @@
 
 #pragma once
 
-#ifdef _DEBUG
+#ifdef LPP_USE_CYCLIC_CHECK
 #define LUCENE_INTERFACE(Name) \
 	static String _getClassName() { return L###Name; } \
 	virtual String getClassName() { return L###Name; } \
