@@ -8,8 +8,8 @@
 #   ADD_PRECOMPILED_HEADER  _targetName _input  _dowarn
 #   ADD_PRECOMPILED_HEADER_TO_TARGET _targetName _input _pch_output_to_use _dowarn
 #
-# Since this macro set's COMPILER_FLAGS on a target, you must use the following
-# variables instead:
+# Since this macro overides COMPILER_FLAGS on a target, you must use the following
+# variables instead.
 # set PCH_ADDITIONAL_COMPILER_FLAGS to add extra COMPILER_FLAGS to targets
 # set PCH_ADDITIONAL_COMPILER_FLAGS_${targetName} to add extra COMPILER_FLAGS to a specific target
 # 
@@ -32,13 +32,13 @@ IF(CMAKE_COMPILER_IS_GNUCXX)
 	SET(_PCH_include_prefix "-I")
 	
 ELSE(CMAKE_COMPILER_IS_GNUCXX)
-  IF( (WIN32 || WIN64) )	
+  IF( (WIN32 OR WIN64) )	
     #SET(PCHSupport_FOUND TRUE) # for experimental msvc support
     #SET(_PCH_include_prefix "/I")
     SET(PCHSupport_FOUND FALSE)
-  ELSE( (WIN32 || WIN64) )
+  ELSE( (WIN32 OR WIN64) )
     SET(PCHSupport_FOUND FALSE)
-  ENDIF( (WIN32 || WIN64) )	
+  ENDIF( (WIN32 OR WIN64) )	
 ENDIF(CMAKE_COMPILER_IS_GNUCXX)
 
 
@@ -182,6 +182,11 @@ MACRO(ADD_PRECOMPILED_HEADER_TO_TARGET _targetName _input _pch_output_to_use )
     )
     
     ADD_DEPENDENCIES(${_targetName} pch_Generate_${_targetName} )
+  else ( PCHSupport_FOUND )
+    SET_TARGET_PROPERTIES(${_targetName} 
+      PROPERTIES  
+      COMPILE_FLAGS ${PCH_ADDITIONAL_COMPILER_FLAGS} ${PCH_ADDITIONAL_COMPILER_FLAGS_${_targetName}}
+    )
   endif ( PCHSupport_FOUND )
 ENDMACRO(ADD_PRECOMPILED_HEADER_TO_TARGET)
 

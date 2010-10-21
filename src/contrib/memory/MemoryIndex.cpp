@@ -163,6 +163,7 @@ namespace Lucene
             finally = e;
         }
         finally.throwException();
+        return 0; //silence static analyzers
     }
     
     int32_t MemoryIndex::numPositions(Collection<int32_t> positions)

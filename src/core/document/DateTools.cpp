@@ -46,6 +46,9 @@ namespace Lucene
                 std::string fraction(timeString.length() > 16 ? timeString.substr(16, 3) : "000" );
                 return StringUtils::toUnicode(std::string(timeString.substr(0, 8) + timeString.substr(9, 6) + fraction).c_str());
             }
+            case RESOLUTION_NULL:
+                //silence static analyzers
+                break;
         }
         
         boost::throw_exception(IllegalArgumentException(L"unknown resolution '" + StringUtils::toString(resolution) + L"'"));
@@ -108,6 +111,10 @@ namespace Lucene
                                                 boost::posix_time::seconds(boost::posix_time::time_duration(date.time_of_day()).seconds()));
             case RESOLUTION_MILLISECOND:
                 return date;
+                
+            case RESOLUTION_NULL:
+                //silence static analyzers
+                break;
         }
         
         return boost::posix_time::ptime();
@@ -134,6 +141,14 @@ namespace Lucene
                 return DATEORDER_DMY;
             case std::time_get<wchar_t>::mdy:
                 return DATEORDER_MDY;
+            case std::time_get<wchar_t>::ydm:
+              boost::throw_exception(IllegalArgumentException(L"YDM is not valid date order"));
+              break;
+                
+            case std::time_get<wchar_t>::no_order:
+            case std::time_get<wchar_t>::ymd:
+              //silence static analyzers
+              break;
         }
         
         return DATEORDER_YMD;
@@ -182,6 +197,9 @@ namespace Lucene
                 dateFormats.add(L"%Y" + delimiter + L"%B" + delimiter + L"%d");
                 dateFormats.add(L"%y" + delimiter + L"%B" + delimiter + L"%d");
                 break;
+            case DATEORDER_LOCALE:
+              //silence static analyzers
+              break;
         }
         
         boost::date_time::format_date_parser<boost::gregorian::date, wchar_t> parser(L"", locale);

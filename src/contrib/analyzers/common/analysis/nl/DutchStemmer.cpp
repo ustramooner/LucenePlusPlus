@@ -195,24 +195,24 @@ namespace Lucene
         {
             switch (buffer[i])
             {
-                case L'\u00e4':
-                case L'\u00e1':
+                case L'\x00e4':
+                case L'\x00e1':
                     buffer[i] = L'a';
                     break;
-                case L'\u00eb':
-                case L'\u00e9':
+                case L'\x00eb':
+                case L'\x00e9':
                     buffer[i] = L'e';
                     break;
-                case L'\u00fc':
-                case L'\u00fa':
+                case L'\x00fc':
+                case L'\x00fa':
                     buffer[i] = L'u';
                     break;
-                case L'\u00ef':
+                case L'\x00ef':
                 case L'i':
                     buffer[i] = L'i';
                     break;
-                case L'\u00f6':
-                case L'\u00f3':
+                case L'\x00f6':
+                case L'\x00f3':
                     buffer[i] = L'o';
                     break;
             }
@@ -308,7 +308,7 @@ namespace Lucene
             case L'i':
             case L'u':
             case L'y':
-            case L'\u00e8':
+            case L'\x00e8':
                 return true;
             default:
                 return false;

@@ -3292,7 +3292,7 @@ namespace TestExceptionDocumentsWriterInit
     public:
         virtual bool testPoint(const wchar_t* name)
         {
-            if (doFail && name == L"DocumentsWriter.ThreadState.init start")
+            if (doFail && wcscmp(name, L"DocumentsWriter.ThreadState.init start")==0 )
                 boost::throw_exception(RuntimeException(L"intentionally failing"));
             return true;
         }
@@ -3337,7 +3337,7 @@ namespace TestExceptionJustBeforeFlush
     public:
         virtual bool testPoint(const wchar_t* name)
         {
-            if (doFail && name == L"DocumentsWriter.ThreadState.init start")
+            if (doFail && wcscmp(name, L"DocumentsWriter.ThreadState.init start") == 0 )
                 boost::throw_exception(RuntimeException(L"intentionally failing"));
             return true;
         }
@@ -3406,7 +3406,7 @@ namespace TestExceptionOnMergeInit
     public:
         virtual bool testPoint(const wchar_t* name)
         {
-            if (doFail && name == L"startMergeInit")
+            if (doFail && wcscmp(name, L"startMergeInit")==0 )
             {
                 failed = true;
                 boost::throw_exception(RuntimeException(L"intentionally failing"));
@@ -4004,7 +4004,7 @@ namespace TestRollbackExceptionHang
     public:
         virtual bool testPoint(const wchar_t* name)
         {
-            if (doFail && name == L"rollback before checkpoint")
+            if (doFail && wcscmp(name, L"rollback before checkpoint") == 0 )
                 boost::throw_exception(RuntimeException(L"intentionally failing"));
             return true;
         }
