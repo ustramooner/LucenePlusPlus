@@ -27,7 +27,7 @@ namespace Lucene
         this->lazy = false;
         this->omitTermFreqAndPositions = false;
         this->boost = 1.0;
-        this->fieldsData = Blank();
+        this->fieldsData = VariantUtils::null();
         
         this->binaryLength = 0;
         this->binaryOffset = 0;
@@ -45,7 +45,7 @@ namespace Lucene
         this->lazy = false;
         this->omitTermFreqAndPositions = false;
         this->boost = 1.0;
-        this->fieldsData = Blank();
+        this->fieldsData = VariantUtils::null();
         
         this->binaryLength = 0;
         this->binaryOffset = 0;

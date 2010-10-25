@@ -52,14 +52,14 @@ namespace Lucene
 	{
 	public:
 		/// Creates one of these objects for a custom comparator/parser.
-		Entry(const String& field, LuceneObjectPtr custom);
+		Entry(const String& field, boost::any custom);
 		virtual ~Entry();
 	
 		LUCENE_CLASS(Entry);
 	
 	public:
 		String field; // which Fieldable
-		LuceneObjectPtr custom; // which custom comparator or parser
+		boost::any custom; // which custom comparator or parser
 	
 	public:
 		/// Two of these are equal if they reference the same field and type.
@@ -80,17 +80,17 @@ namespace Lucene
 	
 	public:
 		FieldCacheWeakPtr _wrapper;
-		WeakMapLuceneObjectMapEntryLuceneObject readerCache;
+		WeakMapLuceneObjectMapEntryAny readerCache;
 	
 	protected:
-		virtual LuceneObjectPtr createValue(IndexReaderPtr reader, EntryPtr key) = 0;
+		virtual boost::any createValue(IndexReaderPtr reader, EntryPtr key) = 0;
 	
 	public:
 	    /// Remove this reader from the cache, if present.
 	    virtual void purge(IndexReaderPtr r);
 	    
-		virtual LuceneObjectPtr get(IndexReaderPtr reader, EntryPtr key);
-		virtual void printNewInsanity(InfoStreamPtr infoStream, LuceneObjectPtr value);
+      virtual boost::any get(IndexReaderPtr reader, EntryPtr key);
+      virtual void printNewInsanity(InfoStreamPtr infoStream, boost::any value);
 	};
 	
 	class ByteCache : public Cache
@@ -102,7 +102,7 @@ namespace Lucene
 		LUCENE_CLASS(ByteCache);
 	
 	protected:
-		virtual LuceneObjectPtr createValue(IndexReaderPtr reader, EntryPtr key);
+		virtual boost::any createValue(IndexReaderPtr reader, EntryPtr key);
 	};
 	
 	class IntCache : public Cache
@@ -114,7 +114,7 @@ namespace Lucene
 		LUCENE_CLASS(IntCache);
 	
 	protected:
-		virtual LuceneObjectPtr createValue(IndexReaderPtr reader, EntryPtr key);
+		virtual boost::any createValue(IndexReaderPtr reader, EntryPtr key);
 	};
 	
 	class LongCache : public Cache
@@ -126,7 +126,7 @@ namespace Lucene
 		LUCENE_CLASS(LongCache);
 	
 	protected:
-		virtual LuceneObjectPtr createValue(IndexReaderPtr reader, EntryPtr key);
+		virtual boost::any createValue(IndexReaderPtr reader, EntryPtr key);
 	};
 	
 	class DoubleCache : public Cache
@@ -138,7 +138,7 @@ namespace Lucene
 		LUCENE_CLASS(DoubleCache);
 	
 	protected:
-		virtual LuceneObjectPtr createValue(IndexReaderPtr reader, EntryPtr key);
+		virtual boost::any createValue(IndexReaderPtr reader, EntryPtr key);
 	};
 	
 	class StringCache : public Cache
@@ -150,7 +150,7 @@ namespace Lucene
 		LUCENE_CLASS(StringCache);
 	
 	protected:
-		virtual LuceneObjectPtr createValue(IndexReaderPtr reader, EntryPtr key);
+		virtual boost::any createValue(IndexReaderPtr reader, EntryPtr key);
 	};
 	
 	class StringIndexCache : public Cache
@@ -162,13 +162,13 @@ namespace Lucene
 		LUCENE_CLASS(StringIndexCache);
 	
 	protected:
-		virtual LuceneObjectPtr createValue(IndexReaderPtr reader, EntryPtr key);
+		virtual boost::any createValue(IndexReaderPtr reader, EntryPtr key);
 	};
 	
 	class FieldCacheEntryImpl : public FieldCacheEntry
 	{
 	public:
-		FieldCacheEntryImpl(LuceneObjectPtr readerKey, const String& fieldName, const String& cacheType, LuceneObjectPtr custom, LuceneObjectPtr value);
+		FieldCacheEntryImpl(LuceneObjectPtr readerKey, const String& fieldName, const String& cacheType, boost::any custom, boost::any value);
 		virtual ~FieldCacheEntryImpl();
 		
 		LUCENE_CLASS(FieldCacheEntryImpl);
@@ -177,14 +177,14 @@ namespace Lucene
 		LuceneObjectPtr readerKey;
 		String fieldName;
 		String cacheType;
-		LuceneObjectPtr custom;
-		LuceneObjectPtr value;
+		boost::any custom;
+		boost::any value;
 	
 	public:
 		virtual LuceneObjectPtr getReaderKey();
 		virtual String getFieldName();
 		virtual String getCacheType();
-		virtual LuceneObjectPtr getCustom();
-		virtual LuceneObjectPtr getValue();
+		virtual boost::any getCustom();
+		virtual boost::any getValue();
 	};
 }

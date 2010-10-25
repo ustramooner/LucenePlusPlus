@@ -181,10 +181,6 @@ namespace Lucene
         return InfoStreamPtr(); // override
     }
         
-    CreationPlaceholder::CreationPlaceholder()
-    {
-    }
-    
     CreationPlaceholder::~CreationPlaceholder()
     {
     }
@@ -360,8 +356,7 @@ namespace Lucene
     String FieldCacheEntry::toString()
     {
         StringStream buffer;
-        buffer << L"'" << getReaderKey()->toString() << L"'=>" << getFieldName() << L"',";
-        buffer << getCacheType() << L"," << getCustom()->toString() << L"=>" << getValue()->toString();
+        buffer << L"'" << getReaderKey()->toString() << L"'=>" << getFieldName() << L"'," << getCacheType();
         return buffer.str();
     }
 }

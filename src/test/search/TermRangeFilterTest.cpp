@@ -68,16 +68,16 @@ BOOST_AUTO_TEST_CASE(testRangeFilterId)
 
     // unbounded id
 
-    result = search->search(q,  newLucene<TermRangeFilter>(L"id", minIP, Blank(), true, false), numDocs)->scoreDocs;
+    result = search->search(q,  newLucene<TermRangeFilter>(L"id", minIP, VariantUtils::null(), true, false), numDocs)->scoreDocs;
     BOOST_CHECK_EQUAL(numDocs, result.size());
 
-    result = search->search(q,  newLucene<TermRangeFilter>(L"id", Blank(), maxIP, false, true), numDocs)->scoreDocs;
+    result = search->search(q,  newLucene<TermRangeFilter>(L"id", VariantUtils::null(), maxIP, false, true), numDocs)->scoreDocs;
     BOOST_CHECK_EQUAL(numDocs, result.size());
 
-    result = search->search(q,  newLucene<TermRangeFilter>(L"id", minIP, Blank(), false, false), numDocs)->scoreDocs;
+    result = search->search(q,  newLucene<TermRangeFilter>(L"id", minIP, VariantUtils::null(), false, false), numDocs)->scoreDocs;
     BOOST_CHECK_EQUAL(numDocs - 1, result.size());
 
-    result = search->search(q,  newLucene<TermRangeFilter>(L"id", Blank(), maxIP, false, false), numDocs)->scoreDocs;
+    result = search->search(q,  newLucene<TermRangeFilter>(L"id", VariantUtils::null(), maxIP, false, false), numDocs)->scoreDocs;
     BOOST_CHECK_EQUAL(numDocs - 1, result.size());
 
     result = search->search(q,  newLucene<TermRangeFilter>(L"id", medIP, maxIP, true, false), numDocs)->scoreDocs;
@@ -97,12 +97,12 @@ BOOST_AUTO_TEST_CASE(testRangeFilterId)
 
     result = search->search(q,  newLucene<TermRangeFilter>(L"id", minIP, minIP, true, true), numDocs)->scoreDocs;
     BOOST_CHECK_EQUAL(1, result.size());
-    result = search->search(q,  newLucene<TermRangeFilter>(L"id", Blank(), minIP, false, true), numDocs)->scoreDocs;
+    result = search->search(q,  newLucene<TermRangeFilter>(L"id", VariantUtils::null(), minIP, false, true), numDocs)->scoreDocs;
     BOOST_CHECK_EQUAL(1, result.size());
 
     result = search->search(q,  newLucene<TermRangeFilter>(L"id", maxIP, maxIP, true, true), numDocs)->scoreDocs;
     BOOST_CHECK_EQUAL(1, result.size());
-    result = search->search(q,  newLucene<TermRangeFilter>(L"id", maxIP, Blank(), true, false), numDocs)->scoreDocs;
+    result = search->search(q,  newLucene<TermRangeFilter>(L"id", maxIP, VariantUtils::null(), true, false), numDocs)->scoreDocs;
     BOOST_CHECK_EQUAL(1, result.size());
 
     result = search->search(q,  newLucene<TermRangeFilter>(L"id", medIP, medIP, true, true), numDocs)->scoreDocs;
@@ -150,16 +150,16 @@ BOOST_AUTO_TEST_CASE(testRangeFilterIdCollating)
 
     // unbounded id
 
-    numHits = search->search(q,  newLucene<TermRangeFilter>(L"id", minIP, Blank(), true, false, c), 1000)->totalHits;
+    numHits = search->search(q,  newLucene<TermRangeFilter>(L"id", minIP, VariantUtils::null(), true, false, c), 1000)->totalHits;
     BOOST_CHECK_EQUAL(numDocs, numHits);
 
-    numHits = search->search(q,  newLucene<TermRangeFilter>(L"id", Blank(), maxIP, false, true, c), 1000)->totalHits;
+    numHits = search->search(q,  newLucene<TermRangeFilter>(L"id", VariantUtils::null(), maxIP, false, true, c), 1000)->totalHits;
     BOOST_CHECK_EQUAL(numDocs, numHits);
 
-    numHits = search->search(q,  newLucene<TermRangeFilter>(L"id", minIP, Blank(), false, false, c), 1000)->totalHits;
+    numHits = search->search(q,  newLucene<TermRangeFilter>(L"id", minIP, VariantUtils::null(), false, false, c), 1000)->totalHits;
     BOOST_CHECK_EQUAL(numDocs - 1, numHits);
 
-    numHits = search->search(q,  newLucene<TermRangeFilter>(L"id", Blank(), maxIP, false, false, c), 1000)->totalHits;
+    numHits = search->search(q,  newLucene<TermRangeFilter>(L"id", VariantUtils::null(), maxIP, false, false, c), 1000)->totalHits;
     BOOST_CHECK_EQUAL(numDocs - 1, numHits);
 
     numHits = search->search(q,  newLucene<TermRangeFilter>(L"id", medIP, maxIP, true, false, c), 1000)->totalHits;
@@ -179,12 +179,12 @@ BOOST_AUTO_TEST_CASE(testRangeFilterIdCollating)
 
     numHits = search->search(q,  newLucene<TermRangeFilter>(L"id", minIP, minIP, true, true, c), 1000)->totalHits;
     BOOST_CHECK_EQUAL(1, numHits);
-    numHits = search->search(q,  newLucene<TermRangeFilter>(L"id", Blank(), minIP, false, true, c), 1000)->totalHits;
+    numHits = search->search(q,  newLucene<TermRangeFilter>(L"id", VariantUtils::null(), minIP, false, true, c), 1000)->totalHits;
     BOOST_CHECK_EQUAL(1, numHits);
 
     numHits = search->search(q,  newLucene<TermRangeFilter>(L"id", maxIP, maxIP, true, true, c), 1000)->totalHits;
     BOOST_CHECK_EQUAL(1, numHits);
-    numHits = search->search(q,  newLucene<TermRangeFilter>(L"id", maxIP, Blank(), true, false, c), 1000)->totalHits;
+    numHits = search->search(q,  newLucene<TermRangeFilter>(L"id", maxIP, VariantUtils::null(), true, false, c), 1000)->totalHits;
     BOOST_CHECK_EQUAL(1, numHits);
 
     numHits = search->search(q,  newLucene<TermRangeFilter>(L"id", medIP, medIP, true, true, c), 1000)->totalHits;
@@ -221,16 +221,16 @@ BOOST_AUTO_TEST_CASE(testRangeFilterRand)
 
     // unbounded
 
-    result = search->search(q, newLucene<TermRangeFilter>(L"rand", minRP, Blank(), true, false), numDocs)->scoreDocs;
+    result = search->search(q, newLucene<TermRangeFilter>(L"rand", minRP, VariantUtils::null(), true, false), numDocs)->scoreDocs;
     BOOST_CHECK_EQUAL(numDocs, result.size());
 
-    result = search->search(q, newLucene<TermRangeFilter>(L"rand", Blank(), maxRP, false, true), numDocs)->scoreDocs;
+    result = search->search(q, newLucene<TermRangeFilter>(L"rand", VariantUtils::null(), maxRP, false, true), numDocs)->scoreDocs;
     BOOST_CHECK_EQUAL(numDocs, result.size());
 
-    result = search->search(q, newLucene<TermRangeFilter>(L"rand", minRP, Blank(), false, false), numDocs)->scoreDocs;
+    result = search->search(q, newLucene<TermRangeFilter>(L"rand", minRP, VariantUtils::null(), false, false), numDocs)->scoreDocs;
     BOOST_CHECK_EQUAL(numDocs - 1, result.size());
 
-    result = search->search(q, newLucene<TermRangeFilter>(L"rand", Blank(), maxRP, false, false), numDocs)->scoreDocs;
+    result = search->search(q, newLucene<TermRangeFilter>(L"rand", VariantUtils::null(), maxRP, false, false), numDocs)->scoreDocs;
     BOOST_CHECK_EQUAL(numDocs - 1, result.size());
 
     // very small sets
@@ -242,12 +242,12 @@ BOOST_AUTO_TEST_CASE(testRangeFilterRand)
 
     result = search->search(q, newLucene<TermRangeFilter>(L"rand", minRP, minRP, true, true), numDocs)->scoreDocs;
     BOOST_CHECK_EQUAL(1, result.size());
-    result = search->search(q, newLucene<TermRangeFilter>(L"rand", Blank(), minRP, false, true), numDocs)->scoreDocs;
+    result = search->search(q, newLucene<TermRangeFilter>(L"rand", VariantUtils::null(), minRP, false, true), numDocs)->scoreDocs;
     BOOST_CHECK_EQUAL(1, result.size());
 
     result = search->search(q, newLucene<TermRangeFilter>(L"rand", maxRP, maxRP, true, true), numDocs)->scoreDocs;
     BOOST_CHECK_EQUAL(1, result.size());
-    result = search->search(q, newLucene<TermRangeFilter>(L"rand", maxRP, Blank(), true, false), numDocs)->scoreDocs;
+    result = search->search(q, newLucene<TermRangeFilter>(L"rand", maxRP, VariantUtils::null(), true, false), numDocs)->scoreDocs;
     BOOST_CHECK_EQUAL(1, result.size());
 }
 
@@ -284,16 +284,16 @@ BOOST_AUTO_TEST_CASE(testRangeFilterRandCollating)
 
     // unbounded
 
-    numHits = search->search(q, newLucene<TermRangeFilter>(L"rand", minRP, Blank(), true, false, c), 1000)->totalHits;
+    numHits = search->search(q, newLucene<TermRangeFilter>(L"rand", minRP, VariantUtils::null(), true, false, c), 1000)->totalHits;
     BOOST_CHECK_EQUAL(numDocs, numHits);
 
-    numHits = search->search(q, newLucene<TermRangeFilter>(L"rand", Blank(), maxRP, false, true, c), 1000)->totalHits;
+    numHits = search->search(q, newLucene<TermRangeFilter>(L"rand", VariantUtils::null(), maxRP, false, true, c), 1000)->totalHits;
     BOOST_CHECK_EQUAL(numDocs, numHits);
 
-    numHits = search->search(q, newLucene<TermRangeFilter>(L"rand", minRP, Blank(), false, false, c), 1000)->totalHits;
+    numHits = search->search(q, newLucene<TermRangeFilter>(L"rand", minRP, VariantUtils::null(), false, false, c), 1000)->totalHits;
     BOOST_CHECK_EQUAL(numDocs - 1, numHits);
 
-    numHits = search->search(q, newLucene<TermRangeFilter>(L"rand", Blank(), maxRP, false, false, c), 1000)->totalHits;
+    numHits = search->search(q, newLucene<TermRangeFilter>(L"rand", VariantUtils::null(), maxRP, false, false, c), 1000)->totalHits;
     BOOST_CHECK_EQUAL(numDocs - 1, numHits);
 
     // very small sets
@@ -305,12 +305,12 @@ BOOST_AUTO_TEST_CASE(testRangeFilterRandCollating)
 
     numHits = search->search(q, newLucene<TermRangeFilter>(L"rand", minRP, minRP, true, true, c), 1000)->totalHits;
     BOOST_CHECK_EQUAL(1, numHits);
-    numHits = search->search(q, newLucene<TermRangeFilter>(L"rand", Blank(), minRP, false, true, c), 1000)->totalHits;
+    numHits = search->search(q, newLucene<TermRangeFilter>(L"rand", VariantUtils::null(), minRP, false, true, c), 1000)->totalHits;
     BOOST_CHECK_EQUAL(1, numHits);
 
     numHits = search->search(q, newLucene<TermRangeFilter>(L"rand", maxRP, maxRP, true, true, c), 1000)->totalHits;
     BOOST_CHECK_EQUAL(1, numHits);
-    numHits = search->search(q, newLucene<TermRangeFilter>(L"rand", maxRP, Blank(), true, false, c), 1000)->totalHits;
+    numHits = search->search(q, newLucene<TermRangeFilter>(L"rand", maxRP, VariantUtils::null(), true, false, c), 1000)->totalHits;
     BOOST_CHECK_EQUAL(1, numHits);
 }
 
