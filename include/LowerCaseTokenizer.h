@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef LOWERCASETOKENIZER_H
+#define LOWERCASETOKENIZER_H
 
 #include "LetterTokenizer.h"
 
@@ -38,3 +39,5 @@ namespace Lucene
 		virtual wchar_t normalize(wchar_t c);
 	};
 }
+
+#endif

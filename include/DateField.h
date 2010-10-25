@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DATEFIELD_H
+#define DATEFIELD_H
 
 #include "LuceneObject.h"
 #include <boost/date_time/posix_time/ptime.hpp>
@@ -52,3 +53,5 @@ namespace Lucene
 		static int64_t stringToTime(const String& s);
 	};
 }
+
+#endif

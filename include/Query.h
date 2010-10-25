@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef QUERY_H
+#define QUERY_H
 
 #include "LuceneObject.h"
 
@@ -108,3 +109,5 @@ namespace Lucene
 		String boostString();
 	};
 }
+
+#endif

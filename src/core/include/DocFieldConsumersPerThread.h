@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DOCFIELDCONSUMERSPERTHREAD_H
+#define DOCFIELDCONSUMERSPERTHREAD_H
 
 #include "DocFieldConsumerPerThread.h"
 
@@ -32,3 +33,5 @@ namespace Lucene
 		virtual DocFieldConsumerPerFieldPtr addField(FieldInfoPtr fi);		
 	};
 }
+
+#endif

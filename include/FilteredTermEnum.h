@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FILTEREDTERMENUM_H
+#define FILTEREDTERMENUM_H
 
 #include "TermEnum.h"
 
@@ -57,3 +58,5 @@ namespace Lucene
 		virtual void setEnum(TermEnumPtr actualEnum);
 	};
 }
+
+#endif

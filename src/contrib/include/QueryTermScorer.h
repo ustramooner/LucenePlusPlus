@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef QUERYTERMSCORER_H
+#define QUERYTERMSCORER_H
 
 #include "LuceneContrib.h"
 #include "HighlighterScorer.h"
@@ -66,3 +67,5 @@ namespace Lucene
 	    virtual double getMaxTermWeight();
 	};
 }
+
+#endif

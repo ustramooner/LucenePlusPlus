@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef GRADIENTFORMATTER_H
+#define GRADIENTFORMATTER_H
 
 #include "Formatter.h"
 
@@ -55,3 +56,5 @@ namespace Lucene
         static int32_t hexToInt(const String& hex);
 	};
 }
+
+#endif

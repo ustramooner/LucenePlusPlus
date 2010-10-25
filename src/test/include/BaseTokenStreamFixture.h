@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BASETOKENSTREAMFIXTURE_H
+#define BASETOKENSTREAMFIXTURE_H
 
 #include "LuceneTestFixture.h"
 #include "Attribute.h"
@@ -73,3 +74,5 @@ namespace Lucene
 	};
 }
 
+
+#endif

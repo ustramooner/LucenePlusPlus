@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef NOLOCKFACTORY_H
+#define NOLOCKFACTORY_H
 
 #include "LockFactory.h"
 #include "Lock.h"
@@ -37,3 +38,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

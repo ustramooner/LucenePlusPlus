@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MULTILEVELSKIPLISTREADER_H
+#define MULTILEVELSKIPLISTREADER_H
 
 #include "IndexInput.h"
 
@@ -118,3 +119,5 @@ namespace Lucene
 		virtual void seek(int64_t pos);
 	};
 }
+
+#endif

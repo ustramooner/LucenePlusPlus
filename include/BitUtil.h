@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BITUTIL_H
+#define BITUTIL_H
 
 #include "LuceneObject.h"
 
@@ -70,3 +71,5 @@ namespace Lucene
 		inline static void CSA(uint64_t& h, uint64_t& l, uint64_t a, uint64_t b, uint64_t c); 
 	};
 }
+
+#endif

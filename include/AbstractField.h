@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef ABSTRACTFIELD_H
+#define ABSTRACTFIELD_H
 
 #include "Fieldable.h"
 
@@ -219,3 +220,5 @@ namespace Lucene
 		void setStoreTermVector(TermVector termVector);
 	};
 }
+
+#endif

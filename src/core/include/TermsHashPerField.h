@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMSHASHPERFIELD_H
+#define TERMSHASHPERFIELD_H
 
 #include "InvertedDocConsumerPerField.h"
 
@@ -97,3 +98,5 @@ namespace Lucene
 		bool postingEquals(const wchar_t* tokenText, int32_t tokenTextLen);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DOCFIELDPROCESSOR_H
+#define DOCFIELDPROCESSOR_H
 
 #include "DocConsumer.h"
 
@@ -35,3 +36,5 @@ namespace Lucene
 		virtual DocConsumerPerThreadPtr addThread(DocumentsWriterThreadStatePtr perThread);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef INFOSTREAM_H
+#define INFOSTREAM_H
 #include "LuceneObject.h"
 #include <fstream>
 
@@ -50,3 +51,5 @@ namespace Lucene
 		virtual InfoStreamOut& operator<< (const String& t);
 	};
 }
+
+#endif

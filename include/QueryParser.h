@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef QUERYPARSER_H
+#define QUERYPARSER_H
 
 #include "QueryParserConstants.h"
 #include "DateTools.h"
@@ -471,3 +472,5 @@ namespace Lucene
 		void jj_save(int32_t index, int32_t xla);
 	};
 }
+
+#endif

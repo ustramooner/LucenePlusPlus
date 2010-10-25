@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef INDEXCOMMIT_H
+#define INDEXCOMMIT_H
 
 #include "LuceneObject.h"
 
@@ -71,3 +72,5 @@ namespace Lucene
 		virtual MapStringString getUserData() = 0;
 	};
 }
+
+#endif

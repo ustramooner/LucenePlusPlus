@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef ABSTRACTALLTERMDOCS_H
+#define ABSTRACTALLTERMDOCS_H
 
 #include "TermDocs.h"
 
@@ -38,3 +39,5 @@ namespace Lucene
 		virtual bool isDeleted(int32_t doc) = 0;
 	};
 }
+
+#endif

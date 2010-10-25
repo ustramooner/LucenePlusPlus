@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef WEIGHTEDSPANTERMEXTRACTOR_H
+#define WEIGHTEDSPANTERMEXTRACTOR_H
 
 #include "LuceneContrib.h"
 #include "FilterIndexReader.h"
@@ -129,3 +130,5 @@ namespace Lucene
         virtual TermEnumPtr terms(TermPtr t);
 	};
 }
+
+#endif

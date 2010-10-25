@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CONCURRENTMERGESCHEDULER_H
+#define CONCURRENTMERGESCHEDULER_H
 
 #include "MergeScheduler.h"
 #include "LuceneThread.h"
@@ -97,3 +98,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

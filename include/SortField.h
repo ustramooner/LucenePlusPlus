@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SORTFIELD_H
+#define SORTFIELD_H
 
 #include "LuceneObject.h"
 
@@ -143,3 +144,5 @@ namespace Lucene
 		void initFieldType(const String& field, int32_t type);
 	};
 }
+
+#endif

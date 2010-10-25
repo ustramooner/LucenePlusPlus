@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMINFO_H
+#define TERMINFO_H
 
 #include "LuceneObject.h"
 
@@ -32,3 +33,5 @@ namespace Lucene
 		void set(TermInfoPtr ti);
 	};
 }
+
+#endif

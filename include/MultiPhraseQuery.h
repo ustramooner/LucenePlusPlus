@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MULTIPHRASEQUERY_H
+#define MULTIPHRASEQUERY_H
 
 #include "Query.h"
 #include "Weight.h"
@@ -77,3 +78,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

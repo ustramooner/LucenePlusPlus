@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef COMPLEXEXPLANATION_H
+#define COMPLEXEXPLANATION_H
 
 #include "Explanation.h"
 
@@ -42,3 +43,5 @@ namespace Lucene
 		virtual String getSummary();
 	};
 }
+
+#endif

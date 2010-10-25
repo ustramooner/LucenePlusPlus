@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BYTESLICEWRITER_H
+#define BYTESLICEWRITER_H
 
 #include "LuceneObject.h"
 
@@ -40,3 +41,5 @@ namespace Lucene
 		void writeVInt(int32_t i);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef LENGTHFILTER_H
+#define LENGTHFILTER_H
 
 #include "TokenFilter.h"
 
@@ -32,3 +33,5 @@ namespace Lucene
 		virtual bool incrementToken();
 	};
 }
+
+#endif

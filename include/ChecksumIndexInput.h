@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CHECKSUMINDEXINPUT_H
+#define CHECKSUMINDEXINPUT_H
 
 #include "IndexInput.h"
 #include <boost/crc.hpp>
@@ -57,3 +58,5 @@ namespace Lucene
 		virtual LuceneObjectPtr clone(LuceneObjectPtr other = LuceneObjectPtr());
 	};
 }
+
+#endif

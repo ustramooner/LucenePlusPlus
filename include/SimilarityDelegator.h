@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SIMILARITYDELEGATOR_H
+#define SIMILARITYDELEGATOR_H
 
 #include "Similarity.h"
 
@@ -34,3 +35,5 @@ namespace Lucene
 		virtual double scorePayload(int32_t docId, const String& fieldName, int32_t start, int32_t end, ByteArray payload, int32_t offset, int32_t length);
 	};
 }
+
+#endif

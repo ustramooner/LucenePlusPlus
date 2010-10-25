@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef WEIGHTEDTERM_H
+#define WEIGHTEDTERM_H
 
 #include "LuceneContrib.h"
 #include "LuceneObject.h"
@@ -38,3 +39,5 @@ namespace Lucene
 	    void setWeight(double weight);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SPANWEIGHT_H
+#define SPANWEIGHT_H
 
 #include "Weight.h"
 
@@ -42,3 +43,5 @@ namespace Lucene
 		friend class PayloadTermSpanScorer;
 	};
 }
+
+#endif

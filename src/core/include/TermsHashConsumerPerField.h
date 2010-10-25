@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMSHASHCONSUMERPERFIELD_H
+#define TERMSHASHCONSUMERPERFIELD_H
 
 #include "LuceneObject.h"
 
@@ -29,3 +30,5 @@ namespace Lucene
 		virtual int32_t getStreamCount() = 0;
 	};
 }
+
+#endif

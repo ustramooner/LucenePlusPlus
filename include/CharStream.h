@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CHARSTREAM_H
+#define CHARSTREAM_H
 
 #include "Reader.h"
 
@@ -28,3 +29,5 @@ namespace Lucene
 		virtual int32_t correctOffset(int32_t currentOff) = 0;
 	};
 }
+
+#endif

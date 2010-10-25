@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FILTEREDDOCIDSETITERATOR_H
+#define FILTEREDDOCIDSETITERATOR_H
 
 #include "DocIdSetIterator.h"
 
@@ -38,3 +39,5 @@ namespace Lucene
 		virtual bool match(int32_t docid) = 0;
 	};
 }
+
+#endif

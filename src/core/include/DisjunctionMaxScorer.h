@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DISJUNCTIONMAXSCORER_H
+#define DISJUNCTIONMAXSCORER_H
 
 #include "Scorer.h"
 
@@ -57,3 +58,5 @@ namespace Lucene
 		void heapRemoveRoot();
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SPANNEARQUERY_H
+#define SPANNEARQUERY_H
 
 #include "SpanQuery.h"
 
@@ -53,3 +54,5 @@ namespace Lucene
 		virtual int32_t hashCode();
 	};
 }
+
+#endif

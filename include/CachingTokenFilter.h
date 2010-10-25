@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CACHINGTOKENFILTER_H
+#define CACHINGTOKENFILTER_H
 
 #include "TokenFilter.h"
 
@@ -37,3 +38,5 @@ namespace Lucene
 		void fillCache();
 	};
 }
+
+#endif

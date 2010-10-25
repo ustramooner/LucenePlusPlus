@@ -4,10 +4,10 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SET_H
+#define SET_H
 
 #include "LuceneSync.h"
-#include <set>
 
 namespace Lucene
 {
@@ -150,3 +150,5 @@ namespace Lucene
 		}
     };
 }
+
+#endif

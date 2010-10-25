@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CHARREADER_H
+#define CHARREADER_H
 
 #include "CharStream.h"
 
@@ -36,3 +37,5 @@ namespace Lucene
 		virtual void reset();
 	};
 }
+
+#endif

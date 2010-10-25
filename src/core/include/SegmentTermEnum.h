@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SEGMENTTERMENUM_H
+#define SEGMENTTERMENUM_H
 
 #include "TermEnum.h"
 
@@ -83,3 +84,5 @@ namespace Lucene
 		virtual void close();
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMFREQVECTOR_H
+#define TERMFREQVECTOR_H
 
 #include "LuceneObject.h"
 
@@ -51,3 +52,5 @@ namespace Lucene
 		virtual Collection<int32_t> indexesOf(Collection<String> terms, int32_t start, int32_t length);
 	};
 }
+
+#endif

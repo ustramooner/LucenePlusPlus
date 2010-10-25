@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FILEREADER_H
+#define FILEREADER_H
 
 #include "Reader.h"
 
@@ -49,3 +50,5 @@ namespace Lucene
 		virtual int64_t length();
 	};
 }
+
+#endif

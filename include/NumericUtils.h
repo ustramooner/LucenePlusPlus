@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef NUMERICUTILS_H
+#define NUMERICUTILS_H
 
 #include "LuceneObject.h"
 
@@ -175,3 +176,5 @@ namespace Lucene
 		virtual void addRange(int32_t min, int32_t max, int32_t shift);
 	};
 }
+
+#endif

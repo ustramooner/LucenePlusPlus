@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BOOLEANCLAUSE_H
+#define BOOLEANCLAUSE_H
 
 #include "LuceneObject.h"
 
@@ -56,3 +57,5 @@ namespace Lucene
 		virtual String toString();
 	};
 }
+
+#endif

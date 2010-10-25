@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef ARABICNORMALIZER_H
+#define ARABICNORMALIZER_H
 
 #include "LuceneContrib.h"
 #include "LuceneObject.h"
@@ -68,3 +69,5 @@ namespace Lucene
         int32_t deleteChar(wchar_t* s, int32_t pos, int32_t len);
 	};
 }
+
+#endif

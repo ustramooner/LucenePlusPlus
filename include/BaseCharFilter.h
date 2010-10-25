@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BASECHARFILTER_H
+#define BASECHARFILTER_H
 
 #include "CharFilter.h"
 
@@ -37,3 +38,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

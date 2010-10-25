@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SNOWBALLFILTER_H
+#define SNOWBALLFILTER_H
 
 #include "LuceneContrib.h"
 #include "TokenFilter.h"
@@ -31,3 +32,5 @@ namespace Lucene
         virtual bool incrementToken();
 	};
 }
+
+#endif

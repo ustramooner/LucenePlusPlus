@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CACHINGWRAPPERFILTER_H
+#define CACHINGWRAPPERFILTER_H
 
 #include "Filter.h"
 #include "FilteredDocIdSet.h"
@@ -68,3 +69,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

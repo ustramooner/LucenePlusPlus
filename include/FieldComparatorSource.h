@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDCOMPARATORSOURCE_H
+#define FIELDCOMPARATORSOURCE_H
 
 #include "LuceneObject.h"
 
@@ -24,3 +25,5 @@ namespace Lucene
 		virtual FieldComparatorPtr newComparator(const String& fieldname, int32_t numHits, int32_t sortPos, bool reversed) = 0;
 	};
 }
+
+#endif

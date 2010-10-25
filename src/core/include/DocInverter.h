@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DOCINVERTER_H
+#define DOCINVERTER_H
 
 #include "DocFieldConsumer.h"
 
@@ -43,3 +44,5 @@ namespace Lucene
 		virtual DocFieldConsumerPerThreadPtr addThread(DocFieldProcessorPerThreadPtr docFieldProcessorPerThread);
 	};
 }
+
+#endif

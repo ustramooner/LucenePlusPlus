@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef NORMSWRITERPERFIELD_H
+#define NORMSWRITERPERFIELD_H
 
 #include "InvertedDocEndConsumerPerField.h"
 
@@ -42,3 +43,5 @@ namespace Lucene
 		virtual void finish();
 	};
 }
+
+#endif

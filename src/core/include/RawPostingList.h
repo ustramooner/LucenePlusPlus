@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef RAWPOSTINGLIST_H
+#define RAWPOSTINGLIST_H
 
 #include "LuceneObject.h"
 
@@ -31,3 +32,5 @@ namespace Lucene
 		int32_t byteStart;
 	};
 }
+
+#endif

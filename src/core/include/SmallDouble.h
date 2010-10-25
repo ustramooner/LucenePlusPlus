@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SMALLDOUBLE_H
+#define SMALLDOUBLE_H
 
 #include "LuceneObject.h"
 
@@ -28,3 +29,5 @@ namespace Lucene
 		static double byteToDouble(uint8_t b);
 	};
 }
+
+#endif

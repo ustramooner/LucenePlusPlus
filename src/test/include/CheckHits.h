@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CHECKHITS_H
+#define CHECKHITS_H
 
 #include "test_lucene.h"
 
@@ -53,3 +54,5 @@ namespace Lucene
 		static void verifyExplanation(const String& q, int32_t doc, double score, bool deep, ExplanationPtr expl);
 	};
 }
+
+#endif

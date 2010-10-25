@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef QUERYPARSERCONSTANTS_H
+#define QUERYPARSERCONSTANTS_H
 
 #include "LuceneObject.h"
 
@@ -73,3 +74,5 @@ namespace Lucene
 		static const wchar_t* _tokenImage[];
 	};
 }
+
+#endif

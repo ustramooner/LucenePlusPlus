@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DIRECTORY_H
+#define DIRECTORY_H
 
 #include "LuceneObject.h"
 
@@ -103,3 +104,5 @@ namespace Lucene
 		void ensureOpen();
 	};
 }
+
+#endif

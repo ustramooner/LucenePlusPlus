@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PORTERSTEMFILTER_H
+#define PORTERSTEMFILTER_H
 
 #include "TokenFilter.h"
 
@@ -43,3 +44,5 @@ namespace Lucene
 		virtual bool incrementToken();
 	};
 }
+
+#endif

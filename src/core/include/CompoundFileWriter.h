@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef COMPOUNDFILEWRITER_H
+#define COMPOUNDFILEWRITER_H
 
 #include "LuceneObject.h"
 
@@ -73,3 +74,5 @@ namespace Lucene
 		void copyFile(const FileEntry& source, IndexOutputPtr os, ByteArray buffer);
 	};
 }
+
+#endif

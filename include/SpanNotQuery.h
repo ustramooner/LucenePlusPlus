@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SPANNOTQUERY_H
+#define SPANNOTQUERY_H
 
 #include "SpanQuery.h"
 #include "Spans.h"
@@ -46,3 +47,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

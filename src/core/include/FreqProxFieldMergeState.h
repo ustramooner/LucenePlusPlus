@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FREQPROXFIELDMERGESTATE_H
+#define FREQPROXFIELDMERGESTATE_H
 
 #include "LuceneObject.h"
 
@@ -43,3 +44,5 @@ namespace Lucene
 		bool nextDoc();  
 	};
 }
+
+#endif

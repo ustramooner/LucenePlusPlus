@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CUSTOMSCOREPROVIDER_H
+#define CUSTOMSCOREPROVIDER_H
 
 #include "LuceneObject.h"
 
@@ -88,3 +89,5 @@ namespace Lucene
 		virtual ExplanationPtr customExplain(int32_t doc, ExplanationPtr subQueryExpl, ExplanationPtr valSrcExpl);
 	};
 }
+
+#endif

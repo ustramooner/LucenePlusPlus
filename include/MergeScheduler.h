@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MERGESCHEDULER_H
+#define MERGESCHEDULER_H
 
 #include "LuceneObject.h"
 
@@ -27,3 +28,5 @@ namespace Lucene
 		virtual void close() = 0;
 	};
 }
+
+#endif

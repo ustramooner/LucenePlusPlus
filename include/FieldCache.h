@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDCACHE_H
+#define FIELDCACHE_H
 
 #include "LuceneObject.h"
 #include <boost/any.hpp>
@@ -265,3 +266,5 @@ namespace Lucene
 		virtual String toString();
 	};
 }
+
+#endif

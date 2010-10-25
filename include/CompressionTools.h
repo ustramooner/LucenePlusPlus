@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef COMPRESSIONTOOLS_H
+#define COMPRESSIONTOOLS_H
 
 #include "LuceneObject.h"
 
@@ -50,3 +51,5 @@ namespace Lucene
 		static void zlibFree(void* opaque, void* buffer);
 	};
 }
+
+#endif

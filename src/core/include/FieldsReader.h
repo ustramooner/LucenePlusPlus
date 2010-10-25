@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDSREADER_H
+#define FIELDSREADER_H
 
 #include "AbstractField.h"
 #include "CloseableThreadLocal.h"
@@ -136,3 +137,5 @@ namespace Lucene
 		IndexInputPtr getFieldStream();
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMVECTORSTERMSWRITERPERTHREAD_H
+#define TERMVECTORSTERMSWRITERPERTHREAD_H
 
 #include "TermsHashConsumerPerThread.h"
 
@@ -39,3 +40,5 @@ namespace Lucene
 		bool vectorFieldsInOrder(FieldInfoPtr fi);
 	};
 }
+
+#endif

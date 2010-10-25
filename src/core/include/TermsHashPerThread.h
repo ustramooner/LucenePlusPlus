@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMSHASHPERTHREAD_H
+#define TERMSHASHPERTHREAD_H
 
 #include "InvertedDocConsumerPerThread.h"
 
@@ -54,3 +55,5 @@ namespace Lucene
 		static bool noNullPostings(Collection<RawPostingListPtr> postings, int32_t count, const String& details);
 	};
 }
+
+#endif

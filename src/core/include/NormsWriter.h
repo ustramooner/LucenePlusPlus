@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef NORMSWRITER_H
+#define NORMSWRITER_H
 
 #include "InvertedDocEndConsumer.h"
 
@@ -40,3 +41,5 @@ namespace Lucene
 		static uint8_t getDefaultNorm();
 	};
 }
+
+#endif

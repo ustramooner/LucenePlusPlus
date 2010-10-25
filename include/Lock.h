@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef LOCK_H
+#define LOCK_H
 
 #include "LuceneObject.h"
 
@@ -45,3 +46,5 @@ namespace Lucene
 		bool obtain(int32_t lockWaitTimeout);
 	};
 }
+
+#endif

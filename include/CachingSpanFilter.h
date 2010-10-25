@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CACHINGSPANFILTER_H
+#define CACHINGSPANFILTER_H
 
 #include "SpanFilter.h"
 #include "CachingWrapperFilter.h"
@@ -44,3 +45,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

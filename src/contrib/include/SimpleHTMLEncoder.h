@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SIMPLEHTMLENCODER_H
+#define SIMPLEHTMLENCODER_H
 
 #include "Encoder.h"
 
@@ -24,3 +25,5 @@ namespace Lucene
 		static String htmlEncode(const String& plainText);
 	};
 }
+
+#endif

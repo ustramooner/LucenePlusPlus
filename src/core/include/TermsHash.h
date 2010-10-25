@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMSHASH_H
+#define TERMSHASH_H
 
 #include "InvertedDocConsumer.h"
 
@@ -61,3 +62,5 @@ namespace Lucene
 		void getPostings(Collection<RawPostingListPtr> postings);
 	};
 }
+
+#endif

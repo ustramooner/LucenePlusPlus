@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SERIALMERGESCHEDULER_H
+#define SERIALMERGESCHEDULER_H
 
 #include "MergeScheduler.h"
 
@@ -27,3 +28,5 @@ namespace Lucene
 		virtual void close();
 	};
 }
+
+#endif

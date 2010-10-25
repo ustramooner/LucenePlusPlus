@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FORMATPOSTINGSPOSITIONSWRITER_H
+#define FORMATPOSTINGSPOSITIONSWRITER_H
 
 #include "FormatPostingsPositionsConsumer.h"
 
@@ -40,3 +41,5 @@ namespace Lucene
 		void close();
 	};
 }
+
+#endif

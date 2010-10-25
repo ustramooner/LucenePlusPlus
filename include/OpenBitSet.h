@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef OPENBITSET_H
+#define OPENBITSET_H
 
 #include "DocIdBitSet.h"
 
@@ -62,3 +63,5 @@ namespace Lucene
 		static uint64_t xorCount(OpenBitSetPtr first, OpenBitSetPtr second);
 	};
 }
+
+#endif

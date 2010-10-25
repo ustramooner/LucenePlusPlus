@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef COLLATOR_H
+#define COLLATOR_H
 
 #include "LuceneObject.h"
 
@@ -27,3 +28,5 @@ namespace Lucene
 		int32_t compare(const String& first, const String& second);
 	};
 }
+
+#endif

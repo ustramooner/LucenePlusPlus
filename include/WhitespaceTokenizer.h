@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef WHITESPACETOKENIZER_H
+#define WHITESPACETOKENIZER_H
 
 #include "CharTokenizer.h"
 
@@ -33,3 +34,5 @@ namespace Lucene
 		virtual bool isTokenChar(wchar_t c);
 	};
 }
+
+#endif

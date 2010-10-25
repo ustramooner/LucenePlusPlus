@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef STOREDFIELDSWRITERPERTHREAD_H
+#define STOREDFIELDSWRITERPERTHREAD_H
 
 #include "LuceneObject.h"
 
@@ -32,3 +33,5 @@ namespace Lucene
 		void abort();
 	};
 }
+
+#endif

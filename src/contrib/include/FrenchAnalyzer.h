@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FRENCHANALYZER_H
+#define FRENCHANALYZER_H
 
 #include "LuceneContrib.h"
 #include "Analyzer.h"
@@ -79,3 +80,5 @@ namespace Lucene
         TokenStreamPtr result;
 	};
 }
+
+#endif

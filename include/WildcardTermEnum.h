@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef WILDCARDTERMENUM_H
+#define WILDCARDTERMENUM_H
 
 #include "FilteredTermEnum.h"
 
@@ -49,3 +50,5 @@ namespace Lucene
 		virtual bool endEnum();
 	};
 }
+
+#endif

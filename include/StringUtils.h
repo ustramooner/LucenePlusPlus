@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef STRINGUTILS_H
+#define STRINGUTILS_H
 
 namespace Lucene
 {
@@ -90,3 +91,5 @@ namespace Lucene
 	
 	#define UTF8_TO_STRING(utf8) StringUtils::toUnicode(utf8, SIZEOF_ARRAY(utf8))
 }
+
+#endif

@@ -1,15 +1,11 @@
 /////////////////////////////////////////////////////////////////////////////
 // Copyright (c) 2009-2010 Alan Wright. All rights reserved.
 // Distributable under the terms of either the Apache License (Version 2.0)
-#include <boost/multi_index_container.hpp>
-#include <boost/multi_index/hashed_index.hpp>
-#include <boost/multi_index/identity.hpp>
-#include <boost/multi_index/member.hpp> 
-#include <boost/multi_index/sequenced_index.hpp>
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SIMPLELRUCACHE_H
+#define SIMPLELRUCACHE_H
 
 #include <boost/multi_index_container.hpp>
 #include <boost/multi_index/hashed_index.hpp>
@@ -99,3 +95,5 @@ namespace Lucene
 	};
 };
 
+
+#endif

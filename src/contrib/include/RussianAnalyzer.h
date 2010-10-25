@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef RUSSIANANALYZER_H
+#define RUSSIANANALYZER_H
 
 #include "LuceneContrib.h"
 #include "Analyzer.h"
@@ -68,3 +69,5 @@ namespace Lucene
         TokenStreamPtr result;
 	};
 }
+
+#endif

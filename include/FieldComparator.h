@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDCOMPARATOR_H
+#define FIELDCOMPARATOR_H
 
 #include "LuceneObject.h"
 
@@ -343,3 +344,5 @@ namespace Lucene
 		virtual ComparableValue value(int32_t slot);
 	};
 }
+
+#endif

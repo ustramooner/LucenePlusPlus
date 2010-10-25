@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef HASHSET_H
+#define HASHSET_H
 
 #include "LuceneSync.h"
 #ifdef USE_TR1
@@ -131,3 +132,5 @@ namespace Lucene
 		}
     };
 }
+
+#endif

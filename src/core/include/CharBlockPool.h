@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CHARBLOCKPOOL_H
+#define CHARBLOCKPOOL_H
 
 #include "LuceneObject.h"
 
@@ -35,3 +36,5 @@ namespace Lucene
 		void nextBuffer();
 	};
 }
+
+#endif

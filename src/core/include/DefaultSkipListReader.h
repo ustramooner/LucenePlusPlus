@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DEFAULTSKIPLISTREADER_H
+#define DEFAULTSKIPLISTREADER_H
 
 #include "MultiLevelSkipListReader.h"
 
@@ -55,3 +56,5 @@ namespace Lucene
 		virtual int32_t readSkipData(int32_t level, IndexInputPtr skipStream);
 	};
 }
+
+#endif

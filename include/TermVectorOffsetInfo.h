@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMVECTOROFFSETINFO_H
+#define TERMVECTOROFFSETINFO_H
 
 #include "LuceneObject.h"
 
@@ -44,3 +45,5 @@ namespace Lucene
 		virtual int32_t hashCode();
 	};
 }
+
+#endif

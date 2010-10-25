@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DOCHELPER_H
+#define DOCHELPER_H
 
 #include "test_lucene.h"
 
@@ -104,3 +105,5 @@ namespace Lucene
 		int32_t numFields(DocumentPtr doc);
 	};
 }
+
+#endif

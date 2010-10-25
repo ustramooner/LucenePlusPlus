@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DIRECTORYREADER_H
+#define DIRECTORYREADER_H
 
 #include "IndexReader.h"
 #include "TermEnum.h"
@@ -376,3 +377,5 @@ namespace Lucene
 		virtual void deleteCommit();
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef STOREDFIELDSWRITER_H
+#define STOREDFIELDSWRITER_H
 
 #include "DocumentsWriter.h"
 
@@ -70,3 +71,5 @@ namespace Lucene
 		virtual void finish();
 	};
 }
+
+#endif

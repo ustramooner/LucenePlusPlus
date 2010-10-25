@@ -4,7 +4,6 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include <vector>
 #include "LuceneInc.h"
 #include "StringUtils.h"
 #include "UnicodeUtils.h"

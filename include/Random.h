@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef RANDOM_H
+#define RANDOM_H
 
 #include "LuceneObject.h"
 #include "MiscUtils.h"
@@ -31,3 +32,5 @@ namespace Lucene
 			int32_t next(int32_t bits);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef LUCENE_H
+#define LUCENE_H
 
 #include "Config.h"
 
@@ -13,6 +14,9 @@
 #include <stdexcept>
 
 //shared pointers used in this header and LuceneObject
+#include <vector>
+#include <map>
+#include <set>
 #include <boost/shared_ptr.hpp>
 #include <boost/make_shared.hpp>
 #include <boost/weak_ptr.hpp>
@@ -44,6 +48,11 @@ using boost::uint16_t;
 using boost::int32_t;
 using boost::uint32_t;
 using boost::int64_t;
+#include <boost/regex.hpp>
+#include <boost/dynamic_bitset.hpp>
+#include <boost/unordered_map.hpp>
+#include <boost/unordered_set.hpp>
+#include <boost/enable_shared_from_this.hpp>
 using boost::uint64_t;
 
 #define SIZEOF_ARRAY(arr) (sizeof(arr) / sizeof((arr)[0]))
@@ -220,3 +229,5 @@ namespace Lucene
 	#define INTERNAL protected
 #endif
 
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FASTCHARSTREAM_H
+#define FASTCHARSTREAM_H
 
 #include "QueryParserCharStream.h"
 
@@ -52,3 +53,5 @@ namespace Lucene
 		void refill();
 	};
 }
+
+#endif

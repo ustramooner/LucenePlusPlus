@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TOKEN_H
+#define TOKEN_H
 
 #include "Attribute.h"
 #include "AttributeSource.h"
@@ -352,3 +353,5 @@ namespace Lucene
 		virtual int32_t hashCode();
 	};
 }
+
+#endif

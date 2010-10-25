@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDDOCSORTEDHITQUEUE_H
+#define FIELDDOCSORTEDHITQUEUE_H
 
 #include "PriorityQueue.h"
 
@@ -47,3 +48,5 @@ namespace Lucene
 		virtual bool lessThan(const FieldDocPtr& first, const FieldDocPtr& second);
 	};
 }
+
+#endif

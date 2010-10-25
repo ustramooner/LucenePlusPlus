@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef UNICODEUTILS_H
+#define UNICODEUTILS_H
 
 #include "MiscUtils.h"
 #include "LuceneObject.h"
@@ -97,3 +98,5 @@ namespace Lucene
 		virtual ~UnicodeResult();
 	};	
 }
+
+#endif

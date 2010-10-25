@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMSPANS_H
+#define TERMSPANS_H
 
 #include "Spans.h"
 
@@ -40,3 +41,5 @@ namespace Lucene
 		TermPositionsPtr getPositions();
 	};
 }
+
+#endif

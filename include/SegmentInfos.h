@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SEGMENTINFOS_H
+#define SEGMENTINFOS_H
 
 #include "SegmentInfoCollection.h"
 
@@ -222,3 +223,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

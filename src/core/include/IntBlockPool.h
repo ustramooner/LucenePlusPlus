@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef INTBLOCKPOOL_H
+#define INTBLOCKPOOL_H
 
 #include "LuceneObject.h"
 
@@ -36,3 +37,5 @@ namespace Lucene
 		void nextBuffer();
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CONSTANTS_H
+#define CONSTANTS_H
 
 namespace Lucene
 {
@@ -81,3 +82,5 @@ namespace Lucene
 		static bool onOrAfter(LuceneVersion::Version first, LuceneVersion::Version second);
 	};	
 }
+
+#endif

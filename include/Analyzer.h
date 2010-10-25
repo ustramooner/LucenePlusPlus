@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef ANALYZER_H
+#define ANALYZER_H
 
 #include "CloseableThreadLocal.h"
 
@@ -65,3 +66,5 @@ namespace Lucene
 		virtual void setPreviousTokenStream(LuceneObjectPtr stream);
 	};
 }
+
+#endif

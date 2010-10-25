@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef LUCENEEXCEPTION_H
+#define LUCENEEXCEPTION_H
 
 namespace Lucene
 {
@@ -93,3 +94,5 @@ namespace Lucene
 	typedef ExceptionTemplate<LuceneException, LuceneException::QueryParser> QueryParserError;
 	typedef ExceptionTemplate<LuceneException, LuceneException::Compression> CompressionException;
 }
+
+#endif

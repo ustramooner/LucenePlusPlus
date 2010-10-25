@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DOCVALUES_H
+#define DOCVALUES_H
 
 #include "LuceneObject.h"
 
@@ -91,3 +92,5 @@ namespace Lucene
 		void compute();
 	};
 }
+
+#endif

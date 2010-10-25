@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CHECKINDEX_H
+#define CHECKINDEX_H
 #include "LuceneObject.h"
 
 namespace Lucene
@@ -314,3 +315,5 @@ namespace Lucene
 		LuceneException error;
 	};
 }
+
+#endif

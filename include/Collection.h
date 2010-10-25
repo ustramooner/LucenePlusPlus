@@ -4,12 +4,12 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef COLLECTION_H
+#define COLLECTION_H
 
 #include "LuceneSync.h"
 #include <set>
 #include <map>
-#include <vector>
 
 namespace Lucene
 {
@@ -310,3 +310,5 @@ namespace Lucene
 		return result;
 	}
 }
+
+#endif

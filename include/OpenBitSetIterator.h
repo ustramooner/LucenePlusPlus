@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef OPENBITSETITERATOR_H
+#define OPENBITSETITERATOR_H
 
 #include "DocIdBitSet.h"
 
@@ -20,3 +21,5 @@ namespace Lucene
 		LUCENE_CLASS(OpenBitSetIterator);
 	};
 }
+
+#endif

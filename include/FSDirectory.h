@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FSDIRECTORY_H
+#define FSDIRECTORY_H
 
 #include "Directory.h"
 
@@ -125,3 +126,5 @@ namespace Lucene
 		void initOutput(const String& name);
 	};
 }
+
+#endif

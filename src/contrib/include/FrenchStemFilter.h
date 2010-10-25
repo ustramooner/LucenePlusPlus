@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FRENCHSTEMFILTER_H
+#define FRENCHSTEMFILTER_H
 
 #include "LuceneContrib.h"
 #include "TokenFilter.h"
@@ -45,3 +46,5 @@ namespace Lucene
         void setExclusionSet(HashSet<String> exclusiontable);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CHARFOLDER_H
+#define CHARFOLDER_H
 
 #include "LuceneObject.h"
 #include <limits.h>
@@ -47,3 +48,5 @@ namespace Lucene
 		static bool fillUpper();
 	};
 }
+
+#endif

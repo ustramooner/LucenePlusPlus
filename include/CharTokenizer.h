@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CHARTOKENIZER_H
+#define CHARTOKENIZER_H
 
 #include "Tokenizer.h"
 
@@ -49,3 +50,5 @@ namespace Lucene
 		virtual wchar_t normalize(wchar_t c);
 	};
 }
+
+#endif

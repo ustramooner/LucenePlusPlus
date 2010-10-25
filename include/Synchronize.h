@@ -1,11 +1,11 @@
 /////////////////////////////////////////////////////////////////////////////
 // Copyright (c) 2009-2010 Alan Wright. All rights reserved.
 // Distributable under the terms of either the Apache License (Version 2.0)
-#include <boost/thread/recursive_mutex.hpp>
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SYNCHRONIZE_H
+#define SYNCHRONIZE_H
 
 namespace Lucene
 {
@@ -60,3 +60,5 @@ namespace Lucene
 		void lock(int32_t timeout);
 	};
 }
+
+#endif

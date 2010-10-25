@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef QUERYWRAPPERFILTER_H
+#define QUERYWRAPPERFILTER_H
 
 #include "Filter.h"
 #include "DocIdSet.h"
@@ -38,3 +39,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

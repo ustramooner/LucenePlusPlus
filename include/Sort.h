@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SORT_H
+#define SORT_H
 
 #include "LuceneObject.h"
 
@@ -110,3 +111,5 @@ namespace Lucene
 		virtual int32_t hashCode();
 	};
 }
+
+#endif

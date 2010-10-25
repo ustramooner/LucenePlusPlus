@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDCACHEIMPL_H
+#define FIELDCACHEIMPL_H
 
 #include "FieldCache.h"
 
@@ -192,3 +193,5 @@ namespace Lucene
 		virtual boost::any getValue();
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef LUCENETYPES_H
+#define LUCENETYPES_H
 
 #include "Lucene.h"
 
@@ -569,3 +570,5 @@ namespace Lucene
 	DECLARE_SHARED_PTR(UTF8Stream)
 	DECLARE_SHARED_PTR(UTF16Decoder)
 }
+
+#endif

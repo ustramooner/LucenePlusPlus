@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef WORDLISTLOADER_H
+#define WORDLISTLOADER_H
 
 #include "LuceneObject.h"
 
@@ -44,3 +45,5 @@ namespace Lucene
 		static MapStringString getStemDict(const String& wordstemfile);
 	};
 }
+
+#endif

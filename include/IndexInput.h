@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef INDEXINPUT_H
+#define INDEXINPUT_H
 
 #include "LuceneObject.h"
 
@@ -119,3 +120,5 @@ namespace Lucene
 		virtual MapStringString readStringStringMap();
 	};
 }
+
+#endif

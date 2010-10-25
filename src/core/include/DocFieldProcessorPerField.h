@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DOCFIELDPROCESSORPERFIELD_H
+#define DOCFIELDPROCESSORPERFIELD_H
 
 #include "LuceneObject.h"
 
@@ -33,3 +34,5 @@ namespace Lucene
 		virtual void abort();
 	};
 }
+
+#endif

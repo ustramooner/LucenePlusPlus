@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SIMPLEFSLOCKFACTORY_H
+#define SIMPLEFSLOCKFACTORY_H
 
 #include "FSLockFactory.h"
 #include "Lock.h"
@@ -38,3 +39,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BOOLEANSCORER_H
+#define BOOLEANSCORER_H
 
 #include "Scorer.h"
 #include "Collector.h"
@@ -155,3 +156,5 @@ namespace Lucene
 		SubScorerPtr next;
 	};
 }
+
+#endif

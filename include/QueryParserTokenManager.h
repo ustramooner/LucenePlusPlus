@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef QUERYPARSERTOKENMANAGER_H
+#define QUERYPARSERTOKENMANAGER_H
 
 #include "QueryParserConstants.h"
 
@@ -105,3 +106,5 @@ namespace Lucene
 		void jjCheckNAddStates(int32_t start, int32_t end);
 	};
 }
+
+#endif

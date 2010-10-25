@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SPANQUERYFILTER_H
+#define SPANQUERYFILTER_H
 
 #include "SpanFilter.h"
 
@@ -41,3 +42,5 @@ namespace Lucene
 		virtual int32_t hashCode();
 	};
 }
+
+#endif

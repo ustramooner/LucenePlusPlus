@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef LETTERTOKENIZER_H
+#define LETTERTOKENIZER_H
 
 #include "CharTokenizer.h"
 
@@ -36,3 +37,5 @@ namespace Lucene
 		virtual bool isTokenChar(wchar_t c);
 	};
 }
+
+#endif

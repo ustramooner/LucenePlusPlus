@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef LUCENETHREAD_H
+#define LUCENETHREAD_H
 
 #include "LuceneObject.h"
 
@@ -79,3 +80,5 @@ namespace Lucene
 		static void runThread(LuceneThread* thread);
 	};
 }
+
+#endif

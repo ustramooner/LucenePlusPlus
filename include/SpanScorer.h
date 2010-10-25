@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SPANSCORER_H
+#define SPANSCORER_H
 
 #include "Scorer.h"
 
@@ -45,3 +46,5 @@ namespace Lucene
 		friend class PayloadNearSpanWeight;
 	};
 }
+
+#endif

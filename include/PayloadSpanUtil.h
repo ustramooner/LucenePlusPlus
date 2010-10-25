@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PAYLOADSPANUTIL_H
+#define PAYLOADSPANUTIL_H
 
 #include "LuceneObject.h"
 
@@ -35,3 +36,5 @@ namespace Lucene
 		void getPayloads(Collection<ByteArray> payloads, SpanQueryPtr query);
 	};
 }
+
+#endif

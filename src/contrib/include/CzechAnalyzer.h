@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CZECHANALYZER_H
+#define CZECHANALYZER_H
 
 #include "LuceneContrib.h"
 #include "Analyzer.h"
@@ -70,3 +71,5 @@ namespace Lucene
         TokenStreamPtr result;
 	};
 }
+
+#endif

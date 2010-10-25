@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef INDEXFILENAMES_H
+#define INDEXFILENAMES_H
 
 #include "LuceneObject.h"
 
@@ -111,3 +112,5 @@ namespace Lucene
 		static String segmentFileName(const String& segmentName, const String& ext);
 	};
 }
+
+#endif

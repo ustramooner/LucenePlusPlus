@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SEGMENTINFOCOLLECTION_H
+#define SEGMENTINFOCOLLECTION_H
 
 #include "LuceneObject.h"
 
@@ -37,3 +38,5 @@ namespace Lucene
 		virtual LuceneObjectPtr clone(LuceneObjectPtr other = LuceneObjectPtr());
 	};
 }
+
+#endif

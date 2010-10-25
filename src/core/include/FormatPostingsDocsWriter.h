@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FORMATPOSTINGSDOCSWRITER_H
+#define FORMATPOSTINGSDOCSWRITER_H
 
 #include "FormatPostingsDocsConsumer.h"
 
@@ -53,3 +54,5 @@ namespace Lucene
 		void close();
 	};
 }
+
+#endif

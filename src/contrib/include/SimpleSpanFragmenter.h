@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SIMPLESPANFRAGMENTER_H
+#define SIMPLESPANFRAGMENTER_H
 
 #include "Fragmenter.h"
 
@@ -44,3 +45,5 @@ namespace Lucene
 		virtual void start(const String& originalText, TokenStreamPtr tokenStream);
 	};
 }
+
+#endif

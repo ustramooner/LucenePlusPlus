@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef COLLECTOR_H
+#define COLLECTOR_H
 
 #include "LuceneObject.h"
 
@@ -133,3 +134,5 @@ namespace Lucene
    		virtual bool acceptsDocsOutOfOrder() = 0;
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMINFOSREADER_H
+#define TERMINFOSREADER_H
 
 #include "CloseableThreadLocal.h"
 #include "SimpleLRUCache.h"
@@ -85,3 +86,5 @@ namespace Lucene
 		TermInfoCachePtr termInfoCache;
 	};
 }
+
+#endif

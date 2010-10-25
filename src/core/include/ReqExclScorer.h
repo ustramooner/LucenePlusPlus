@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef REQEXCLSCORER_H
+#define REQEXCLSCORER_H
 
 #include "Scorer.h"
 
@@ -53,3 +54,5 @@ namespace Lucene
 		int32_t toNonExcluded();
 	};
 }
+
+#endif

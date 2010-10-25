@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FILEUTILS_H
+#define FILEUTILS_H
 
 namespace Lucene
 {
@@ -59,3 +60,5 @@ namespace Lucene
 		LPPAPI String extractFile(const String& path);
 	}
 }
+
+#endif

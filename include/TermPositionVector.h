@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMPOSITIONVECTOR_H
+#define TERMPOSITIONVECTOR_H
 
 #include "TermFreqVector.h"
 
@@ -32,3 +33,5 @@ namespace Lucene
 		virtual Collection<TermVectorOffsetInfoPtr> getOffsets(int32_t index);
 	};
 }
+
+#endif

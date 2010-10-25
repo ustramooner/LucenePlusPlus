@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DATETOOLS_H
+#define DATETOOLS_H
 
 #include "LuceneObject.h"
 #include <boost/date_time/posix_time/ptime.hpp>
@@ -106,3 +107,5 @@ namespace Lucene
 		static boost::posix_time::ptime parseDate(const String& dateString, std::locale locale = std::locale());
 	};
 }
+
+#endif

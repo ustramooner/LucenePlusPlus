@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef STANDARDTOKENIZER_H
+#define STANDARDTOKENIZER_H
 
 #include "Tokenizer.h"
 #include "Constants.h"
@@ -105,3 +106,5 @@ namespace Lucene
 		void setReplaceInvalidAcronym(bool replaceInvalidAcronym);
 	};
 }
+
+#endif

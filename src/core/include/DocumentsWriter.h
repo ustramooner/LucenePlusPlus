@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DOCUMENTSWRITER_H
+#define DOCUMENTSWRITER_H
 
 #include "ByteBlockPool.h"
 #include "RAMFile.h"
@@ -522,3 +523,5 @@ namespace Lucene
 		virtual void recycleByteBlocks(Collection<ByteArray> blocks);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SEGMENTINFO_H
+#define SEGMENTINFO_H
 
 #include "LuceneObject.h"
 
@@ -168,3 +169,5 @@ namespace Lucene
 		void clearFiles();
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef NUMERICRANGEQUERY_H
+#define NUMERICRANGEQUERY_H
 
 #include "MultiTermQuery.h"
 #include "FilteredTermEnum.h"
@@ -185,3 +186,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

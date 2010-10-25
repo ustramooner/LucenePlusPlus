@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BUFFEREDDELETES_H
+#define BUFFEREDDELETES_H
 
 #include "Term.h"
 #include "Query.h"
@@ -53,3 +54,5 @@ namespace Lucene
 		void setNum(int32_t num);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef GREEKLOWERCASEFILTER_H
+#define GREEKLOWERCASEFILTER_H
 
 #include "LuceneContrib.h"
 #include "TokenFilter.h"
@@ -31,3 +32,5 @@ namespace Lucene
         wchar_t lowerCase(wchar_t codepoint);
 	};
 }
+
+#endif

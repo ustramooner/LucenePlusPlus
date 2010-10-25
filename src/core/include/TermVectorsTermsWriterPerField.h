@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMVECTORSTERMSWRITERPERFIELD_H
+#define TERMVECTORSTERMSWRITERPERFIELD_H
 
 #include "TermsHashConsumerPerField.h"
 
@@ -50,3 +51,5 @@ namespace Lucene
 		virtual void skippingLongTerm();
 	};
 }
+
+#endif

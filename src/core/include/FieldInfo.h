@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDINFO_H
+#define FIELDINFO_H
 
 #include "LuceneObject.h"
 
@@ -41,3 +42,5 @@ namespace Lucene
 					bool omitNorms, bool storePayloads, bool omitTermFreqAndPositions);
 	};
 }
+
+#endif

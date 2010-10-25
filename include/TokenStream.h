@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TOKENSTREAM_H
+#define TOKENSTREAM_H
 
 #include "AttributeSource.h"
 
@@ -97,3 +98,5 @@ namespace Lucene
 		virtual void close();
 	};
 }
+
+#endif

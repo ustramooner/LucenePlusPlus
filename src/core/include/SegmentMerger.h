@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SEGMENTMERGER_H
+#define SEGMENTMERGER_H
 
 #include "LuceneObject.h"
 
@@ -151,3 +152,5 @@ namespace Lucene
 		virtual void work(double units);
 	};
 }
+
+#endif

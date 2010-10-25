@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MOCKRAMINPUTSTREAM_H
+#define MOCKRAMINPUTSTREAM_H
 
 #include "test_lucene.h"
 #include "RAMInputStream.h"
@@ -33,3 +34,5 @@ namespace Lucene
 		virtual LuceneObjectPtr clone(LuceneObjectPtr other = LuceneObjectPtr());
 	};
 }
+
+#endif

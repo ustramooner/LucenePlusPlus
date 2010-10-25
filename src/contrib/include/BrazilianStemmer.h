@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BRAZILIANSTEMMER_H
+#define BRAZILIANSTEMMER_H
 
 #include "LuceneContrib.h"
 #include "LuceneObject.h"
@@ -112,3 +113,5 @@ namespace Lucene
         void step5();
 	};
 }
+
+#endif

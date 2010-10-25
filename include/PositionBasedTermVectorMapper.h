@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef POSITIONBASEDTERMVECTORMAPPER_H
+#define POSITIONBASEDTERMVECTORMAPPER_H
 
 #include "TermVectorMapper.h"
 
@@ -75,3 +76,5 @@ namespace Lucene
 		Collection<TermVectorOffsetInfoPtr> getOffsets();
 	};
 }
+
+#endif

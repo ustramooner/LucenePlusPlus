@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMSCORER_H
+#define TERMSCORER_H
 
 #include "Scorer.h"
 
@@ -67,3 +68,5 @@ namespace Lucene
 		virtual bool score(CollectorPtr collector, int32_t max, int32_t firstDocID);
 	};
 }
+
+#endif

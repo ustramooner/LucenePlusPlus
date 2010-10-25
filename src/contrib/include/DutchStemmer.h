@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DUTCHSTEMMER_H
+#define DUTCHSTEMMER_H
 
 #include "LuceneContrib.h"
 #include "LuceneObject.h"
@@ -88,3 +89,5 @@ namespace Lucene
         bool isVowel(wchar_t c);
 	};
 }
+
+#endif

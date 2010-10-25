@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PERSIANANALYZER_H
+#define PERSIANANALYZER_H
 
 #include "LuceneContrib.h"
 #include "Analyzer.h"
@@ -76,3 +77,5 @@ namespace Lucene
         TokenStreamPtr result;
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FILTEREDDOCIDSET_H
+#define FILTEREDDOCIDSET_H
 
 #include "DocIdSet.h"
 #include "FilteredDocIdSetIterator.h"
@@ -51,3 +52,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

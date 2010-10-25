@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PREFIXQUERY_H
+#define PREFIXQUERY_H
 
 #include "MultiTermQuery.h"
 
@@ -44,3 +45,5 @@ namespace Lucene
 		virtual FilteredTermEnumPtr getEnum(IndexReaderPtr reader);
 	};
 }
+
+#endif

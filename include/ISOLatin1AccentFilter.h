@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef ISOLATIN1ACCENTFILTER_H
+#define ISOLATIN1ACCENTFILTER_H
 
 #include "TokenFilter.h"
 
@@ -37,3 +38,5 @@ namespace Lucene
 		void removeAccents(const wchar_t* input, int32_t length);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef KEYWORDANALYZER_H
+#define KEYWORDANALYZER_H
 
 #include "Analyzer.h"
 
@@ -24,3 +25,5 @@ namespace Lucene
 		virtual TokenStreamPtr reusableTokenStream(const String& fieldName, ReaderPtr reader);
 	};
 }
+
+#endif

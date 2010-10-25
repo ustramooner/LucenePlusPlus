@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FILTER_H
+#define FILTER_H
 
 #include "LuceneObject.h"
 
@@ -35,3 +36,5 @@ namespace Lucene
 		virtual DocIdSetPtr getDocIdSet(IndexReaderPtr reader) = 0;
 	};
 }
+
+#endif

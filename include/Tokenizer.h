@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TOKENIZER_H
+#define TOKENIZER_H
 
 #include "TokenStream.h"
 
@@ -65,3 +66,5 @@ namespace Lucene
 		virtual void reset(ReaderPtr input);
 	};
 }
+
+#endif

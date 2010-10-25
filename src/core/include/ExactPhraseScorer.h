@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef EXACTPHRASESCORER_H
+#define EXACTPHRASESCORER_H
 
 #include "PhraseScorer.h"
 
@@ -22,3 +23,5 @@ namespace Lucene
 		virtual double phraseFreq();
 	};
 }
+
+#endif

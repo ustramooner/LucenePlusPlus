@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef GERMANSTEMFILTER_H
+#define GERMANSTEMFILTER_H
 
 #include "LuceneContrib.h"
 #include "TokenFilter.h"
@@ -45,3 +46,5 @@ namespace Lucene
         void setExclusionSet(HashSet<String> exclusionSet);
 	};
 }
+
+#endif

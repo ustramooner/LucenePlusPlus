@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MOCKFSDIRECTORY_H
+#define MOCKFSDIRECTORY_H
 
 #include "test_lucene.h"
 #include "Directory.h"
@@ -42,3 +43,5 @@ namespace Lucene
 		virtual int64_t fileLength(const String& name);
 	};
 }
+
+#endif

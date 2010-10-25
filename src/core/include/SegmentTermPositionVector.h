@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SEGMENTTERMPOSITIONVECTOR_H
+#define SEGMENTTERMPOSITIONVECTOR_H
 
 #include "SegmentTermVector.h"
 
@@ -37,3 +38,5 @@ namespace Lucene
 		virtual Collection<int32_t> getTermPositions(int32_t index);
 	};
 }
+
+#endif

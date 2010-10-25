@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SEGMENTMERGEINFO_H
+#define SEGMENTMERGEINFO_H
 
 #include "Term.h"
 
@@ -37,3 +38,5 @@ namespace Lucene
 		void close();
 	};
 }
+
+#endif

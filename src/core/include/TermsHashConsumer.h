@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMSHASHCONSUMER_H
+#define TERMSHASHCONSUMER_H
 
 #include "LuceneObject.h"
 
@@ -31,3 +32,5 @@ namespace Lucene
 		virtual void setFieldInfos(FieldInfosPtr fieldInfos);
 	};
 }
+
+#endif

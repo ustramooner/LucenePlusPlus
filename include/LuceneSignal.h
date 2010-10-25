@@ -1,12 +1,11 @@
 /////////////////////////////////////////////////////////////////////////////
 // Copyright (c) 2009-2010 Alan Wright. All rights reserved.
 // Distributable under the terms of either the Apache License (Version 2.0)
-#include <boost/thread/mutex.hpp>
-#include <boost/thread/condition.hpp>
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef LUCENESIGNAL_H
+#define LUCENESIGNAL_H
 
 namespace Lucene
 {
@@ -30,3 +29,5 @@ namespace Lucene
 	};
 }
 
+
+#endif

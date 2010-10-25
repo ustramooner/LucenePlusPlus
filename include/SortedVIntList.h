@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SORTEDVINTLIST_H
+#define SORTEDVINTLIST_H
 
 #include "DocIdSet.h"
 
@@ -84,3 +85,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef QUERYUTILS_H
+#define QUERYUTILS_H
 
 #include "test_lucene.h"
 
@@ -60,3 +61,5 @@ namespace Lucene
 		static void checkFirstSkipTo(QueryPtr q, IndexSearcherPtr s);
 	};
 }
+
+#endif

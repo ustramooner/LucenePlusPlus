@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef HIGHLIGHTERSCORER_H
+#define HIGHLIGHTERSCORER_H
 
 #include "LuceneContrib.h"
 #include "LuceneObject.h"
@@ -47,3 +48,5 @@ namespace Lucene
 		virtual double getFragmentScore();
 	};
 }
+
+#endif

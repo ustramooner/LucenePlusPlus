@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef ATTRIBUTESOURCE_H
+#define ATTRIBUTESOURCE_H
 
 #include "LuceneObject.h"
 
@@ -186,3 +187,5 @@ namespace Lucene
 		friend class AttributeSource;
 	};
 }
+
+#endif

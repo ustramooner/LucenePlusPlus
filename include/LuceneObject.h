@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef LUCENEOBJECT_H
+#define LUCENEOBJECT_H
 
 #ifdef LPP_USE_CYCLIC_CHECK
 #define LUCENE_INTERFACE(Name) \
@@ -57,3 +58,5 @@ namespace Lucene
 		virtual String toString();
 	};
 }
+
+#endif

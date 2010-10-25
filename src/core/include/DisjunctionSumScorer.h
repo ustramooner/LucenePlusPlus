@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DISJUNCTIONSUMSCORER_H
+#define DISJUNCTIONSUMSCORER_H
 
 #include "Scorer.h"
 
@@ -90,3 +91,5 @@ namespace Lucene
 		bool advanceAfterCurrent();
 	};
 }
+
+#endif

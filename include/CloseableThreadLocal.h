@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CLOSEABLETHREADLOCAL_H
+#define CLOSEABLETHREADLOCAL_H
 
 #include "LuceneThread.h"
 #include "Synchronize.h"
@@ -58,3 +59,5 @@ namespace Lucene
 		}
 	};
 }
+
+#endif

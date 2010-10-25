@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DUTCHSTEMFILTER_H
+#define DUTCHSTEMFILTER_H
 
 #include "LuceneContrib.h"
 #include "TokenFilter.h"
@@ -53,3 +54,5 @@ namespace Lucene
         void setStemDictionary(MapStringString dict);
 	};
 }
+
+#endif

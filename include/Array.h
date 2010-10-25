@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef ARRAY_H
+#define ARRAY_H
 
 #include "Lucene.h"
 #include <cstring>
@@ -145,3 +146,5 @@ namespace Lucene
 		return (value1.hashCode() == value2.hashCode());
 	}
 }
+
+#endif

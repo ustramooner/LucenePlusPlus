@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FREQPROXTERMSWRITER_H
+#define FREQPROXTERMSWRITER_H
 
 #include "TermsHashConsumer.h"
 #include "RawPostingList.h"
@@ -53,3 +54,5 @@ namespace Lucene
 		int32_t lastPosition; // Last position where this term occurred
 	};
 }
+
+#endif

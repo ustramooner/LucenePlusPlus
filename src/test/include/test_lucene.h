@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TEST_LUCENE_H
+#define TEST_LUCENE_H
 
 #include "Lucene.h"
 #include "LuceneHeaders.h"
@@ -45,3 +46,5 @@ namespace Lucene
 	};
 }
 
+
+#endif

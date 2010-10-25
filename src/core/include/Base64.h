@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BASE64_H
+#define BASE64_H
 
 #include "LuceneObject.h"
 
@@ -28,3 +29,5 @@ namespace Lucene
 		static bool isBase64(wchar_t ch);
 	};
 }
+
+#endif

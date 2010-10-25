@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MOCKINDEXINPUT_H
+#define MOCKINDEXINPUT_H
 
 #include "test_lucene.h"
 #include "BufferedIndexInput.h"
@@ -33,3 +34,5 @@ namespace Lucene
 		virtual void seekInternal(int64_t pos);
 	};
 }
+
+#endif

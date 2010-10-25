@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef KEEPONLYLASTCOMMITDELETIONPOLICY_H
+#define KEEPONLYLASTCOMMITDELETIONPOLICY_H
 
 #include "IndexDeletionPolicy.h"
 
@@ -27,3 +28,5 @@ namespace Lucene
 		virtual void onCommit(Collection<IndexCommitPtr> commits);
 	};
 }
+
+#endif

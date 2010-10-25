@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDSORTEDTERMVECTORMAPPER_H
+#define FIELDSORTEDTERMVECTORMAPPER_H
 
 #include "TermVectorMapper.h"
 #include <boost/function.hpp>
@@ -48,3 +49,5 @@ namespace Lucene
 		TermVectorEntryComparator getComparator();
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef ARRAYREADER_H
+#define ARRAYREADER_H
 
 #include "Reader.h"
 
@@ -91,3 +92,5 @@ namespace Lucene
 		LUCENE_CLASS(CharArrayReader);
     };
 }
+
+#endif

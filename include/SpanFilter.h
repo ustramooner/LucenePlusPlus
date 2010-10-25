@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SPANFILTER_H
+#define SPANFILTER_H
 
 #include "Filter.h"
 
@@ -31,3 +32,5 @@ namespace Lucene
 		virtual SpanFilterResultPtr bitSpans(IndexReaderPtr reader) = 0;
 	};
 }
+
+#endif

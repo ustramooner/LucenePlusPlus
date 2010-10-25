@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DOUBLEFIELDSOURCE_H
+#define DOUBLEFIELDSOURCE_H
 
 #include "FieldCacheSource.h"
 #include "DocValues.h"
@@ -58,3 +59,5 @@ namespace Lucene
 		virtual CollectionValue getInnerArray();
 	};
 }
+
+#endif

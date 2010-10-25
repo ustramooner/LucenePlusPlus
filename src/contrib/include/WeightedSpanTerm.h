@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef WEIGHTEDSPANTERM_H
+#define WEIGHTEDSPANTERM_H
 
 #include "WeightedTerm.h"
 
@@ -51,3 +52,5 @@ namespace Lucene
 	    int32_t end;
 	};	
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMRANGETERMENUM_H
+#define TERMRANGETERMENUM_H
 
 #include "FilteredTermEnum.h"
 
@@ -55,3 +56,5 @@ namespace Lucene
 		virtual bool termCompare(TermPtr term);
 	};
 }
+
+#endif

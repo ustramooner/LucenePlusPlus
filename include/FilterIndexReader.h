@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FILTERINDEXREADER_H
+#define FILTERINDEXREADER_H
 
 #include "IndexReader.h"
 #include "TermPositions.h"
@@ -134,3 +135,5 @@ namespace Lucene
 		virtual void close();
 	};
 }
+
+#endif

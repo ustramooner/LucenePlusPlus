@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SIMPLEFSDIRECTORY_H
+#define SIMPLEFSDIRECTORY_H
 
 #include "FSDirectory.h"
 #include "BufferedIndexInput.h"
@@ -36,3 +37,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

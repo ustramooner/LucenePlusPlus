@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef READONLYDIRECTORYREADER_H
+#define READONLYDIRECTORYREADER_H
 
 #include "DirectoryReader.h"
 
@@ -27,3 +28,5 @@ namespace Lucene
 		virtual void acquireWriteLock();
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef INTFIELDSOURCE_H
+#define INTFIELDSOURCE_H
 
 #include "FieldCacheSource.h"
 #include "DocValues.h"
@@ -41,3 +42,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

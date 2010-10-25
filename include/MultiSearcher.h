@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MULTISEARCHER_H
+#define MULTISEARCHER_H
 
 #include "Searcher.h"
 #include "Collector.h"
@@ -75,3 +76,5 @@ namespace Lucene
 	
 	
 }
+
+#endif

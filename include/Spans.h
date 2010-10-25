@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SPANS_H
+#define SPANS_H
 
 #include "LuceneObject.h"
 
@@ -73,3 +74,5 @@ namespace Lucene
 		virtual bool isPayloadAvailable() = 0;
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SEGMENTTERMVECTOR_H
+#define SEGMENTTERMVECTOR_H
 
 #include "TermFreqVector.h"
 
@@ -46,3 +47,5 @@ namespace Lucene
 		virtual Collection<int32_t> indexesOf(Collection<String> termNumbers, int32_t start, int32_t length);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef KEYWORDTOKENIZER_H
+#define KEYWORDTOKENIZER_H
 
 #include "Tokenizer.h"
 
@@ -40,3 +41,5 @@ namespace Lucene
 		virtual void reset();
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef LUCENECONTRIB_H
+#define LUCENECONTRIB_H
 
 namespace Lucene
 {
@@ -109,3 +110,5 @@ namespace Lucene
 		
 	typedef HashSet< WeightedTermPtr, luceneHash<WeightedTermPtr>, luceneEquals<WeightedTermPtr> > SetWeightedTerm;
 }
+
+#endif

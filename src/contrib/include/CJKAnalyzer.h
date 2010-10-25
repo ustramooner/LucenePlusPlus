@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CJKANALYZER_H
+#define CJKANALYZER_H
 
 #include "LuceneContrib.h"
 #include "Analyzer.h"
@@ -63,3 +64,5 @@ namespace Lucene
         TokenStreamPtr result;
 	};
 }
+
+#endif

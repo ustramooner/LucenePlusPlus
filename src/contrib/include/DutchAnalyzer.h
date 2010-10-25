@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DUTCHANALYZER_H
+#define DUTCHANALYZER_H
 
 #include "LuceneContrib.h"
 #include "Analyzer.h"
@@ -83,3 +84,5 @@ namespace Lucene
         TokenStreamPtr result;
 	};
 }
+
+#endif

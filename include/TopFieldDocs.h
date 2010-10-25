@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TOPFIELDDOCS_H
+#define TOPFIELDDOCS_H
 
 #include "TopDocs.h"
 
@@ -29,3 +30,5 @@ namespace Lucene
 		Collection<SortFieldPtr> fields;
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDVALUEHITQUEUE_H
+#define FIELDVALUEHITQUEUE_H
 
 #include "HitQueueBase.h"
 #include "ScoreDoc.h"
@@ -68,3 +69,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

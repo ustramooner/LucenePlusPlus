@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMVECTORSREADER_H
+#define TERMVECTORSREADER_H
 
 #include "TermVectorMapper.h"
 
@@ -146,3 +147,5 @@ namespace Lucene
 		TermFreqVectorPtr materializeVector();
 	};
 }
+
+#endif

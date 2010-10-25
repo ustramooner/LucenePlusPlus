@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMBUFFER_H
+#define TERMBUFFER_H
 
 #include "LuceneObject.h"
 
@@ -46,3 +47,5 @@ namespace Lucene
 		int32_t compareChars(wchar_t* chars1, int32_t len1, wchar_t* chars2, int32_t len2);
 	};
 }
+
+#endif

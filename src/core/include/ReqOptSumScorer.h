@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef REQOPTSUMSCORER_H
+#define REQOPTSUMSCORER_H
 
 #include "Scorer.h"
 
@@ -36,3 +37,5 @@ namespace Lucene
 		virtual double score();
 	};
 }
+
+#endif

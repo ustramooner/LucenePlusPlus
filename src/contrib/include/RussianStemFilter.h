@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef RUSSIANSTEMFILTER_H
+#define RUSSIANSTEMFILTER_H
 
 #include "LuceneContrib.h"
 #include "TokenFilter.h"
@@ -39,3 +40,5 @@ namespace Lucene
         void setStemmer(RussianStemmerPtr stemmer);
 	};
 }
+
+#endif

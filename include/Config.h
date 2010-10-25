@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CONFIG_H
+#define CONFIG_H
 
 #if defined(_WIN32) || defined(_WIN64)
 #pragma warning(disable:4251)
@@ -92,6 +93,8 @@
 
 // Make internal bitset storage public
 #define BOOST_DYNAMIC_BITSET_DONT_USE_FRIENDS
+
+#endif
 
 //use tr1 for hash map & hash set
 //#define USE_TR1

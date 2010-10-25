@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SIMPLEFRAGMENTER_H
+#define SIMPLEFRAGMENTER_H
 
 #include "Fragmenter.h"
 
@@ -39,3 +40,5 @@ namespace Lucene
 		void setFragmentSize(int32_t size);
 	};
 }
+
+#endif

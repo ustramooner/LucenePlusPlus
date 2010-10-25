@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef NUMBERTOOLS_H
+#define NUMBERTOOLS_H
 
 #include "LuceneObject.h"
 
@@ -54,3 +55,5 @@ namespace Lucene
 		static int64_t stringToLong(const String& str);
 	};
 }
+
+#endif

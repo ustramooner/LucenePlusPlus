@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PERFIELDANALYZERWRAPPER_H
+#define PERFIELDANALYZERWRAPPER_H
 
 #include "Analyzer.h"
 
@@ -61,3 +62,5 @@ namespace Lucene
 		virtual String toString();
 	};
 }
+
+#endif

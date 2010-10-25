@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MAPOFSETS_H
+#define MAPOFSETS_H
 
 namespace Lucene
 {
@@ -71,3 +72,5 @@ namespace Lucene
 		}
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CHARARRAYSET_H
+#define CHARARRAYSET_H
 
 #include "LuceneObject.h"
 
@@ -51,3 +52,5 @@ namespace Lucene
 		HashSet<String>::iterator end();
 	};
 }
+
+#endif

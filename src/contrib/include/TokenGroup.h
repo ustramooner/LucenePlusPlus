@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TOKENGROUP_H
+#define TOKENGROUP_H
 
 #include "LuceneContrib.h"
 #include "LuceneObject.h"
@@ -63,3 +64,5 @@ namespace Lucene
 	    double getTotalScore();
 	};
 }
+
+#endif

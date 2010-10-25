@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BUFFEREDINDEXINPUT_H
+#define BUFFEREDINDEXINPUT_H
 
 #include "IndexInput.h"
 
@@ -100,3 +101,5 @@ namespace Lucene
 		virtual void seekInternal(int64_t pos) = 0;
 	};
 }
+
+#endif

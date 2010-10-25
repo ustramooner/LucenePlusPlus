@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef QUERYPARSEERROR_H
+#define QUERYPARSEERROR_H
 
 #include "LuceneObject.h"
 
@@ -48,3 +49,5 @@ namespace Lucene
 		static String addEscapes(const String& str);
 	};
 }
+
+#endif

@@ -4,10 +4,10 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BITSET_H
+#define BITSET_H
 
 #include "LuceneObject.h"
-#include <boost/dynamic_bitset.hpp>
 
 namespace Lucene
 {
@@ -61,3 +61,5 @@ namespace Lucene
 		virtual LuceneObjectPtr clone(LuceneObjectPtr other = LuceneObjectPtr());
 	};
 }
+
+#endif

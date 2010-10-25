@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CONJUNCTIONSCORER_H
+#define CONJUNCTIONSCORER_H
 
 #include "Scorer.h"
 
@@ -34,3 +35,5 @@ namespace Lucene
 		int32_t doNext();
 	};
 }
+
+#endif

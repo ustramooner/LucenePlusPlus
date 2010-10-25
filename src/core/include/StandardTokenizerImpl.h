@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef STANDARDTOKENIZERIMPL_H
+#define STANDARDTOKENIZERIMPL_H
 
 #include "LuceneObject.h"
 
@@ -187,3 +188,5 @@ namespace Lucene
 		void zzScanError(int32_t errorCode);
 	};
 }
+
+#endif

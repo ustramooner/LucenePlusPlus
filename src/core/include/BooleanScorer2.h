@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BOOLEANSCORER2_H
+#define BOOLEANSCORER2_H
 
 #include "DisjunctionSumScorer.h"
 #include "ConjunctionScorer.h"
@@ -165,3 +166,5 @@ namespace Lucene
 		virtual double score();
 	};
 }
+
+#endif

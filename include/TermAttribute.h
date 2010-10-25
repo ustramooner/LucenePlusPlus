@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMATTRIBUTE_H
+#define TERMATTRIBUTE_H
 
 #include "Attribute.h"
 
@@ -87,3 +88,5 @@ namespace Lucene
 		void initTermBuffer();
 	};
 }
+
+#endif

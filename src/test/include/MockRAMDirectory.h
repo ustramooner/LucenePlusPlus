@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MOCKRAMDIRECTORY_H
+#define MOCKRAMDIRECTORY_H
 
 #include "test_lucene.h"
 #include "RAMDirectory.h"
@@ -120,3 +121,5 @@ namespace Lucene
 		bool doFail;
 	};
 }
+
+#endif

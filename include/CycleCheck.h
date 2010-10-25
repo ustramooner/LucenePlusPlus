@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CYCLECHECK_H
+#define CYCLECHECK_H
 
 namespace Lucene
 {
@@ -47,3 +48,5 @@ namespace Lucene
 		}
 	};
 }
+
+#endif

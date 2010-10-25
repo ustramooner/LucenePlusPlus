@@ -4,10 +4,10 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MAP_H
+#define MAP_H
 
 #include "LuceneSync.h"
-#include <map>
 
 namespace Lucene
 {
@@ -144,3 +144,5 @@ namespace Lucene
 		}
     };
 }
+
+#endif

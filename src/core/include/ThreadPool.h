@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef THREADPOOL_H
+#define THREADPOOL_H
 
 #include "LuceneObject.h"
 #include <boost/thread/thread.hpp>
@@ -83,3 +84,5 @@ namespace Lucene
 		}
 	};
 }
+
+#endif

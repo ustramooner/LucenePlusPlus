@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CHECKSUMINDEXOUTPUT_H
+#define CHECKSUMINDEXOUTPUT_H
 
 #include "IndexOutput.h"
 #include <boost/crc.hpp>
@@ -65,3 +66,5 @@ namespace Lucene
 		virtual int64_t length();
 	};
 }
+
+#endif

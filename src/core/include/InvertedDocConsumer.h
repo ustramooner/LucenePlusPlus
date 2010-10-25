@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef INVERTEDDOCCONSUMER_H
+#define INVERTEDDOCCONSUMER_H
 
 #include "LuceneObject.h"
 
@@ -39,3 +40,5 @@ namespace Lucene
 		virtual void setFieldInfos(FieldInfosPtr fieldInfos);
 	};
 }
+
+#endif

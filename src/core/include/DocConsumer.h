@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DOCCONSUMER_H
+#define DOCCONSUMER_H
 
 #include "LuceneObject.h"
 
@@ -25,3 +26,5 @@ namespace Lucene
 		virtual bool freeRAM() = 0;
 	};
 }
+
+#endif

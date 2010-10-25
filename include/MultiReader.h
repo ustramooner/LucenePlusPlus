@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MULTIREADER_H
+#define MULTIREADER_H
 
 #include "IndexReader.h"
 
@@ -137,3 +138,5 @@ namespace Lucene
 		virtual void doClose();
 	};
 }
+
+#endif

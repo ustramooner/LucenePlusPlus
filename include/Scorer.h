@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SCORER_H
+#define SCORER_H
 
 #include "DocIdSetIterator.h"
 
@@ -58,3 +59,5 @@ namespace Lucene
 		friend class ScoreCachingWrappingScorer;
 	};
 }
+
+#endif

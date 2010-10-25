@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef STOPFILTER_H
+#define STOPFILTER_H
 
 #include "TokenFilter.h"
 #include "Constants.h"
@@ -64,3 +65,5 @@ namespace Lucene
 		void setEnablePositionIncrements(bool enable);
 	};
 }
+
+#endif

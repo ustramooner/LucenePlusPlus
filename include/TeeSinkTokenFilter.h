@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TEESINKTOKENFILTER_H
+#define TEESINKTOKENFILTER_H
 
 #include "TokenFilter.h"
 
@@ -146,3 +147,5 @@ namespace Lucene
 		friend class TeeSinkTokenFilter;
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BYTESLICEREADER_H
+#define BYTESLICEREADER_H
 
 #include "IndexInput.h"
 
@@ -57,3 +58,5 @@ namespace Lucene
 		virtual void close();
 	};
 }
+
+#endif

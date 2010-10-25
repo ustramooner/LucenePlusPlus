@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef INDEXOUTPUT_H
+#define INDEXOUTPUT_H
 
 #include "LuceneObject.h"
 
@@ -103,3 +104,5 @@ namespace Lucene
 		void writeStringStringMap(MapStringString map);
 	};
 }
+
+#endif

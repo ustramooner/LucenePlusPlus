@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DEFAULTSKIPLISTWRITER_H
+#define DEFAULTSKIPLISTWRITER_H
 
 #include "MultiLevelSkipListWriter.h"
 
@@ -48,3 +49,5 @@ namespace Lucene
 		friend class FormatPostingsTermsWriter;
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DOCINVERTERPERTHREAD_H
+#define DOCINVERTERPERTHREAD_H
 
 #include "DocFieldConsumerPerThread.h"
 #include "AttributeSource.h"
@@ -57,3 +58,5 @@ namespace Lucene
 		void reinit(const String& stringValue, int32_t startOffset, int32_t endOffset);
 	};
 }
+
+#endif

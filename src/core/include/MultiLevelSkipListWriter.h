@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MULTILEVELSKIPLISTWRITER_H
+#define MULTILEVELSKIPLISTWRITER_H
 
 #include "LuceneObject.h"
 
@@ -71,3 +72,5 @@ namespace Lucene
 		virtual void writeSkipData(int32_t level, IndexOutputPtr skipBuffer) = 0;
 	};
 }
+
+#endif

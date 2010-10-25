@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef COMPOUNDFILEREADER_H
+#define COMPOUNDFILEREADER_H
 
 #include "Directory.h"
 #include "BufferedIndexInput.h"
@@ -118,3 +119,5 @@ namespace Lucene
 		virtual void seekInternal(int64_t pos);
 	};
 }
+
+#endif

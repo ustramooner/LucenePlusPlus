@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef INDEXDELETIONPOLICY_H
+#define INDEXDELETIONPOLICY_H
 
 #include "LuceneObject.h"
 
@@ -65,3 +66,5 @@ namespace Lucene
 		virtual void onCommit(Collection<IndexCommitPtr> commits) = 0;
 	};
 }
+
+#endif

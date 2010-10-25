@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DOCUMENT_H
+#define DOCUMENT_H
 
 #include "LuceneObject.h"
 
@@ -138,3 +139,5 @@ namespace Lucene
 		virtual String toString();
 	};
 }
+
+#endif

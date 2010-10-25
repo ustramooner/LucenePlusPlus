@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MOCKLOCK_H
+#define MOCKLOCK_H
 
 #include "test_lucene.h"
 #include "Lock.h"
@@ -29,3 +30,5 @@ namespace Lucene
 		virtual String toString();
 	};
 }
+
+#endif

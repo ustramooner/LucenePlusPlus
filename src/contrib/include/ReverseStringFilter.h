@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef REVERSESTRINGFILTER_H
+#define REVERSESTRINGFILTER_H
 
 #include "TokenFilter.h"
 
@@ -56,3 +57,5 @@ namespace Lucene
         virtual bool incrementToken();
 	};
 }
+
+#endif

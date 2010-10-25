@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SPANTERMQUERY_H
+#define SPANTERMQUERY_H
 
 #include "SpanQuery.h"
 
@@ -38,3 +39,5 @@ namespace Lucene
 		virtual SpansPtr getSpans(IndexReaderPtr reader);
 	};
 }
+
+#endif

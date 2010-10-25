@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDINFOS_H
+#define FIELDINFOS_H
 
 #include "LuceneObject.h"
 
@@ -146,3 +147,5 @@ namespace Lucene
 		void read(IndexInputPtr input, const String& fileName);
 	};
 }
+
+#endif

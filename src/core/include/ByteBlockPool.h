@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BYTEBLOCKPOOL_H
+#define BYTEBLOCKPOOL_H
 
 #include "LuceneObject.h"
 
@@ -64,3 +65,5 @@ namespace Lucene
 		virtual ByteArray getByteBlock(bool trackAllocations) = 0;
 	};
 }
+
+#endif

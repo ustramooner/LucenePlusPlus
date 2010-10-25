@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MMAPDIRECTORY_H
+#define MMAPDIRECTORY_H
 
 #include "FSDirectory.h"
 #include "IndexInput.h"
@@ -39,3 +40,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

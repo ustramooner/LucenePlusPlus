@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FRENCHSTEMMER_H
+#define FRENCHSTEMMER_H
 
 #include "LuceneContrib.h"
 #include "LuceneObject.h"
@@ -174,3 +175,5 @@ namespace Lucene
         bool isStemmable(const String& term);
 	};
 }
+
+#endif

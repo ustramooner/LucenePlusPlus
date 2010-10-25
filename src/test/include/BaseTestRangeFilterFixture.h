@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BASETESTRANGEFILTERFIXTURE_H
+#define BASETESTRANGEFILTERFIXTURE_H
 
 #include "LuceneTestFixture.h"
 #include "LuceneObject.h"
@@ -53,3 +54,5 @@ namespace Lucene
 	};
 }
 
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MULTIPLETERMPOSITIONS_H
+#define MULTIPLETERMPOSITIONS_H
 
 #include "TermPositions.h"
 #include "PriorityQueue.h"
@@ -52,3 +53,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

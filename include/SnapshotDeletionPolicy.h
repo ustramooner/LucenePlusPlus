@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SNAPSHOTDELETIONPOLICY_H
+#define SNAPSHOTDELETIONPOLICY_H
 
 #include "IndexDeletionPolicy.h"
 #include "IndexCommit.h"
@@ -50,3 +51,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

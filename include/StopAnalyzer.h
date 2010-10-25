@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef STOPANALYZER_H
+#define STOPANALYZER_H
 
 #include "Analyzer.h"
 #include "Constants.h"
@@ -48,3 +49,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

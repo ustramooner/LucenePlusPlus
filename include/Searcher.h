@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SEARCHER_H
+#define SEARCHER_H
 
 #include "Searchable.h"
 
@@ -100,3 +101,5 @@ namespace Lucene
 		virtual WeightPtr createWeight(QueryPtr query);
 	};
 }
+
+#endif

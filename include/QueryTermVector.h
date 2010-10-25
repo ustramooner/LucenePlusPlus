@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef QUERYTERMVECTOR_H
+#define QUERYTERMVECTOR_H
 
 #include "TermFreqVector.h"
 
@@ -39,3 +40,5 @@ namespace Lucene
 		void processTerms(Collection<String> queryTerms);
 	};
 }
+
+#endif

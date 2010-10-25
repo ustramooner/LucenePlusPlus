@@ -16,3 +16,4 @@
 #endif
 
 #include "Lucene.h"
+

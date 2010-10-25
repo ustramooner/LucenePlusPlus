@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef LOCKFACTORY_H
+#define LOCKFACTORY_H
 
 #include "LuceneObject.h"
 
@@ -49,3 +50,5 @@ namespace Lucene
 		virtual void clearLock(const String& lockName) = 0;
 	};
 }
+
+#endif

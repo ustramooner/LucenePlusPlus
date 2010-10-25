@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CHINESEANALYZER_H
+#define CHINESEANALYZER_H
 
 #include "LuceneContrib.h"
 #include "Analyzer.h"
@@ -44,3 +45,5 @@ namespace Lucene
         TokenStreamPtr result;
 	};
 }
+
+#endif

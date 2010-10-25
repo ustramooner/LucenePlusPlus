@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TIMELIMITINGCOLLECTOR_H
+#define TIMELIMITINGCOLLECTOR_H
 
 #include "Collector.h"
 #include "LuceneThread.h"
@@ -92,3 +93,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

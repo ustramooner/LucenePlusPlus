@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TOKENSOURCES_H
+#define TOKENSOURCES_H
 
 #include "LuceneContrib.h"
 #include "TokenStream.h"
@@ -87,3 +88,5 @@ namespace Lucene
 	    virtual bool incrementToken();
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef NUMERICFIELD_H
+#define NUMERICFIELD_H
 
 #include "Field.h"
 
@@ -128,3 +129,5 @@ namespace Lucene
 		virtual NumericFieldPtr setDoubleValue(double value);
 	};
 }
+
+#endif

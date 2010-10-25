@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SEGMENTWRITESTATE_H
+#define SEGMENTWRITESTATE_H
 
 #include "LuceneObject.h"
 
@@ -34,3 +35,5 @@ namespace Lucene
 		String segmentFileName(const String& ext);
 	};
 }
+
+#endif

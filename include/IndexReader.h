@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef INDEXREADER_H
+#define INDEXREADER_H
 
 #include "SegmentInfos.h"
 
@@ -555,3 +556,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

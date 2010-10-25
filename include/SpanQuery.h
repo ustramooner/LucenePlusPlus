@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SPANQUERY_H
+#define SPANQUERY_H
 
 #include "Query.h"
 
@@ -27,3 +28,5 @@ namespace Lucene
 		virtual WeightPtr createWeight(SearcherPtr searcher);
 	};
 }
+
+#endif

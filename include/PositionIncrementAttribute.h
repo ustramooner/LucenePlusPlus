@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef POSITIONINCREMENTATTRIBUTE_H
+#define POSITIONINCREMENTATTRIBUTE_H
 
 #include "Attribute.h"
 
@@ -57,3 +58,5 @@ namespace Lucene
 		virtual LuceneObjectPtr clone(LuceneObjectPtr other = LuceneObjectPtr());
 	};
 }
+
+#endif

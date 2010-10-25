@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef HIGHLIGHTER_H
+#define HIGHLIGHTER_H
 
 #include "LuceneContrib.h"
 #include "PriorityQueue.h"
@@ -124,3 +125,5 @@ namespace Lucene
 		virtual bool lessThan(const TextFragmentPtr& first, const TextFragmentPtr& second);
 	};
 }
+
+#endif

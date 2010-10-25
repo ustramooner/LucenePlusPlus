@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PAYLOADHELPER_H
+#define PAYLOADHELPER_H
 
 #include "test_lucene.h"
 
@@ -30,3 +31,5 @@ namespace Lucene
 		static IndexSearcherPtr setUp(SimilarityPtr similarity, int32_t numDocs);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef LOGDOCMERGEPOLICY_H
+#define LOGDOCMERGEPOLICY_H
 
 #include "LogMergePolicy.h"
 
@@ -39,3 +40,5 @@ namespace Lucene
 		int32_t getMinMergeDocs();
 	};
 }
+
+#endif

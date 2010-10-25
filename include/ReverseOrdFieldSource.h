@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef REVERSEORDFIELDSOURCE_H
+#define REVERSEORDFIELDSOURCE_H
 
 #include "ValueSource.h"
 #include "DocValues.h"
@@ -49,3 +50,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

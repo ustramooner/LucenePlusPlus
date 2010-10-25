@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDSCOREQUERY_H
+#define FIELDSCOREQUERY_H
 
 #include "ValueSourceQuery.h"
 
@@ -70,3 +71,5 @@ namespace Lucene
 		static ValueSourcePtr getValueSource(const String& field, Type type);
 	};
 }
+
+#endif

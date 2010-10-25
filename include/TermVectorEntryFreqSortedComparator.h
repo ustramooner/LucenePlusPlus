@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMVECTORENTRYFREQSORTEDCOMPARATOR_H
+#define TERMVECTORENTRYFREQSORTEDCOMPARATOR_H
 
 #include "LuceneObject.h"
 
@@ -22,3 +23,5 @@ namespace Lucene
 		static bool compare(const TermVectorEntryPtr& first, const TermVectorEntryPtr& second);
 	};
 }
+
+#endif

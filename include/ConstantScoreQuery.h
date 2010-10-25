@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CONSTANTSCOREQUERY_H
+#define CONSTANTSCOREQUERY_H
 
 #include "Query.h"
 #include "Weight.h"
@@ -48,3 +49,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

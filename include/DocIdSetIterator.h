@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DOCIDSETITERATOR_H
+#define DOCIDSETITERATOR_H
 
 #include "LuceneObject.h"
 
@@ -70,3 +71,5 @@ namespace Lucene
    		virtual int32_t advance(int32_t target) = 0;
 	};
 }
+
+#endif

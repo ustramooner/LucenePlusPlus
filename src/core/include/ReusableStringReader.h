@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef REUSABLESTRINGREADER_H
+#define REUSABLESTRINGREADER_H
 
 #include "Reader.h"
 
@@ -37,3 +38,5 @@ namespace Lucene
 		virtual void close();
 	};
 }
+
+#endif

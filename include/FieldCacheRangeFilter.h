@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDCACHERANGEFILTER_H
+#define FIELDCACHERANGEFILTER_H
 
 #include "Filter.h"
 
@@ -110,3 +111,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef NULLFRAGMENTER_H
+#define NULLFRAGMENTER_H
 
 #include "Fragmenter.h"
 
@@ -23,3 +24,5 @@ namespace Lucene
 		virtual bool isNewFragment();
 	};
 }
+
+#endif

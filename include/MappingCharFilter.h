@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MAPPINGCHARFILTER_H
+#define MAPPINGCHARFILTER_H
 
 #include "BaseCharFilter.h"
 
@@ -43,3 +44,5 @@ namespace Lucene
 		NormalizeCharMapPtr match(NormalizeCharMapPtr map);
 	};
 }
+
+#endif

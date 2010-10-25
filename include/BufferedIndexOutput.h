@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BUFFEREDINDEXOUTPUT_H
+#define BUFFEREDINDEXOUTPUT_H
 
 #include "IndexOutput.h"
 
@@ -70,3 +71,5 @@ namespace Lucene
 		void flushBuffer(const uint8_t* b, int32_t length);
 	};
 }
+
+#endif

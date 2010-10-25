@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef INVERTEDDOCENDCONSUMERPERTHREAD_H
+#define INVERTEDDOCENDCONSUMERPERTHREAD_H
 
 #include "LuceneObject.h"
 
@@ -24,3 +25,5 @@ namespace Lucene
 		virtual void abort() = 0;
 	};
 }
+
+#endif

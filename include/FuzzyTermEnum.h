@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FUZZYTERMENUM_H
+#define FUZZYTERMENUM_H
 
 #include "FilteredTermEnum.h"
 
@@ -111,3 +112,5 @@ namespace Lucene
 		int32_t calculateMaxDistance(int32_t m);
 	};
 }
+
+#endif

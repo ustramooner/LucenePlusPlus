@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FREQPROXTERMSWRITERPERTHREAD_H
+#define FREQPROXTERMSWRITERPERTHREAD_H
 
 #include "TermsHashConsumerPerThread.h"
 
@@ -29,3 +30,5 @@ namespace Lucene
 		virtual void abort();
 	};
 }
+
+#endif

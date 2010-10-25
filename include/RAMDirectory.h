@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef RAMDIRECTORY_H
+#define RAMDIRECTORY_H
 
 #include "Directory.h"
 
@@ -81,3 +82,5 @@ namespace Lucene
 		virtual void close();
 	};
 }
+
+#endif

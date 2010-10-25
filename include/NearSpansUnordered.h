@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef NEARSPANSUNORDERED_H
+#define NEARSPANSUNORDERED_H
 
 #include "Spans.h"
 #include "PriorityQueue.h"
@@ -68,3 +69,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

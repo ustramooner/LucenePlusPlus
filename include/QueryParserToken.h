@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef QUERYPARSERTOKEN_H
+#define QUERYPARSERTOKEN_H
 
 #include "LuceneObject.h"
 
@@ -65,3 +66,5 @@ namespace Lucene
 		static QueryParserTokenPtr newToken(int32_t ofKind, const String& image = EmptyString);
 	};
 }
+
+#endif

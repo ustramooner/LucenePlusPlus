@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MINPAYLOADFUNCTION_H
+#define MINPAYLOADFUNCTION_H
 
 #include "PayloadFunction.h"
 
@@ -25,3 +26,5 @@ namespace Lucene
 		virtual bool equals(LuceneObjectPtr other);
 	};
 }
+
+#endif

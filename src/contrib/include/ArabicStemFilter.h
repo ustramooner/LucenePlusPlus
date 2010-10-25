@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef ARABICSTEMFILTER_H
+#define ARABICSTEMFILTER_H
 
 #include "LuceneContrib.h"
 #include "TokenFilter.h"
@@ -28,3 +29,5 @@ namespace Lucene
         virtual bool incrementToken();
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CHINESETOKENIZER_H
+#define CHINESETOKENIZER_H
 
 #include "Tokenizer.h"
 
@@ -76,3 +77,5 @@ namespace Lucene
         bool flush();
 	};
 }
+
+#endif

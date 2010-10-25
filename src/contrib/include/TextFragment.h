@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TEXTFRAGMENT_H
+#define TEXTFRAGMENT_H
 
 #include "LuceneContrib.h"
 #include "LuceneObject.h"
@@ -61,3 +62,5 @@ namespace Lucene
         virtual void clear();
 	};
 }
+
+#endif

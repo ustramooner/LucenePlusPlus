@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PREFIXFILTER_H
+#define PREFIXFILTER_H
 
 #include "MultiTermQueryWrapperFilter.h"
 
@@ -25,3 +26,5 @@ namespace Lucene
 		virtual String toString();
 	};
 }
+
+#endif

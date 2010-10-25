@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PREFIXTERMENUM_H
+#define PREFIXTERMENUM_H
 
 #include "FilteredTermEnum.h"
 
@@ -36,3 +37,5 @@ namespace Lucene
 		TermPtr getPrefixTerm();
 	};
 }
+
+#endif

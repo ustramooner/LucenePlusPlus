@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef AVERAGEPAYLOADFUNCTION_H
+#define AVERAGEPAYLOADFUNCTION_H
 
 #include "PayloadFunction.h"
 
@@ -27,3 +28,5 @@ namespace Lucene
 		virtual bool equals(LuceneObjectPtr other);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FORMATPOSTINGSFIELDSWRITER_H
+#define FORMATPOSTINGSFIELDSWRITER_H
 
 #include "FormatPostingsFieldsConsumer.h"
 
@@ -38,3 +39,5 @@ namespace Lucene
 		virtual void finish();
 	};
 }
+
+#endif

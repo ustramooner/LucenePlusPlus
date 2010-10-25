@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef VARIANTUTILS_H
+#define VARIANTUTILS_H
 
 #include "StringUtils.h"
 #include "MiscUtils.h"
@@ -97,3 +98,5 @@ namespace Lucene
 		}
 	};
 }
+
+#endif

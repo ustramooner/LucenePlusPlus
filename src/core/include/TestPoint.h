@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TESTPOINT_H
+#define TESTPOINT_H
 
 namespace Lucene
 {
@@ -37,3 +38,5 @@ namespace Lucene
 		String method;
 	};
 }
+
+#endif

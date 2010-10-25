@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PAYLOADNEARQUERY_H
+#define PAYLOADNEARQUERY_H
 
 #include "SpanNearQuery.h"
 #include "SpanWeight.h"
@@ -96,3 +97,5 @@ namespace Lucene
 		virtual ExplanationPtr explain(int32_t doc);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MAPWEIGHTEDSPANTERM_H
+#define MAPWEIGHTEDSPANTERM_H
 
 #include "LuceneContrib.h"
 #include "LuceneObject.h"
@@ -31,3 +32,5 @@ namespace Lucene
 	    virtual void clear();
 	};
 }
+
+#endif

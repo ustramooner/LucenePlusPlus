@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SORTEDTERMVECTORMAPPER_H
+#define SORTEDTERMVECTORMAPPER_H
 
 #include "TermVectorMapper.h"
 #include <boost/function.hpp>
@@ -58,3 +59,5 @@ namespace Lucene
 		Collection<TermVectorEntryPtr> getTermVectorEntrySet();
 	};
 }
+
+#endif

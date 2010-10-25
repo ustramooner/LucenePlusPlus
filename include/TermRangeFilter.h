@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMRANGEFILTER_H
+#define TERMRANGEFILTER_H
 
 #include "MultiTermQueryWrapperFilter.h"
 
@@ -63,3 +64,5 @@ namespace Lucene
 		CollatorPtr getCollator();
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MOCKLOCKFACTORY_H
+#define MOCKLOCKFACTORY_H
 
 #include "test_lucene.h"
 #include "LockFactory.h"
@@ -30,3 +31,5 @@ namespace Lucene
 		virtual void clearLock(const String& lockName);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SCORECACHINGWRAPPINGSCORER_H
+#define SCORECACHINGWRAPPINGSCORER_H
 
 #include "Scorer.h"
 
@@ -44,3 +45,5 @@ namespace Lucene
 		virtual bool score(CollectorPtr collector, int32_t max, int32_t firstDocID);
 	};
 }
+
+#endif

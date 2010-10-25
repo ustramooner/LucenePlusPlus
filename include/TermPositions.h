@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMPOSITIONS_H
+#define TERMPOSITIONS_H
 
 #include "TermDocs.h"
 
@@ -48,3 +49,5 @@ namespace Lucene
 		virtual bool isPayloadAvailable();
 	};
 }
+
+#endif

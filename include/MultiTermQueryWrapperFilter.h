@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MULTITERMQUERYWRAPPERFILTER_H
+#define MULTITERMQUERYWRAPPERFILTER_H
 
 #include "Filter.h"
 
@@ -54,3 +55,5 @@ namespace Lucene
 		virtual DocIdSetPtr getDocIdSet(IndexReaderPtr reader);
 	};
 }
+
+#endif

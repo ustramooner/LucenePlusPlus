@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMVECTORSTERMSWRITER_H
+#define TERMVECTORSTERMSWRITER_H
 
 #include "TermsHashConsumer.h"
 #include "DocumentsWriter.h"
@@ -92,3 +93,5 @@ namespace Lucene
 		int32_t lastPosition; // Last position where this term occurred
 	};
 }
+
+#endif

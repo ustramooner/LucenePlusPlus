@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef READONLYSEGMENTREADER_H
+#define READONLYSEGMENTREADER_H
 
 #include "SegmentReader.h"
 
@@ -24,3 +25,5 @@ namespace Lucene
 		virtual bool isDeleted(int32_t n);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef INDEXWRITER_H
+#define INDEXWRITER_H
 
 #include "MergePolicy.h"
 
@@ -1105,3 +1106,5 @@ namespace Lucene
 		virtual void warm(IndexReaderPtr reader) = 0;
 	};
 }
+
+#endif

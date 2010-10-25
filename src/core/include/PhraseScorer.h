@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PHRASESCORER_H
+#define PHRASESCORER_H
 
 #include "Scorer.h"
 
@@ -66,3 +67,5 @@ namespace Lucene
 		void firstToLast();
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PARALLELREADER_H
+#define PARALLELREADER_H
 
 #include "IndexReader.h"
 #include "TermEnum.h"
@@ -179,3 +180,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

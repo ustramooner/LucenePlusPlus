@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef INPUTSTREAMREADER_H
+#define INPUTSTREAMREADER_H
 
 #include "Reader.h"
 
@@ -41,3 +42,5 @@ namespace Lucene
 		virtual void reset();
 	};
 }
+
+#endif

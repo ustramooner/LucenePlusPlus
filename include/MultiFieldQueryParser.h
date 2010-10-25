@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MULTIFIELDQUERYPARSER_H
+#define MULTIFIELDQUERYPARSER_H
 
 #include "QueryParser.h"
 
@@ -132,3 +133,5 @@ namespace Lucene
 		virtual QueryPtr getRangeQuery(const String& field, const String& part1, const String& part2, bool inclusive);
 	};
 }
+
+#endif

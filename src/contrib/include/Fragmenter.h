@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FRAGMENTER_H
+#define FRAGMENTER_H
 
 #include "LuceneContrib.h"
 #include "LuceneObject.h"
@@ -33,3 +34,5 @@ namespace Lucene
 		virtual bool isNewFragment();
 	};
 }
+
+#endif

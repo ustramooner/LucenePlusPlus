@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELD_H
+#define FIELD_H
 
 #include "AbstractField.h"
 
@@ -150,3 +151,5 @@ namespace Lucene
 		void ConstructField(const String& name, ByteArray value, int32_t offset, int32_t length, Store store);
 	};
 }
+
+#endif

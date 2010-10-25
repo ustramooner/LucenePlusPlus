@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef OPENBITSETDISI_H
+#define OPENBITSETDISI_H
 
 #include "OpenBitSet.h"
 
@@ -45,3 +46,5 @@ namespace Lucene
 		void inPlaceXor(DocIdSetIteratorPtr disi);
 	};
 }
+
+#endif

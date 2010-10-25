@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMINFOSWRITER_H
+#define TERMINFOSWRITER_H
 
 #include "LuceneObject.h"
 
@@ -90,3 +91,5 @@ namespace Lucene
 		void writeTerm(int32_t fieldNumber, ByteArray termBytes, int32_t termBytesLength);
 	};
 }
+
+#endif

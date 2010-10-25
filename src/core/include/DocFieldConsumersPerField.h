@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DOCFIELDCONSUMERSPERFIELD_H
+#define DOCFIELDCONSUMERSPERFIELD_H
 
 #include "DocFieldConsumerPerField.h"
 
@@ -30,3 +31,5 @@ namespace Lucene
 		virtual void abort();
 	};
 }
+
+#endif

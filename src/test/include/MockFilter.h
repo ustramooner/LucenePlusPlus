@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MOCKFILTER_H
+#define MOCKFILTER_H
 
 #include "test_lucene.h"
 #include "Filter.h"
@@ -29,3 +30,5 @@ namespace Lucene
 		bool wasCalled();
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MULTITERMQUERY_H
+#define MULTITERMQUERY_H
 
 #include "Query.h"
 
@@ -176,3 +177,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

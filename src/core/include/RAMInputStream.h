@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef RAMINPUTSTREAM_H
+#define RAMINPUTSTREAM_H
 
 #include "IndexInput.h"
 
@@ -65,3 +66,5 @@ namespace Lucene
 		void switchCurrentBuffer(bool enforceEOF);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef NEARSPANSORDERED_H
+#define NEARSPANSORDERED_H
 
 #include "Spans.h"
 
@@ -94,3 +95,5 @@ namespace Lucene
 		bool shrinkToAfterShortestMatch();
 	};
 }
+
+#endif

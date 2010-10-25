@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMVECTORSWRITER_H
+#define TERMVECTORSWRITER_H
 
 #include "LuceneObject.h"
 
@@ -38,3 +39,5 @@ namespace Lucene
 		void close();
 	};
 }
+
+#endif

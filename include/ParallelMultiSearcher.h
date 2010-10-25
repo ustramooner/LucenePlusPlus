@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PARALLELMULTISEARCHER_H
+#define PARALLELMULTISEARCHER_H
 
 #include "MultiSearcher.h"
 
@@ -37,3 +38,5 @@ namespace Lucene
 		virtual TopFieldDocsPtr search(WeightPtr weight, FilterPtr filter, int32_t n, SortPtr sort);
 	};
 }
+
+#endif

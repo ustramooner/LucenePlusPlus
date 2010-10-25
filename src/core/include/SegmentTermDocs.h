@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SEGMENTTERMDOCS_H
+#define SEGMENTTERMDOCS_H
 
 #include "TermPositions.h"
 
@@ -78,3 +79,5 @@ namespace Lucene
 		virtual void skipProx(int64_t proxPointer, int32_t payloadLength);
 	};
 }
+
+#endif

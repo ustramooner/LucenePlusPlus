@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMQUERY_H
+#define TERMQUERY_H
 
 #include "Query.h"
 #include "Weight.h"
@@ -46,3 +47,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PHRASEQUEUE_H
+#define PHRASEQUEUE_H
 
 #include "PriorityQueue.h"
 
@@ -22,3 +23,5 @@ namespace Lucene
 		virtual bool lessThan(const PhrasePositionsPtr& first, const PhrasePositionsPtr& second);
 	};
 }
+
+#endif

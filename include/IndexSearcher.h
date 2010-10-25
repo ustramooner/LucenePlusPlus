@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef INDEXSEARCHER_H
+#define INDEXSEARCHER_H
 
 #include "Searcher.h"
 
@@ -97,3 +98,5 @@ namespace Lucene
 		void searchWithFilter(IndexReaderPtr reader, WeightPtr weight, FilterPtr filter, CollectorPtr collector);
 	};
 }
+
+#endif

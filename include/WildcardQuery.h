@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef WILDCARDQUERY_H
+#define WILDCARDQUERY_H
 
 #include "MultiTermQuery.h"
 
@@ -49,3 +50,5 @@ namespace Lucene
 		virtual FilteredTermEnumPtr getEnum(IndexReaderPtr reader);
 	};
 }
+
+#endif

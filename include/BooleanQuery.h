@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BOOLEANQUERY_H
+#define BOOLEANQUERY_H
 
 #include "Query.h"
 #include "BooleanClause.h"
@@ -99,3 +100,5 @@ namespace Lucene
 	
 	
 }
+
+#endif

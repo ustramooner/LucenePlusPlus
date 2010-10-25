@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef ALLOCATOR_H
+#define ALLOCATOR_H
 
 namespace Lucene
 {
@@ -139,3 +140,5 @@ namespace Lucene
 		}
 	};
 }
+
+#endif

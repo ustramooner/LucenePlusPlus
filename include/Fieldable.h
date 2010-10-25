@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDABLE_H
+#define FIELDABLE_H
 
 #include "LuceneObject.h"
 
@@ -145,3 +146,5 @@ namespace Lucene
 		virtual void setOmitTermFreqAndPositions(bool omitTermFreqAndPositions) = 0;
 	};
 }
+
+#endif

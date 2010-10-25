@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TOKENFILTER_H
+#define TOKENFILTER_H
 
 #include "TokenStream.h"
 
@@ -40,3 +41,5 @@ namespace Lucene
 		virtual void reset();
 	};
 }
+
+#endif

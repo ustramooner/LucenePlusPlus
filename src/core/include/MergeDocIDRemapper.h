@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MERGEDOCIDREMAPPER_H
+#define MERGEDOCIDREMAPPER_H
 
 #include "LuceneObject.h"
 
@@ -33,3 +34,5 @@ namespace Lucene
 		int32_t remap(int32_t oldDocID);
 	};
 }
+
+#endif

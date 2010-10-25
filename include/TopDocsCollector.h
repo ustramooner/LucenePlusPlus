@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TOPDOCSCOLLECTOR_H
+#define TOPDOCSCOLLECTOR_H
 
 #include "Collector.h"
 #include "PriorityQueue.h"
@@ -78,3 +79,5 @@ namespace Lucene
 		virtual TopDocsPtr newTopDocs(Collection<ScoreDocPtr> results, int32_t start);
 	};
 }
+
+#endif

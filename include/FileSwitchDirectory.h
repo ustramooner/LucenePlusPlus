@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FILESWITCHDIRECTORY_H
+#define FILESWITCHDIRECTORY_H
 
 #include "Directory.h"
 
@@ -80,3 +81,5 @@ namespace Lucene
 		DirectoryPtr getDirectory(const String& name);		
 	};
 }
+
+#endif

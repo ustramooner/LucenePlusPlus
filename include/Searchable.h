@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SEARCHABLE_H
+#define SEARCHABLE_H
 
 #include "LuceneObject.h"
 
@@ -102,3 +103,5 @@ namespace Lucene
 		virtual TopFieldDocsPtr search(WeightPtr weight, FilterPtr filter, int32_t n, SortPtr sort) = 0;
 	};
 }
+
+#endif

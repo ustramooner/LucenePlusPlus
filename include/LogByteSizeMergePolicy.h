@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef LOGBYTESIZEMERGEPOLICY_H
+#define LOGBYTESIZEMERGEPOLICY_H
 
 #include "LogMergePolicy.h"
 
@@ -56,3 +57,5 @@ namespace Lucene
 		double getMinMergeMB();
 	};
 }
+
+#endif

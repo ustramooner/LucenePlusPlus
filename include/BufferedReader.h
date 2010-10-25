@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BUFFEREDREADER_H
+#define BUFFEREDREADER_H
 
 #include "Reader.h"
 
@@ -58,3 +59,5 @@ namespace Lucene
 		int32_t peek();
 	};
 }
+
+#endif

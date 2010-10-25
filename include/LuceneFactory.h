@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef LUCENEFACTORY_H
+#define LUCENEFACTORY_H
 
 namespace Lucene
 {
@@ -148,3 +149,5 @@ namespace Lucene
 		return instance;
 	}
 }
+
+#endif

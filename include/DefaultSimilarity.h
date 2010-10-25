@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DEFAULTSIMILARITY_H
+#define DEFAULTSIMILARITY_H
 
 #include "Similarity.h"
 
@@ -55,3 +56,5 @@ namespace Lucene
 		bool getDiscountOverlaps();
 	};
 }
+
+#endif

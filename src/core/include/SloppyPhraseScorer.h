@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SLOPPYPHRASESCORER_H
+#define SLOPPYPHRASESCORER_H
 
 #include "PhraseScorer.h"
 
@@ -64,3 +65,5 @@ namespace Lucene
 		PhrasePositionsPtr termPositionsDiffer(PhrasePositionsPtr pp);
 	};
 }
+
+#endif

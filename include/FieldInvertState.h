@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDINVERTSTATE_H
+#define FIELDINVERTSTATE_H
 
 #include "LuceneObject.h"
 
@@ -57,3 +58,5 @@ namespace Lucene
 		AttributeSourcePtr getAttributeSource();
 	};
 }
+
+#endif

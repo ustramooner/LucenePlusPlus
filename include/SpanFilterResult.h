@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SPANFILTERRESULT_H
+#define SPANFILTERRESULT_H
 
 #include "LuceneObject.h"
 
@@ -74,3 +75,5 @@ namespace Lucene
 		int32_t getStart();
 	};
 }
+
+#endif

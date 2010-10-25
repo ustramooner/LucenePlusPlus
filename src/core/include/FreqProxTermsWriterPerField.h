@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FREQPROXTERMSWRITERPERFIELD_H
+#define FREQPROXTERMSWRITERPERFIELD_H
 
 #include "TermsHashConsumerPerField.h"
 
@@ -42,3 +43,5 @@ namespace Lucene
 		void abort();
 	};
 }
+
+#endif

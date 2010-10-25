@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TOPSCOREDOCCOLLECTOR_H
+#define TOPSCOREDOCCOLLECTOR_H
 
 #include "TopDocsCollector.h"
 
@@ -46,3 +47,5 @@ namespace Lucene
 	
 	
 }
+
+#endif

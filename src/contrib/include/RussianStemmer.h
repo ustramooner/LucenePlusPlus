@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef RUSSIANSTEMMER_H
+#define RUSSIANSTEMMER_H
 
 #include "LuceneContrib.h"
 #include "LuceneObject.h"
@@ -121,3 +122,5 @@ namespace Lucene
         bool verb(String& stemmingZone);
 	};
 }
+
+#endif

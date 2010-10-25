@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMRANGEQUERY_H
+#define TERMRANGEQUERY_H
 
 #include "MultiTermQuery.h"
 
@@ -84,3 +85,5 @@ namespace Lucene
 		virtual FilteredTermEnumPtr getEnum(IndexReaderPtr reader);
 	};
 }
+
+#endif

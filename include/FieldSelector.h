@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDSELECTOR_H
+#define FIELDSELECTOR_H
 
 #include "LuceneObject.h"
 
@@ -68,3 +69,5 @@ namespace Lucene
 		virtual FieldSelectorResult accept(const String& fieldName) = 0;
 	};
 }
+
+#endif

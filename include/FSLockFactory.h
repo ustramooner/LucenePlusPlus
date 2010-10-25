@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FSLOCKFACTORY_H
+#define FSLOCKFACTORY_H
 
 #include "LockFactory.h"
 
@@ -34,3 +35,5 @@ namespace Lucene
 		String getLockDir();
 	};
 }
+
+#endif

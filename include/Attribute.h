@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef ATTRIBUTE_H
+#define ATTRIBUTE_H
 
 #include "LuceneObject.h"
 
@@ -51,3 +52,5 @@ namespace Lucene
 		virtual LuceneObjectPtr clone(LuceneObjectPtr other = LuceneObjectPtr()) = 0;
 	};
 }
+
+#endif

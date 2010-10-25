@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FILTERMANAGER_H
+#define FILTERMANAGER_H
 
 #include "LuceneThread.h"
 
@@ -67,3 +68,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

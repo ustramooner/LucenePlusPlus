@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TESTUTILS_H
+#define TESTUTILS_H
 
 #include "Lucene.h"
 
@@ -38,3 +39,5 @@ namespace Lucene
 	/// If any issues are hit, a RuntimeException is thrown; else, true is returned.
 	bool checkIndex(DirectoryPtr dir);
 }
+
+#endif

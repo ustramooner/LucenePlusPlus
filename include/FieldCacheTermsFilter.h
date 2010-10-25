@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDCACHETERMSFILTER_H
+#define FIELDCACHETERMSFILTER_H
 
 #include "Filter.h"
 #include "DocIdSet.h"
@@ -62,3 +63,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

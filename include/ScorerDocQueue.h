@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SCORERDOCQUEUE_H
+#define SCORERDOCQUEUE_H
 
 #include "LuceneObject.h"
 
@@ -73,3 +74,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

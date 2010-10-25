@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef RAMOUTPUTSTREAM_H
+#define RAMOUTPUTSTREAM_H
 
 #include "IndexOutput.h"
 
@@ -73,3 +74,5 @@ namespace Lucene
 		void setFileLength();
 	};
 }
+
+#endif

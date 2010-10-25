@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDSWRITER_H
+#define FIELDSWRITER_H
 
 #include "LuceneObject.h"
 
@@ -57,3 +58,5 @@ namespace Lucene
 		void addDocument(DocumentPtr doc);
 	};
 }
+
+#endif

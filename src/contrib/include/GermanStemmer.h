@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef GERMANSTEMMER_H
+#define GERMANSTEMMER_H
 
 #include "LuceneContrib.h"
 #include "LuceneObject.h"
@@ -68,3 +69,5 @@ namespace Lucene
         void resubstitute();
 	};
 }
+
+#endif

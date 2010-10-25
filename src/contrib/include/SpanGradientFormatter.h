@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SPANGRADIENTFORMATTER_H
+#define SPANGRADIENTFORMATTER_H
 
 #include "GradientFormatter.h"
 
@@ -26,3 +27,5 @@ namespace Lucene
 		virtual String highlightTerm(const String& originalText, TokenGroupPtr tokenGroup);
 	};
 }
+
+#endif

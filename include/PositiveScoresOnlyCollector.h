@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef POSITIVESCORESONLYCOLLECTOR_H
+#define POSITIVESCORESONLYCOLLECTOR_H
 
 #include "Collector.h"
 
@@ -31,3 +32,5 @@ namespace Lucene
 		virtual bool acceptsDocsOutOfOrder();
 	};
 }
+
+#endif

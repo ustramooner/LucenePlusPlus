@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMENUM_H
+#define TERMENUM_H
 
 #include "LuceneObject.h"
 
@@ -34,3 +35,5 @@ namespace Lucene
 		virtual void close() = 0;
 	};
 }
+
+#endif

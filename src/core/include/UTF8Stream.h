@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef UTF8STREAM_H
+#define UTF8STREAM_H
 
 #include "LuceneObject.h"
 
@@ -98,3 +99,5 @@ namespace Lucene
         int32_t utf16to32(wchar_t* unicode, int32_t length);
 	};
 }
+
+#endif

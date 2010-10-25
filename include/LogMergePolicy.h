@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef LOGMERGEPOLICY_H
+#define LOGMERGEPOLICY_H
 
 #include "MergePolicy.h"
 
@@ -141,3 +142,5 @@ namespace Lucene
 		bool isOptimized(SegmentInfoPtr info);
 	};
 }
+
+#endif

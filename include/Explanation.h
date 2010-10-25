@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef EXPLANATION_H
+#define EXPLANATION_H
 
 #include "LuceneObject.h"
 
@@ -82,3 +83,5 @@ namespace Lucene
 		virtual String explain() = 0;
 	};
 }
+
+#endif

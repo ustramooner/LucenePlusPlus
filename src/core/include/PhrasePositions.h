@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PHRASEPOSITIONS_H
+#define PHRASEPOSITIONS_H
 
 #include "LuceneObject.h"
 
@@ -35,3 +36,5 @@ namespace Lucene
 		bool nextPosition();
 	};
 }
+
+#endif

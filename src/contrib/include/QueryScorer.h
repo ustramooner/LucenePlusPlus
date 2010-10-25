@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef QUERYSCORER_H
+#define QUERYSCORER_H
 
 #include "LuceneContrib.h"
 #include "HighlighterScorer.h"
@@ -91,3 +92,5 @@ namespace Lucene
 	    virtual void setWrapIfNotCachingTokenFilter(bool wrap);
 	};
 }
+
+#endif

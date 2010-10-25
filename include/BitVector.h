@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BITVECTOR_H
+#define BITVECTOR_H
 
 #include "LuceneObject.h"
 
@@ -90,3 +91,5 @@ namespace Lucene
 		void readDgaps(IndexInputPtr input);
 	};
 }
+
+#endif

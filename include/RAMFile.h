@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef RAMFILE_H
+#define RAMFILE_H
 
 #include "LuceneObject.h"
 
@@ -52,3 +53,5 @@ namespace Lucene
 		virtual ByteArray newBuffer(int32_t size);
 	};
 }
+
+#endif

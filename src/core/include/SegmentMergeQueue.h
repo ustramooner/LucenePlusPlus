@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SEGMENTMERGEQUEUE_H
+#define SEGMENTMERGEQUEUE_H
 
 #include "PriorityQueue.h"
 
@@ -25,3 +26,5 @@ namespace Lucene
 		virtual bool lessThan(const SegmentMergeInfoPtr& first, const SegmentMergeInfoPtr& second);
 	};
 }
+
+#endif

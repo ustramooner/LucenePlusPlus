@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef NUMERICTOKENSTREAM_H
+#define NUMERICTOKENSTREAM_H
 
 #include "TokenStream.h"
 
@@ -115,3 +116,5 @@ namespace Lucene
 		virtual String toString();
 	};
 }
+
+#endif

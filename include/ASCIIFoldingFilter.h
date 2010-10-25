@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef ASCIIFOLDINGFILTER_H
+#define ASCIIFOLDINGFILTER_H
 
 #include "TokenFilter.h"
 
@@ -61,3 +62,5 @@ namespace Lucene
 		void foldToASCII(const wchar_t* input, int32_t length);
 	};
 }
+
+#endif

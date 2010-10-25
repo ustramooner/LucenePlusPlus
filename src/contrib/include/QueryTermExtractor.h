@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef QUERYTERMEXTRACTOR_H
+#define QUERYTERMEXTRACTOR_H
 
 #include "LuceneContrib.h"
 #include "LuceneObject.h"
@@ -63,3 +64,5 @@ namespace Lucene
 	    static void getTermsFromFilteredQuery(FilteredQueryPtr query, SetWeightedTerm terms, bool prohibited, const String& fieldName);
 	};
 }
+
+#endif

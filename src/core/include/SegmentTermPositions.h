@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SEGMENTTERMPOSITIONS_H
+#define SEGMENTTERMPOSITIONS_H
 
 #include "SegmentTermDocs.h"
 
@@ -75,3 +76,5 @@ namespace Lucene
 		virtual void lazySkip();
 	};
 }
+
+#endif

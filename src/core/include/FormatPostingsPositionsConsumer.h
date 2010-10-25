@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FORMATPOSTINGSPOSITIONSCONSUMER_H
+#define FORMATPOSTINGSPOSITIONSCONSUMER_H
 
 #include "LuceneObject.h"
 
@@ -25,3 +26,5 @@ namespace Lucene
 		virtual void finish() = 0;
 	};
 }
+
+#endif

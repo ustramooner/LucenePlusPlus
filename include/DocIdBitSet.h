@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DOCIDBITSET_H
+#define DOCIDBITSET_H
 
 #include "DocIdSet.h"
 
@@ -57,3 +58,5 @@ namespace Lucene
 		virtual int32_t advance(int32_t target);
 	};	
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CUSTOMSCOREQUERY_H
+#define CUSTOMSCOREQUERY_H
 
 #include "Query.h"
 #include "Weight.h"
@@ -131,3 +132,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

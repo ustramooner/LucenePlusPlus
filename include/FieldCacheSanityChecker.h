@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDCACHESANITYCHECKER_H
+#define FIELDCACHESANITYCHECKER_H
 
 #include "LuceneObject.h"
 #include "MapOfSets.h"
@@ -121,3 +122,5 @@ namespace Lucene
 		virtual String toString();
 	};
 }
+
+#endif

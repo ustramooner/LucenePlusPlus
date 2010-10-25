@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef ARABICLETTERTOKENIZER_H
+#define ARABICLETTERTOKENIZER_H
 
 #include "LuceneContrib.h"
 #include "LetterTokenizer.h"
@@ -37,3 +38,5 @@ namespace Lucene
 		virtual bool isTokenChar(wchar_t c);
 	};
 }
+
+#endif

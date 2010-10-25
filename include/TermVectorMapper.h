@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMVECTORMAPPER_H
+#define TERMVECTORMAPPER_H
 
 #include "LuceneObject.h"
 
@@ -68,3 +69,5 @@ namespace Lucene
 		virtual void setDocumentNumber(int32_t documentNumber);
 	};
 }
+
+#endif

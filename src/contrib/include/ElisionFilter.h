@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef ELISIONFILTER_H
+#define ELISIONFILTER_H
 
 #include "LuceneContrib.h"
 #include "TokenFilter.h"
@@ -41,3 +42,5 @@ namespace Lucene
         virtual bool incrementToken();
 	};
 }
+
+#endif

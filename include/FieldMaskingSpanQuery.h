@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDMASKINGSPANQUERY_H
+#define FIELDMASKINGSPANQUERY_H
 
 #include "SpanQuery.h"
 
@@ -79,3 +80,5 @@ namespace Lucene
 		virtual LuceneObjectPtr clone(LuceneObjectPtr other = LuceneObjectPtr());
 	};
 }
+
+#endif

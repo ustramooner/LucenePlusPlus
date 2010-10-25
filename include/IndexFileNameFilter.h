@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef INDEXFILENAMEFILTER_H
+#define INDEXFILENAMEFILTER_H
 
 #include "LuceneObject.h"
 
@@ -26,3 +27,5 @@ namespace Lucene
 		static IndexFileNameFilterPtr getFilter();
 	};
 }
+
+#endif

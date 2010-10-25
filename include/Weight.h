@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef WEIGHT_H
+#define WEIGHT_H
 
 #include "LuceneObject.h"
 
@@ -79,3 +80,5 @@ namespace Lucene
 		virtual bool scoresDocsOutOfOrder();
 	};
 }
+
+#endif

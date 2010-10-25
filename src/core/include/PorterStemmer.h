@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PORTERSTEMMER_H
+#define PORTERSTEMMER_H
 
 #include "LuceneObject.h"
 
@@ -121,3 +122,5 @@ namespace Lucene
 		void step5();
 	};
 }
+
+#endif

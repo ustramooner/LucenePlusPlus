@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef FIELDCACHESOURCE_H
+#define FIELDCACHESOURCE_H
 
 #include "ValueSource.h"
 
@@ -57,3 +58,5 @@ namespace Lucene
 		virtual int32_t cachedFieldSourceHashCode() = 0;
 	};
 }
+
+#endif

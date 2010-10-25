@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SIMPLEHTMLFORMATTER_H
+#define SIMPLEHTMLFORMATTER_H
 
 #include "Formatter.h"
 
@@ -34,3 +35,5 @@ namespace Lucene
 		virtual String highlightTerm(const String& originalText, TokenGroupPtr tokenGroup);
 	};
 }
+
+#endif

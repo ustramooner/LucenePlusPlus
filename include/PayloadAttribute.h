@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PAYLOADATTRIBUTE_H
+#define PAYLOADATTRIBUTE_H
 
 #include "Attribute.h"
 
@@ -43,3 +44,5 @@ namespace Lucene
 		virtual void copyTo(AttributePtr target);
 	};
 }
+
+#endif

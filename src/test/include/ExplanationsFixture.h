@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef EXPLANATIONSFIXTURE_H
+#define EXPLANATIONSFIXTURE_H
 
 #include "LuceneTestFixture.h"
 
@@ -55,3 +56,5 @@ namespace Lucene
 	};
 }
 
+
+#endif

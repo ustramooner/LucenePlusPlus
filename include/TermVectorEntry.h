@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef TERMVECTORENTRY_H
+#define TERMVECTORENTRY_H
 
 #include "LuceneObject.h"
 
@@ -44,3 +45,5 @@ namespace Lucene
 		virtual String toString();
 	};
 }
+
+#endif

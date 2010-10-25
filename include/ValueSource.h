@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef VALUESOURCE_H
+#define VALUESOURCE_H
 
 #include "LuceneObject.h"
 
@@ -41,3 +42,5 @@ namespace Lucene
 		virtual int32_t hashCode() = 0;
 	};
 }
+
+#endif

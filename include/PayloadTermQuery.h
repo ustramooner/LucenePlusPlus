@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PAYLOADTERMQUERY_H
+#define PAYLOADTERMQUERY_H
 
 #include "SpanTermQuery.h"
 #include "SpanWeight.h"
@@ -43,3 +44,5 @@ namespace Lucene
 	};
 		
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef INDEXFILEDELETER_H
+#define INDEXFILEDELETER_H
 
 #include "IndexCommit.h"
 
@@ -190,3 +191,5 @@ namespace Lucene
 		virtual int32_t compareTo(LuceneObjectPtr other);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef HITQUEUE_H
+#define HITQUEUE_H
 
 #include "HitQueueBase.h"
 
@@ -29,3 +30,5 @@ namespace Lucene
 		virtual ScoreDocPtr getSentinelObject();
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef ENCODER_H
+#define ENCODER_H
 
 #include "LuceneContrib.h"
 #include "LuceneObject.h"
@@ -22,3 +23,5 @@ namespace Lucene
 		virtual String encodeText(const String& originalText);
 	};
 }
+
+#endif

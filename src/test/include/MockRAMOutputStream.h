@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MOCKRAMOUTPUTSTREAM_H
+#define MOCKRAMOUTPUTSTREAM_H
 
 #include "test_lucene.h"
 #include "RAMOutputStream.h"
@@ -37,3 +38,5 @@ namespace Lucene
 		virtual void writeBytes(const uint8_t* b, int32_t offset, int32_t length);
 	};
 }
+
+#endif

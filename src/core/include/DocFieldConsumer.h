@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DOCFIELDCONSUMER_H
+#define DOCFIELDCONSUMER_H
 
 #include "LuceneObject.h"
 
@@ -40,3 +41,5 @@ namespace Lucene
 		virtual void setFieldInfos(FieldInfosPtr fieldInfos);
 	};
 }
+
+#endif

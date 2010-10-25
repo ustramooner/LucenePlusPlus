@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef CJKTOKENIZER_H
+#define CJKTOKENIZER_H
 
 #include "Tokenizer.h"
 
@@ -96,3 +97,5 @@ namespace Lucene
 		virtual void reset(ReaderPtr input);
 	};
 }
+
+#endif

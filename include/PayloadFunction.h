@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef PAYLOADFUNCTION_H
+#define PAYLOADFUNCTION_H
 
 #include "LuceneObject.h"
 
@@ -52,3 +53,5 @@ namespace Lucene
 		virtual bool equals(LuceneObjectPtr other) = 0;
 	};
 }
+
+#endif

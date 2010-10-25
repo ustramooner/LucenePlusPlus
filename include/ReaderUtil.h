@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef READERUTIL_H
+#define READERUTIL_H
 
 #include "LuceneObject.h"
 
@@ -40,3 +41,5 @@ namespace Lucene
 		static int32_t subIndex(int32_t n, Collection<int32_t> docStarts);
 	};
 }
+
+#endif

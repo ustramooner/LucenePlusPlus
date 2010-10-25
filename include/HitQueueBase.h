@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef HITQUEUEBASE_H
+#define HITQUEUEBASE_H
 
 #include "PriorityQueue.h"
 
@@ -58,3 +59,5 @@ namespace Lucene
 		virtual ScoreDocPtr getSentinelObject();
 	};
 }
+
+#endif

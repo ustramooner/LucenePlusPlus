@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef MERGEPOLICY_H
+#define MERGEPOLICY_H
 
 #include "SegmentInfos.h"
 
@@ -135,3 +136,5 @@ namespace Lucene
 		String segString(DirectoryPtr dir);
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef NORMSWRITERPERTHREAD_H
+#define NORMSWRITERPERTHREAD_H
 
 #include "InvertedDocEndConsumerPerThread.h"
 
@@ -31,3 +32,5 @@ namespace Lucene
 		bool freeRAM();
 	};
 }
+
+#endif

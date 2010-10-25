@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SIMILARITY_H
+#define SIMILARITY_H
 
 #include "Explanation.h"
 
@@ -612,3 +613,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef SEGMENTREADER_H
+#define SEGMENTREADER_H
 
 #include "IndexReader.h"
 #include "CloseableThreadLocal.h"
@@ -212,3 +213,5 @@ namespace Lucene
 	};
 	
 }
+
+#endif

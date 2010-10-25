@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef QUERYPARSERCHARSTREAM_H
+#define QUERYPARSERCHARSTREAM_H
 
 #include "LuceneObject.h"
 
@@ -78,3 +79,5 @@ namespace Lucene
 		virtual void Done() = 0;
 	};
 }
+
+#endif

@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef DOCINVERTERPERFIELD_H
+#define DOCINVERTERPERFIELD_H
 
 #include "DocFieldConsumerPerField.h"
 
@@ -39,3 +40,5 @@ namespace Lucene
 		virtual void processFields(Collection<FieldablePtr> fields, int32_t count);
 	};
 }
+
+#endif

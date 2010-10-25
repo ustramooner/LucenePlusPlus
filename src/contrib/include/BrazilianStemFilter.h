@@ -4,7 +4,8 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef BRAZILIANSTEMFILTER_H
+#define BRAZILIANSTEMFILTER_H
 
 #include "LuceneContrib.h"
 #include "TokenFilter.h"
@@ -33,3 +34,5 @@ namespace Lucene
         virtual bool incrementToken();
 	};
 }
+
+#endif
