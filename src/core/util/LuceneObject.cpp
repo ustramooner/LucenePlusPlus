@@ -7,14 +7,10 @@
 #include "stdafx.h"
 #include <boost/thread/thread.hpp>
 #include "LuceneObject.h"
-#include "Synchronize.h"
-#include "LuceneSignal.h"
 #include "StringUtils.h"
 
 namespace Lucene
 {
-
-    boost::mutex LuceneObjectLockMutex;
 
     LuceneObject::LuceneObject()
     {
@@ -53,45 +49,5 @@ namespace Lucene
     String LuceneObject::toString()
     {
         return StringUtils::toString(hashCode());
-    }
-    
-    SynchronizePtr LuceneObject::getSync()
-    {
-        boost::mutex::scoped_lock syncLock(LuceneObjectLockMutex);
-        if (!objectLock)
-            objectLock = newInstance<Synchronize>();
-        return objectLock;
-    }
-    
-    LuceneSignalPtr LuceneObject::getSignal()
-    {
-        if (!objectSignal)
-            objectSignal = newInstance<LuceneSignal>(getSync());
-        return objectSignal;
-    }
-    
-    void LuceneObject::lock(int32_t timeout)
-    {
-        getSync()->lock();
-    }
-    
-    void LuceneObject::unlock()
-    {
-        getSync()->unlock();
-    }
-    
-    bool LuceneObject::holdsLock()
-    {
-        return getSync()->holdsLock();
-    }
-    
-    void LuceneObject::wait(int32_t timeout)
-    {
-        getSignal()->wait(timeout);
-    }
-    
-    void LuceneObject::notifyAll()
-    {
-        getSignal()->notifyAll();
     }
 }

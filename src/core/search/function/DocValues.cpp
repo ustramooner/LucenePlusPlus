@@ -10,6 +10,7 @@
 #include "Explanation.h"
 #include "StringUtils.h"
 #include "MiscUtils.h"
+#include "VariantUtils.h"
 
 namespace Lucene
 {

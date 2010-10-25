@@ -4,6 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
+#include "IndexReader.h"
 #include "stdafx.h"
 #include "LuceneTestFixture.h"
 #include "RAMDirectory.h"

@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "LuceneObject.h"
+#include "LuceneSync.h"
 #ifdef USE_TR1
 	#include <tr1/unordered_set>
 #else
@@ -17,7 +17,7 @@ namespace Lucene
 {
     /// Utility template class to handle hash set collections that can be safely copied and shared
 	template < class TYPE, class HASH = USE_TR1_PREFIX::hash<TYPE>, class EQUAL = std::equal_to<TYPE> >
-	class HashSet : public LuceneObject
+	class HashSet : public LuceneSync
 	{
 	public:
 		typedef HashSet<TYPE, HASH, EQUAL> this_type;
@@ -86,11 +86,6 @@ namespace Lucene
 		const_iterator end() const
 		{
 			return setContainer->end();
-		}
-		
-		virtual int32_t hashCode()
-		{
-			return (int32_t)(int64_t)setContainer.get();
 		}
 		
 		operator bool() const

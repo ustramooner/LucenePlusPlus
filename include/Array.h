@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "LuceneObject.h"
+#include "Lucene.h"
 #include <cstring>
 
 namespace Lucene
@@ -48,7 +48,7 @@ namespace Lucene
 	
 	/// Utility template class to handle sharable arrays of simple data types
 	template <typename TYPE>
-	class Array : public LuceneObject
+	class Array
 	{
 	public:
 		typedef Array<TYPE> this_type;
@@ -142,6 +142,6 @@ namespace Lucene
 	template <class TYPE>
 	inline bool operator== (const Array<TYPE>& value1, const Array<TYPE>& value2)
 	{
-		return value1.hashCode() == value2.hashCode();
+		return (value1.hashCode() == value2.hashCode());
 	}
 }

@@ -106,6 +106,13 @@ def configure(conf):
     conf.env['LINKFLAGS_cshlib'] = ''
     conf.env['LINKFLAGS_cxxshlib'] = ''
     
+    conf.check_tool('boost')
+    conf.check_tool('clang', 'build')
+    conf.check_boost(
+        #static = 'onlystatic',
+        lib = ['filesystem', 'thread', 'regex', 'system', 'date_time', 'iostreams', 'unit_test_framework']
+    )
+    
     if conf.env['HAVE_LLVM'] == False:
       raise Exception("No clang found")
     if conf.path.find_dir(conf.env['INCLUDES_BOOST'] + "/libs") == None:
@@ -167,23 +174,23 @@ def build(bld):
         )
     
     
-    lucene_boost_sources = []
-    for source_dir in boost_sources_dirs:
-        if not bld.path.find_dir(bld.env["INCLUDES_BOOST"] + "/" + source_dir):
-          raise Exception(source_dir + " was not found or is not inside the lucene path")
-        source_dir = bld.path.find_dir(bld.env["INCLUDES_BOOST"] + "/" + source_dir)
-        lucene_boost_sources.extend(source_dir.ant_glob(source_patterns, excl='win32'))
-    bld(
-        name = 'lucene_boost',
-        features = ['cxx', 'c'] + [target_type],
-        source = [source.relpath_gen(bld.path) for source in lucene_boost_sources],
-        target = 'lucene_boost',
-        includes = bld.env["INCLUDES_BOOST"],
-        cflags = compile_flags,
-        cxxflags = compile_flags,
-        linkflags = dll_link_flags,
-        defines = [debug_define] + boost_defines,
-    )
+    #lucene_boost_sources = []
+    #for source_dir in boost_sources_dirs:
+    #    if not bld.path.find_dir(bld.env["INCLUDES_BOOST"] + "/" + source_dir):
+    #      raise Exception(source_dir + " was not found or is not inside the lucene path")
+    #    source_dir = bld.path.find_dir(bld.env["INCLUDES_BOOST"] + "/" + source_dir)
+    #    lucene_boost_sources.extend(source_dir.ant_glob(source_patterns, excl='win32'))
+    #bld(
+    #    name = 'lucene_boost',
+    #    features = ['cxx', 'c'] + [target_type],
+    #    source = [source.relpath_gen(bld.path) for source in lucene_boost_sources],
+    #    target = 'lucene_boost',
+    #    includes = bld.env["INCLUDES_BOOST"],
+    #    cflags = compile_flags,
+    #    cxxflags = compile_flags,
+    #    linkflags = dll_link_flags,
+    #    defines = [debug_define] + boost_defines,
+    #)
     
     ##########
     # applications
@@ -233,7 +240,7 @@ def build(bld):
         linkflags = app_link_flags,
         defines = ['LPP_HAVE_GXXCLASSVISIBILITY'] + [debug_define],
         #uselib = 'PTHREAD',
-        uselib_local = 'lucene++ lucene_boost'
+        use = 'lucene++ lucene_boost'
         )
         
     bld(
@@ -253,4 +260,4 @@ def build(bld):
         
         #Todo:
         #llvm-ld -native *.so target.bc -o ntv -lsupc++ -lstdc++ -L/usr/lib/llvm-2.8/gcc-4.2/lib64 -lpthread
-        
+

@@ -7,6 +7,7 @@
 #pragma once
 
 #include "LuceneObject.h"
+#include <boost/any.hpp>
 
 namespace Lucene
 {

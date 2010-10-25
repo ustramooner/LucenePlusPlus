@@ -1,5 +1,6 @@
 \#*
 *~
+*.rej
 *.orig
 *.bak
 bin/*

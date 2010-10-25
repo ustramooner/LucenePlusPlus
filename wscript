@@ -23,6 +23,7 @@ source_patterns = [
     '*.cpp'
 ]
 
+    opt.tool_options("boost")
 lucene_source_dirs = [
     'src/core/analysis',
     'src/core/document',

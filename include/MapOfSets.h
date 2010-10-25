@@ -10,7 +10,7 @@ namespace Lucene
 {
 	/// Helper class for keeping Lists of Objects associated with keys.
 	template <class MAPKEY, class MAPHASH, class MAPEQUAL, class SETVALUE, class SETHASH, class SETEQUAL>
-	class MapOfSets : public LuceneObject
+	class MapOfSets
 	{
 	public:
 		typedef HashSet<SETVALUE, SETHASH, SETEQUAL> set_type;

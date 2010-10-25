@@ -10,6 +10,10 @@
 
 namespace Lucene
 {
+  typedef HashMap< EntryPtr, boost::any, luceneHash<EntryPtr>, luceneEquals<EntryPtr> > MapEntryAny;
+  typedef WeakHashMap< LuceneObjectWeakPtr, MapEntryAny, luceneWeakHash<LuceneObjectWeakPtr>, luceneWeakEquals<LuceneObjectWeakPtr> > WeakMapLuceneObjectMapEntryAny;
+
+
 	/// The default cache implementation, storing all values in memory.  A WeakHashMap is used for storage.
 	class FieldCacheImpl : public FieldCache, public LuceneObject
 	{

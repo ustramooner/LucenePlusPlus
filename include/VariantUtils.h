@@ -8,6 +8,7 @@
 
 #include "StringUtils.h"
 #include "MiscUtils.h"
+#include <boost/any.hpp>
 
 namespace Lucene
 {

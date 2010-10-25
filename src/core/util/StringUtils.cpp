@@ -4,6 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
+#include <vector>
 #include "stdafx.h"
 #include "StringUtils.h"
 #include "UnicodeUtils.h"

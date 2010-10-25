@@ -1,6 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////
 // Copyright (c) 2009-2010 Alan Wright. All rights reserved.
 // Distributable under the terms of either the Apache License (Version 2.0)
+#include <boost/thread/recursive_mutex.hpp>
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
@@ -21,6 +22,9 @@ namespace Lucene
 		int32_t recursionCount;
 	
 	public:
+	    /// create a new Synchronize instance atomically.
+	    static void createSync(SynchronizePtr& sync);
+	    
 		/// Lock mutex using an optional timeout.
 		void lock(int32_t timeout = 0);
 		

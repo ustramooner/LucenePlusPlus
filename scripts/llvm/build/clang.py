@@ -42,7 +42,7 @@ def apply_clang_cpp(self):
 def apply_clang_llvm(self):
     if self.env['HAVE_LLVM'] == False:
       return
-    self.env['AR'] = self.env['LLVM-AR'] or self.env['AR']
+    #self.env['AR'] = self.env['LLVM-AR'] or self.env['AR']
     self.env['LINK_CC'] = self.env['LLVM-LD'] or self.env['LINK_CC']
     self.env['LINK_CXX'] = self.env['LLVM-LD'] or self.env['LINK_CXX']
     self.env['STLIB_MARKER'] = ''
@@ -65,7 +65,6 @@ def configure(conf):
     conf.find_program('clang++', var='CLANGPP', path_list = search_paths)
     conf.find_program('llvm-ld', var='LLVM-LD', path_list = search_paths)
     conf.find_program('llvm-ar', var='LLVM-AR', path_list = search_paths)
-    
     if conf.env['LLVM-LD'] == None or conf.env['LLVM-AR'] == None or conf.env['CLANG'] == None or conf.env['CLANGPP'] == None:
       conf.env['HAVE_LLVM'] = False
     else:

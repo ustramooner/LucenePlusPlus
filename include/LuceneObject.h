@@ -24,8 +24,8 @@
 namespace Lucene
 {
 	/// Base class for all Lucene classes
-	class LPPAPI LuceneObject : public boost::enable_shared_from_this<LuceneObject>
-	{
+	class LPPAPI LuceneObject : public LuceneSync, public boost::enable_shared_from_this<LuceneObject>
+ 	{
 	public:
 		virtual ~LuceneObject();
 	
@@ -55,26 +55,5 @@ namespace Lucene
 		
 		/// Returns a string representation of the object
 		virtual String toString();
-		
-		/// Return this object synchronize lock.
-		virtual SynchronizePtr getSync();
-		
-		/// Return this object signal.
-		virtual LuceneSignalPtr getSignal();
-		
-		/// Lock this object using an optional timeout.
-		virtual void lock(int32_t timeout = 0);
-		
-		/// Unlock this object.
-		virtual void unlock();
-		
-		/// Returns true if this object is currently locked by current thread.
-		virtual bool holdsLock();
-		
-		/// Wait for signal using an optional timeout.
-		virtual void wait(int32_t timeout = 0);
-		
-		/// Notify all threads waiting for signal.
-		virtual void notifyAll();
 	};
 }
