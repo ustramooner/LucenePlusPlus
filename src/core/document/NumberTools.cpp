@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "LuceneInc.h"
 #include "NumberTools.h"
 #include "StringUtils.h"
 #include <limits.h>

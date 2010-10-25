@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "LuceneInc.h"
 #include "NoLockFactory.h"
 #include "_NoLockFactory.h"
 #include "CycleCheck.h"

@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "LuceneInc.h"
 #include <fstream>
 #include "SimpleFSDirectory.h"
 #include "_SimpleFSDirectory.h"

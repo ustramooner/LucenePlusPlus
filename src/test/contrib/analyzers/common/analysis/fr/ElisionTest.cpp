@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 #include "TermAttribute.h"
 
-#include "stdafx.h"
+#include "TestInc.h"
 #include "BaseTokenStreamFixture.h"
 #include "StandardTokenizer.h"
 #include "StringReader.h"

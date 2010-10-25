@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "LuceneInc.h"
 #include "MultiSearcher.h"
 #include "_MultiSearcher.h"
 #include "VariantUtils.h"

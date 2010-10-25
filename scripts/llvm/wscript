@@ -70,6 +70,7 @@ tester_include_dirs = [
 
 
 def options(opt):
+    opt.tool_options("boost")
     opt.tool_options('compiler_cxx')
     opt.tool_options('clang', tooldir = 'build')
     opt.add_option(
@@ -115,10 +116,10 @@ def configure(conf):
     
     if conf.env['HAVE_LLVM'] == False:
       raise Exception("No clang found")
-    if conf.path.find_dir(conf.env['INCLUDES_BOOST'] + "/libs") == None:
-      raise Exception(conf.env['INCLUDES_BOOST'] + " does not have the libs directory or is not within the source path (" + top + ") - check that the path is correctly and points to a source distribution")
-    if conf.path.find_dir(conf.env['INCLUDES_BOOST'] + "/boost") != None:
-      raise Exception("Please remove the boost includes path, it causes problems for some unknown reason")
+    #if conf.path.find_dir(conf.env['INCLUDES_BOOST'] + "/libs") == None:
+    #  raise Exception(conf.env['INCLUDES_BOOST'] + " does not have the libs directory or is not within the source path (" + top + ") - check that the path is correctly and points to a source distribution")
+    #if conf.path.find_dir(conf.env['INCLUDES_BOOST'] + "/boost") != None:
+    #  raise Exception("Please remove the boost includes path, it causes problems for some unknown reason")
 
 def build(bld):
     target_type = 'cxxstlib'

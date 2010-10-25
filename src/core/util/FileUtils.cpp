@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "LuceneInc.h"
 #include "StringUtils.h"
 #include "FileUtils.h"
 #include <boost/thread/thread.hpp>

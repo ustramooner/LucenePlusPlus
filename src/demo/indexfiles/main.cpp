@@ -5,6 +5,9 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
+#define NOMINMAX
+
+#include "targetver.h"
 #include "LuceneHeaders.h"
 #include <iostream>
 #include "StringUtils.h"

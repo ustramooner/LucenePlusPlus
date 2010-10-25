@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "LuceneInc.h"
 #include "PhraseQuery.h"
 #include "_PhraseQuery.h"
 #include "StringUtils.h"

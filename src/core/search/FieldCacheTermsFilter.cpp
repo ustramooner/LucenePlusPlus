@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "LuceneInc.h"
 #include "FieldCacheTermsFilter.h"
 #include "_FieldCacheTermsFilter.h"
 #include "FieldCache.h"

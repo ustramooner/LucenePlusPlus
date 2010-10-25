@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "LuceneInc.h"
 #include <boost/thread/thread.hpp>
 #include "ConcurrentMergeScheduler.h"
 #include "_ConcurrentMergeScheduler.h"

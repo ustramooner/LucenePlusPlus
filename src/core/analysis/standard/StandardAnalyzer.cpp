@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "LuceneInc.h"
 #include "StandardAnalyzer.h"
 #include "_StandardAnalyzer.h"
 #include "StandardTokenizer.h"

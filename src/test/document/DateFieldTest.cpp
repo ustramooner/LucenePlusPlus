@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "TestInc.h"
 #include <boost/date_time/gregorian/gregorian.hpp>
 #include "LuceneTestFixture.h"
 #include "DateField.h"

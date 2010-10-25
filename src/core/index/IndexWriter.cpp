@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "LuceneInc.h"
 #include <boost/bind/protect.hpp>
 #include "IndexWriter.h"
 #include "_IndexWriter.h"

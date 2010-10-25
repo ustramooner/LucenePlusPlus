@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "LuceneInc.h"
 #include "SegmentMerger.h"
 #include "_SegmentReader.h"
 #include "StringUtils.h"

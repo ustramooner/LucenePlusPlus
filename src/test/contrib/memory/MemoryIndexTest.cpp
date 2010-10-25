@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "TestInc.h"
 #include <boost/algorithm/string.hpp>
 #include "TestUtils.h"
 #include "BaseTokenStreamFixture.h"

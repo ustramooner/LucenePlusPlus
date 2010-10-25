@@ -69,7 +69,7 @@ def set_options(opt):
         '--debug', 
         default = False,
         action = "store_true",
-        help ='debug build no optimization, etc...', 
+        help ='debug build no optimization, etc.', 
         dest = 'debug')
     
     opt.add_option(

@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "TestInc.h"
 #include <boost/regex.hpp>
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"

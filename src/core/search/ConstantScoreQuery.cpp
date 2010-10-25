@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "LuceneInc.h"
 #include "ConstantScoreQuery.h"
 #include "_ConstantScoreQuery.h"
 #include "Filter.h"

@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "LuceneInc.h"
 #include "QueryParserTokenManager.h"
 #include "StringUtils.h"
 #include "QueryParserCharStream.h"

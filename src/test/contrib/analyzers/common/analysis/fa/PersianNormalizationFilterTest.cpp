@@ -5,7 +5,7 @@
 #include "StringReader.h"
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "TestInc.h"
 #include "BaseTokenStreamFixture.h"
 #include "ArabicLetterTokenizer.h"
 #include "PersianNormalizationFilter.h"

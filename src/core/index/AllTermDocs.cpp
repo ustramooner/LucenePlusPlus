@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "LuceneInc.h"
 #include "AllTermDocs.h"
 #include "SegmentReader.h"
 #include "BitVector.h"
@@ -13,11 +13,9 @@ namespace Lucene
 {
     AllTermDocs::AllTermDocs(SegmentReaderPtr parent) : AbstractAllTermDocs(parent->maxDoc())
     {
-        {
             SyncLock parentLock(parent);
             this->_deletedDocs = parent->deletedDocs;
         }
-    }
     
     AllTermDocs::~AllTermDocs()
     {

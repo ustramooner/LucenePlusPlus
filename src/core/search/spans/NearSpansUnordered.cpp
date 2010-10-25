@@ -4,7 +4,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "LuceneInc.h"
 #include "NearSpansUnordered.h"
 #include "_NearSpansUnordered.h"
 #include "NearSpansOrdered.h"

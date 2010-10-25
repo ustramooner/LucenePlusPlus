@@ -5,7 +5,7 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "LuceneInc.h"
 #include <boost/algorithm/string.hpp>
 #include "IndexFileNameFilter.h"
 #include "IndexFileNames.h"
