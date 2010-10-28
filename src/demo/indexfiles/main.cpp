@@ -4,7 +4,6 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
 #include "LuceneHeaders.h"
 #include <iostream>
 #include "StringUtils.h"
