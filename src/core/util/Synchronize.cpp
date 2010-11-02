@@ -12,22 +12,14 @@
 
 namespace Lucene
 {
-    class Synchronize::RecursiveMutexContainer {
-    public:
-        boost::recursive_timed_mutex mutexSynchronize;
-        ThreadId lockThread;
-    };
-
     Synchronize::Synchronize()
     {
-        recursiveMutexContainer = new RecursiveMutexContainer;
-        recursiveMutexContainer->lockThread = LuceneThread::nullId();
+        lockThread = 0;
         recursionCount = 0;
     }
     
     Synchronize::~Synchronize()
     {
-        delete recursiveMutexContainer;
     }
     
     void Synchronize::createSync(SynchronizePtr& sync)
@@ -41,18 +33,18 @@ namespace Lucene
     void Synchronize::lock(int32_t timeout)
     {
         if (timeout > 0)
-            recursiveMutexContainer->mutexSynchronize.timed_lock(boost::posix_time::milliseconds(timeout));
+            mutexSynchronize.timed_lock(boost::posix_time::milliseconds(timeout));
         else
-            recursiveMutexContainer->mutexSynchronize.lock();
-        recursiveMutexContainer->lockThread = LuceneThread::currentId();
+            mutexSynchronize.lock();
+        lockThread = LuceneThread::currentId();
         ++recursionCount;
     }
     
     void Synchronize::unlock()
     {
         if (--recursionCount == 0)
-            recursiveMutexContainer->lockThread = LuceneThread::nullId();
-        recursiveMutexContainer->mutexSynchronize.unlock();        
+            lockThread = 0;
+        mutexSynchronize.unlock();        
     }
     
     int32_t Synchronize::unlockAll()
@@ -65,7 +57,7 @@ namespace Lucene
     
     bool Synchronize::holdsLock()
     {
-        return (recursiveMutexContainer->lockThread == LuceneThread::currentId() && recursionCount > 0);
+        return (lockThread == LuceneThread::currentId() && recursionCount > 0);
     }
     
     SyncLock::SyncLock(SynchronizePtr sync, int32_t timeout)

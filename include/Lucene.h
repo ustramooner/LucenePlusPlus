@@ -84,7 +84,6 @@ namespace Lucene
 #include "HashSet.h"
 #include "Collection.h"
 #include "LuceneException.h"
-#include "ThreadId.h"
 
 namespace Lucene
 {	
@@ -209,7 +208,7 @@ namespace Lucene
 	typedef WeakHashMap< LuceneObjectWeakPtr, LuceneObjectPtr, luceneWeakHash<LuceneObjectWeakPtr>, luceneWeakEquals<LuceneObjectWeakPtr> > WeakMapObjectObject;
 	
 	typedef Map< String, AttributePtr > MapStringAttribute;
-	typedef Map< ThreadId, DocumentsWriterThreadStatePtr > MapThreadDocumentsWriterThreadState;
+    typedef Map< int64_t, DocumentsWriterThreadStatePtr > MapThreadDocumentsWriterThreadState;
 	typedef Map< String, IndexReaderPtr > MapStringIndexReader;
 	typedef Map< TermPtr, NumPtr, luceneCompare<TermPtr> > MapTermNum;
 	

@@ -103,13 +103,12 @@ namespace Lucene
         return true;
     }
     
-    ThreadId LuceneThread::nullId()
+    int64_t LuceneThread::nullId()
     {
-      	return ThreadId::nullId();
-    }
-    
-    ThreadId LuceneThread::currentId()
-    {
-        return ThreadId::currentId();
+        #if defined(_WIN32) || defined(_WIN64)
+          return GetCurrentThreadId();
+        #else
+          return pthread_self();
+        #endif
     }
 }

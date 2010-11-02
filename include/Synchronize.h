@@ -7,6 +7,8 @@
 #ifndef SYNCHRONIZE_H
 #define SYNCHRONIZE_H
 
+#include <boost/thread/recursive_mutex.hpp>
+
 namespace Lucene
 {
 	/// Utility class to support locking via a mutex.
@@ -17,13 +19,13 @@ namespace Lucene
 		virtual ~Synchronize();
 	
 	protected:
-		class RecursiveMutexContainer;
-		RecursiveMutexContainer* recursiveMutexContainer;
+    boost::recursive_timed_mutex mutexSynchronize;
+		int64_t lockThread;
 		int32_t recursionCount;
 	
 	public:
-	    /// create a new Synchronize instance atomically.
-	    static void createSync(SynchronizePtr& sync);
+    /// create a new Synchronize instance atomically.
+    static void createSync(SynchronizePtr& sync);
 	    
 		/// Lock mutex using an optional timeout.
 		void lock(int32_t timeout = 0);

@@ -69,7 +69,7 @@ namespace TestFlushException
 
     public:
         bool hitExc;
-        ThreadId mainThread;
+        int64_t mainThread;
 
     public:
         virtual void setDoFail()
