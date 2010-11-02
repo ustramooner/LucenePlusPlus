@@ -12,6 +12,9 @@
 #pragma warning(disable:4275)
 #pragma warning(disable:4005)
 #pragma warning(disable:4996)
+#ifndef _WIN64
+#pragma warning(disable:4244)
+#endif
 #endif
 
 #if defined(_WIN32) || defined(_WIN64)
