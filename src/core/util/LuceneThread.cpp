@@ -103,7 +103,7 @@ namespace Lucene
         return true;
     }
     
-    int64_t LuceneThread::nullId()
+    int64_t LuceneThread::currentId()
     {
         #if defined(_WIN32) || defined(_WIN64)
           return GetCurrentThreadId();

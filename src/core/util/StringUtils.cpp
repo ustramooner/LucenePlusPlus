@@ -8,7 +8,7 @@
 #include "StringUtils.h"
 #include "UnicodeUtils.h"
 #include "UTF8Stream.h"
-#include "ArrayReader.h"
+#include "Reader.h"
 #include "CharFolder.h"
 #include <boost/algorithm/string.hpp>
 
@@ -22,7 +22,9 @@ namespace Lucene
     
     int32_t StringUtils::toUnicode(const uint8_t* utf8, int32_t length, CharArray unicode)
     {
-        UTF8DecoderPtr utf8Decoder(newLucene<UTF8Decoder>(newLucene<ByteArrayReader>(utf8, length)));
+        if (length == 0)
+            return 0;
+        UTF8DecoderPtr utf8Decoder(newLucene<UTF8Decoder>(utf8, utf8 + length));
         int32_t decodeLength = utf8Decoder->decode(unicode.get(), unicode.length());
         return decodeLength == Reader::READER_EOF ? 0 : decodeLength;
     }
@@ -41,6 +43,8 @@ namespace Lucene
     
     String StringUtils::toUnicode(const uint8_t* utf8, int32_t length)
     {
+        if (length == 0)
+            return L"";
         CharArray unicode(CharArray::newInstance(length));
         int32_t result = toUnicode(utf8, length, unicode);
         return String(unicode.get(), result);
@@ -48,12 +52,14 @@ namespace Lucene
     
     String StringUtils::toUnicode(const SingleString& s)
     {
-        return toUnicode((uint8_t*)s.c_str(), s.length());
+        return s.empty() ? L"" : toUnicode((uint8_t*)s.c_str(), s.length());
     }
     
     int32_t StringUtils::toUTF8(const wchar_t* unicode, int32_t length, ByteArray utf8)
     {
-        UTF8EncoderPtr utf8Encoder(newLucene<UTF8Encoder>(newLucene<CharArrayReader>(unicode, length)));
+        if (length == 0)
+            return 0;
+        UTF8EncoderPtr utf8Encoder(newLucene<UTF8Encoder>(unicode, unicode + length));
         int32_t encodeLength = utf8Encoder->encode(utf8.get(), utf8.length());
         return encodeLength == Reader::READER_EOF ? 0 : encodeLength;
     }
@@ -72,6 +78,8 @@ namespace Lucene
     
     SingleString StringUtils::toUTF8(const wchar_t* unicode, int32_t length)
     {
+        if (length == 0)
+            return "";
         ByteArray utf8(ByteArray::newInstance(length * MAX_ENCODING_UTF8_SIZE));
         int32_t result = toUTF8(unicode, length, utf8);
         return SingleString((char*)utf8.get(), result);
@@ -79,7 +87,7 @@ namespace Lucene
     
     SingleString StringUtils::toUTF8(const String& s)
     {
-        return toUTF8(s.c_str(), s.length());
+        return s.empty() ? "" : toUTF8(s.c_str(), s.length());
     }
     
     void StringUtils::toLower(String& str)
