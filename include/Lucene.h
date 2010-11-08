@@ -17,6 +17,7 @@
 #include <vector>
 #include <map>
 #include <set>
+#include <list>
 #include <boost/shared_ptr.hpp>
 #include <boost/make_shared.hpp>
 #include <boost/weak_ptr.hpp>
@@ -212,8 +213,8 @@ namespace Lucene
 	typedef Map< String, IndexReaderPtr > MapStringIndexReader;
 	typedef Map< TermPtr, NumPtr, luceneCompare<TermPtr> > MapTermNum;
 	
-	template <typename KEY, typename VALUE> class SimpleLRUCache;
-	typedef SimpleLRUCache<TermPtr, TermInfoPtr> TermInfoCache;
+    template < class KEY, class VALUE, class HASH = boost::hash<KEY>, class EQUAL = std::equal_to<KEY> > class SimpleLRUCache;
+    typedef SimpleLRUCache< TermPtr, TermInfoPtr, luceneHash<TermPtr>, luceneEquals<TermPtr> > TermInfoCache;
 	typedef boost::shared_ptr<TermInfoCache> TermInfoCachePtr;
 }
 
