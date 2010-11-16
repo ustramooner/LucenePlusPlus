@@ -29,8 +29,9 @@ namespace Lucene
     /// A parser for queries is contained in: {@link QueryParser}
 	class LPPAPI Query : public LuceneObject
 	{
-	public:
+	protected:
 		Query();
+	public:
 		virtual ~Query();
 		
 		LUCENE_CLASS(Query);

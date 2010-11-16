@@ -25,7 +25,6 @@ namespace Lucene
 	
 		LUCENE_CLASS(TopDocs);
 	
-	public:
 		/// The total number of hits for the query.
 		int32_t totalHits;
 		

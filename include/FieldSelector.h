@@ -14,6 +14,8 @@ namespace Lucene
 	/// {@link IndexReader#document(int32_t, FieldSelector)}
 	class LPPAPI FieldSelector : public LuceneObject
 	{
+	protected:
+	  FieldSelector();
 	public:
 		virtual ~FieldSelector();
 		

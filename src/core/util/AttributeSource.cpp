@@ -11,6 +11,9 @@
 
 namespace Lucene
 {
+    AttributeFactory::AttributeFactory()
+    {
+    }
     AttributeFactory::~AttributeFactory()
     {
     }
