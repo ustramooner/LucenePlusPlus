@@ -35,12 +35,7 @@ namespace Lucene
 		
 		SynchronizePtr objectLock;
 		LuceneSignalPtr objectSignal;
-	
 	public:
-		/// Called directly after instantiation to create objects that depend on this object being 
-		/// fully constructed.
-		virtual void initialize();
-		
 		/// Return clone of this object
 		/// @param other clone reference - null when called initially, then set in top virtual override.
 		virtual LuceneObjectPtr clone(LuceneObjectPtr other = LuceneObjectPtr());

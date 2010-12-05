@@ -22,6 +22,10 @@ namespace Lucene
 		LuceneSignalPtr objectSignal;
 
 	public:
+		/// Called directly after instantiation to create objects that depend on this object being 
+		/// fully constructed.
+		virtual void initialize();
+		
 		/// Return this object synchronize lock.
 		virtual SynchronizePtr getSync();
 

@@ -7,6 +7,8 @@
 #ifndef LUCENECONTRIB_H
 #define LUCENECONTRIB_H
 
+#include "Lucene.h"
+
 namespace Lucene
 {
 	// analyzers
@@ -91,10 +93,10 @@ namespace Lucene
 	DECLARE_SHARED_PTR(WeightedSpanTermExtractor)
 	DECLARE_SHARED_PTR(WeightedTerm)
 
-    // memory
-    DECLARE_SHARED_PTR(MemoryIndex)
-    DECLARE_SHARED_PTR(MemoryIndexInfo)
-    DECLARE_SHARED_PTR(MemoryIndexReader)
+	// memory
+	DECLARE_SHARED_PTR(MemoryIndex)
+	DECLARE_SHARED_PTR(MemoryIndexInfo)
+	DECLARE_SHARED_PTR(MemoryIndexReader)
 
 	typedef HashMap< String, WeightedSpanTermPtr > MapStringWeightedSpanTerm;
 	typedef HashMap< String, WeightedTermPtr > MapStringWeightedTerm;

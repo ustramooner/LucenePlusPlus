@@ -15,6 +15,11 @@ namespace Lucene
     {
     }
 
+    void LuceneSync::initialize()
+    {
+        // override
+    }
+    
     SynchronizePtr LuceneSync::getSync()
     {
         Synchronize::createSync(objectLock);

@@ -19,11 +19,6 @@ namespace Lucene
     {
     }
     
-    void LuceneObject::initialize()
-    {
-        // override
-    }
-    
     LuceneObjectPtr LuceneObject::clone(LuceneObjectPtr other)
     {
         if (!other)

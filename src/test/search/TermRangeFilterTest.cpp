@@ -15,6 +15,7 @@
 #include "TermQuery.h"
 #include "Term.h"
 #include "RAMDirectory.h"
+#include "VariantUtils.h"
 #include "Collator.h"
 
 using namespace Lucene;

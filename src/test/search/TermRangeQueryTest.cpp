@@ -21,6 +21,7 @@
 #include "Tokenizer.h"
 #include "TermAttribute.h"
 #include "Reader.h"
+#include "VariantUtils.h"
 
 using namespace Lucene;
 
