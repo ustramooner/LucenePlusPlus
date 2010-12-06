@@ -59,7 +59,39 @@ lucene_include_dirs = [
 ]
 
 tester_source_dirs = [
-    'src/test'
+  'src/test/',
+  'src/test/analysis',
+  'src/test/analysis/standard',
+  'src/test/analysis/tokenattributes',
+  'src/test/contrib',
+  'src/test/contrib/analyzers',
+  'src/test/contrib/analyzers/common',
+  'src/test/contrib/analyzers/common/analysis',
+  'src/test/contrib/analyzers/common/analysis/ar',
+  'src/test/contrib/analyzers/common/analysis/br',
+  'src/test/contrib/analyzers/common/analysis/cjk',
+  'src/test/contrib/analyzers/common/analysis/cn',
+  'src/test/contrib/analyzers/common/analysis/cz',
+  'src/test/contrib/analyzers/common/analysis/de',
+  'src/test/contrib/analyzers/common/analysis/el',
+  'src/test/contrib/analyzers/common/analysis/fa',
+  'src/test/contrib/analyzers/common/analysis/fr',
+  'src/test/contrib/analyzers/common/analysis/nl',
+  'src/test/contrib/analyzers/common/analysis/reverse',
+  'src/test/contrib/analyzers/common/analysis/ru',
+  'src/test/contrib/highlighter',
+  'src/test/contrib/memory',
+  'src/test/contrib/snowball',
+  'src/test/document',
+  'src/test/include',
+  'src/test/index',
+  'src/test/queryparser',
+  'src/test/search',
+  'src/test/search/function',
+  'src/test/search/payloads',
+  'src/test/search/spans',
+  'src/test/store',
+  'src/test/util'
 ]
 
 tester_include_dirs = [
