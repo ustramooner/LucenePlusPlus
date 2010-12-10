@@ -138,7 +138,7 @@ namespace Lucene
                 _sizeInBytes -= existing->second->getSizeInBytes();
                 existing->second->_directory.reset();
             }
-            fileMap[name] = file;
+            fileMap.put(name, file);
         }
         return newLucene<RAMOutputStream>(file);
     }
@@ -160,6 +160,6 @@ namespace Lucene
     void RAMDirectory::close()
     {
         isOpen = false;
-        fileMap.clear();
+        fileMap.reset();
     }
 }
