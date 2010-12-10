@@ -38,7 +38,7 @@ namespace Lucene
         return defaultImpl;
     }
     
-    Collection<double> Similarity::NORM_TABLE()
+    const Collection<double> Similarity::NORM_TABLE()
     {
         static Collection<double> _NORM_TABLE;
         if (!_NORM_TABLE)
@@ -55,7 +55,7 @@ namespace Lucene
         return NORM_TABLE()[b & 0xff];  // & 0xff maps negative bytes to positive above 127
     }
     
-    Collection<double> Similarity::getNormDecoder()
+    const Collection<double> Similarity::getNormDecoder()
     {
         return NORM_TABLE();
     }

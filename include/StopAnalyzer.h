@@ -42,7 +42,7 @@ namespace Lucene
 		static const wchar_t* _ENGLISH_STOP_WORDS_SET[];
 	public:
 		/// An unmodifiable set containing some common English words that are usually not useful for searching.
-		static HashSet<String> ENGLISH_STOP_WORDS_SET();
+        static const HashSet<String> ENGLISH_STOP_WORDS_SET();
 	
 		virtual TokenStreamPtr tokenStream(const String& fieldName, ReaderPtr reader);
 		virtual TokenStreamPtr reusableTokenStream(const String& fieldName, ReaderPtr reader);

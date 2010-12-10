@@ -88,7 +88,7 @@ namespace Lucene
     {
     }
     
-    HashSet<String> CzechAnalyzer::getDefaultStopSet()
+    const HashSet<String> CzechAnalyzer::getDefaultStopSet()
     {
         static HashSet<String> stopSet;
         if (!stopSet)

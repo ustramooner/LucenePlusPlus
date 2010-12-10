@@ -91,7 +91,7 @@ namespace Lucene
     {
     }
     
-    HashSet<String> ArabicAnalyzer::getDefaultStopSet()
+    const HashSet<String> ArabicAnalyzer::getDefaultStopSet()
     {
         static HashSet<String> stopSet;
         if (!stopSet)

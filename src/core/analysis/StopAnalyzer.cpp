@@ -50,7 +50,7 @@ namespace Lucene
     {
     }
     
-    HashSet<String> StopAnalyzer::ENGLISH_STOP_WORDS_SET()
+    const HashSet<String> StopAnalyzer::ENGLISH_STOP_WORDS_SET()
     {
         static HashSet<String> __ENGLISH_STOP_WORDS_SET;
         if (!__ENGLISH_STOP_WORDS_SET)
