@@ -132,11 +132,14 @@ def build(bld):
     
     dll_link_flags = ['-link-as-library']
     app_link_flags = ['-native', 
-                      'scripts/llvm/liblucene_boost.a', 'scripts/llvm/liblucene++.a'
+                      'scripts/llvm/liblucene++.a',
+                      '-L/usr/lib/gcc/x86_64-linux-gnu/4.5/',
+                      '-lsupc++', '-lstdc++', 
+                      '-lpthread', '-lm', '-lc'
     ]
-    #                        '-L/usr/lib/llvm-2.8/gcc-4.2/lib64', 
-    #                        '-lsupc++', '-lstdc++', 
-    #                        '-lpthread', '-lm', '-lc'
+    #                        'scripts/llvm/liblucene_boost.a',  
+    #                        
+    #                        
 
     ###############
     #libraries...
@@ -156,6 +159,7 @@ def build(bld):
         cxxflags = compile_flags,
         linkflags = dll_link_flags,
         defines = ['LPP_BUILDING_LIB', 'LPP_HAVE_GXXCLASSVISIBILITY'] + [debug_define],
+        uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD'
         )
     
     lucene_contrib_sources = []
@@ -226,8 +230,8 @@ def build(bld):
         cxxflags = compile_flags,
         linkflags = app_link_flags,
         defines = ['LPP_HAVE_GXXCLASSVISIBILITY'] + [debug_define],
-        uselib = 'PTHREAD',
-        use = 'lucene++'
+        uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD',
+        uselib_local = 'lucene++'
         )
 
     bld(
@@ -240,8 +244,8 @@ def build(bld):
         cxxflags = compile_flags,
         linkflags = app_link_flags,
         defines = ['LPP_HAVE_GXXCLASSVISIBILITY'] + [debug_define],
-        #uselib = 'PTHREAD',
-        use = 'lucene++ lucene_boost'
+        uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD',
+        uselib_local = 'lucene++'
         )
         
     bld(
@@ -254,8 +258,8 @@ def build(bld):
         cxxflags = compile_flags,
         linkflags = app_link_flags,
         defines = ['LPP_HAVE_GXXCLASSVISIBILITY'] + [debug_define],
-        uselib = 'PTHREAD',
-        use = 'lucene++'
+        uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD',
+        uselib_local = 'lucene++'
         )
         
         
