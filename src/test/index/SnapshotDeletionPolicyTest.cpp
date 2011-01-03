@@ -169,7 +169,7 @@ public:
             int64_t bytesLeft = size;
             while (bytesLeft > 0)
             {
-                int32_t numToRead = bytesLeft < buffer.length() ? (int32_t)bytesLeft : buffer.length();
+                int32_t numToRead = bytesLeft < buffer.size() ? (int32_t)bytesLeft : buffer.size();
                 input->readBytes(buffer.get(), 0, numToRead, false);
                 bytesLeft -= numToRead;
             }
@@ -191,7 +191,7 @@ public:
         HashSet<String> _startFiles = dir->listAll();
         SegmentInfosPtr infos = newLucene<SegmentInfos>();
         infos->read(dir);
-        IndexFileDeleterPtr deleter = newLucene<IndexFileDeleter>(dir, newLucene<KeepOnlyLastCommitDeletionPolicy>(), infos, InfoStreamPtr(), DocumentsWriterPtr());
+        IndexFileDeleterPtr deleter = newLucene<IndexFileDeleter>(dir, newLucene<KeepOnlyLastCommitDeletionPolicy>(), infos, InfoStreamPtr(), DocumentsWriterPtr(), HashSet<String>());
         HashSet<String> _endFiles = dir->listAll();
         
         Collection<String> startFiles = Collection<String>::newInstance(_startFiles.begin(), _startFiles.end());

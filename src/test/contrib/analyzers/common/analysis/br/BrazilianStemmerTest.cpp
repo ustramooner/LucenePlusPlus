@@ -8,7 +8,6 @@
 #include "BaseTokenStreamFixture.h"
 #include "BrazilianAnalyzer.h"
 
-
 using namespace Lucene;
 
 class BrazilianStemmerFixture : public BaseTokenStreamFixture

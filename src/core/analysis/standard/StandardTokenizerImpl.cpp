@@ -316,6 +316,14 @@ namespace Lucene
         return _yychar;
     }
     
+    void StandardTokenizerImpl::reset(ReaderPtr r)
+    {
+        // reset to default buffer size, if buffer has grown
+        if (zzBuffer.size() > ZZ_BUFFERSIZE)
+            zzBuffer.resize(ZZ_BUFFERSIZE);
+        yyreset(r);
+    }
+    
     void StandardTokenizerImpl::getText(TokenPtr t)
     {
         t->setTermBuffer(zzBuffer.get(), zzStartRead, zzMarkedPos - zzStartRead);
@@ -342,11 +350,11 @@ namespace Lucene
         }
         
         // is the buffer big enough?
-        if (zzCurrentPos >= zzBuffer.length())
+        if (zzCurrentPos >= zzBuffer.size())
             zzBuffer.resize(zzCurrentPos * 2);
         
         // finally: fill the buffer with new input
-        int32_t numRead = zzReader->read(zzBuffer.get(), zzEndRead, zzBuffer.length() - zzEndRead);
+        int32_t numRead = zzReader->read(zzBuffer.get(), zzEndRead, zzBuffer.size() - zzEndRead);
         
         if (numRead < 0)
             return true;

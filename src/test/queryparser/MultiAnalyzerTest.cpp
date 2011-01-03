@@ -7,7 +7,6 @@
 #include "TestInc.h"
 #include "BaseTokenStreamFixture.h"
 #include "QueryParser.h"
-
 #include "Analyzer.h"
 #include "StandardTokenizer.h"
 #include "LowerCaseFilter.h"

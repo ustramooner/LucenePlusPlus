@@ -7,7 +7,6 @@
 #include "TestInc.h"
 #include "LuceneTestFixture.h"
 #include "QueryParser.h"
-
 #include "IndexSearcher.h"
 #include "WhitespaceAnalyzer.h"
 #include "RAMDirectory.h"

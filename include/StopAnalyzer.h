@@ -40,6 +40,7 @@ namespace Lucene
 		bool enablePositionIncrements;
 	
 		static const wchar_t* _ENGLISH_STOP_WORDS_SET[];
+
 	public:
 		/// An unmodifiable set containing some common English words that are usually not useful for searching.
         static const HashSet<String> ENGLISH_STOP_WORDS_SET();

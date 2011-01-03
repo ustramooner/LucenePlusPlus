@@ -23,7 +23,6 @@
 #include "MultiPhraseQuery.h"
 #include "CheckHits.h"
 
-
 using namespace Lucene;
 
 class Qnorm1Similarity : public DefaultSimilarity

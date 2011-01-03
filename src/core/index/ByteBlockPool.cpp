@@ -45,7 +45,7 @@ namespace Lucene
             for (int32_t i = 0; i < bufferUpto; ++i)
             {
                 // Fully zero fill buffers that we fully used
-                MiscUtils::arrayFill(buffers[i].get(), 0, buffers[i].length(), 0);
+                MiscUtils::arrayFill(buffers[i].get(), 0, buffers[i].size(), 0);
             }
             
             // Partial zero fill the final buffer
@@ -107,9 +107,9 @@ namespace Lucene
         buffer[newUpto + 2] = slice[upto - 1];
         
         // Write forwarding address at end of last slice
-        slice[upto - 3] = (uint8_t)(offset >> 24);
-        slice[upto - 2] = (uint8_t)(offset >> 16);
-        slice[upto - 1] = (uint8_t)(offset >> 8);
+        slice[upto - 3] = (uint8_t)MiscUtils::unsignedShift(offset, 24);
+        slice[upto - 2] = (uint8_t)MiscUtils::unsignedShift(offset, 16);
+        slice[upto - 1] = (uint8_t)MiscUtils::unsignedShift(offset, 8);
         slice[upto] = (uint8_t)offset;
         
         // Write new level

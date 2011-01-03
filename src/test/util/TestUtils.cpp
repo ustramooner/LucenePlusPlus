@@ -15,7 +15,6 @@
 #include "IndexWriter.h"
 #include "Random.h"
 
-
 namespace Lucene
 {
     static RandomPtr randomTest = newLucene<Random>();

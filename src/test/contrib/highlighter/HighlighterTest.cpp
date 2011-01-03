@@ -41,11 +41,6 @@
 #include "WeightedSpanTerm.h"
 #include "WeightedTerm.h"
 #include "BooleanQuery.h"
-#include "ScoreDoc.h"
-#include "Term.h"
-#include "FilteredQuery.h"
-#include "Token.h"
-#include "TermQuery.h"
 #include "WildcardQuery.h"
 #include "NullFragmenter.h"
 #include "TermRangeFilter.h"
@@ -57,6 +52,11 @@
 #include "SimpleHTMLEncoder.h"
 #include "MultiSearcher.h"
 #include "FileUtils.h"
+#include "ScoreDoc.h"
+#include "Term.h"
+#include "FilteredQuery.h"
+#include "Token.h"
+#include "TermQuery.h"
 
 using namespace Lucene;
 class HighlighterTestFixture;

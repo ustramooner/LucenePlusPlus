@@ -16,6 +16,7 @@ namespace Lucene
 	{
 	protected:
 		Reader();
+
 	public:
 		virtual ~Reader();
 		LUCENE_CLASS(Reader);

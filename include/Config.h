@@ -33,20 +33,14 @@
 // Define LPPAPI for dll builds
 #if defined(LPP_HAVE_DLL)
   #ifdef LPP_BUILDING_LIB
-  #define LPPAPI LPP_EXPORT
+    #define LPPAPI LPP_EXPORT
+    #define LPPCONTRIBAPI LPP_EXPORT
   #else
-  #define LPPAPI LPP_IMPORT
+    #define LPPAPI LPP_IMPORT
+    #define LPPCONTRIBAPI LPP_IMPORT
   #endif
-  #else
+#else
   #define LPPAPI
-#endif
-#if defined(LPP_HAVE_DLL)
-  #ifdef LPP_BUILDING_LIB
-  #define LPPCONTRIBAPI LPP_EXPORT
-  #else
-  #define LPPCONTRIBAPI LPP_IMPORT
-  #endif
-  #else
   #define LPPCONTRIBAPI
 #endif
 

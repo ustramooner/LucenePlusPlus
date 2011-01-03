@@ -17,7 +17,6 @@
 #include "Document.h"
 #include "Field.h"
 
-
 using namespace Lucene;
 
 class FieldCacheSanityCheckerTestFixture : public LuceneTestFixture

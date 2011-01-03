@@ -30,28 +30,6 @@ namespace Lucene
 		bool isValid();
 	};
 	
-	class OutputFile : public LuceneObject
-	{
-	public:
-		OutputFile(const String& path);
-		virtual ~OutputFile();
-		
-		LUCENE_CLASS(OutputFile);
-				
-	protected:
-		ofstreamPtr file;
-		String path;
-	
-	public:
-		bool write(const uint8_t* b, int32_t offset, int32_t length);
-		void close();
-		void setPosition(int64_t position);
-		int64_t getLength();
-		void setLength(int64_t length);
-		void flush();
-		bool isValid();
-	};
-	
 	class SimpleFSIndexInput : public BufferedIndexInput
 	{
 	public:
@@ -82,6 +60,28 @@ namespace Lucene
 		virtual LuceneObjectPtr clone(LuceneObjectPtr other = LuceneObjectPtr());
 	};
 		
+	class OutputFile : public LuceneObject
+	{
+	public:
+		OutputFile(const String& path);
+		virtual ~OutputFile();
+		
+		LUCENE_CLASS(OutputFile);
+				
+	protected:
+		ofstreamPtr file;
+		String path;
+	
+	public:
+		bool write(const uint8_t* b, int32_t offset, int32_t length);
+		void close();
+		void setPosition(int64_t position);
+		int64_t getLength();
+		void setLength(int64_t length);
+		void flush();
+		bool isValid();
+	};
+	
 	class SimpleFSIndexOutput : public BufferedIndexOutput
 	{
 	public:
@@ -100,7 +100,6 @@ namespace Lucene
 		virtual void seek(int64_t pos);
 		virtual int64_t length();
 		virtual void setLength(int64_t length);
-	};		
-
+	};
 }
 

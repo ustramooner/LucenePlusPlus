@@ -8,7 +8,6 @@
 #include <boost/blank.hpp>
 #include "LuceneTestFixture.h"
 #include "RAMDirectory.h"
-
 #include "IndexSearcher.h"
 #include "TermRangeQuery.h"
 #include "WhitespaceAnalyzer.h"

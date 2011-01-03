@@ -6,6 +6,7 @@
 
 #ifndef INFOSTREAM_H
 #define INFOSTREAM_H
+
 #include "LuceneObject.h"
 #include <fstream>
 
@@ -50,6 +51,17 @@ namespace Lucene
 	public:
 		virtual InfoStreamOut& operator<< (const String& t);
 	};
+    
+    /// Null stream override to eat messages.
+    class LPPAPI InfoStreamNull : public InfoStream
+    {
+    public:
+        virtual ~InfoStreamNull();
+        LUCENE_CLASS(InfoStreamNull);
+            
+    public:
+        virtual InfoStreamNull& operator<< (const String& t);
+    };
 }
 
 #endif

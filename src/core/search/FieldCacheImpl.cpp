@@ -541,7 +541,7 @@ namespace Lucene
             do
             {
                 TermPtr term(termEnum->term());
-                if (!term || term->field() != field)
+                if (!term || term->field() != field || t >= mterms.size() )
                     break;
                 
                 // store term text

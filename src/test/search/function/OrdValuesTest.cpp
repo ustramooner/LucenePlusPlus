@@ -8,7 +8,6 @@
 #include <boost/blank.hpp>
 #include "FunctionFixture.h"
 #include "IndexSearcher.h"
-
 #include "ValueSource.h"
 #include "OrdFieldSource.h"
 #include "ReverseOrdFieldSource.h"

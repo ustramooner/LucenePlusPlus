@@ -6,7 +6,6 @@
 
 #include "TestInc.h"
 #include "LuceneTestFixture.h"
-
 #include "_NumericRangeQuery.h"
 #include "NumericRangeFilter.h"
 #include "TopDocs.h"

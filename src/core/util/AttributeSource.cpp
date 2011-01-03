@@ -108,7 +108,7 @@ namespace Lucene
             if (!currentState)
                 computeCurrentState();
 
-            for (AttributeSourceStatePtr& state = currentState; state; state = state->next){
+            for (AttributeSourceStatePtr state = currentState; state; state = state->next){
             	state->attribute->clear();
             }
         }
@@ -144,8 +144,11 @@ namespace Lucene
     int32_t AttributeSource::hashCode()
     {
         int32_t code = 0;
-        for (AttributeSourceStatePtr& state = currentState; state; state = state->next){
-        	code = code * 31 + state->attribute->hashCode();
+        if (hasAttributes()) {
+          if (!currentState)
+              computeCurrentState();
+          for (AttributeSourceStatePtr state = currentState; state; state = state->next)
+        	  code = code * 31 + state->attribute->hashCode();
         }
         return code;
     }
@@ -199,7 +202,7 @@ namespace Lucene
         {
             if (!currentState)
                 computeCurrentState();
-            for (AttributeSourceStatePtr& state = currentState; state; state = state->next)
+            for (AttributeSourceStatePtr state = currentState; state; state = state->next)
             {
                 if (state != currentState)
                     buf << L",";
@@ -218,7 +221,7 @@ namespace Lucene
         {
             if (!currentState)
                 computeCurrentState();
-            for (AttributeSourceStatePtr& state = currentState; state; state = state->next)
+            for (AttributeSourceStatePtr state = currentState; state; state = state->next)
                 clone->attributes.put(state->attribute->getClassName(), boost::dynamic_pointer_cast<Attribute>(state->attribute->clone()));
         }
         
@@ -232,7 +235,7 @@ namespace Lucene
         {
             if (!currentState)
                 computeCurrentState();
-            for (AttributeSourceStatePtr& state = currentState; state; state = state->next)
+            for (AttributeSourceStatePtr state = currentState; state; state = state->next)
                 attrImpls.add(state->attribute);
         }
         return attrImpls;

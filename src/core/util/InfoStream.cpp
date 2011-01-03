@@ -43,4 +43,14 @@ namespace Lucene
         std::wcout << t;
         return *this;
     }
-}
+    
+    InfoStreamNull::~InfoStreamNull()
+    {
+    }
+    
+    InfoStreamNull& InfoStreamNull::operator<< (const String& t)
+    {
+        return *this;
+    }
+    }
+    

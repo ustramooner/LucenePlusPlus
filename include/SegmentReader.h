@@ -26,6 +26,7 @@ namespace Lucene
 		SegmentReaderRefPtr deletedDocsRef;
 		CoreReadersPtr core;
 		FieldsReaderLocalPtr fieldsReaderLocal;
+    SegmentInfoPtr rollbackSegmentInfo;
 		CloseableThreadLocal<TermVectorsReader> termVectorsLocal;
 		FieldInfosPtr fieldInfos();
 
@@ -189,7 +190,9 @@ namespace Lucene
 		/// Implements commit.
 		virtual void doCommit(MapStringString commitUserData);
 		
-		/// Implements close.
+    virtual void commitChanges(MapStringString commitUserData);
+    
+    /// Implements close.
 		virtual void doClose();
 		
 		/// Implements deletion of the document numbered docNum.

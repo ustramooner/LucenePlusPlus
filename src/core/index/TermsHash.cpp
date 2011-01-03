@@ -56,7 +56,6 @@ namespace Lucene
     
     void TermsHash::abort()
     {
-        SyncLock syncLock(this);
         consumer->abort();
         if (nextTermsHash)
             nextTermsHash->abort();
@@ -125,20 +124,27 @@ namespace Lucene
     
     bool TermsHash::freeRAM()
     {
-        SyncLock syncLock(this);
         if (!trackAllocations)
             return false;
         
+        bool any = false;
+        int64_t bytesFreed = 0;
+        {
+            SyncLock syncLock(this);
         int32_t numToFree = postingsFreeCount >= postingsFreeChunk ? postingsFreeChunk : postingsFreeCount;
-        bool any = (numToFree > 0);
+            any = (numToFree > 0);
         if (any)
         {
             MiscUtils::arrayFill(postingsFreeList.begin(), postingsFreeCount - numToFree, postingsFreeCount, RawPostingListPtr());
             postingsFreeCount -= numToFree;
             postingsAllocCount -= numToFree;
-            DocumentsWriterPtr(_docWriter)->bytesAllocated(-numToFree * bytesPerPosting);
+                bytesFreed = -numToFree * bytesPerPosting;
             any = true;
         }
+        }
+        
+        if (any)
+            DocumentsWriterPtr(_docWriter)->bytesAllocated(bytesFreed);
         
         if (nextTermsHash && nextTermsHash->freeRAM())
             any = true;

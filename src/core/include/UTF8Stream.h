@@ -11,7 +11,7 @@
 
 namespace Lucene
 {
-    class LPPCONTRIBAPI UTF8Base : public LuceneObject
+  class UTF8Base : public LuceneObject
 	{
 	public:
         virtual ~UTF8Base();
@@ -88,10 +88,10 @@ namespace Lucene
         }
 	};
 	
-    class LPPCONTRIBAPI UTF8Encoder : public UTF8Base
+  class UTF8Encoder : public UTF8Base
 	{
 	public:
-        UTF8Encoder(const wchar_t* unicodeBegin, const wchar_t* unicodeEnd);
+    UTF8Encoder(const wchar_t* unicodeBegin, const wchar_t* unicodeEnd);
 		virtual ~UTF8Encoder();
 		
 		LUCENE_CLASS(UTF8Encoder);
@@ -111,25 +111,25 @@ namespace Lucene
         uint8_t* appendChar(uint8_t* utf8, uint32_t cp);
 	};
 	
-    class LPPCONTRIBAPI UTF8EncoderStream : public UTF8Encoder
-    {
-    public:
-        UTF8EncoderStream(ReaderPtr reader);
-        virtual ~UTF8EncoderStream();
-        
-        LUCENE_CLASS(UTF8EncoderStream);
+  class UTF8EncoderStream : public UTF8Encoder
+  {
+  public:
+      UTF8EncoderStream(ReaderPtr reader);
+      virtual ~UTF8EncoderStream();
+      
+      LUCENE_CLASS(UTF8EncoderStream);
+  
+  protected:
+      ReaderPtr reader;
+  
+  protected:
+      virtual uint32_t readNext();
+  };
     
-    protected:
-        ReaderPtr reader;
-    
-    protected:
-        virtual uint32_t readNext();
-    };
-    
-    class LPPCONTRIBAPI UTF8Decoder : public UTF8Base
+  class UTF8Decoder : public UTF8Base
 	{
 	public:
-        UTF8Decoder(const uint8_t* utf8Begin, const uint8_t* utf8End);
+    UTF8Decoder(const uint8_t* utf8Begin, const uint8_t* utf8End);
 		virtual ~UTF8Decoder();
 		
 		LUCENE_CLASS(UTF8Decoder);
@@ -151,25 +151,25 @@ namespace Lucene
         bool isValidNext(uint32_t& cp);
 	};
 	
-    class LPPCONTRIBAPI UTF8DecoderStream : public UTF8Decoder
-    {
-    public:
-        UTF8DecoderStream(ReaderPtr reader);
-        virtual ~UTF8DecoderStream();
-        
-        LUCENE_CLASS(UTF8DecoderStream);
-    
-    protected:
-        ReaderPtr reader;
-    
-    protected:
-        virtual uint32_t readNext();
-    };
-    
-    class LPPCONTRIBAPI UTF16Decoder : public UTF8Base
+  class UTF8DecoderStream : public UTF8Decoder
+  {
+  public:
+      UTF8DecoderStream(ReaderPtr reader);
+      virtual ~UTF8DecoderStream();
+      
+      LUCENE_CLASS(UTF8DecoderStream);
+  
+  protected:
+      ReaderPtr reader;
+  
+  protected:
+      virtual uint32_t readNext();
+  };
+  
+  class UTF16Decoder : public UTF8Base
 	{
 	public:
-        UTF16Decoder(const uint16_t* utf16Begin, const uint16_t* utf16End);
+    UTF16Decoder(const uint16_t* utf16Begin, const uint16_t* utf16End);
 		virtual ~UTF16Decoder();
 		
 		LUCENE_CLASS(UTF16Decoder);

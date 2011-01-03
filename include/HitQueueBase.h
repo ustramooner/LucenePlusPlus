@@ -11,7 +11,7 @@
 
 namespace Lucene
 {
-	class HitQueueBase : public LuceneObject
+  class LPPAPI HitQueueBase : public LuceneObject
 	{
 	public:
 		HitQueueBase(int32_t size);
@@ -43,7 +43,7 @@ namespace Lucene
 		friend class PriorityQueueScoreDocs;
 	};
 	
-	class PriorityQueueScoreDocs : public PriorityQueue<ScoreDocPtr>
+  class LPPAPI PriorityQueueScoreDocs : public PriorityQueue<ScoreDocPtr>
 	{
 	public:
 		PriorityQueueScoreDocs(HitQueueBasePtr hitQueue, int32_t size);

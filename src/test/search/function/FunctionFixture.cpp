@@ -13,7 +13,6 @@
 #include "Document.h"
 #include "Field.h"
 
-
 namespace Lucene
 {
     /// Actual score computation order is slightly different than assumptions this allows for a small amount of variation

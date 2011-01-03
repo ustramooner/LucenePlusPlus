@@ -35,7 +35,7 @@ namespace Lucene
     {
         // Shrink back if we are over allocated now
         docIDs.resize(MiscUtils::getShrinkSize(docIDs.size(), upto));
-        norms.resize(MiscUtils::getShrinkSize(norms.length(), upto));
+        norms.resize(MiscUtils::getShrinkSize(norms.size(), upto));
         upto = 0;
     }
     
@@ -51,7 +51,7 @@ namespace Lucene
     
     void NormsWriterPerField::finish()
     {
-        BOOST_ASSERT(docIDs.size() == norms.length());
+        BOOST_ASSERT(docIDs.size() == norms.size());
         if (fieldInfo->isIndexed && !fieldInfo->omitNorms)
         {
             if (docIDs.size() <= upto)

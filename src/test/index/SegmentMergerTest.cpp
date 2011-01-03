@@ -132,8 +132,6 @@ BOOST_AUTO_TEST_CASE(testMerge)
     Collection<int32_t> freqs = vector->getTermFrequencies();
     BOOST_CHECK(freqs);
     
-    fprintf(stderr, "p1=%p\n", (void*)vector.get());
-    fprintf(stderr, "p2=%p\n", (void*)boost::dynamic_pointer_cast<TermPositionVector>(vector).get());
     BOOST_CHECK(boost::dynamic_pointer_cast<TermPositionVector>(vector));
     
     for (int32_t i = 0; i < terms.size(); ++i)

@@ -10,6 +10,7 @@
 #include "_SegmentReader.h"
 #include "TermInfo.h"
 #include "IndexInput.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {
@@ -69,7 +70,7 @@ namespace Lucene
             // if the LSB is set, then we have to read the current payload length
             if ((delta & 1) != 0)
                 payloadLength = proxStream->readVInt();
-            delta = delta >> 1;
+            delta = MiscUtils::unsignedShift(delta, 1);
             needToLoadPayload = true;
         }
         return delta;
@@ -165,7 +166,7 @@ namespace Lucene
         // read payloads lazily
         ByteArray retArray;
         int32_t retOffset = 0;
-        if (!data || data.length() - offset < payloadLength)
+        if (!data || data.size() - offset < payloadLength)
         {
             // the array is too small to store the payload data, so we allocate a new one
             retArray = ByteArray::newInstance(payloadLength);

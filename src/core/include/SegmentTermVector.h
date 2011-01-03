@@ -7,11 +7,11 @@
 #ifndef SEGMENTTERMVECTOR_H
 #define SEGMENTTERMVECTOR_H
 
-#include "TermFreqVector.h"
+#include "TermPositionVector.h"
 
 namespace Lucene
 {
-	class SegmentTermVector : public TermFreqVector, public LuceneObject
+	class SegmentTermVector : public TermPositionVector, public LuceneObject
 	{
 	public:
 		SegmentTermVector(const String& field, Collection<String> terms, Collection<int32_t> termFreqs);

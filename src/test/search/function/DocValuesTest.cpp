@@ -8,7 +8,6 @@
 #include <float.h>
 #include "LuceneTestFixture.h"
 #include "DocValues.h"
-
 #include "MiscUtils.h"
 
 using namespace Lucene;

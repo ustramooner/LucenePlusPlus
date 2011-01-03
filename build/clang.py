@@ -48,11 +48,7 @@ def set_options(opt):
 
 
 def detect(conf):
-    if sys.platform == "darwin":
-      search_paths = ['/Xcode4/usr/bin/']
-    else:
-      search_paths = []
-    if getattr(conf, 'clang', True) and not Options.options.disable_clang:
+    search_paths = ['/Xcode4/usr/bin/'] if sys.platform == "darwin" else []
       conf.find_program('clang', var='CLANG')
       conf.find_program('clang++', var='CLANGPP', path_list = search_paths)
 

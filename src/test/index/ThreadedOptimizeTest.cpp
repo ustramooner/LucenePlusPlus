@@ -20,7 +20,6 @@
 #include "ConcurrentMergeScheduler.h"
 #include "FSDirectory.h"
 
-
 using namespace Lucene;
 
 class OptimizeThread : public LuceneThread

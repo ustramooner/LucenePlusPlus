@@ -221,6 +221,11 @@ namespace Lucene
         isOpen = false;
     }
     
+    String FSDirectory::toString()
+    {
+        return getClassName() + L"@" + directory + L" lockFactory=" + getLockFactory()->toString();
+    }
+    
     String FSDirectory::getFile()
     {
         ensureOpen();

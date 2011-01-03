@@ -7,7 +7,6 @@
 #include "TestInc.h"
 #include "BaseTestRangeFilterFixture.h"
 #include "RAMDirectory.h"
-
 #include "IndexWriter.h"
 #include "WhitespaceAnalyzer.h"
 #include "Document.h"

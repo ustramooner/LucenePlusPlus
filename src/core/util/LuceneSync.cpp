@@ -14,11 +14,6 @@ namespace Lucene
     LuceneSync::~LuceneSync()
     {
     }
-
-    void LuceneSync::initialize()
-    {
-        // override
-    }
     
     SynchronizePtr LuceneSync::getSync()
     {

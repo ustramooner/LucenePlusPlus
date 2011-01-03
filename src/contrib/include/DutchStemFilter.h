@@ -11,12 +11,24 @@
 #include "TokenFilter.h"
 
 namespace Lucene
+    ///
+    /// NOTE: This stemmer does not implement the Snowball algorithm correctly, specifically 
+    /// doubled consonants. It is recommended that you consider using the "Dutch" stemmer in 
+    /// the snowball package instead. This stemmer will likely be deprecated in a future release.
+    ///
+    /// NOTE: This stemmer does not implement the Snowball algorithm correctly, specifically 
+    /// doubled consonants. It is recommended that you consider using the "Dutch" stemmer in 
+    /// the snowball package instead. This stemmer will likely be deprecated in a future release.
 {
 	/// A {@link TokenFilter} that stems Dutch words. 
 	///
 	/// It supports a table of words that should not be stemmed at all.  The stemmer used can 
 	/// be changed at runtime after the filter object is created (as long as it is a 
 	/// {@link DutchStemmer}).
+    ///
+    /// NOTE: This stemmer does not implement the Snowball algorithm correctly, specifically 
+    /// doubled consonants. It is recommended that you consider using the "Dutch" stemmer in 
+    /// the snowball package instead. This stemmer will likely be deprecated in a future release.
 	class LPPCONTRIBAPI DutchStemFilter : public TokenFilter
 	{
 	public:

@@ -26,6 +26,5 @@ namespace Lucene
 		/// Stop timer thread.
 		void stopThread();
 	};
-
 }
 

@@ -23,7 +23,6 @@
 #include "BooleanQuery.h"
 #include "TermQuery.h"
 
-
 namespace Lucene
 {
     const String ExplanationsFixture::KEY = L"KEY";

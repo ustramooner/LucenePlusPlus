@@ -28,6 +28,18 @@ namespace Lucene
 		virtual String toString();
 	};
 	
+	/// @see FieldCache#NUMERIC_UTILS_INT_PARSER()
+	class NumericUtilsIntParser : public IntParser
+	{
+	public:
+		virtual ~NumericUtilsIntParser();
+		LUCENE_CLASS(NumericUtilsIntParser);
+	
+	public:
+		virtual int32_t parseInt(const String& string);
+		virtual String toString();
+	};
+	
 	/// @see FieldCache#DEFAULT_LONG_PARSER()
 	class DefaultLongParser : public LongParser
 	{
@@ -40,6 +52,18 @@ namespace Lucene
 		virtual String toString();
 	};
 	
+	/// @see FieldCache#NUMERIC_UTILS_LONG_PARSER()
+	class NumericUtilsLongParser : public LongParser
+	{
+	public:
+		virtual ~NumericUtilsLongParser();
+		LUCENE_CLASS(NumericUtilsLongParser);
+	
+	public:
+		virtual int64_t parseLong(const String& string);
+		virtual String toString();
+	};
+
 	/// @see FieldCache#DEFAULT_DOUBLE_PARSER()
 	class DefaultDoubleParser : public DoubleParser
 	{
@@ -64,29 +88,6 @@ namespace Lucene
 		virtual String toString();
 	};
 	
-	/// @see FieldCache#NUMERIC_UTILS_INT_PARSER()
-	class NumericUtilsIntParser : public IntParser
-	{
-	public:
-		virtual ~NumericUtilsIntParser();
-		LUCENE_CLASS(NumericUtilsIntParser);
-	
-	public:
-		virtual int32_t parseInt(const String& string);
-		virtual String toString();
-	};
-	
-	/// @see FieldCache#NUMERIC_UTILS_LONG_PARSER()
-	class NumericUtilsLongParser : public LongParser
-	{
-	public:
-		virtual ~NumericUtilsLongParser();
-		LUCENE_CLASS(NumericUtilsLongParser);
-	
-	public:
-		virtual int64_t parseLong(const String& string);
-		virtual String toString();
-	};
 
 }
 

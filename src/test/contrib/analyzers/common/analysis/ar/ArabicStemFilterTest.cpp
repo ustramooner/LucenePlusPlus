@@ -10,7 +10,6 @@
 #include "ArabicLetterTokenizer.h"
 #include "StringReader.h"
 
-
 using namespace Lucene;
 
 class ArabicStemFilterFixture : public BaseTokenStreamFixture

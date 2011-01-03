@@ -120,7 +120,10 @@ namespace Lucene
 		
 		/// Closes the store to future operations.
 		virtual void close();
-	
+
+    /// For debug output.
+    virtual String toString();
+    
 	protected:
 		/// Initializes the directory to create a new file with the given name. This method should be used in {@link #createOutput}.
 		void initOutput(const String& name);

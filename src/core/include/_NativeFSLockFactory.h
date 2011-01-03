@@ -34,6 +34,5 @@ namespace Lucene
 	protected:
 		bool lockExists();
 	};
-
 }
 

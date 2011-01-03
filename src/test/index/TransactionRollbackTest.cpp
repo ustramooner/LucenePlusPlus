@@ -18,7 +18,6 @@
 #include "BitSet.h"
 #include "IndexCommit.h"
 
-
 using namespace Lucene;
 
 /// Keeps all commit points (used to build index)

@@ -22,7 +22,6 @@
 #include "MatchAllDocsQuery.h"
 #include "MultiPhraseQuery.h"
 
-
 using namespace Lucene;
 
 class Qnorm1Similarity : public DefaultSimilarity

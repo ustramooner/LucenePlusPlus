@@ -19,7 +19,6 @@
 #include "IndexSearcher.h"
 #include "Scorer.h"
 
-
 namespace Lucene
 {
     /// Some explains methods calculate their values though a slightly different order of operations 

@@ -18,7 +18,6 @@
 #include "MockRAMDirectory.h"
 #include "Random.h"
 
-
 using namespace Lucene;
 
 BOOST_FIXTURE_TEST_SUITE(TransactionsTest, LuceneTestFixture)

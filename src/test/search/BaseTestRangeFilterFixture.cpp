@@ -13,7 +13,6 @@
 #include "Field.h"
 #include "Random.h"
 
-
 namespace Lucene
 {
     TestIndex::TestIndex(int32_t minR, int32_t maxR, bool allowNegativeRandomInts)

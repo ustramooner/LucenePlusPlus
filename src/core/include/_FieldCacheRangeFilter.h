@@ -4,9 +4,31 @@
 #include "DocIdSet.h"
 #include "FieldCache.h"
 #include "StringUtils.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {
+	
+	class FieldCacheRangeFilterString : public FieldCacheRangeFilter
+	{
+	public:
+		FieldCacheRangeFilterString(const String& field, ParserPtr parser, const String& lowerVal, const String& upperVal, bool includeLower, bool includeUpper);
+		virtual ~FieldCacheRangeFilterString();
+		
+		LUCENE_CLASS(FieldCacheRangeFilterString);
+	
+	public:
+		String lowerVal;
+		String upperVal;
+	
+	public:
+		virtual DocIdSetPtr getDocIdSet(IndexReaderPtr reader);
+		
+		virtual String toString();
+		virtual bool equals(LuceneObjectPtr other);
+		virtual int32_t hashCode();
+	};
+	
 
 	class FieldCacheDocIdSet : public DocIdSet
 	{
@@ -58,27 +80,6 @@ namespace Lucene
 			return (values[doc] >= inclusiveLowerPoint && values[doc] <= inclusiveUpperPoint);
 		}
 	};	
-	
-	class FieldCacheRangeFilterString : public FieldCacheRangeFilter
-	{
-	public:
-		FieldCacheRangeFilterString(const String& field, ParserPtr parser, const String& lowerVal, const String& upperVal, bool includeLower, bool includeUpper);
-		virtual ~FieldCacheRangeFilterString();
-		
-		LUCENE_CLASS(FieldCacheRangeFilterString);
-	
-	public:
-		String lowerVal;
-		String upperVal;
-	
-	public:
-		virtual DocIdSetPtr getDocIdSet(IndexReaderPtr reader);
-		
-		virtual String toString();
-		virtual bool equals(LuceneObjectPtr other);
-		virtual int32_t hashCode();
-	};
-	
 	
 	template <typename TYPE>
 	class FieldCacheRangeFilterNumeric : public FieldCacheRangeFilter
@@ -149,7 +150,7 @@ namespace Lucene
 		{
 			int32_t code = StringUtils::hashCode(field);
 			code ^= lowerVal == 0 ? 550356204 : (int32_t)lowerVal;
-			code = (code << 1) | (code >> 31); // rotate to distinguish lower from upper
+			code = (code << 1) | MiscUtils::unsignedShift(code, 31); // rotate to distinguish lower from upper
 			code ^= upperVal == 0 ? -1674416163 : (int32_t)upperVal;
 			code ^= parser ? parser->hashCode() : -1572457324;
 			code ^= (includeLower ? 1549299360 : -365038026) ^ (includeUpper ? 1721088258 : 1948649653);
@@ -206,7 +207,6 @@ namespace Lucene
 		virtual Collection<double> getValues(IndexReaderPtr reader);
 	};
 	
-	
 	class FieldCacheDocIdSetString : public FieldCacheDocIdSet
 	{
 	public:
@@ -224,6 +224,26 @@ namespace Lucene
 		virtual bool matchDoc(int32_t doc);
 	};
 	
+	/// A DocIdSetIterator using TermDocs to iterate valid docIds
+	class FieldDocIdSetIteratorTermDocs : public DocIdSetIterator
+  {
+  public:
+      FieldDocIdSetIteratorTermDocs(FieldCacheDocIdSetPtr cacheDocIdSet, TermDocsPtr termDocs);
+      virtual ~FieldDocIdSetIteratorTermDocs();
+      
+      LUCENE_CLASS(FieldDocIdSetIteratorTermDocs);
+  
+  protected:
+      FieldCacheDocIdSetWeakPtr _cacheDocIdSet;
+      TermDocsPtr termDocs;
+      int32_t doc;
+  
+  public:
+      virtual int32_t docID();
+      virtual int32_t nextDoc();
+      virtual int32_t advance(int32_t target);
+  };
+
 	/// A DocIdSetIterator generating docIds by incrementing a variable - this one can be used if there 
 	/// are no deletions are on the index.
 	class FieldDocIdSetIteratorIncrement : public DocIdSetIterator
@@ -243,26 +263,5 @@ namespace Lucene
 		virtual int32_t nextDoc();
 		virtual int32_t advance(int32_t target);
 	};
-	/// A DocIdSetIterator using TermDocs to iterate valid docIds
-	class FieldDocIdSetIteratorTermDocs : public DocIdSetIterator
-	{
-	public:
-		FieldDocIdSetIteratorTermDocs(FieldCacheDocIdSetPtr cacheDocIdSet, TermDocsPtr termDocs);
-		virtual ~FieldDocIdSetIteratorTermDocs();
-		
-		LUCENE_CLASS(FieldDocIdSetIteratorTermDocs);
-	
-	protected:
-		FieldCacheDocIdSetWeakPtr _cacheDocIdSet;
-		TermDocsPtr termDocs;
-		int32_t doc;
-	
-	public:
-		virtual int32_t docID();
-		virtual int32_t nextDoc();
-		virtual int32_t advance(int32_t target);
-	};
-
-
 }
 

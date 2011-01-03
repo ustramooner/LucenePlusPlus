@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
                 testDir = L"./test/testfiles";
 
                 if (!FileUtils::isDirectory(testDir)){
-					testDir = FileUtils::extractPath(StringUtils::toUnicode(__FILE__)) + L"/testfiles";
+					        testDir = FileUtils::extractPath(StringUtils::toUnicode(__FILE__)) + L"/testfiles";
                 }
             }
         }

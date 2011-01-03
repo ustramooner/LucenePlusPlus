@@ -39,7 +39,6 @@ namespace Lucene
 		virtual LuceneObjectPtr clone(LuceneObjectPtr other = LuceneObjectPtr());
 	};
 
-
 	class LPPAPI DocIdBitSetIterator : public DocIdSetIterator
 	{
 	public:

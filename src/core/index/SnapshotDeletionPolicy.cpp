@@ -72,6 +72,11 @@ namespace Lucene
     {
     }
     
+    String MyCommitPoint::toString()
+    {
+        return L"SnapshotDeletionPolicy.SnapshotCommitPoint(" + cp->toString() + L")";
+    }
+    
     String MyCommitPoint::getSegmentsFileName()
     {
         return cp->getSegmentsFileName();

@@ -20,7 +20,6 @@
 #include "QueryUtils.h"
 #include "CheckHits.h"
 
-
 using namespace Lucene;
 
 class FieldMaskingSpanQueryFixture : public LuceneTestFixture

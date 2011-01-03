@@ -25,7 +25,7 @@ namespace Lucene
         if (length == 0)
             return 0;
         UTF8DecoderPtr utf8Decoder(newLucene<UTF8Decoder>(utf8, utf8 + length));
-        int32_t decodeLength = utf8Decoder->decode(unicode.get(), unicode.length());
+        int32_t decodeLength = utf8Decoder->decode(unicode.get(), unicode.size());
         return decodeLength == Reader::READER_EOF ? 0 : decodeLength;
     }
     
@@ -60,7 +60,7 @@ namespace Lucene
         if (length == 0)
             return 0;
         UTF8EncoderPtr utf8Encoder(newLucene<UTF8Encoder>(unicode, unicode + length));
-        int32_t encodeLength = utf8Encoder->encode(utf8.get(), utf8.length());
+        int32_t encodeLength = utf8Encoder->encode(utf8.get(), utf8.size());
         return encodeLength == Reader::READER_EOF ? 0 : encodeLength;
     }
     
@@ -87,7 +87,7 @@ namespace Lucene
     
     SingleString StringUtils::toUTF8(const String& s)
     {
-        return s.empty() ? "" : toUTF8(s.c_str(), s.length());
+        return s.empty() ? "" : toUTF8(s.c_str(), s.size());
     }
     
     void StringUtils::toLower(String& str)
@@ -130,7 +130,7 @@ namespace Lucene
     {
         if (value.empty())
             boost::throw_exception(NumberFormatException());
-        if (value.length() > 1 && value[0] == L'-' && !UnicodeUtil::isDigit(value[1]))
+        if (value.size() > 1 && value[0] == L'-' && !UnicodeUtil::isDigit(value[1]))
             boost::throw_exception(NumberFormatException());
         if (value[0] != L'-' && !UnicodeUtil::isDigit(value[0]))
             boost::throw_exception(NumberFormatException());
@@ -141,7 +141,7 @@ namespace Lucene
     {
         if (value.empty())
             boost::throw_exception(NumberFormatException());
-        if (value.length() > 1 && value[0] == L'-' && !UnicodeUtil::isDigit(value[1]))
+        if (value.size() > 1 && value[0] == L'-' && !UnicodeUtil::isDigit(value[1]))
             boost::throw_exception(NumberFormatException());
         if (value[0] != L'-' && !UnicodeUtil::isDigit(value[0]))
             boost::throw_exception(NumberFormatException());

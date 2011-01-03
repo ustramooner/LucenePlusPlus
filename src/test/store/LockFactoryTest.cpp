@@ -27,7 +27,6 @@
 #include "ScoreDoc.h"
 #include "TopDocs.h"
 
-
 using namespace Lucene;
 
 BOOST_FIXTURE_TEST_SUITE(LockFactoryTest, LuceneTestFixture)

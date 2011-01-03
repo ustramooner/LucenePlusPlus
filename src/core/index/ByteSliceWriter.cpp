@@ -7,6 +7,7 @@
 #include "LuceneInc.h"
 #include "ByteSliceWriter.h"
 #include "DocumentsWriter.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {
@@ -27,7 +28,7 @@ namespace Lucene
         BOOST_ASSERT(slice);
         upto = (address & DocumentsWriter::BYTE_BLOCK_MASK);
         offset0 = address;
-        BOOST_ASSERT(upto < slice.length());
+        BOOST_ASSERT(upto < slice.size());
     }
     
     void ByteSliceWriter::writeByte(uint8_t b)
@@ -41,7 +42,7 @@ namespace Lucene
             BOOST_ASSERT(slice);
         }
         slice[upto++] = b;
-        BOOST_ASSERT(upto != slice.length());
+        BOOST_ASSERT(upto != slice.size());
     }
     
     void ByteSliceWriter::writeBytes(const uint8_t* b, int32_t offset, int32_t length)
@@ -58,7 +59,7 @@ namespace Lucene
             }
             
             slice[upto++] = b[offset++];
-            BOOST_ASSERT(upto != slice.length());
+            BOOST_ASSERT(upto != slice.size());
         }
     }
     
@@ -72,7 +73,7 @@ namespace Lucene
         while ((i & ~0x7f) != 0)
         {
             writeByte((uint8_t)((i & 0x7f) | 0x80));
-            i = (uint32_t)i >> 7;
+            i = MiscUtils::unsignedShift(i, 7);
         }
         writeByte((uint8_t)i);
     }

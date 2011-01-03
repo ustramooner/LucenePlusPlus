@@ -8,7 +8,6 @@
 #include "MockRAMOutputStream.h"
 #include "MockRAMDirectory.h"
 
-
 namespace Lucene
 {
     MockRAMOutputStream::MockRAMOutputStream(MockRAMDirectoryPtr dir, RAMFilePtr f, const String& name) : RAMOutputStream(f)

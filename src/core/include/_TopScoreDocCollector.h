@@ -31,6 +31,5 @@ namespace Lucene
 		virtual void collect(int32_t doc);
 		virtual bool acceptsDocsOutOfOrder();
 	};
-
 }
 

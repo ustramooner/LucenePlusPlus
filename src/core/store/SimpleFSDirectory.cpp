@@ -45,7 +45,7 @@ namespace Lucene
     
     InputFile::InputFile(const String& path)
     {
-        file = newInstance<std::ifstream>(StringUtils::toUTF8(path).c_str(), std::ios::binary | std::ios::in );
+        file = newInstance<std::ifstream>(StringUtils::toUTF8(path).c_str(), std::ios::binary | std::ios::in | std::ios::out);
         if (!file->is_open())
             boost::throw_exception(FileNotFoundException(path));
         position = 0;

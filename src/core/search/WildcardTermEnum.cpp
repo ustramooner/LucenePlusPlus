@@ -115,7 +115,8 @@ namespace Lucene
             
             if (pattern[p] == WILDCARD_STRING)
             {
-                // Look at the character beyond the '*'.
+                // Look at the character beyond the '*' characters.
+                while (p < (int32_t)pattern.length() && pattern[p] == WILDCARD_STRING)
                 ++p;
                 // Examine the string, starting at the last character.
                 for (int32_t i = string.length(); i >= s; --i)

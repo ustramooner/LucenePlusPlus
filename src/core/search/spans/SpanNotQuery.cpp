@@ -104,9 +104,9 @@ namespace Lucene
     int32_t SpanNotQuery::hashCode()
     {
         int32_t result = include->hashCode();
-        result = (result << 1) | (result >> 31); // rotate left
+        result = (result << 1) | MiscUtils::unsignedShift(result, 31); // rotate left
         result ^= exclude->hashCode();
-        result = (result << 1) | (result >> 31); // rotate left
+        result = (result << 1) | MiscUtils::unsignedShift(result, 31); // rotate left
         result ^= MiscUtils::doubleToRawIntBits(getBoost());
         return result;
     }

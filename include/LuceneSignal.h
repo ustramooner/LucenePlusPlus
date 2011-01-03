@@ -18,8 +18,8 @@ namespace Lucene
 		LuceneSignal(SynchronizePtr objectLock = SynchronizePtr());
 		virtual ~LuceneSignal();
 
-	    /// create a new LuceneSignal instance atomically.
-	    static void createSignal(LuceneSignalPtr& signal, SynchronizePtr objectLock);
+    /// create a new LuceneSignal instance atomically.
+    static void createSignal(LuceneSignalPtr& signal, SynchronizePtr objectLock);
 	    
 		/// Wait for signal using an optional timeout.
 		void wait(int32_t timeout = 0);

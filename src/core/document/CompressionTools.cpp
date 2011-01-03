@@ -59,7 +59,7 @@ namespace Lucene
     
     ByteArray CompressionTools::compress(ByteArray value)
     {
-        return compress(value.get(), 0, value.length(), Z_BEST_COMPRESSION);
+        return compress(value.get(), 0, value.size(), Z_BEST_COMPRESSION);
     }
     
     ByteArray CompressionTools::compressString(const String& value)
@@ -89,7 +89,7 @@ namespace Lucene
             return ByteArray();
         }
 
-        stream.avail_in = value.length();
+        stream.avail_in = value.size();
         stream.next_in = value.get();
         
         int32_t allocSize = COMPRESS_BUFFER;
@@ -132,7 +132,7 @@ namespace Lucene
     String CompressionTools::decompressString(ByteArray value)
     {
         ByteArray bytes(decompress(value));
-        return StringUtils::toUnicode(bytes.get(), bytes.length());
+        return StringUtils::toUnicode(bytes.get(), bytes.size());
     }
     
     void* CompressionTools::zlibAlloc(void* opaque, unsigned int items, unsigned int size)

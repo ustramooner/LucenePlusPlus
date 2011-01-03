@@ -9,7 +9,6 @@
 #include "CJKTokenizer.h"
 #include "CJKAnalyzer.h"
 
-
 using namespace Lucene;
 
 class CJKTokenizerFixture : public BaseTokenStreamFixture

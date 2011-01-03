@@ -19,7 +19,6 @@
 #include "BitSet.h"
 #include "TimeLimitingCollector.h"
 
-
 using namespace Lucene;
 
 DECLARE_SHARED_PTR(MyHitCollector)

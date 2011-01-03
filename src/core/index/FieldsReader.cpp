@@ -305,7 +305,7 @@ namespace Lucene
         {
             int32_t toRead = fieldsStream->readVInt();
             ByteArray b(ByteArray::newInstance(toRead));
-            fieldsStream->readBytes(b.get(), 0, b.length());
+            fieldsStream->readBytes(b.get(), 0, b.size());
             if (compressed)
                 doc->add(newLucene<Field>(fi->name, uncompress(b), Field::STORE_YES));
             else
@@ -323,7 +323,7 @@ namespace Lucene
                 int32_t toRead = fieldsStream->readVInt();
                 
                 ByteArray b(ByteArray::newInstance(toRead));
-                fieldsStream->readBytes(b.get(), 0, b.length());
+                fieldsStream->readBytes(b.get(), 0, b.size());
                 f = newLucene<Field>(fi->name, uncompressString(b), store, index, termVector);
                 f->setOmitTermFreqAndPositions(fi->omitTermFreqAndPositions);
                 f->setOmitNorms(fi->omitNorms);
@@ -344,9 +344,9 @@ namespace Lucene
         int32_t size = fieldsStream->readVInt();
         int32_t bytesize = (binary || compressed) ? size : 2 * size;
         ByteArray sizebytes(ByteArray::newInstance(4));
-        sizebytes[0] = (uint8_t)(bytesize >> 24);
-        sizebytes[1] = (uint8_t)(bytesize >> 16);
-        sizebytes[2] = (uint8_t)(bytesize >> 8);
+        sizebytes[0] = (uint8_t)MiscUtils::unsignedShift(bytesize, 24);
+        sizebytes[1] = (uint8_t)MiscUtils::unsignedShift(bytesize, 16);
+        sizebytes[2] = (uint8_t)MiscUtils::unsignedShift(bytesize, 8);
         sizebytes[3] = (uint8_t)(bytesize);
         doc->add(newLucene<Field>(fi->name, sizebytes, Field::STORE_YES));
         return size;
@@ -449,7 +449,7 @@ namespace Lucene
                     if (isCompressed)
                     {
                         ByteArray b(ByteArray::newInstance(toRead));
-                        localFieldsStream->readBytes(b.get(), 0, b.length());
+                        localFieldsStream->readBytes(b.get(), 0, b.size());
                         fieldsData = reader->uncompressString(b);
                     }
                     else
@@ -514,7 +514,7 @@ namespace Lucene
                 ByteArray b;
                 
                 // Allocate new buffer if result is null or too small
-                if (!result || result.length() < toRead)
+                if (!result || result.size() < toRead)
                     b = ByteArray::newInstance(toRead);
                 else
                     b = result;

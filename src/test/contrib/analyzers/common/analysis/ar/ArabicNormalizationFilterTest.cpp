@@ -10,8 +10,6 @@
 #include "ArabicNormalizationFilter.h"
 #include "StringReader.h"
 
-#include "StringReader.h"
-
 using namespace Lucene;
 
 class ArabicNormalizationFilterFixture : public BaseTokenStreamFixture

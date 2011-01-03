@@ -106,7 +106,11 @@ namespace Lucene
                 }
             }
             else
+            {
+                // If all documents flushed in a segment had hit non-aborting exceptions, it's possible that
+                // FieldInfos.hasVectors returns true yet the term vector files don't exist.
                 format = 0;
+            }
             
             this->fieldInfos = fieldInfos;
             success = true;
@@ -471,7 +475,7 @@ namespace Lucene
             if (preUTF8)
             {
                 // Term stored as "java chars"
-                if (charBuffer.length() < totalLength)
+                if (charBuffer.size() < totalLength)
                     charBuffer.resize((int32_t)(1.5 * (double)totalLength));
                 totalLength = start + tvf->readChars(charBuffer.get(), start, deltaLength);
                 term.append(charBuffer.get(), totalLength);					
@@ -479,7 +483,7 @@ namespace Lucene
             else
             {
                 // Term stored as utf8 bytes
-                if (byteBuffer.length() < totalLength)
+                if (byteBuffer.size() < totalLength)
                     byteBuffer.resize((int32_t)(1.5 * (double)totalLength));
                 tvf->readBytes(byteBuffer.get(), start, deltaLength);
                 term = StringUtils::toUnicode(byteBuffer.get(), totalLength);

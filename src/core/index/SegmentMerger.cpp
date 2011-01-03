@@ -23,6 +23,7 @@
 #include "TermVectorsWriter.h"
 #include "FormatPostingsDocsConsumer.h"
 #include "FormatPostingsFieldsWriter.h"
+#include "TestPoint.h"
 #include "FormatPostingsPositionsConsumer.h"
 #include "FormatPostingsTermsConsumer.h"
 #include "SegmentMergeInfo.h"
@@ -116,11 +117,9 @@ namespace Lucene
             (*reader)->close();
     }
     
-    HashSet<String> SegmentMerger::createCompoundFile(const String& fileName)
+    HashSet<String> SegmentMerger::getMergedFiles()
     {
-        CompoundFileWriterPtr cfsWriter(newLucene<CompoundFileWriter>(directory, fileName, checkAbort));
-        
-        HashSet<String> files(HashSet<String>::newInstance());
+        HashSet<String> fileSet(HashSet<String>::newInstance());
         
         // Basic files
         for (HashSet<String>::iterator ext = IndexFileNames::COMPOUND_EXTENSIONS().begin(); ext != IndexFileNames::COMPOUND_EXTENSIONS().end(); ++ext)
@@ -129,7 +128,7 @@ namespace Lucene
                 continue;
             
             if (mergeDocStores || (*ext != IndexFileNames::FIELDS_EXTENSION() && *ext != IndexFileNames::FIELDS_INDEX_EXTENSION()))
-                files.add(segment + L"." + *ext);
+                fileSet.add(segment + L"." + *ext);
         }
         
         // Fieldable norm files
@@ -138,7 +137,7 @@ namespace Lucene
             FieldInfoPtr fi(fieldInfos->fieldInfo(i));
             if (fi->isIndexed && !fi->omitNorms)
             {
-                files.add(segment + L"." + IndexFileNames::NORMS_EXTENSION());
+                fileSet.add(segment + L"." + IndexFileNames::NORMS_EXTENSION());
                 break;
             }
         }
@@ -147,8 +146,16 @@ namespace Lucene
         if (fieldInfos->hasVectors() && mergeDocStores)
         {
             for (HashSet<String>::iterator ext = IndexFileNames::VECTOR_EXTENSIONS().begin(); ext != IndexFileNames::VECTOR_EXTENSIONS().end(); ++ext)
-                files.add(segment + L"." + *ext);
+                fileSet.add(segment + L"." + *ext);
         }
+        
+        return fileSet;
+        }
+        
+    HashSet<String> SegmentMerger::createCompoundFile(const String& fileName)
+    {
+        HashSet<String> files(getMergedFiles());
+        CompoundFileWriterPtr cfsWriter(newLucene<CompoundFileWriter>(directory, fileName, checkAbort));
         
         // Now merge all added files
         for (HashSet<String>::iterator file = files.begin(); file != files.end(); ++file)
@@ -513,6 +520,8 @@ namespace Lucene
 
     void SegmentMerger::mergeTerms()
     {
+        TestScope testScope(L"SegmentMerger", L"mergeTerms");
+        
         SegmentWriteStatePtr state(newLucene<SegmentWriteState>(DocumentsWriterPtr(), directory, segment, L"", mergedDocs, 0, termIndexInterval));
         
         FormatPostingsFieldsConsumerPtr consumer(newLucene<FormatPostingsFieldsWriter>(state, fieldInfos));
@@ -652,7 +661,7 @@ namespace Lucene
                         {
                             if (!payloadBuffer)
                                 payloadBuffer = ByteArray::newInstance(payloadLength);
-                            if (payloadBuffer.length() < payloadLength)
+                            if (payloadBuffer.size() < payloadLength)
                                 payloadBuffer.resize(payloadLength);
                             postings->getPayload(payloadBuffer, 0);
                         }
@@ -691,9 +700,9 @@ namespace Lucene
                         
                         if (!normBuffer)
                             normBuffer = ByteArray::newInstance(maxDoc);
-                        if (normBuffer.length() < maxDoc) // the buffer is too small for the current segment
+                        if (normBuffer.size() < maxDoc) // the buffer is too small for the current segment
                             normBuffer.resize(maxDoc);
-                        MiscUtils::arrayFill(normBuffer.get(), 0, normBuffer.length(), 0);
+                        MiscUtils::arrayFill(normBuffer.get(), 0, normBuffer.size(), 0);
                         (*reader)->norms(fi->name, normBuffer, 0);
                         if (!(*reader)->hasDeletions())
                         {

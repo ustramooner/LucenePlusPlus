@@ -44,6 +44,7 @@
 #include "TermAttribute.h"
 #include "PositionIncrementAttribute.h"
 #include "PhraseQuery.h"
+#include "InfoStream.h"
 #include "SpanTermQuery.h"
 #include "TermPositionVector.h"
 #include "TermVectorOffsetInfo.h"
@@ -55,6 +56,7 @@
 #include "Random.h"
 #include "UnicodeUtils.h"
 #include "UTF8Stream.h"
+#include "InfoStream.h"
 
 using namespace Lucene;
 
@@ -80,7 +82,7 @@ static void checkNoUnreferencedFiles(DirectoryPtr dir)
     HashSet<String> _startFiles = dir->listAll();
     SegmentInfosPtr infos = newLucene<SegmentInfos>();
     infos->read(dir);
-    IndexFileDeleterPtr deleter = newLucene<IndexFileDeleter>(dir, newLucene<KeepOnlyLastCommitDeletionPolicy>(), infos, InfoStreamPtr(), DocumentsWriterPtr());
+    IndexFileDeleterPtr deleter = newLucene<IndexFileDeleter>(dir, newLucene<KeepOnlyLastCommitDeletionPolicy>(), infos, InfoStreamPtr(), DocumentsWriterPtr(), HashSet<String>());
     HashSet<String> _endFiles = dir->listAll();
     
     Collection<String> startFiles = Collection<String>::newInstance(_startFiles.begin(), _startFiles.end());
@@ -812,8 +814,8 @@ BOOST_AUTO_TEST_CASE(testAddIndexOnDiskFull)
 
             if (done)
             {
-                // Make sure that temp free Directory space required is at most 2X total input size of indices
-                BOOST_CHECK((dir->getMaxUsedSizeInBytes() - startDiskUsage) < 2 * (startDiskUsage + inputDiskUsage));
+                // Make sure that temp free Directory space required is at most 3X total input size of indices
+                BOOST_CHECK((dir->getMaxUsedSizeInBytes() - startDiskUsage) < 3 * (startDiskUsage + inputDiskUsage));
             }
 
             // Make sure we don't hit disk full during close below
@@ -1018,7 +1020,9 @@ BOOST_AUTO_TEST_CASE(testOptimizeMaxNumSegments2)
     {
         for (int32_t i = 0; i < 19; ++i)
             writer->addDocument(doc);
-        boost::dynamic_pointer_cast<ConcurrentMergeScheduler>(writer->getMergeScheduler())->sync();
+        
+        writer->commit();
+        writer->waitForMerges();
         writer->commit();
 
         SegmentInfosPtr sis = newLucene<SegmentInfos>();
@@ -1048,6 +1052,11 @@ BOOST_AUTO_TEST_CASE(testOptimizeTempSpaceUsage)
     IndexWriterPtr writer  = newLucene<IndexWriter>(dir, newLucene<WhitespaceAnalyzer>(), true, IndexWriter::MaxFieldLengthLIMITED);
     for (int32_t j = 0; j < 500; ++j)
         addDocWithIndex(writer, j);
+
+    // force one extra segment w/ different doc store so we see the doc stores get merged
+    writer->commit();
+    addDocWithIndex(writer, 500);
+      
     writer->close();
     
     int64_t startDiskUsage = 0;
@@ -1061,7 +1070,8 @@ BOOST_AUTO_TEST_CASE(testOptimizeTempSpaceUsage)
     writer->close();
     int64_t maxDiskUsage = dir->getMaxUsedSizeInBytes();
 
-    BOOST_CHECK(maxDiskUsage <= 2 * startDiskUsage);
+    BOOST_CHECK(maxDiskUsage <= 4 * startDiskUsage);
+                 
     dir->close();
 }
 
@@ -1359,11 +1369,11 @@ BOOST_AUTO_TEST_CASE(testCommitOnCloseDiskUsage)
 
     int64_t endDiskUsage = dir->getMaxUsedSizeInBytes();
 
-    // Ending index is 50X as large as starting index; due to 2X disk usage normally we allow 100X max
+    // Ending index is 50X as large as starting index; due to 3X disk usage normally we allow 150X max
     // transient usage.  If something is wrong with deleter and it doesn't delete intermediate segments 
-    // then it will exceed this 100X
-    BOOST_CHECK(midDiskUsage < 100 * startDiskUsage);
-    BOOST_CHECK(endDiskUsage < 100 * startDiskUsage);
+    // then it will exceed this 150X
+    BOOST_CHECK(midDiskUsage < 150 * startDiskUsage);
+    BOOST_CHECK(endDiskUsage < 150 * startDiskUsage);
 }
 
 /// Verify that calling optimize when writer is open for "commit on close" works correctly both for 
@@ -4036,7 +4046,7 @@ BOOST_AUTO_TEST_CASE(testBinaryFieldOffsetLength)
     FieldPtr f = newLucene<Field>(L"binary", b, 10, 17, Field::STORE_YES);
     ByteArray bx = f->getBinaryValue();
     BOOST_CHECK(bx);
-    BOOST_CHECK_EQUAL(50, bx.length());
+    BOOST_CHECK_EQUAL(50, bx.size());
     BOOST_CHECK_EQUAL(10, f->getBinaryOffset());
     BOOST_CHECK_EQUAL(17, f->getBinaryLength());
     doc->add(f);
@@ -4048,7 +4058,7 @@ BOOST_AUTO_TEST_CASE(testBinaryFieldOffsetLength)
     f = doc->getField(L"binary");
     b = f->getBinaryValue();
     BOOST_CHECK(b);
-    BOOST_CHECK_EQUAL(17, b.length());
+    BOOST_CHECK_EQUAL(17, b.size());
     BOOST_CHECK_EQUAL(87, b[0]);
     reader->close();
     dir->close();
@@ -4156,6 +4166,7 @@ BOOST_AUTO_TEST_CASE(testOutOfMemoryErrorCausesCloseToFail)
 {
     MockRAMDirectoryPtr dir = newLucene<MockRAMDirectory>();
     IndexWriterPtr writer = newLucene<TestOutOfMemoryErrorCausesCloseToFail::MemoryIndexWriter>(dir, newLucene<StandardAnalyzer>(LuceneVersion::LUCENE_CURRENT), true, IndexWriter::MaxFieldLengthUNLIMITED);
+    writer->setInfoStream(newLucene<InfoStreamNull>());
 
     BOOST_CHECK_EXCEPTION(writer->close(), OutOfMemoryError, check_exception(LuceneException::OutOfMemory));
 
@@ -4503,7 +4514,7 @@ BOOST_AUTO_TEST_CASE(testIndexStoreCombos)
     f = doc->getField(L"binary");
     b = f->getBinaryValue();
     BOOST_CHECK(b);
-    BOOST_CHECK_EQUAL(17, b.length());
+    BOOST_CHECK_EQUAL(17, b.size());
     BOOST_CHECK_EQUAL(87, b[0]);
 
     BOOST_CHECK(reader->document(0)->getFieldable(L"binary")->isBinary());
@@ -4663,5 +4674,235 @@ BOOST_AUTO_TEST_CASE(testCommitThreadSafety)
     dir->close();
 }
 
-BOOST_AUTO_TEST_SUITE_END()
+namespace TestCorruptionAfterDiskFullDuringMerge
+{
+    DECLARE_SHARED_PTR(FailTwiceDuringMerge)
+    
+    class FailTwiceDuringMerge : public MockDirectoryFailure
+    {
+    public:
+        FailTwiceDuringMerge()
+        {
+            didFail1 = false;
+            didFail2 = false;
+        }
+        
+        virtual ~FailTwiceDuringMerge()
+        {
+        }
 
+    public:
+        bool didFail1;
+        bool didFail2;
+
+    public:
+        virtual void eval(MockRAMDirectoryPtr dir)
+        {
+            if (!doFail)
+                return;
+            if (TestPoint::getTestPoint(L"SegmentMerger", L"mergeTerms") && !didFail1)
+            {
+                didFail1 = true;
+                boost::throw_exception(IOException(L"fake disk full during mergeTerms"));
+            }
+            if (TestPoint::getTestPoint(L"BitVector", L"write") && !didFail2)
+            {
+                didFail2 = true;
+                boost::throw_exception(IOException(L"fake disk full while writing BitVector"));
+            }
+        }
+    };
+}
+
+BOOST_AUTO_TEST_CASE(testCorruptionAfterDiskFullDuringMerge)
+{
+    MockRAMDirectoryPtr dir = newLucene<MockRAMDirectory>();
+    dir->setPreventDoubleWrite(false);
+    IndexWriterPtr w = newLucene<IndexWriter>(dir, newLucene<WhitespaceAnalyzer>(), IndexWriter::MaxFieldLengthUNLIMITED);
+    w->setMergeScheduler(newLucene<SerialMergeScheduler>());
+    
+    boost::dynamic_pointer_cast<LogMergePolicy>(w->getMergePolicy())->setMergeFactor(2);
+
+    DocumentPtr doc = newLucene<Document>();
+    doc->add(newLucene<Field>(L"f", L"doctor who", Field::STORE_YES, Field::INDEX_ANALYZED));
+    w->addDocument(doc);
+
+    w->commit();
+
+    w->deleteDocuments(newLucene<Term>(L"f", L"who"));
+    w->addDocument(doc);
+
+    // disk fills up!
+    TestCorruptionAfterDiskFullDuringMerge::FailTwiceDuringMergePtr ftdm = newLucene<TestCorruptionAfterDiskFullDuringMerge::FailTwiceDuringMerge>();
+    ftdm->setDoFail();
+    dir->failOn(ftdm);
+    
+    try
+    {
+        w->commit();
+        BOOST_FAIL("fake disk full IOExceptions not hit");
+    }
+    catch (IOException&)
+    {
+    }
+    
+    BOOST_CHECK(ftdm->didFail1 || ftdm->didFail2);
+    
+    checkIndex(dir);
+    ftdm->clearDoFail();
+    w->addDocument(doc);
+    w->close();
+
+    checkIndex(dir);
+    dir->close();
+}
+
+namespace TestFutureCommit
+{
+    class NoDeletionPolicy : public IndexDeletionPolicy
+    {
+    public:
+        virtual ~NoDeletionPolicy()
+        {
+        }
+        
+        LUCENE_CLASS(NoDeletionPolicy);
+        
+    public:
+        virtual void onInit(Collection<IndexCommitPtr> commits)
+        {
+        }
+        
+        virtual void onCommit(Collection<IndexCommitPtr> commits)
+        {
+        }
+    };
+}
+
+BOOST_AUTO_TEST_CASE(testFutureCommit)
+{
+    MockRAMDirectoryPtr dir = newLucene<MockRAMDirectory>();
+
+    IndexWriterPtr w = newLucene<IndexWriter>(dir, newLucene<WhitespaceAnalyzer>(), (IndexDeletionPolicyPtr)newLucene<TestFutureCommit::NoDeletionPolicy>(), IndexWriter::MaxFieldLengthUNLIMITED);
+    DocumentPtr doc = newLucene<Document>();
+    w->addDocument(doc);
+
+    // commit to "first"
+    MapStringString commitData = MapStringString::newInstance();
+    commitData.put(L"tag", L"first");
+    w->commit(commitData);
+    
+    // commit to "second"
+    w->addDocument(doc);
+    commitData.put(L"tag", L"second");
+    w->commit(commitData);
+    w->close();
+    
+    // open "first" with IndexWriter
+    IndexCommitPtr commit;
+    Collection<IndexCommitPtr> commits = IndexReader::listCommits(dir);
+    for (Collection<IndexCommitPtr>::iterator c = commits.begin(); c != commits.end(); ++c)
+    {
+        String tag = (*c)->getUserData().get(L"tag");
+        if (tag == L"first")
+        {
+            commit = *c;
+            break;
+        }
+    }
+    
+    BOOST_CHECK(commit);
+    
+    w = newLucene<IndexWriter>(dir, newLucene<WhitespaceAnalyzer>(), newLucene<TestFutureCommit::NoDeletionPolicy>(), IndexWriter::MaxFieldLengthUNLIMITED, commit);
+
+    BOOST_CHECK_EQUAL(1, w->numDocs());
+
+    // commit IndexWriter to "third"
+    w->addDocument(doc);
+    commitData.put(L"tag", L"third");
+    w->commit(commitData);
+    w->close();
+
+    // make sure "second" commit is still there
+    commit.reset();
+    commits = IndexReader::listCommits(dir);
+    for (Collection<IndexCommitPtr>::iterator c = commits.begin(); c != commits.end(); ++c)
+    {
+        String tag = (*c)->getUserData().get(L"tag");
+        if (tag == L"second")
+        {
+            commit = *c;
+            break;
+        }
+    }
+    
+    BOOST_CHECK(commit);
+    
+    IndexReaderPtr r = IndexReader::open(commit, true);
+    BOOST_CHECK_EQUAL(2, r->numDocs());
+    r->close();
+
+    // open "second", with writeable IndexReader & commit
+    r = IndexReader::open(commit, newLucene<TestFutureCommit::NoDeletionPolicy>(), false);
+    BOOST_CHECK_EQUAL(2, r->numDocs());
+    r->deleteDocument(0);
+    r->deleteDocument(1);
+    commitData.put(L"tag", L"fourth");
+    r->commit(commitData);
+    r->close();
+
+    // make sure "third" commit is still there
+    commit.reset();
+    commits = IndexReader::listCommits(dir);
+    for (Collection<IndexCommitPtr>::iterator c = commits.begin(); c != commits.end(); ++c)
+    {
+        String tag = (*c)->getUserData().get(L"tag");
+        if (tag == L"third")
+        {
+            commit = *c;
+            break;
+        }
+    }
+    
+    BOOST_CHECK(commit);
+    
+    dir->close();
+}
+
+BOOST_AUTO_TEST_CASE(testNoUnwantedTVFiles)
+{
+    DirectoryPtr dir = newLucene<MockRAMDirectory>();
+    IndexWriterPtr indexWriter = newLucene<IndexWriter>(dir, newLucene<WhitespaceAnalyzer>(), IndexWriter::MaxFieldLengthUNLIMITED);
+    indexWriter->setRAMBufferSizeMB(0.01);
+    indexWriter->setUseCompoundFile(false);
+
+    String BIG = L"alskjhlaksjghlaksjfhalksvjepgjioefgjnsdfjgefgjhelkgjhqewlrkhgwlekgrhwelkgjhwelkgrhwlkejg";
+    BIG += BIG + BIG + BIG;
+    
+    for (int32_t i = 0; i < 2; ++i)
+    {
+        DocumentPtr doc = newLucene<Document>();
+        doc->add(newLucene<Field>(L"id", StringUtils::toString(i) + BIG, Field::STORE_YES, Field::INDEX_NOT_ANALYZED_NO_NORMS));
+        doc->add(newLucene<Field>(L"str", StringUtils::toString(i) + BIG, Field::STORE_YES, Field::INDEX_NOT_ANALYZED));
+        doc->add(newLucene<Field>(L"str2", StringUtils::toString(i) + BIG, Field::STORE_YES, Field::INDEX_ANALYZED));
+        doc->add(newLucene<Field>(L"str3", StringUtils::toString(i) + BIG, Field::STORE_YES, Field::INDEX_ANALYZED_NO_NORMS));
+        indexWriter->addDocument(doc);
+    }
+
+    indexWriter->close();
+
+    checkIndex(dir);
+
+    checkNoUnreferencedFiles(dir);
+    HashSet<String> files = dir->listAll();
+    for (HashSet<String>::iterator file = files.begin(); file != files.end(); ++file)
+    {
+        BOOST_CHECK(!boost::ends_with(*file, IndexFileNames::VECTORS_FIELDS_EXTENSION()));
+        BOOST_CHECK(!boost::ends_with(*file, IndexFileNames::VECTORS_INDEX_EXTENSION()));
+        BOOST_CHECK(!boost::ends_with(*file, IndexFileNames::VECTORS_DOCUMENTS_EXTENSION()));
+    }
+    
+    dir->close();
+}
+
+BOOST_AUTO_TEST_SUITE_END()

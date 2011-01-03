@@ -8,7 +8,6 @@
 #include "BaseTokenStreamFixture.h"
 #include "ArabicAnalyzer.h"
 
-
 using namespace Lucene;
 
 BOOST_FIXTURE_TEST_SUITE(ArabicAnalyzerTest, BaseTokenStreamFixture)

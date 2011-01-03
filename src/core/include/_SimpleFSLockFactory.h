@@ -31,6 +31,5 @@ namespace Lucene
 		/// Returns derived object name.
 		virtual String toString();
 	};
-
 }
 

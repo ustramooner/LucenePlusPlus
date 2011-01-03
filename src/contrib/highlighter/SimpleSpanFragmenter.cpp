@@ -12,6 +12,7 @@
 #include "OffsetAttribute.h"
 #include "QueryScorer.h"
 #include "TokenStream.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {
@@ -68,7 +69,7 @@ namespace Lucene
             }
         }
         
-        bool isNewFrag = (offsetAtt->endOffset() >= (fragmentSize * currentNumFrags) && (textSize - offsetAtt->endOffset()) >= (fragmentSize >> 1));
+        bool isNewFrag = (offsetAtt->endOffset() >= (fragmentSize * currentNumFrags) && (textSize - offsetAtt->endOffset()) >= MiscUtils::unsignedShift(fragmentSize, 1));
         
         if (isNewFrag)
             ++currentNumFrags;

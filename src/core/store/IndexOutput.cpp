@@ -36,7 +36,7 @@ namespace Lucene
         while ((i & ~0x7f) != 0)
         {
             writeByte((uint8_t)((i & 0x7f) | 0x80));
-            i = (uint32_t)i >> 7;
+            i = MiscUtils::unsignedShift(i, 7);
         }
         writeByte((uint8_t)i);
     }
@@ -52,7 +52,7 @@ namespace Lucene
         while ((i & ~0x7f) != 0)
         {
             writeByte((uint8_t)((i & 0x7f) | 0x80));
-            i = (uint64_t)i >> 7;
+            i = MiscUtils::unsignedShift(i, (int64_t)7);
         }
         writeByte((uint8_t)i);
     }
@@ -80,7 +80,7 @@ namespace Lucene
             }
             else
             {
-                writeByte((uint8_t)(0xe0 | (code >> 12)));
+                writeByte((uint8_t)(0xe0 | MiscUtils::unsignedShift(code, 12)));
                 writeByte((uint8_t)(0x80 | ((code >> 6) & 0x3f)));
                 writeByte((uint8_t)(0x80 | (code & 0x3f)));
             }

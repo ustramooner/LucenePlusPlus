@@ -55,6 +55,8 @@ namespace Lucene
 		/// This must always point to the most recent file format.
 		static const int32_t CURRENT_FORMAT;
 
+		int32_t counter; // used to name new segments
+	
 	private:
 		/// Advanced configuration of retry logic in loading segments_N file.
 		static int32_t defaultGenFileRetryCount;
@@ -79,8 +81,6 @@ namespace Lucene
 		ChecksumIndexOutputPtr pendingSegnOutput;
 	
 	public:
-		int32_t counter; // used to name new segments
-	
 		SegmentInfoPtr info(int32_t i);
 		String getCurrentSegmentFileName();
 		String getNextSegmentFileName();

@@ -21,7 +21,6 @@
 #include "ScoreDoc.h"
 #include "TopDocs.h"
 
-
 using namespace Lucene;
 
 DECLARE_SHARED_PTR(SimpleDocIdSetFilter)

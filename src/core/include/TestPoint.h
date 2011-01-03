@@ -7,6 +7,8 @@
 #ifndef TESTPOINT_H
 #define TESTPOINT_H
 
+#include "Lucene.h"
+
 namespace Lucene
 {
 	/// Used for unit testing as a substitute for stack trace

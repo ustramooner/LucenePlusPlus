@@ -28,4 +28,13 @@ namespace Lucene
     {
     }
     
+    double TopDocs::getMaxScore()
+    {
+        return maxScore;
+}
+
+    void TopDocs::setMaxScore(double maxScore)
+    {
+        this->maxScore = maxScore;
+    }
 }

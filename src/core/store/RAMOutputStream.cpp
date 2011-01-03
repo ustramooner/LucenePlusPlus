@@ -110,7 +110,7 @@ namespace Lucene
                 switchCurrentBuffer();
             }
             
-            int32_t remainInBuffer = currentBuffer.length() - bufferPosition;
+            int32_t remainInBuffer = currentBuffer.size() - bufferPosition;
             int32_t bytesToCopy = length < remainInBuffer ? length : remainInBuffer;
             MiscUtils::arrayCopy(b, offset, currentBuffer.get(), bufferPosition, bytesToCopy);
             offset += bytesToCopy;
@@ -127,7 +127,7 @@ namespace Lucene
             currentBuffer = file->getBuffer(currentBufferIndex);
         bufferPosition = 0;
         bufferStart = (int64_t)BUFFER_SIZE * (int64_t)currentBufferIndex;
-        bufferLength = currentBuffer.length();
+        bufferLength = currentBuffer.size();
     }
     
     void RAMOutputStream::setFileLength()

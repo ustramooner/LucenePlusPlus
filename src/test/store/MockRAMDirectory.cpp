@@ -45,7 +45,10 @@ namespace Lucene
     {
         SyncLock syncLock(this);
         if (!openFiles)
+        {
             openFiles = MapStringInt::newInstance();
+            openFilesDeleted = HashSet<String>::newInstance();
+        }
         if (!createdFiles)
             createdFiles = HashSet<String>::newInstance();
         if (!unSyncedFiles)
@@ -72,6 +75,7 @@ namespace Lucene
         SyncLock syncLock(this);
         crashed = true;
         openFiles = MapStringInt::newInstance();
+        openFilesDeleted = HashSet<String>::newInstance();
         HashSet<String> crashFiles(unSyncedFiles);
         unSyncedFiles.clear();
         int32_t count = 0;		
@@ -85,7 +89,7 @@ namespace Lucene
                 // Zero out file entirely
                 int32_t numBuffers = file->numBuffers();
                 for (int32_t i = 0; i < numBuffers; ++i)
-                    MiscUtils::arrayFill(file->getBuffer(i).get(), 0, file->getBuffer(i).length(), 0);
+                    MiscUtils::arrayFill(file->getBuffer(i).get(), 0, file->getBuffer(i).size(), 0);
             }
             else if (count % 3 == 2)
             {
@@ -170,10 +174,25 @@ namespace Lucene
         
         unSyncedFiles.remove(name);
         
-        if (!forced && noDeleteOpenFile && openFiles.contains(name))
+        if (!forced && noDeleteOpenFile)
+        {
+            if (openFiles.contains(name))
+            {
+                openFilesDeleted.add(name);
             boost::throw_exception(IOException(L"MockRAMDirectory: file \"" + name + L"\" is still open: cannot delete"));
+            }
+            else
+                openFilesDeleted.remove(name);
+        }
         
         RAMDirectory::deleteFile(name);
+    }
+    
+    HashSet<String> MockRAMDirectory::getOpenDeletedFiles()
+    {
+        SyncLock syncLock(this);
+        HashSet<String> openFilesDeleted = HashSet<String>::newInstance(this->openFilesDeleted.begin(), this->openFilesDeleted.end());
+        return openFilesDeleted;
     }
     
     IndexOutputPtr MockRAMDirectory::createOutput(const String& name)
@@ -247,7 +266,10 @@ namespace Lucene
     {
         SyncLock syncLock(this);
         if (!openFiles)
+        {
             openFiles = MapStringInt::newInstance();
+            openFilesDeleted = HashSet<String>::newInstance();
+        }
         if (noDeleteOpenFile && !openFiles.empty())
         {
             // RuntimeException instead of IOException because RAMDirectory does not throw IOException currently

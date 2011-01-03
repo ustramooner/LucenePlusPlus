@@ -46,6 +46,5 @@ namespace Lucene {
 		/// Returns a clone of this stream.
 		virtual LuceneObjectPtr clone(LuceneObjectPtr other = LuceneObjectPtr());
 	};
-
 }
 

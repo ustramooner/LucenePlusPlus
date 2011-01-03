@@ -332,6 +332,9 @@ namespace Lucene
                 _hasDeletions = true;
         }
         starts[subReaders.size()] = _maxDoc;
+        
+        if (!readOnly)
+            maxIndexVersion = SegmentInfos::readCurrentVersion(_directory);
     }
     
     IndexReaderPtr DirectoryReader::open(DirectoryPtr directory, IndexDeletionPolicyPtr deletionPolicy, IndexCommitPtr commit, bool readOnly, int32_t termInfosIndexDivisor)
@@ -622,7 +625,7 @@ namespace Lucene
         ensureOpen();
         ByteArray bytes(normsCache.get(field));
         if (!bytes && !hasNorms(field))
-            MiscUtils::arrayFill(norms.get(), offset, norms.length(), DefaultSimilarity::encodeNorm(1.0));
+            MiscUtils::arrayFill(norms.get(), offset, norms.size(), DefaultSimilarity::encodeNorm(1.0));
         else if (bytes) // cache hit
             MiscUtils::arrayCopy(bytes.get(), 0, norms.get(), offset, maxDoc());
         else
@@ -699,7 +702,7 @@ namespace Lucene
                 
                 // we have to check whether index has changed since this reader was opened.
                 // if so, this reader is no longer valid for deletion
-                if (SegmentInfos::readCurrentVersion(_directory) > segmentInfos->getVersion())
+                if (SegmentInfos::readCurrentVersion(_directory) > maxIndexVersion)
                 {
                     stale = true;
                     this->writeLock->release();
@@ -717,7 +720,8 @@ namespace Lucene
             segmentInfos->setUserData(commitUserData);
             
             // Default deleter (for backwards compatibility) is KeepOnlyLastCommitDeleter
-            IndexFileDeleterPtr deleter(newLucene<IndexFileDeleter>(_directory, deletionPolicy ? deletionPolicy : newLucene<KeepOnlyLastCommitDeletionPolicy>(), segmentInfos, InfoStreamPtr(), DocumentsWriterPtr()));
+            IndexFileDeleterPtr deleter(newLucene<IndexFileDeleter>(_directory, deletionPolicy ? deletionPolicy : newLucene<KeepOnlyLastCommitDeletionPolicy>(), segmentInfos, InfoStreamPtr(), DocumentsWriterPtr(), synced));
+            segmentInfos->updateGeneration(deleter->getLastSegmentInfos());
             
             // Checkpoint the state we are about to change, in case we have to roll back
             startCommit();
@@ -766,6 +770,8 @@ namespace Lucene
             deleter->checkpoint(segmentInfos, true);
             deleter->close();
             
+            maxIndexVersion = segmentInfos->getVersion();
+            
             if (writeLock)
             {
                 writeLock->release(); // release write lock
@@ -778,7 +784,6 @@ namespace Lucene
     void DirectoryReader::startCommit()
     {
         rollbackHasChanges = _hasChanges;
-        rollbackSegmentInfos = boost::dynamic_pointer_cast<SegmentInfos>(segmentInfos->clone());
         for (Collection<SegmentReaderPtr>::iterator reader = subReaders.begin(); reader != subReaders.end(); ++reader)
             (*reader)->startCommit();
     }
@@ -786,13 +791,6 @@ namespace Lucene
     void DirectoryReader::rollbackCommit()
     {
         _hasChanges = rollbackHasChanges;
-        for (int32_t i = 0; i < segmentInfos->size(); ++i)
-        {
-            // Rollback each segmentInfo.  Because the // SegmentReader holds a reference to the
-            // SegmentInfo we can't [easily] just replace segmentInfos, so we reset it in place instead
-            segmentInfos->info(i)->reset(rollbackSegmentInfos->info(i));
-        }
-        rollbackSegmentInfos.reset();
         for (Collection<SegmentReaderPtr>::iterator reader = subReaders.begin(); reader != subReaders.end(); ++reader)
             (*reader)->rollbackCommit();
     }
@@ -1259,6 +1257,11 @@ namespace Lucene
     
     ReaderCommit::~ReaderCommit()
     {
+    }
+    
+    String ReaderCommit::toString()
+    {
+        return L"DirectoryReader::ReaderCommit(" + segmentsFileName + L")";
     }
     
     bool ReaderCommit::isOptimized()

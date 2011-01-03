@@ -7,7 +7,6 @@
 #include "TestInc.h"
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
-
 #include "FileUtils.h"
 
 using namespace Lucene;

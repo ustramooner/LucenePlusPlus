@@ -23,7 +23,6 @@
 #include "WildcardQuery.h"
 #include "Random.h"
 
-
 using namespace Lucene;
 
 class BooleanMinShouldMatchFixture : public LuceneTestFixture

@@ -55,10 +55,6 @@ namespace Lucene
     QueryTermVector::~QueryTermVector()
     {
     }
-    String QueryTermVector::getField()
-    {
-	return NULL;
-    }
     
     void QueryTermVector::processTerms(Collection<String> queryTerms)
     {

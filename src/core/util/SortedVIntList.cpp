@@ -9,6 +9,7 @@
 #include "BitSet.h"
 #include "OpenBitSet.h"
 #include "DocIdSetIterator.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {
@@ -55,7 +56,7 @@ namespace Lucene
     {
         lastInt = 0;
         initBytes();
-        int32_t nextInt = bits->nextSetBit(0);
+        int32_t nextInt = bits->nextSetBit((int32_t)0);
         while (nextInt != -1)
         {
             addInt(nextInt);
@@ -91,17 +92,17 @@ namespace Lucene
         if (diff < 0)
             boost::throw_exception(IllegalArgumentException(L"Input not sorted or first element negative."));
         
-        if (!bytes || (lastBytePos + MAX_BYTES_PER_INT) > bytes.length())
+        if (!bytes || (lastBytePos + MAX_BYTES_PER_INT) > bytes.size())
         {
             // biggest possible int does not fit
-            bytes.resize((bytes.length() * 2) + MAX_BYTES_PER_INT);
+            bytes.resize((bytes.size() * 2) + MAX_BYTES_PER_INT);
         }
         
         // See IndexOutput.writeVInt()
         while ((diff & ~VB1) != 0) // The high bit of the next byte needs to be set.
         {
             bytes[lastBytePos++] = (uint8_t)((diff & VB1) | ~VB1);
-            diff >>= BIT_SHIFT;
+            diff = MiscUtils::unsignedShift(diff, BIT_SHIFT);
         }
         bytes[lastBytePos++] = (uint8_t)diff; // Last byte, high bit not set.
         ++_size;
@@ -115,7 +116,7 @@ namespace Lucene
     
     int32_t SortedVIntList::getByteSize()
     {
-        return bytes ? bytes.length() : 0;
+        return bytes ? bytes.size() : 0;
     }
     
     bool SortedVIntList::isCacheable()

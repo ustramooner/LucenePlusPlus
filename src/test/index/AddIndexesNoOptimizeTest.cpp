@@ -20,7 +20,6 @@
 #include "SerialMergeScheduler.h"
 #include "SegmentInfo.h"
 
-
 using namespace Lucene;
 
 BOOST_FIXTURE_TEST_SUITE(AddIndexesNoOptimizeTest, LuceneTestFixture)

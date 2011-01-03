@@ -17,7 +17,6 @@
 #include "Document.h"
 #include "Field.h"
 
-
 using namespace Lucene;
 
 class TestFieldSelector : public FieldSelector

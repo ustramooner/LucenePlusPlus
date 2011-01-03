@@ -285,8 +285,11 @@ namespace Lucene
         SyncLock syncLock(this);
         BOOST_ASSERT(allThreadsIdle());
         
-        message(L"closeDocStore: " + StringUtils::toString(_openFiles.size()) + L" files to flush to segment " + 
+        if (infoStream)
+        {
+          message(L"closeDocStore: " + StringUtils::toString(_openFiles.size()) + L" files to flush to segment " + 
                 docStoreSegment + L" numDocs=" + StringUtils::toString(numDocsInStore));
+        }
         
         bool success = false;
         LuceneException finally;
@@ -366,6 +369,7 @@ namespace Lucene
         LuceneException finally;
         try
         {
+            if (infoStream)
             message(L"docWriter: now abort");
             
             // Forcefully remove waiting ThreadStates from line
@@ -390,6 +394,7 @@ namespace Lucene
                 }
                 
                 deletesInRAM->clear();
+                deletesFlushed->clear();
                 _openFiles.clear();
                 
                 for (Collection<DocumentsWriterThreadStatePtr>::iterator threadState = threadStates.begin(); threadState != threadStates.end(); ++threadState)
@@ -431,6 +436,7 @@ namespace Lucene
         }
         aborting = false;
         notifyAll();
+        if (infoStream)
         message(L"docWriter: done abort");
         finally.throwException();
     }
@@ -508,6 +514,7 @@ namespace Lucene
         
         docStoreOffset = numDocsInStore;
         
+        if (infoStream)
         message(L"flush postings as segment " + flushState->segmentName + L" numDocs=" + StringUtils::toString(numDocsInRAM));
         
         bool success = false;
@@ -533,10 +540,13 @@ namespace Lucene
             {
                 SegmentInfoPtr si(newLucene<SegmentInfo>(flushState->segmentName, flushState->numDocs, directory));
                 int64_t newSegmentSize = si->sizeInBytes();
-                message(L"  oldRAMSize=" + StringUtils::toString(numBytesUsed) + L" newFlushedSize=" + 
+                if (infoStream)
+                {
+                  message(L"  oldRAMSize=" + StringUtils::toString(numBytesUsed) + L" newFlushedSize=" + 
                         StringUtils::toString(newSegmentSize) + L" docs/MB=" + 
                         StringUtils::toString((double)numDocsInRAM / ((double)newSegmentSize / 1024.0 / 1024.0)) +
                         L" new/old=" + StringUtils::toString(100.0 * (double)newSegmentSize / (double)numBytesUsed) + L"%");
+                }
             }
             
             flushedDocCount += flushState->numDocs;
@@ -556,6 +566,11 @@ namespace Lucene
         BOOST_ASSERT(waitQueue->waitingBytes == 0);
         
         return flushState->numDocs;
+    }
+    
+    HashSet<String> DocumentsWriter::getFlushedFiles()
+    {
+        return flushState->flushedFiles;
     }
     
     void DocumentsWriter::createCompoundFile(const String& segment)
@@ -1256,10 +1271,13 @@ namespace Lucene
                     {
                         // Nothing else to free -- must flush now.
                         bufferIsFull = (numBytesUsed + deletesRAMUsed > flushTrigger);
-                        if (bufferIsFull)
-                            message(L"    nothing to free; now set bufferIsFull");
-                        else
-                            message(L"    nothing to free");
+                        if (infoStream)
+                        {
+                          if (bufferIsFull)
+                              message(L"    nothing to free; now set bufferIsFull");
+                          else
+                              message(L"    nothing to free");
+                        }
                         BOOST_ASSERT(numBytesUsed <= numBytesAlloc);
                         break;
                     }
@@ -1304,9 +1322,12 @@ namespace Lucene
                 ++iter;
             }
                 
-            message(L"    after free: freedMB=" + StringUtils::toString((double)(startBytesAlloc - numBytesAlloc - deletesRAMUsed) / 1024.0 / 1024.0) + 
+            if (infoStream)
+            {
+              message(L"    after free: freedMB=" + StringUtils::toString((double)(startBytesAlloc - numBytesAlloc - deletesRAMUsed) / 1024.0 / 1024.0) + 
                     L" usedMB=" + StringUtils::toString((double)(numBytesUsed + deletesRAMUsed) / 1024.0 / 1024.0) + 
                     L" allocMB=" + StringUtils::toString((double)numBytesAlloc / 1024.0 / 1024.0));
+            }
         }
         else
         {
@@ -1315,10 +1336,13 @@ namespace Lucene
             SyncLock syncLock(this);
             if (numBytesUsed + deletesRAMUsed > flushTrigger)
             {
-                message(L"  RAM: now flush @ usedMB=" + StringUtils::toString((double)numBytesUsed / 1024.0 / 1024.0) +
+                if (infoStream)
+                {
+                  message(L"  RAM: now flush @ usedMB=" + StringUtils::toString((double)numBytesUsed / 1024.0 / 1024.0) +
                         L" allocMB=" + StringUtils::toString((double)numBytesAlloc / 1024.0 / 1024.0) +
                         L" deletesMB=" + StringUtils::toString((double)deletesRAMUsed / 1024.0 / 1024.0) +
                         L" triggerMB=" + StringUtils::toString((double)flushTrigger / 1024.0 / 1024.0));
+                }
                 bufferIsFull = true;
             }
         }
@@ -1587,7 +1611,7 @@ namespace Lucene
             // be shared between things that don't track allocations (term vectors) and things that do (freq/prox postings).
             docWriter->numBytesAlloc += blockSize;
             b = ByteArray::newInstance(blockSize);
-            MiscUtils::arrayFill(b.get(), 0, b.length(), 0);
+            MiscUtils::arrayFill(b.get(), 0, b.size(), 0);
         }
         else
             b = freeByteBlocks.removeLast();

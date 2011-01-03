@@ -47,7 +47,6 @@ namespace Lucene
 		int32_t termInfosIndexDivisor;
 		
 		bool rollbackHasChanges;
-		SegmentInfosPtr rollbackSegmentInfos;
 		
 		Collection<SegmentReaderPtr> subReaders;
 		Collection<int32_t> starts; // 1st docno for each segment
@@ -56,6 +55,10 @@ namespace Lucene
 		int32_t _numDocs;
 		bool _hasDeletions;
 	
+    // Max version in index as of when we opened; this can be > our current segmentInfos version 
+    // in case we were opened on a past IndexCommit
+    int64_t maxIndexVersion;
+    
 	public:
 		void _initialize(Collection<SegmentReaderPtr> subReaders);
 		
@@ -351,6 +354,8 @@ namespace Lucene
 		MapStringString userData;
 		
 	public:
+        virtual String toString();
+        
 		/// Returns true if this commit is an optimized index.
 		virtual bool isOptimized();
 		

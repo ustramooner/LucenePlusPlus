@@ -7,7 +7,6 @@
 #include "TestInc.h"
 #include "LuceneTestFixture.h"
 #include "Random.h"
-
 #include "RAMDirectory.h"
 #include "IndexWriter.h"
 #include "WhitespaceAnalyzer.h"
@@ -221,7 +220,7 @@ public:
         if (!result)
             result = boost::dynamic_pointer_cast<BitSet>(rnd->clone());
         else
-            result->andBitSet(rnd);
+            result->_and(rnd);
         return result;
     }
 };

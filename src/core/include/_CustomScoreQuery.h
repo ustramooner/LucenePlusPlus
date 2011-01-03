@@ -4,6 +4,27 @@
 namespace Lucene
 {
 
+
+
+	// when deprecated methods are removed, do not extend class here, just return new default CustomScoreProvider
+	class DefaultCustomScoreProvider : public CustomScoreProvider
+	{
+	public:
+	    DefaultCustomScoreProvider(CustomScoreQueryPtr customQuery, IndexReaderPtr reader);
+		virtual ~DefaultCustomScoreProvider();
+	
+		LUCENE_CLASS(DefaultCustomScoreProvider);
+	
+	protected:
+	    CustomScoreQueryWeakPtr _customQuery;
+	
+	public:
+	    virtual double customScore(int32_t doc, double subQueryScore, Collection<double> valSrcScores);
+	    virtual double customScore(int32_t doc, double subQueryScore, double valSrcScore);
+	    virtual ExplanationPtr customExplain(int32_t doc, ExplanationPtr subQueryExpl, Collection<ExplanationPtr> valSrcExpls);
+	    virtual ExplanationPtr customExplain(int32_t doc, ExplanationPtr subQueryExpl, ExplanationPtr valSrcExpl);
+	};
+	
 	class CustomWeight : public Weight
 	{
 	public:
@@ -55,26 +76,5 @@ namespace Lucene
 		virtual double score();
 		virtual int32_t advance(int32_t target);
 	};
-
-
-	// when deprecated methods are removed, do not extend class here, just return new default CustomScoreProvider
-	class DefaultCustomScoreProvider : public CustomScoreProvider
-	{
-	public:
-	    DefaultCustomScoreProvider(CustomScoreQueryPtr customQuery, IndexReaderPtr reader);
-		virtual ~DefaultCustomScoreProvider();
-	
-		LUCENE_CLASS(DefaultCustomScoreProvider);
-	
-	protected:
-	    CustomScoreQueryWeakPtr _customQuery;
-	
-	public:
-	    virtual double customScore(int32_t doc, double subQueryScore, Collection<double> valSrcScores);
-	    virtual double customScore(int32_t doc, double subQueryScore, double valSrcScore);
-	    virtual ExplanationPtr customExplain(int32_t doc, ExplanationPtr subQueryExpl, Collection<ExplanationPtr> valSrcExpls);
-	    virtual ExplanationPtr customExplain(int32_t doc, ExplanationPtr subQueryExpl, ExplanationPtr valSrcExpl);
-	};
-	
 }
 

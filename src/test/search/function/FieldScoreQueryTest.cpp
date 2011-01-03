@@ -17,7 +17,6 @@
 #include "ValueSource.h"
 #include "DocValues.h"
 
-
 using namespace Lucene;
 
 /// Tests here create an index with a few documents, each having an int value indexed 

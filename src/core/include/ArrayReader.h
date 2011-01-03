@@ -68,7 +68,7 @@ namespace Lucene
 	};
 	
 	/// Convenience class for reading byte arrays.
-	class LPPCONTRIBAPI ByteArrayReader : public ArrayReader<uint8_t>
+	class ByteArrayReader : public ArrayReader<uint8_t>
 	{
 	public:
 		ByteArrayReader(ByteArray array);
@@ -80,7 +80,7 @@ namespace Lucene
     };
     
     /// Convenience class for reading char arrays.
-	class LPPCONTRIBAPI CharArrayReader : public ArrayReader<wchar_t>
+	class CharArrayReader : public ArrayReader<wchar_t>
 	{
 	public:
 		CharArrayReader(CharArray array);

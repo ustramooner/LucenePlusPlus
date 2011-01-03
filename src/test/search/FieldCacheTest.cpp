@@ -15,7 +15,6 @@
 #include "IndexReader.h"
 #include "FieldCache.h"
 
-
 using namespace Lucene;
 
 class FieldCacheFixture : public LuceneTestFixture

@@ -14,7 +14,6 @@
 #include "Document.h"
 #include "Field.h"
 
-
 using namespace Lucene;
 
 BOOST_FIXTURE_TEST_SUITE(FileSwitchDirectoryTest, LuceneTestFixture)
