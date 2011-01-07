@@ -145,10 +145,72 @@ namespace Lucene
         int32_t utf8to32(wchar_t* unicode, int32_t length);
     
     protected:
+        inline int32_t sequenceLength(uint32_t cp){
+          uint8_t lead = mask8(cp);
+          if (lead < 0x80)
+              return 1;
+          else if ((lead >> 5) == 0x6)
+              return 2;
+          else if ((lead >> 4) == 0xe)
+              return 3;
+          else if ((lead >> 3) == 0x1e)
+              return 4;
+          return 0;
+        }
+        inline bool isValidNext(uint32_t& cp){
+          // Determine the sequence length based on the lead octet
+          int32_t length = sequenceLength(cp);
+          if (length < 1 && length > 4)
+              return false;
+
+          // Now that we have a valid sequence length, get trail octets and calculate the code point
+          if (!getSequence(cp, length))
+              return false;
+          
+          // Decoding succeeded, now security checks
+          return (isValidCodePoint(cp) && !isOverlongSequence(cp, length));
+        }
+        
+        inline bool getSequence(uint32_t& cp, int32_t length)
+        {
+            cp = mask8(cp);
+            if (length == 1)
+                return true;
+            uint32_t next = readNext();
+            if (next == UNICODE_TERMINATOR)
+                return false;
+            if (!isTrail(next))
+                return false;
+            if (length == 2)
+            {
+                cp = ((cp << 6) & 0x7ff) + (next & 0x3f);
+                return true;
+            }
+            if (length == 3)
+                cp = ((cp << 12) & 0xffff) + ((mask8(next) << 6) & 0xfff);
+            else
+                cp = ((cp << 18) & 0x1fffff) + ((mask8(next) << 12) & 0x3ffff);
+            next = readNext();
+            if (next == UNICODE_TERMINATOR)
+                return false;
+            if (!isTrail(next))
+                return false;
+            if (length == 3)
+            {
+                cp += next & 0x3f;
+                return true;
+            }
+            cp += (mask8(next) << 6) & 0xfff;
+            next = readNext();
+            if (next == UNICODE_TERMINATOR)
+                return false;
+            if (!isTrail(next))
+                return false;
+            cp += next & 0x3f;
+            return true;
+        }
+        
         virtual uint32_t readNext();
-        int32_t sequenceLength(uint32_t cp);
-        bool getSequence(uint32_t& cp, int32_t length);
-        bool isValidNext(uint32_t& cp);
 	};
 	
   class UTF8DecoderStream : public UTF8Decoder
