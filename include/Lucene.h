@@ -218,7 +218,7 @@ namespace Lucene
 	typedef boost::shared_ptr<TermInfoCache> TermInfoCachePtr;
 }
 
-#ifdef _DEBUG
+#ifdef LPP_USE_CYCLIC_CHECK
   #include "CycleCheck.h"
 #endif
 #include "Synchronize.h" //SyncLock used throughout...

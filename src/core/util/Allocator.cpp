@@ -19,7 +19,7 @@ namespace Lucene
     {
         #if defined(LPP_USE_NEDMALLOC)
         return nedalloc::nedmalloc(size);
-        #elif (defined(_WIN32) || defined(_WIN64)) && defined(_DEBUG) 
+        #elif (defined(_WIN32) || defined(_WIN64)) && !defined(NDEBUG) 
         return _malloc_dbg(size, _NORMAL_BLOCK, __FILE__, __LINE__);
         #else
         return malloc(size);
@@ -37,7 +37,7 @@ namespace Lucene
         }
         #if defined(LPP_USE_NEDMALLOC)
         return nedalloc::nedrealloc(memory, size);
-        #elif defined(_WIN32) && defined(_DEBUG)
+        #elif defined(_WIN32) && !defined(NDEBUG)
         return _realloc_dbg(memory, size, _NORMAL_BLOCK, __FILE__, __LINE__);
         #else
         return realloc(memory, size);
@@ -50,7 +50,7 @@ namespace Lucene
             return;
         #if defined(LPP_USE_NEDMALLOC)
         nedalloc::nedfree(memory);
-        #elif defined(_WIN32) && defined(_DEBUG)
+        #elif defined(_WIN32) && !defined(NDEBUG)
         _free_dbg(memory, _NORMAL_BLOCK);
         #else
         free(memory);
