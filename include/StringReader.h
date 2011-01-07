@@ -12,7 +12,7 @@
 namespace Lucene
 {
 	/// Convenience class for reading strings.
-	class StringReader : public Reader
+	class LPPAPI StringReader : public Reader
 	{
 	public:
 		/// Creates a new StringReader, given the String to read from.
