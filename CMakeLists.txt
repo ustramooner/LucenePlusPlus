@@ -29,6 +29,11 @@ endif(COMMAND cmake_policy)
 # include specific modules
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
+#if setup using the Toolchain-llvm.cmake file, then use llvm...
+IF ( ENABLE_LLVM )
+  INCLUDE (Toolchain-llvm)
+ENDIF ( ENABLE_LLVM )
+
 #define options...
 INCLUDE (Lucene++Docs)
 INCLUDE (FindThreads)
@@ -39,7 +44,6 @@ ENABLE_TESTING()
 SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin CACHE PATH "Executable Output Directory" FORCE)
 SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin CACHE PATH "Library Output Directory" FORCE)
 ####################################
-
 
 ####################################
 #user specified build options
@@ -52,15 +56,6 @@ ELSE(NOT CMAKE_BUILD_TYPE)
     MESSAGE( "Compiling as ${CMAKE_BUILD_TYPE}" )
 ENDIF(NOT CMAKE_BUILD_TYPE)
 
-SET ( ENABLE_COMPILE_TESTS_VALUE ON )
-IF ( MSVC_IDE )
-	#this is annoying...
-	SET ( ENABLE_COMPILE_TESTS_VALUE OFF )
-ENDIF( MSVC_IDE )
-OPTION(ENABLE_COMPILE_TESTS
-  "enable various projects that test alternative build switches"
-  ${ENABLE_COMPILE_TESTS_VALUE})
-
 OPTION(ENABLE_PACKAGING
   "create build scripts for creating lucene++ packages"
   OFF)
@@ -70,9 +65,19 @@ OPTION(ENABLE_NEDMALLOC
 OPTION(LUCENE_USE_STATIC_BOOST_LIBS
   "use static boost libraries "
   OFF)
+OPTION(ENABLE_CYCLIC_CHECK
+  "enable cyclic checking "
+  OFF)
 
 #install path options
 SET(LIB_DESTINATION "lib" CACHE STRING "Define lib output directory name")
+
+IF ( ENABLE_NEDMALLOC )
+  ADD_DEFINITIONS(-DLPP_USE_NEDMALLOC)
+ENDIF ( ENABLE_NEDMALLOC )
+IF ( ENABLE_CYCLIC_CHECK )
+  ADD_DEFINITIONS(-DLPP_USE_CYCLIC_CHECK)
+ENDIF ( ENABLE_CYCLIC_CHECK )
 ####################################
 
 
