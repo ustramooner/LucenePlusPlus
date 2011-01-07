@@ -8,7 +8,7 @@ project(lucene++-base)
 #PATCH should be 0 unless a patch is made that doesn't affect the public signature (i.e. clients don't need to re-compile).
 SET(LUCENE++_VERSION_MAJOR "3")
 SET(LUCENE++_VERSION_MINOR "0")
-SET(LUCENE++_VERSION_REVISION "2")
+SET(LUCENE++_VERSION_REVISION "3")
 SET(LUCENE++_VERSION_PATCH "0")
 
 #derived versions
