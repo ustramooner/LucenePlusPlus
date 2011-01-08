@@ -49,7 +49,7 @@ SET_TARGET_PROPERTIES(lucene++ PROPERTIES
 TARGET_LINK_LIBRARIES(lucene++ lucene++-c ${CMAKE_THREAD_LIBS_INIT} ${Boost_LIBRARIES})
 install(TARGETS lucene++
 	        DESTINATION ${LIB_DESTINATION} 
-	        COMPONENT shared-runtime )
+	        COMPONENT runtime)
 
 #################################
 # lucene++ static library

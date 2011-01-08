@@ -9,11 +9,11 @@ SET(CPACK_PACKAGE_VERSION ${LUCENE++_VERSION})
 SET(CPACK_PACKAGE_SOVERSION ${LUCENE++_SOVERSION})
 
 SET(CPACK_PACKAGE_VENDOR "Ben van Klinken")
-SET(CPACK_PACKAGE_CONTACT "lucene++-developers@lists.sourceforge.net")
+SET(CPACK_PACKAGE_CONTACT "ustramooner@users.sourceforge.net")
 SET(CPACK_PACKAGE_NAME "liblucene++")
 
 SET(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/README.PACKAGE")
-SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Lucene++ - a C++ search engine, ported from the popular Apache Lucene")
+SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Lucene++ is an up to date C++ port of the popular Java Lucene library, a high-performance, full-featured text search engine")
 
 SET(CPACK_RESOURCE_FILE_README "${CMAKE_CURRENT_SOURCE_DIR}/README.PACKAGE")
 SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/COPYING")
@@ -33,18 +33,19 @@ ELSE( (WIN32 OR WIN64) AND NOT UNIX)
 ENDIF( (WIN32 OR WIN64) AND NOT UNIX)
 SET(CPACK_SOURCE_PACKAGE_FILE_NAME "lucene++-${CPACK_PACKAGE_VERSION}-Source")
 
-#specific packaging requirements:
-SET(CPACK_DEBIAN_PACKAGE_DEPENDS "libc6 (>= 2.4), libgcc1 (>= 1:4.1.1-21), libstdc++6 (>= 4.1.1-21), zlib1g")
+#specific packaging requirements:,
+SET(CPACK_DEBIAN_PACKAGE_DEPENDS "libc6 (>= 2.4), libgcc1 (>= 1:4.1.1-21), libstdc++6 (>= 4.1.1-21), libboost-date-time1.42.0, libboost-filesystem1.42.0, libboost-regex1.42.0, libboost-thread1.42.0, libboost-iostreams1.42.0")
 SET(CPACK_DEBIAN_PACKAGE_SECTION "libs")
 SET(CPACK_RPM_PACKAGE_LICENSE "Apache 2.0")
 SET(CPACK_RPM_PACKAGE_GROUP "libs")
-SET(CPACK_RPM_PACKAGE_REQUIRES "libz")
+SET(CPACK_RPM_PACKAGE_REQUIRES "libboost-date-time1.42.0, libboost-filesystem1.42.0, libboost-regex1.42.0, libboost-thread1.42.0, libboost-iostreams1.42.0")
 
 #don't include the current binary dir.
 get_filename_component(lucene++-base_BINARY_DIR_name ${lucene++-base_BINARY_DIR} NAME)
 SET(CPACK_SOURCE_IGNORE_FILES
   "/\\\\.svn/"
   "/\\\\.git/"
+  "/\\\\.waf*/"
   "\\\\.swp$"
   "\\\\.#;/#"
   ".*~"
