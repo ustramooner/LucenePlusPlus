@@ -14,8 +14,6 @@ def apply_clang(self):
     '''
     Replaced the default compiler with clang if required.
     '''
-    if not getattr(self, 'clang', True) or Options.options.disable_clang:
-        return
     self.env['CC'] = self.env['CLANG'] or self.env['CC']
     if sys.platform == "darwin":
         # workaround problems with non-static inline functions
@@ -28,8 +26,6 @@ def apply_clang_cpp(self):
     '''
     Replaced the default compiler with clang if required.
     '''
-    if not getattr(self, 'clang', True) or Options.options.disable_clang:
-        return
     self.env['CPP'] = self.env['CLANGPP'] or self.env['CXX']
     self.env['CXX'] = self.env['CLANGPP'] or self.env['CXX']
     if sys.platform == "darwin":
@@ -49,6 +45,9 @@ def set_options(opt):
 
 def detect(conf):
     search_paths = ['/Xcode4/usr/bin/'] if sys.platform == "darwin" else []
+    
+    if not getattr(conf, 'clang', True) or Options.options.disable_clang:
+        return
     conf.find_program('clang', var='CLANG')
     conf.find_program('clang++', var='CLANGPP', path_list = search_paths)
 
