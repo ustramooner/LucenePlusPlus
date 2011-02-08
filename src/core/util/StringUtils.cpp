@@ -24,8 +24,8 @@ namespace Lucene
     {
         if (length == 0)
             return 0;
-        UTF8DecoderPtr utf8Decoder(newLucene<UTF8Decoder>(utf8, utf8 + length));
-        int32_t decodeLength = utf8Decoder->decode(unicode.get(), unicode.size());
+        UTF8Decoder utf8Decoder(utf8, utf8 + length);
+        int32_t decodeLength = utf8Decoder.decode(unicode.get(), unicode.size());
         return decodeLength == Reader::READER_EOF ? 0 : decodeLength;
     }
     
@@ -35,7 +35,8 @@ namespace Lucene
             unicodeResult->length = 0;
         else
         {
-            unicodeResult->result.resize(length);
+            if ( length > unicodeResult->result.size() )
+              unicodeResult->result.resize(length);
             unicodeResult->length = toUnicode(utf8, length, unicodeResult->result);
         }
         return unicodeResult->length;
@@ -59,8 +60,8 @@ namespace Lucene
     {
         if (length == 0)
             return 0;
-        UTF8EncoderPtr utf8Encoder(newLucene<UTF8Encoder>(unicode, unicode + length));
-        int32_t encodeLength = utf8Encoder->encode(utf8.get(), utf8.size());
+        UTF8Encoder utf8Encoder(unicode, unicode + length);
+        int32_t encodeLength = utf8Encoder.encode(utf8.get(), utf8.size());
         return encodeLength == Reader::READER_EOF ? 0 : encodeLength;
     }
     
@@ -70,7 +71,8 @@ namespace Lucene
             utf8Result->length = 0;
         else
         {
-            utf8Result->result.resize(length * MAX_ENCODING_UTF8_SIZE);
+            if ( length * MAX_ENCODING_UTF8_SIZE > utf8Result->result.size() )
+              utf8Result->result.resize(length * MAX_ENCODING_UTF8_SIZE);
             utf8Result->length = toUTF8(unicode, length, utf8Result->result);
         }
         return utf8Result->length;
