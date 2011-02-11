@@ -549,7 +549,7 @@ namespace Lucene
         return _assertsOn;
     }
     
-    void CheckIndex::main(Collection<String> args)
+    int CheckIndex::main(Collection<String> args)
     {
         bool doFix = false;
         Collection<String> onlySegments(Collection<String>::newInstance());
@@ -563,7 +563,7 @@ namespace Lucene
                 if (arg + 1 == args.end())
                 {
                     std::wcout << L"ERROR: missing name for -segment option\n";
-                    exit(1);
+                    return 1;
                 }
                 ++arg;
                 onlySegments.add(*arg);
@@ -573,7 +573,7 @@ namespace Lucene
                 if (!indexPath.empty())
                 {
                     std::wcout << L"ERROR: unexpected extra argument '" << *arg << L"'\n";
-                    exit(1);
+                    return 1;
                 }
                 indexPath = *arg;
             }
@@ -602,7 +602,7 @@ namespace Lucene
             std::wcout << L"\n";
             std::wcout << L"This tool exits with exit code 1 if the index cannot be opened or has any\n";
             std::wcout << L"corruption, else 0.\n\n";
-            exit(1);
+            return 1;
         }
         
         if (!assertsOn())
@@ -613,7 +613,7 @@ namespace Lucene
         else if (doFix)
         {
             std::wcout << L"ERROR: cannot specify both -fix and -segment\n";
-            exit(1);
+            return 1;
         }
         
         std::wcout << L"\nOpening index @ " << indexPath << L"\n\n";
@@ -625,7 +625,7 @@ namespace Lucene
         catch (...)
         {
             std::wcout << L"ERROR: could not open directory \"" << indexPath << L"\"; exiting\n";
-            exit(1);
+            return 1;
         }
         
         CheckIndexPtr checker(newLucene<CheckIndex>(dir));
@@ -633,7 +633,7 @@ namespace Lucene
         
         IndexStatusPtr result(checker->checkIndex(onlySegments));
         if (result->missingSegments)
-            exit(1);
+            return 1;
         
         if (!result->clean)
         {
@@ -657,7 +657,7 @@ namespace Lucene
         }
         
         std::wcout << L"\n";
-        exit((result && result->clean) ? 0 : 1);
+       return ((result && result->clean) ? 0 : 1);
     }
     
     IndexStatus::IndexStatus()

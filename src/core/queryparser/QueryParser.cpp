@@ -760,8 +760,10 @@ namespace Lucene
             return c - L'a' + 10;
         else if (L'A' <= c && c <= L'F')
             return c - L'A' + 10;
-        else
+        else{
             boost::throw_exception(QueryParserError(L"None-hex character in unicode escape sequence: " + StringUtils::toString(c)));
+            return 0;
+        }
     }
     
     String QueryParser::escape(const String& s)
@@ -780,16 +782,17 @@ namespace Lucene
         return buffer.str();
     }
     
-    void QueryParser::main(Collection<String> args)
+    int QueryParser::main(Collection<String> args)
     {
         if (args.empty())
         {
             std::wcout << L"Usage: QueryParser <input>";
-            exit(0);
+            return 1;
         }
         QueryParserPtr qp(newLucene<QueryParser>(LuceneVersion::LUCENE_CURRENT, L"field", newLucene<SimpleAnalyzer>()));
         QueryPtr q(qp->parse(args[0]));
         std::wcout << q->toString(L"field");
+        return 0;
     }
     
     int32_t QueryParser::Conjunction()
