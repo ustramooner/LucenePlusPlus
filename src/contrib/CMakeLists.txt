@@ -11,8 +11,11 @@ file(GLOB_RECURSE lucene_sources
 file(GLOB_RECURSE HEADERS ${lucene++-contrib_SOURCE_DIR}/include/*.h)
 
 ADD_DEFINITIONS(-DLPP_BUILDING_LIB)
+INCLUDE_DIRECTORIES(${lucene++-base_SOURCE_DIR}/include)
 INCLUDE_DIRECTORIES(${lucene++-lib_SOURCE_DIR}/include)
 INCLUDE_DIRECTORIES(${lucene++-contrib_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
+LINK_DIRECTORIES(${Boost_LIBRARY_DIRS})
 
 install(FILES HEADERS
 		        DESTINATION include/lucene++

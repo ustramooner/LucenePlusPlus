@@ -124,7 +124,20 @@ ENDIF(CMAKE_COMPILER_IS_GNUCC)
 ####################################
 SET(Boost_USE_STATIC_LIBS   ${LUCENE_USE_STATIC_BOOST_LIBS})
 SET(Boost_USE_MULTITHREADED ON)
-find_package( Boost 1.36.0 COMPONENTS date_time filesystem iostreams regex thread unit_test_framework REQUIRED)
+#Boost 1.38 required for bug fixes in basic_streambuf. 
+#The following line fails in earlier builds, so if altered, may allow older versions of boost:
+#boost::gregorian::date date = parser.parse_date(paddedDate.c_str(), dateFormat->c_str(), svp);
+find_package( Boost 1.38.0 COMPONENTS date_time filesystem iostreams regex system thread unit_test_framework REQUIRED)
+IF (Boost_FOUND)
+  MESSAGE( STATUS "boost found: includes in ${Boost_INCLUDE_DIRS}, library in ${Boost_LIBRARY_DIRS}")
+  SET(LUCENE_BOOST_LIBS 
+    ${Boost_DATE_TIME_LIBRARY_RELEASE}
+    ${Boost_FILESYSTEM_LIBRARY_RELEASE}
+    ${Boost_IOSTREAMS_LIBRARY_RELEASE}
+    ${Boost_REGEX_LIBRARY_RELEASE}
+    ${Boost_SYSTEM_LIBRARY_RELEASE}
+    ${Boost_THREAD_LIBRARY_RELEASE})
+ENDIF (Boost_FOUND)
 
 ####################################
 # Pre-Compiled headers
@@ -137,10 +150,6 @@ INCLUDE(PCHSupport)
 ####################################
 # The subdirs
 ####################################
-#set global include paths
-INCLUDE_DIRECTORIES(${lucene++-base_SOURCE_DIR}/include)
-INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIRS} )
-
 #include sub-projects
 ADD_SUBDIRECTORY (src/core)
 ADD_SUBDIRECTORY (src/contrib EXCLUDE_FROM_ALL)

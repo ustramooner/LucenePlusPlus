@@ -5,6 +5,9 @@ project(lucene++-demo)
 ####################################
 file(GLOB_RECURSE HEADERS ${lucene++-demo_SOURCE_DIR}/../include/*.h)
 ADD_DEFINITIONS(-DLPP_HAVE_DLL)
+INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
+INCLUDE_DIRECTORIES(${lucene++-base_SOURCE_DIR}/include)
+
 ADD_EXECUTABLE(indexfiles EXCLUDE_FROM_ALL
 	${lucene++-demo_SOURCE_DIR}/indexfiles/main.cpp ${HEADERS}
 )

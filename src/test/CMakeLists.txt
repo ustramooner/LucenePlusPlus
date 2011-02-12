@@ -8,6 +8,9 @@ file(GLOB_RECURSE lucene_sources
 file(GLOB_RECURSE HEADERS ${lucene++-tester_SOURCE_DIR}/../include/*.h)
 file(GLOB_RECURSE HEADERS ${lucene++-tester_SOURCE_DIR}/include/*.h)
 
+LINK_DIRECTORIES(${Boost_LIBRARY_DIRS})
+INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
+INCLUDE_DIRECTORIES(${lucene++-base_SOURCE_DIR}/include)
 INCLUDE_DIRECTORIES(${lucene++-lib_SOURCE_DIR}/include)
 INCLUDE_DIRECTORIES(${lucene++-contrib_SOURCE_DIR}/include)
 INCLUDE_DIRECTORIES(${lucene++-tester_SOURCE_DIR}/include)
@@ -27,7 +30,8 @@ TARGET_LINK_LIBRARIES(lucene++-tester
   lucene++-c 
   lucene++-contrib-static 
   ${CMAKE_THREAD_LIBS_INIT}
-  ${Boost_LIBRARIES})
+  ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY_RELEASE}
+  ${LUCENE_BOOST_LIBS} )
 
 ADD_TEST(${EXECUTABLE_OUTPUT_PATH}/lucene++-tester ${EXECUTABLE_OUTPUT_PATH}/lucene++-tester -p)
 
