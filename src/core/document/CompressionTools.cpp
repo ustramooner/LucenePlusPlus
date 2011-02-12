@@ -7,12 +7,66 @@
 #include "LuceneInc.h"
 #include "CompressionTools.h"
 #include "UnicodeUtils.h"
-#include "../util/zlib/zlib.h"
 #include "StringUtils.h"
+#include <boost/iostreams/filtering_streambuf.hpp>
+#include <boost/iostreams/stream.hpp>
+#include <boost/iostreams/filter/zlib.hpp>
+#include <boost/iostreams/device/array.hpp>
+#include <boost/iostreams/copy.hpp>
+
+namespace io = boost::iostreams;
 
 namespace Lucene
 {
     const int32_t CompressionTools::COMPRESS_BUFFER = 4096;
+    
+    String ZLibToMessage(int error){
+      if ( error == io::zlib::okay )
+          return L"okay";
+      else if ( error == io::zlib::stream_end )
+          return L"stream_end";
+      else if ( error == io::zlib::stream_error )
+          return L"stream_error";
+      else if ( error == io::zlib::version_error )
+          return L"version_error";
+      else if ( error == io::zlib::data_error )
+          return L"data_error";
+      else if ( error == io::zlib::mem_error )
+          return L"mem_error";
+      else if ( error == io::zlib::buf_error )
+          return L"buf_error";
+      else
+          return L"unknown";
+    }
+    
+    class BufferArraySink : public io::sink
+    {
+        size_t allocSize;
+    public:
+        ByteArray& buffer;
+        std::streamsize& position;
+        
+        BufferArraySink(ByteArray& _buffer, std::streamsize& _position, size_t allocSize):
+          buffer(_buffer),
+          position(_position)
+        {
+          this->allocSize = allocSize;
+          this->buffer.resize(allocSize);
+        }
+        
+        std::streamsize write(const char* s, std::streamsize n)
+        {
+            if (position + n >= allocSize){
+              //grow buffer
+              allocSize <<= 1;
+              buffer.resize(allocSize);
+            }
+            memcpy(buffer.get() + position, s, n);
+            position += n;
+            return n;
+        }
+        
+    };
     
     CompressionTools::~CompressionTools()
     {
@@ -20,51 +74,43 @@ namespace Lucene
     
     ByteArray CompressionTools::compress(uint8_t* value, int32_t offset, int32_t length, int32_t compressionLevel)
     {
-        z_stream stream;
-        stream.zalloc = zlibAlloc;
-        stream.zfree = zlibFree;
-        stream.opaque = Z_NULL;
-
-        if (deflateInit(&stream, compressionLevel) != Z_OK)
-        {
-            boost::throw_exception(CompressionException(L"deflateInit failure:" + StringUtils::toString(stream.msg == NULL ? "" : stream.msg)));
-            return ByteArray();
+        //setup the outStream
+        io::filtering_ostreambuf outStream; 
+        io::zlib_compressor zcompressor(compressionLevel);
+        outStream.push(zcompressor);
+        
+        //and the output buffer
+        ByteArray buffer(ByteArray::newInstance(COMPRESS_BUFFER));
+        std::streamsize position = 0;
+        outStream.push(BufferArraySink(buffer, position, COMPRESS_BUFFER)); 
+        
+        //setup the source stream, and then copy it to the outStream
+        io::stream< io::array_source > source ( (char*)(value + offset), length);
+        
+        try{
+          io::copy(source, outStream); 
+        }catch(io::zlib_error& err){
+          boost::throw_exception(CompressionException(L"deflate failure: " + ZLibToMessage(err.error())));
         }
-
-        stream.avail_in = length;
-        stream.next_in = value + offset;
         
-        // No guarantee that the compressed data will be smaller than the uncompressed data
-        stream.avail_out = length + COMPRESS_BUFFER;
+        buffer.resize(position);
         
-        ByteArray compress(ByteArray::newInstance(stream.avail_out));
-        stream.next_out = compress.get();
-        
-        bool success = (deflate(&stream, Z_FINISH) == Z_STREAM_END);
-        String deflateMessage(StringUtils::toString(stream.msg == NULL ? "" : stream.msg));
-        
-        compress.resize(stream.total_out);
-        deflateEnd(&stream);
-        
-        if (!success)
-            boost::throw_exception(CompressionException(L"deflate failure:" + deflateMessage));
-        
-        return compress;
+        return buffer;
     }
     
     ByteArray CompressionTools::compress(uint8_t* value, int32_t offset, int32_t length)
     {
-        return compress(value, offset, length, Z_BEST_COMPRESSION);
+        return compress(value, offset, length, boost::iostreams::zlib::best_compression);
     }
     
     ByteArray CompressionTools::compress(ByteArray value)
     {
-        return compress(value.get(), 0, value.size(), Z_BEST_COMPRESSION);
+        return compress(value.get(), 0, value.size(), boost::iostreams::zlib::best_compression);
     }
     
     ByteArray CompressionTools::compressString(const String& value)
     {
-        return compressString(value, Z_BEST_COMPRESSION);
+        return compressString(value, boost::iostreams::zlib::best_compression);
     }
     
     ByteArray CompressionTools::compressString(const String& value, int32_t compressionLevel)
@@ -76,72 +122,32 @@ namespace Lucene
     
     ByteArray CompressionTools::decompress(ByteArray value)
     {
-        z_stream stream;
-        stream.avail_in = 0;
-        stream.next_in = Z_NULL;
-        stream.zalloc = zlibAlloc;
-        stream.zfree = zlibFree;
-        stream.opaque = Z_NULL;
-
-        if (inflateInit(&stream) != Z_OK)
-        {
-            boost::throw_exception(CompressionException(L"inflateInit failure:" + StringUtils::toString(stream.msg == NULL ? "" : stream.msg)));
-            return ByteArray();
-        }
-
-        stream.avail_in = value.size();
-        stream.next_in = value.get();
+        //setup the outStream
+        io::filtering_ostreambuf outStream; 
+        outStream.push(io::zlib_decompressor());
         
-        int32_t allocSize = COMPRESS_BUFFER;
-        ByteArray decompress(ByteArray::newInstance(allocSize));
+        //and the output buffer
+        ByteArray buffer(ByteArray::newInstance(COMPRESS_BUFFER));
+        std::streamsize position = 0;
+        outStream.push(BufferArraySink(buffer, position, COMPRESS_BUFFER)); 
         
-        int32_t position = 0;
-        int32_t inflateCode = Z_OK;
-        bool success = true;
-        String inflateMessage;
+        //setup the source stream, and then copy it to the outStream
+        io::stream< io::array_source > source ( (char*)value.get(), value.size() );
         
-        while (inflateCode != Z_STREAM_END)
-        {
-            decompress.resize(allocSize);
-            
-            stream.avail_out = allocSize - position;
-            stream.next_out = decompress.get() + position;
-            
-            inflateCode = inflate(&stream, Z_NO_FLUSH);
-            
-            if (inflateCode != Z_OK && inflateCode != Z_STREAM_END)
-            {
-                success = false;
-                inflateMessage = StringUtils::toString(stream.msg == NULL ? "" : stream.msg);
-                break;
-            }
-            
-            position = stream.total_out;			
-            allocSize <<= 1;
+        try{
+          io::copy(source, outStream); 
+        }catch(io::zlib_error& err){
+          boost::throw_exception(CompressionException(L"deflate failure: " + ZLibToMessage(err.error())));
         }
         
-        decompress.resize(stream.total_out);
-        inflateEnd(&stream);
+        buffer.resize(position);
         
-        if (!success)
-            boost::throw_exception(CompressionException(L"inflate failure:" + inflateMessage));
-        
-        return decompress;
+        return buffer;
     }
     
     String CompressionTools::decompressString(ByteArray value)
     {
         ByteArray bytes(decompress(value));
         return StringUtils::toUnicode(bytes.get(), bytes.size());
-    }
-    
-    void* CompressionTools::zlibAlloc(void* opaque, unsigned int items, unsigned int size)
-    {
-        return (void*)AllocMemory((size_t)(items * size));
-    }
-    
-    void CompressionTools::zlibFree(void* opaque, void* buffer)
-    {
-        FreeMemory((uint8_t*)buffer);
     }
 }
