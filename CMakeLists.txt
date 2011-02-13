@@ -2,19 +2,21 @@ project(lucene++-base)
 
 ####################################
 # VERSION information
-#Rules for version:
-#MAJOR and MINOR versions are purely political
-#REVISION version MUST be revised if the headers or compatibility change
-#PATCH should be 0 unless a patch is made that doesn't affect the public signature (i.e. clients don't need to re-compile).
+#These versions match the Lucene version
 SET(LUCENE++_VERSION_MAJOR "3")
 SET(LUCENE++_VERSION_MINOR "0")
 SET(LUCENE++_VERSION_REVISION "3")
-SET(LUCENE++_VERSION_PATCH "0")
+
+# SOVERSION information
+#MAJOR Must be incremented for releases if the api is not backwards compatible
+#MINOR Must be incremented for releases if backwards compatible only changes are added.
+SET(LUCENE++_SOVERSION_MAJOR "0")
+SET(LUCENE++_SOVERSION_MINOR "0")
 
 #derived versions
-MATH(EXPR LUCENE++_INT_VERSION "(${LUCENE++_VERSION_MAJOR} * 1000000) + (${LUCENE++_VERSION_MINOR} * 10000) + (${LUCENE++_VERSION_REVISION} * 100) + (${LUCENE++_VERSION_PATCH})" )
-SET(LUCENE++_VERSION "${LUCENE++_VERSION_MAJOR}.${LUCENE++_VERSION_MINOR}.${LUCENE++_VERSION_REVISION}.${LUCENE++_VERSION_PATCH}")
-SET(LUCENE++_SOVERSION "${LUCENE++_VERSION_MAJOR}.${LUCENE++_VERSION_MINOR}.${LUCENE++_VERSION_REVISION}")
+MATH(EXPR LUCENE++_INT_VERSION "(${LUCENE++_VERSION_MAJOR} * 10000) + (${LUCENE++_VERSION_MINOR} * 100) + (${LUCENE++_VERSION_REVISION} * 1)" )
+SET(LUCENE++_VERSION "${LUCENE++_VERSION_MAJOR}.${LUCENE++_VERSION_MINOR}.${LUCENE++_VERSION_REVISION}")
+SET(LUCENE++_SOVERSION "${LUCENE++_SOVERSION_MINOR}")
 ####################################
 
 ####################################
