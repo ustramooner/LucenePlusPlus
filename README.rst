@@ -96,7 +96,6 @@ Acknowledgements
 - Ben van Klinken and contributors to the CLucene project for inspiring this project.
 - Jamie Kirkpatrick for cross-platform and waf build support.
 
-- `Zlib <http://www.zlib.net>`_ Copyright (C) 1995-2010 Jean-loup Gailly and Mark Adler
 - `nedmalloc <http://sourceforge.net/projects/nedmalloc/>`_ Copyright 2005-2006 Niall Douglas
 - md5 Copyright (C) 1999, 2000, 2002 Aladdin Enterprises
 - `Unicode character properties (guniprop) <http://library.gnome.org/devel/glib/>`_ Copyright (C) 1999 Tom Tromey, Copyright (C) 2000 Red Hat, Inc.

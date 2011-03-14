@@ -92,8 +92,7 @@ EXCLUDE_PATTERNS       = "**/.svn/**" \
                          "*/test/*" \
                          "*/md5/*" \
                          "*/nedmalloc/*" \
-                         "*/utf8/*" \
-                         "*/zlib/*"
+                         "*/utf8/*"
 EXAMPLE_PATH           = 
 EXAMPLE_PATTERNS       = 
 EXAMPLE_RECURSIVE      = NO

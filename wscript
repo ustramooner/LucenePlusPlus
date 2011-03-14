@@ -39,7 +39,6 @@ lucene_source_dirs = [
   'src/core/util/md5',
   'src/core/util/nedmalloc',
   'src/core/util/unicode',
-  'src/core/util/zlib',
 
 ]
 
@@ -54,7 +53,6 @@ lucene_include_dirs = [
     'src/contrib/snowball/libstemmer_c/include',
     'src/core/util/md5',
     'src/core/util/nedmalloc',
-    'src/core/util/zlib',
     'src/core/util/unicode'
 ]
 
