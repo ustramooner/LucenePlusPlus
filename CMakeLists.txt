@@ -10,13 +10,11 @@ SET(LUCENE++_VERSION_REVISION "3")
 # SOVERSION information
 #MAJOR Must be incremented for releases if the api is not backwards compatible
 #MINOR Must be incremented for releases if backwards compatible only changes are added.
-SET(LUCENE++_SOVERSION_MAJOR "0")
-SET(LUCENE++_SOVERSION_MINOR "0")
+SET(LUCENE++_SOVERSION "0")
 
 #derived versions
 MATH(EXPR LUCENE++_INT_VERSION "(${LUCENE++_VERSION_MAJOR} * 10000) + (${LUCENE++_VERSION_MINOR} * 100) + (${LUCENE++_VERSION_REVISION} * 1)" )
 SET(LUCENE++_VERSION "${LUCENE++_VERSION_MAJOR}.${LUCENE++_VERSION_MINOR}.${LUCENE++_VERSION_REVISION}")
-SET(LUCENE++_SOVERSION "${LUCENE++_SOVERSION_MINOR}")
 ####################################
 
 ####################################
