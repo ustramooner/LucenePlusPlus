@@ -233,7 +233,7 @@ namespace Lucene
             bool seenVowel = false;
             bool seenConson = false;
             int32_t pos = -1;
-            for (int32_t i = R0.length() - 1; i > -1; --i)
+            for (int32_t i = (int32_t)(R0.length() - 1); i > -1; --i)
             {
                 wchar_t ch = R0[i];
                 if (isVowel(ch))
@@ -434,7 +434,7 @@ namespace Lucene
     
     String FrenchStemmer::retrieveR(const String& buffer)
     {
-        int32_t len = buffer.length();
+        int32_t len = (int32_t)buffer.length();
         int32_t pos = -1;
         for (int32_t c = 0; c < len; ++c)
         {
@@ -466,7 +466,7 @@ namespace Lucene
     
     String FrenchStemmer::retrieveRV(const String& buffer)
     {
-        int32_t len = buffer.length();
+        int32_t len = (int32_t)buffer.length();
         if (buffer.length() > 3)
         {
             if (isVowel(buffer[0]) && isVowel(buffer[1]))

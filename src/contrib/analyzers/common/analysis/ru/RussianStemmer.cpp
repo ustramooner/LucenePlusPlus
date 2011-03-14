@@ -429,14 +429,14 @@ namespace Lucene
             }
             // check if ending was found
             if (match)
-                return theEndingClass[i].size(); // cut ending
+                return (int32_t)theEndingClass[i].size(); // cut ending
         }
         return 0;
     }
     
     int32_t RussianStemmer::findEnding(String& stemmingZone, Collection<String> theEndingClass)
     {
-        return findEnding(stemmingZone, stemmingZone.length() - 1, theEndingClass);
+        return findEnding(stemmingZone, (int32_t)(stemmingZone.length() - 1), theEndingClass);
     }
     
     bool RussianStemmer::findAndRemoveEnding(String& stemmingZone, Collection<String> theEndingClass)
@@ -458,7 +458,7 @@ namespace Lucene
             return false; // not found
         else
         {
-            int32_t predessorLength = findEnding(stemmingZone, stemmingZone.length() - endingLength - 1, thePredessors);
+            int32_t predessorLength = findEnding(stemmingZone, (int32_t)(stemmingZone.length() - endingLength - 1), thePredessors);
             if (predessorLength == 0)
                 return false;
             else

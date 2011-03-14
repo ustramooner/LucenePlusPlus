@@ -44,7 +44,7 @@ namespace Lucene
 		
 		int32_t size() const
 		{
-			return mapContainer->size();
+			return (int32_t)mapContainer->size();
 		}
 		
 		bool empty() const

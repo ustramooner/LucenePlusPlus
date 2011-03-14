@@ -51,15 +51,15 @@ namespace Lucene
           position(_position)
         {
           this->allocSize = allocSize;
-          this->buffer.resize(allocSize);
+          this->buffer.resize((int32_t)allocSize);
         }
         
         std::streamsize write(const char* s, std::streamsize n)
         {
-            if (position + n >= allocSize){
+            if (position + n >= (std::streamsize)allocSize){
               //grow buffer
               allocSize <<= 1;
-              buffer.resize(allocSize);
+              buffer.resize((int32_t)allocSize);
             }
             memcpy(buffer.get() + position, s, n);
             position += n;
@@ -93,7 +93,7 @@ namespace Lucene
           boost::throw_exception(CompressionException(L"deflate failure: " + ZLibToMessage(err.error())));
         }
         
-        buffer.resize(position);
+        buffer.resize((int32_t)position);
         
         return buffer;
     }
@@ -116,7 +116,7 @@ namespace Lucene
     ByteArray CompressionTools::compressString(const String& value, int32_t compressionLevel)
     {
         UTF8ResultPtr utf8Result(newLucene<UTF8Result>());
-        StringUtils::toUTF8(value.c_str(), value.length(), utf8Result);
+        StringUtils::toUTF8(value.c_str(), (int32_t)value.length(), utf8Result);
         return compress(utf8Result->result.get(), 0, utf8Result->length, compressionLevel);
     }
     
@@ -140,7 +140,7 @@ namespace Lucene
           boost::throw_exception(CompressionException(L"deflate failure: " + ZLibToMessage(err.error())));
         }
         
-        buffer.resize(position);
+        buffer.resize((int32_t)position);
         
         return buffer;
     }

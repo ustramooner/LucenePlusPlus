@@ -75,7 +75,7 @@ namespace Lucene
                 {
                     // un-tokenized field
                     String stringValue(field->stringValue());
-                    int32_t valueLength = stringValue.length();
+                    int32_t valueLength = (int32_t)stringValue.length();
                     perThread->singleToken->reinit(stringValue, 0, valueLength);
                     fieldState->attributeSource = perThread->singleToken;
                     consumer->start(field);
