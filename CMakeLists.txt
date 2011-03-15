@@ -131,7 +131,6 @@ find_package( Boost 1.38.0 COMPONENTS date_time filesystem iostreams regex syste
 IF (Boost_FOUND)
   MESSAGE( STATUS "boost found: includes in ${Boost_INCLUDE_DIRS}, library in ${Boost_LIBRARY_DIRS}")
   SET(LUCENE_BOOST_LIBS 
-    ${Boost_DATE_TIME_LIBRARY_RELEASE}
     ${Boost_FILESYSTEM_LIBRARY_RELEASE}
     ${Boost_IOSTREAMS_LIBRARY_RELEASE}
     ${Boost_REGEX_LIBRARY_RELEASE}
@@ -155,6 +154,16 @@ ADD_SUBDIRECTORY (src/core)
 ADD_SUBDIRECTORY (src/contrib EXCLUDE_FROM_ALL)
 ADD_SUBDIRECTORY (src/demo EXCLUDE_FROM_ALL)
 ADD_SUBDIRECTORY (src/test)
+
+
+#################################
+# install pkg-config file
+#################################
+IF(NOT WIN32)
+  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/liblucene++.pc.cmake ${CMAKE_CURRENT_BINARY_DIR}/liblucene++.pc @ONLY)
+  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/liblucene++.pc
+          DESTINATION ${LIB_DESTINATION}/pkgconfig )
+ENDIF(NOT WIN32)
 
 
 ####################################
