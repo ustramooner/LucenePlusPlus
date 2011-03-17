@@ -6,15 +6,18 @@ project(lucene++-base)
 SET(LUCENE++_VERSION_MAJOR "3")
 SET(LUCENE++_VERSION_MINOR "0")
 SET(LUCENE++_VERSION_REVISION "3")
+SET(LUCENE++_VERSION_PATCH "4")
 
 # SOVERSION information
-#MAJOR Must be incremented for releases if the api is not backwards compatible
-#MINOR Must be incremented for releases if backwards compatible only changes are added.
+#Must be incremented for releases if the api is not backwards compatible
 SET(LUCENE++_SOVERSION "0")
 
 #derived versions
-MATH(EXPR LUCENE++_INT_VERSION "(${LUCENE++_VERSION_MAJOR} * 10000) + (${LUCENE++_VERSION_MINOR} * 100) + (${LUCENE++_VERSION_REVISION} * 1)" )
-SET(LUCENE++_VERSION "${LUCENE++_VERSION_MAJOR}.${LUCENE++_VERSION_MINOR}.${LUCENE++_VERSION_REVISION}")
+MATH(EXPR LUCENE++_INT_VERSION "(${LUCENE++_VERSION_MAJOR} * 1000000) + (${LUCENE++_VERSION_MINOR} * 10000) + (${LUCENE++_VERSION_REVISION} * 100) + (${LUCENE++_VERSION_PATCH} * 1)" )
+SET(LUCENE++_VERSION "${LUCENE++_VERSION_MAJOR}.${LUCENE++_VERSION_MINOR}.${LUCENE++_VERSION_REVISION}.${LUCENE++_VERSION_PATCH}")
+MESSAGE(${LUCENE++_INT_VERSION})
+MESSAGE(${LUCENE++_VERSION})
+
 ####################################
 
 ####################################
