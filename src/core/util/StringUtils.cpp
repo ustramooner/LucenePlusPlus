@@ -5,12 +5,13 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
+#include <boost/algorithm/string.hpp>
 #include "StringUtils.h"
+#include "MiscUtils.h"
 #include "UnicodeUtils.h"
 #include "UTF8Stream.h"
 #include "Reader.h"
 #include "CharFolder.h"
-#include <boost/algorithm/string.hpp>
 
 namespace Lucene
 {

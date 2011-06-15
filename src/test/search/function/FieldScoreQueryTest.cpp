@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "TestInc.h"
-#include "VariantUtils.h"
 #include "FunctionFixture.h"
 #include "IndexSearcher.h"
 #include "FieldScoreQuery.h"
@@ -16,6 +15,7 @@
 #include "IndexReader.h"
 #include "ValueSource.h"
 #include "DocValues.h"
+#include "VariantUtils.h"
 
 using namespace Lucene;
 

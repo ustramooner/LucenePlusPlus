@@ -92,15 +92,19 @@ BOOST_AUTO_TEST_CASE(testParseDateUS)
 
 BOOST_AUTO_TEST_CASE(testParseDateLocale)
 {
-    bool hasThisLocale;
+    bool hasThisLocale = false;
     
-    try{
+    try
+    {
       std::locale("en_GB.UTF-8");
       hasThisLocale = true;
-    }catch(...){
-      hasThisLocale = false;
     }
-    if ( hasThisLocale ){
+    catch (...)
+    {
+    }
+
+    if (hasThisLocale)
+    {
       DateTools::setDateOrder(DateTools::DATEORDER_LOCALE);
       BOOST_CHECK_EQUAL(DateTools::parseDate(L"01122005", std::locale("en_GB.UTF-8")), ptime(date(2005, 12, 01)));
       BOOST_CHECK_EQUAL(DateTools::parseDate(L"011205", std::locale("en_GB.UTF-8")), ptime(date(2005, 12, 01)));
@@ -114,14 +118,18 @@ BOOST_AUTO_TEST_CASE(testParseDateLocale)
       BOOST_CHECK_EQUAL(DateTools::parseDate(L"01/Jan/2005", std::locale("en_GB.UTF-8")), ptime(date(2005, 01, 01)));
     }
     
-    
-    try{
+    try
+    {
       std::locale("en_US.UTF-8");
       hasThisLocale = true;
-    }catch(...){
+    }
+    catch (...)
+    {
       hasThisLocale = false;
     }
-    if ( hasThisLocale ){
+
+    if (hasThisLocale)
+    {
       DateTools::setDateOrder(DateTools::DATEORDER_LOCALE);
       BOOST_CHECK_EQUAL(DateTools::parseDate(L"12012005", std::locale("en_US.UTF-8")), ptime(date(2005, 12, 01)));
       BOOST_CHECK_EQUAL(DateTools::parseDate(L"120105", std::locale("en_US.UTF-8")), ptime(date(2005, 12, 01)));

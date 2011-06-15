@@ -7,10 +7,10 @@
 #include "LuceneInc.h"
 #include "TermInfosReader.h"
 #include "SegmentTermEnum.h"
-#include "StringUtils.h"
 #include "Directory.h"
 #include "IndexFileNames.h"
 #include "Term.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

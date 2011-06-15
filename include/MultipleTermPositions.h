@@ -8,7 +8,6 @@
 #define MULTIPLETERMPOSITIONS_H
 
 #include "TermPositions.h"
-#include "PriorityQueue.h"
 
 namespace Lucene
 {
@@ -51,7 +50,6 @@ namespace Lucene
 		/// @return false
 		virtual bool isPayloadAvailable();
 	};
-	
 }
 
 #endif

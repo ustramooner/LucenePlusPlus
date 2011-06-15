@@ -97,8 +97,6 @@ namespace Lucene
 		
 		friend class BooleanWeight;
 	};
-	
-	
 }
 
 #endif

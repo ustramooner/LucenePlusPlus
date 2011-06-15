@@ -6,9 +6,8 @@
 
 #include "LuceneInc.h"
 #include "FormatPostingsTermsConsumer.h"
-#include "UnicodeUtils.h"
-#include "MiscUtils.h"
 #include "UTF8Stream.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

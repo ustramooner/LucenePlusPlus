@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <limits.h>
 #include "BooleanScorer.h"
 #include "Similarity.h"
 

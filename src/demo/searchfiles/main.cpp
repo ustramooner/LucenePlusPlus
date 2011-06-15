@@ -1,5 +1,4 @@
 /////////////////////////////////////////////////////////////////////////////
-#include "LuceneHeaders.h"
 // Copyright (c) 2009-2011 Alan Wright. All rights reserved.
 // Distributable under the terms of either the Apache License (Version 2.0)
 // or the GNU Lesser General Public License.
@@ -8,12 +7,11 @@
 #define NOMINMAX
 
 #include "targetver.h"
-#include "LuceneHeaders.h"
 #include <iostream>
 #include <boost/algorithm/string.hpp>
-#include "StringUtils.h"
-#include "MiscUtils.h"
+#include "LuceneHeaders.h"
 #include "FilterIndexReader.h"
+#include "MiscUtils.h"
 
 using namespace Lucene;
 
@@ -103,9 +101,8 @@ static void doPagingSearch(SearcherPtr searcher, QueryPtr query, int32_t hitsPer
 				std::wcout << StringUtils::toString(i + 1) + L". No path for this document\n";
 		}
 		
-		if (!interactive) {
+        if (!interactive)
 			break;
-		}
 
 		if (numTotalHits >= end)
 		{
@@ -229,7 +226,7 @@ int main(int argc, char* argv[])
 	{
 		String index = L"index";
 		String field = L"contents";
-		String queries = L"";
+        String queries;
 		int32_t repeat = 0;
 		bool raw = false;
 		String normsField;
@@ -247,9 +244,11 @@ int main(int argc, char* argv[])
 			{
 				field = StringUtils::toUnicode(argv[i + 1]);
 				++i;
-			}else if (strcmp(argv[i], "-queries") == 0) {
+            }
+            else if (strcmp(argv[i], "-queries") == 0)
+            {
 				queries = StringUtils::toUnicode(argv[i + 1]);
-				i++;
+                ++i;
 			}
 			else if (strcmp(argv[i], "-repeat") == 0)
 			{
@@ -288,23 +287,25 @@ int main(int argc, char* argv[])
 		QueryParserPtr parser = newLucene<QueryParser>(LuceneVersion::LUCENE_CURRENT, field, analyzer);
 
 		ReaderPtr in;		
-		if (queries != L"") {
+        if (!queries.empty())
 		      in = newLucene<FileReader>(queries);
-		}
 
 		while (true)
 		{
 			String line;
 
-			if (queries != L"") {
+            if (!queries.empty())
+            {
 				wchar_t c = in->read();
-				while ( c != '\n' && c != '\r' && c != Reader::READER_EOF ) {
+                while (c != L'\n' && c != L'\r' && c != Reader::READER_EOF)
+                {
 					line += c;
 					c = in->read();
 				}
-			}else{
+            }
+            else
+            {
 				std::wcout << L"Enter query: ";
-			
 				std::wcin >> line;
 			}
 			boost::trim(line);
@@ -324,7 +325,7 @@ int main(int argc, char* argv[])
 			}
 			
 			if (paging)
-				doPagingSearch(searcher, query, hitsPerPage, raw, queries == L"");
+                doPagingSearch(searcher, query, hitsPerPage, raw, queries.empty());
 			else
 				doStreamingSearch(searcher, query);
 		}

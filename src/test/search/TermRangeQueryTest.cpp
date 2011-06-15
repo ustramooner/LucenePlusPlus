@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "TestInc.h"
-#include <boost/blank.hpp>
 #include "LuceneTestFixture.h"
 #include "RAMDirectory.h"
 #include "IndexSearcher.h"

@@ -7,11 +7,11 @@
 #include "LuceneInc.h"
 #include "TermBuffer.h"
 #include "IndexInput.h"
-#include "StringUtils.h"
 #include "FieldInfos.h"
 #include "Term.h"
-#include "UnicodeUtils.h"
 #include "MiscUtils.h"
+#include "UnicodeUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

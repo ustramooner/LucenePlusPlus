@@ -5,14 +5,13 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <limits.h>
 #include <fstream>
-#include <boost/thread/thread.hpp>
 #include "FSDirectory.h"
 #include "NativeFSLockFactory.h"
-#include "FileUtils.h"
 #include "SimpleFSDirectory.h"
 #include "BufferedIndexInput.h"
+#include "LuceneThread.h"
+#include "FileUtils.h"
 #include "StringUtils.h"
 
 extern "C"
@@ -175,7 +174,7 @@ namespace Lucene
                 break;
             }
             
-            boost::this_thread::sleep(boost::posix_time::milliseconds(5)); // pause 5 msec
+            LuceneThread::threadSleep(5); // pause 5 msec
         }
 
         if (!success)

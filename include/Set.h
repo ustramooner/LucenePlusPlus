@@ -7,6 +7,7 @@
 #ifndef SET_H
 #define SET_H
 
+#include <set>
 #include "LuceneSync.h"
 
 namespace Lucene
@@ -20,6 +21,7 @@ namespace Lucene
 		typedef std::set< TYPE, LESS, Allocator<TYPE> > set_type;
 		typedef typename set_type::iterator iterator;
 		typedef typename set_type::const_iterator const_iterator;
+        typedef TYPE value_type;
 	
 		virtual ~Set()
 		{
@@ -51,7 +53,7 @@ namespace Lucene
 		
 		int32_t size() const
 		{
-			return setContainer->size();
+            return (int32_t)setContainer->size();
 		}
 		
 		bool empty() const

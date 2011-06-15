@@ -4,30 +4,31 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#ifndef _FIELDCACHESANITYCHECKER_H
+#define _FIELDCACHESANITYCHECKER_H
 
-#include "MapOfSets.h"
-#include "FieldCacheSanityChecker.h"
+#include "LuceneObject.h"
 
 namespace Lucene
 {
-	/// Simple pair object for using "readerKey + fieldName" a Map key
-	class ReaderField : public LuceneObject
-	{
-	public:
-		ReaderField(LuceneObjectPtr readerKey, const String& fieldName);
-		virtual ~ReaderField();
-	
-		LUCENE_CLASS(ReaderField);
-	
-	public:
-		LuceneObjectPtr readerKey;
-		String fieldName;
-	
-	public:
-		virtual int32_t hashCode();
-		virtual bool equals(LuceneObjectPtr other);
-		virtual String toString();
-	};
+    /// Simple pair object for using "readerKey + fieldName" a Map key
+    class ReaderField : public LuceneObject
+    {
+    public:
+        ReaderField(LuceneObjectPtr readerKey, const String& fieldName);
+        virtual ~ReaderField();
+    
+        LUCENE_CLASS(ReaderField);
+    
+    public:
+        LuceneObjectPtr readerKey;
+        String fieldName;
+    
+    public:
+        virtual int32_t hashCode();
+        virtual bool equals(LuceneObjectPtr other);
+        virtual String toString();
+    };
 }
 
+#endif

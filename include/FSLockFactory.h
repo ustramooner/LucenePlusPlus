@@ -14,6 +14,9 @@ namespace Lucene
 	/// Base class for file system based locking implementation.
 	class LPPAPI FSLockFactory : public LockFactory
 	{
+    protected:
+        FSLockFactory();
+    
 	public:
 		virtual ~FSLockFactory();
 		
@@ -22,8 +25,7 @@ namespace Lucene
 	protected:
 		/// Directory for the lock files.
 		String lockDir;
-		FSLockFactory();
-	
+
 	public:
 		/// Set the lock directory. This method can be only called once to 
 		/// initialize the lock directory. It is used by {@link FSDirectory}

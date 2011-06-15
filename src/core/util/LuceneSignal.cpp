@@ -9,8 +9,6 @@
 #include "Synchronize.h"
 #include <boost/thread/condition.hpp>
 
-
-
 namespace Lucene
 {
     class LuceneSignal::Internal {

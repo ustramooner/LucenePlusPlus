@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "TestInc.h"
-#include "MiscUtils.h"
 #include "LuceneTestFixture.h"
 #include "WildcardQuery.h"
 #include "Term.h"
@@ -24,6 +23,7 @@
 #include "PrefixQuery.h"
 #include "QueryParser.h"
 #include "WhitespaceAnalyzer.h"
+#include "MiscUtils.h"
 
 using namespace Lucene;
 

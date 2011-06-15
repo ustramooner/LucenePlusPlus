@@ -5,13 +5,11 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "TestInc.h"
-#include <boost/thread/thread.hpp>
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "Document.h"
 #include "Field.h"
 #include "DateTools.h"
-#include "FileUtils.h"
 #include "FileReader.h"
 #include "MockRAMDirectory.h"
 #include "IndexWriter.h"
@@ -37,7 +35,7 @@
 #include "FieldCache.h"
 #include "ReadOnlyDirectoryReader.h"
 #include "ReadOnlySegmentReader.h"
-
+#include "FileUtils.h"
 
 using namespace Lucene;
 
@@ -667,7 +665,7 @@ BOOST_AUTO_TEST_CASE(testLastModified)
             reader->close();
             
             // modify index and check version has been incremented
-            boost::this_thread::sleep(boost::posix_time::milliseconds(1000));
+            LuceneThread::threadSleep(1000);
 
             writer = newLucene<IndexWriter>(dir, newLucene<WhitespaceAnalyzer>(), true, IndexWriter::MaxFieldLengthLIMITED);
             addDocumentWithFields(writer);

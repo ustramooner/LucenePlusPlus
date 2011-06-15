@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <limits>
 #include "TopFieldCollector.h"
 #include "_TopFieldCollector.h"
 #include "FieldValueHitQueue.h"

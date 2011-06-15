@@ -6,7 +6,6 @@
 
 #include "LuceneInc.h"
 #include "ChecksumIndexOutput.h"
-#include <boost/crc.hpp>
 
 namespace Lucene
 {

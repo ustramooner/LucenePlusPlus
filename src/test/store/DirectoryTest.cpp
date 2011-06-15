@@ -9,13 +9,13 @@
 #include "TestUtils.h"
 #include "Directory.h"
 #include "Lock.h"
-#include "FileUtils.h"
 #include "FSDirectory.h"
 #include "SimpleFSDirectory.h"
 #include "MMapDirectory.h"
 #include "RAMDirectory.h"
 #include "IndexInput.h"
 #include "IndexOutput.h"
+#include "FileUtils.h"
 
 using namespace Lucene;
 

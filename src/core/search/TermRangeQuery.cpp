@@ -5,12 +5,11 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include "VariantUtils.h"
 #include "TermRangeQuery.h"
 #include "TermRangeTermEnum.h"
-#include "StringUtils.h"
 #include "Collator.h"
-#include "MiscUtils.h"
+#include "StringUtils.h"
+#include "VariantUtils.h"
 
 namespace Lucene
 {

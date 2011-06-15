@@ -8,8 +8,6 @@
 #define VALUESOURCEQUERY_H
 
 #include "Query.h"
-#include "Weight.h"
-#include "Scorer.h"
 
 namespace Lucene
 {
@@ -46,7 +44,6 @@ namespace Lucene
 		virtual int32_t hashCode();
 		virtual LuceneObjectPtr clone(LuceneObjectPtr other = LuceneObjectPtr());
 	};
-	
 }
 
 #endif

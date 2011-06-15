@@ -33,7 +33,6 @@ namespace Lucene
 	
 	protected:
 		Collection<FieldablePtr> fields;
-
 		double boost;
 	
 	public:

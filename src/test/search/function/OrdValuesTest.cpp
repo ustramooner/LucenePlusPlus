@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "TestInc.h"
-#include <boost/blank.hpp>
 #include "FunctionFixture.h"
 #include "IndexSearcher.h"
 #include "ValueSource.h"
@@ -17,6 +16,7 @@
 #include "TopDocs.h"
 #include "Document.h"
 #include "IndexReader.h"
+#include "DocValues.h"
 #include "VariantUtils.h"
 
 using namespace Lucene;

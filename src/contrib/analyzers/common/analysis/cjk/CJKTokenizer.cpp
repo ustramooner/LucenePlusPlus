@@ -12,7 +12,6 @@
 #include "Reader.h"
 #include "CharFolder.h"
 #include "UnicodeUtils.h"
-#include <locale>
 
 namespace Lucene
 {

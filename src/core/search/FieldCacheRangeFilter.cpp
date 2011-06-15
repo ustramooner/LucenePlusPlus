@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <limits.h>
 #include "FieldCacheRangeFilter.h"
 #include "_FieldCacheRangeFilter.h"
 #include "FieldCache.h"

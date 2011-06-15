@@ -47,7 +47,6 @@ namespace Lucene
 		
 		friend class FirstSpans;
 	};
-	
 }
 
 #endif

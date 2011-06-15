@@ -19,8 +19,10 @@ namespace Lucene
 		virtual ~SegmentReader();
 		
 		LUCENE_CLASS(SegmentReader);
+
 	protected:
 		bool readOnly;
+
 	INTERNAL:
 		BitVectorPtr deletedDocs;
 		SegmentReaderRefPtr deletedDocsRef;
@@ -214,7 +216,6 @@ namespace Lucene
 		friend class IndexWriter;
 		friend class Norm;
 	};
-	
 }
 
 #endif

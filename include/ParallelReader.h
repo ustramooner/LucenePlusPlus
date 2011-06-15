@@ -8,8 +8,6 @@
 #define PARALLELREADER_H
 
 #include "IndexReader.h"
-#include "TermEnum.h"
-#include "TermPositions.h"
 
 namespace Lucene
 {
@@ -177,8 +175,7 @@ namespace Lucene
 		friend class ParallelTermEnum;
 		friend class ParallelTermDocs;
 		friend class ParallelTermPositions;
-	};
-	
+	};	
 }
 
 #endif

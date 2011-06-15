@@ -39,7 +39,6 @@
 #include "TestPoint.h"
 #include "MiscUtils.h"
 #include "StringUtils.h"
-#include "CycleCheck.h"
 
 namespace Lucene
 {
@@ -1358,7 +1357,7 @@ namespace Lucene
     {
     }
     
-    bool DocState::testPoint(const wchar_t* name)
+    bool DocState::testPoint(const String& name)
     {
         return IndexWriterPtr(DocumentsWriterPtr(_docWriter)->_writer)->testPoint(name);
     }

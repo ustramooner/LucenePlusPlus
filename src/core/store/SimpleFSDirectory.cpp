@@ -8,10 +8,10 @@
 #include <fstream>
 #include "SimpleFSDirectory.h"
 #include "_SimpleFSDirectory.h"
-#include "StringUtils.h"
 #include "IndexOutput.h"
-#include "FileUtils.h"
 #include "FileReader.h"
+#include "FileUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {
@@ -45,7 +45,7 @@ namespace Lucene
     
     InputFile::InputFile(const String& path)
     {
-        file = newInstance<std::ifstream>(StringUtils::toUTF8(path).c_str(), std::ios::binary | std::ios::in | std::ios::out);
+        file = newInstance<std::ifstream>(StringUtils::toUTF8(path).c_str(), std::ios::binary | std::ios::in);
         if (!file->is_open())
             boost::throw_exception(FileNotFoundException(path));
         position = 0;

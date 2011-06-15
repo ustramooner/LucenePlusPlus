@@ -8,7 +8,6 @@
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "MMapDirectory.h"
-#include "FileUtils.h"
 #include "FSDirectory.h"
 #include "StandardAnalyzer.h"
 #include "IndexWriter.h"
@@ -16,6 +15,7 @@
 #include "Document.h"
 #include "Field.h"
 #include "Random.h"
+#include "FileUtils.h"
 
 using namespace Lucene;
 

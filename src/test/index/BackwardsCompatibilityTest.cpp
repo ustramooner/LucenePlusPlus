@@ -8,7 +8,6 @@
 #include <boost/algorithm/string.hpp>
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
-#include "FileUtils.h"
 #include "FSDirectory.h"
 #include "IndexReader.h"
 #include "IndexWriter.h"
@@ -28,7 +27,7 @@
 #include "TopDocs.h"
 #include "CompoundFileReader.h"
 #include "NumericField.h"
-
+#include "FileUtils.h"
 
 using namespace Lucene;
 

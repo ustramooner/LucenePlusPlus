@@ -20,6 +20,7 @@ namespace Lucene
 	{
 	protected:
 		FieldValueHitQueue(Collection<SortFieldPtr> fields, int32_t size);
+
 	public:
 		virtual ~FieldValueHitQueue();
 	
@@ -67,7 +68,6 @@ namespace Lucene
 	public:
 		virtual String toString();
 	};
-	
 }
 
 #endif

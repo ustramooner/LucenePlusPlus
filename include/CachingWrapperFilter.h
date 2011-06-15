@@ -8,12 +8,9 @@
 #define CACHINGWRAPPERFILTER_H
 
 #include "Filter.h"
-#include "FilteredDocIdSet.h"
 
 namespace Lucene
 {
-	
-	
 	/// Wraps another filter's result and caches it.  The purpose is to allow filters to simply filter, and 
 	/// then wrap with this class to add caching.
 	class LPPAPI CachingWrapperFilter : public Filter
@@ -66,8 +63,7 @@ namespace Lucene
 		virtual String toString();
 		virtual bool equals(LuceneObjectPtr other);
 		virtual int32_t hashCode();
-	};
-	
+	};	
 }
 
 #endif

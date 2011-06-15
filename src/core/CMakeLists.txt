@@ -43,7 +43,7 @@ ADD_LIBRARY(lucene++ SHARED
 	${lucene_sources} ${HEADERS} ${INTERN_HEADERS}
 )
 SET(PCH_ADDITIONAL_COMPILER_FLAGS_lucene++ -DLPP_HAVE_DLL)
-ADD_PRECOMPILED_HEADER(lucene++ ${lucene++-lib_SOURCE_DIR}/include/LucenePCH.h)
+ADD_PRECOMPILED_HEADER(lucene++ ${lucene++-lib_SOURCE_DIR}/include/LuceneInc.h)
 #set properties on the libraries
 SET_TARGET_PROPERTIES(lucene++ PROPERTIES
     VERSION ${LUCENE++_VERSION}
@@ -64,7 +64,7 @@ ADD_LIBRARY(lucene++-static STATIC EXCLUDE_FROM_ALL
 	${lucene_sources} ${HEADERS} ${INTERN_HEADERS}
 )
 SET(PCH_ADDITIONAL_COMPILER_FLAGS_lucene++-static -DLPP_HAVE_DLL)
-ADD_PRECOMPILED_HEADER(lucene++-static ${lucene++-lib_SOURCE_DIR}/include/LucenePCH.h)
+ADD_PRECOMPILED_HEADER(lucene++-static ${lucene++-lib_SOURCE_DIR}/include/LuceneInc.h)
 #set properties on the libraries
 SET_TARGET_PROPERTIES(lucene++-static PROPERTIES
     VERSION ${LUCENE++_VERSION}

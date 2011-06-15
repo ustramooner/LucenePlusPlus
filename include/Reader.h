@@ -21,6 +21,7 @@ namespace Lucene
 		virtual ~Reader();
 		LUCENE_CLASS(Reader);
 	
+    public:
 		static const int32_t READER_EOF;
 		
 		/// Read a single character.

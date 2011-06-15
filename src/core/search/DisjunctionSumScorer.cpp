@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <limits>
 #include "DisjunctionSumScorer.h"
 #include "ScorerDocQueue.h"
 #include "Collector.h"

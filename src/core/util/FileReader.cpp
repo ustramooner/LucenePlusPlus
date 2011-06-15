@@ -7,9 +7,9 @@
 #include "LuceneInc.h"
 #include <fstream>
 #include "FileReader.h"
-#include "StringUtils.h"
-#include "FileUtils.h"
 #include "MiscUtils.h"
+#include "FileUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "TestInc.h"
-#include <boost/thread/thread.hpp>
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "MockRAMDirectory.h"
@@ -13,6 +12,7 @@
 #include "WhitespaceAnalyzer.h"
 #include "IndexWriter.h"
 #include "IndexReader.h"
+#include "ConcurrentMergeScheduler.h"
 #include "_ConcurrentMergeScheduler.h"
 #include "Document.h"
 #include "Field.h"
@@ -22,7 +22,6 @@
 #include "IndexFileDeleter.h"
 #include "KeepOnlyLastCommitDeletionPolicy.h"
 #include "TestPoint.h"
-
 
 using namespace Lucene;
 
@@ -289,7 +288,7 @@ BOOST_AUTO_TEST_CASE(testNoWaitClose)
     directory->close();
     
     // allow time for merge threads to finish
-    boost::this_thread::sleep(boost::posix_time::milliseconds(1000));
+    LuceneThread::threadSleep(1000);
 }
 
 namespace TestSubclassConcurrentMergeScheduler

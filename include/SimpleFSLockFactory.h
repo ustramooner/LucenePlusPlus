@@ -37,7 +37,6 @@ namespace Lucene
 		/// Attempt to clear (forcefully unlock and remove) the specified lock.
 		virtual void clearLock(const String& lockName);
 	};
-	
 }
 
 #endif

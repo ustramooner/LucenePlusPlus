@@ -5,11 +5,9 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <boost/thread/thread.hpp>
 #include "TimeLimitingCollector.h"
 #include "_TimeLimitingCollector.h"
 #include "StringUtils.h"
-#include "CycleCheck.h"
 
 namespace Lucene
 {
@@ -130,7 +128,7 @@ namespace Lucene
                 resolution = TimeLimitingCollector::resolution;
                 time += resolution;
             }
-            boost::this_thread::sleep(boost::posix_time::milliseconds(resolution));
+            LuceneThread::threadSleep(resolution);
         }
     }
     

@@ -5,10 +5,10 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "TestInc.h"
+#include <fstream>
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "MockLock.h"
-#include "FileUtils.h"
 #include "MockLockFactory.h"
 #include "RAMDirectory.h"
 #include "IndexWriter.h"
@@ -26,6 +26,7 @@
 #include "Term.h"
 #include "ScoreDoc.h"
 #include "TopDocs.h"
+#include "FileUtils.h"
 
 using namespace Lucene;
 

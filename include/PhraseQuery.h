@@ -8,7 +8,6 @@
 #define PHRASEQUERY_H
 
 #include "Query.h"
-#include "Weight.h"
 
 namespace Lucene
 {
@@ -78,7 +77,6 @@ namespace Lucene
 		
 		friend class PhraseWeight;
 	};
-	
 }
 
 #endif

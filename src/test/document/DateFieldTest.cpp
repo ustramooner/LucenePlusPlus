@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "TestInc.h"
-#include <boost/date_time/gregorian/gregorian.hpp>
 #include "LuceneTestFixture.h"
 #include "DateField.h"
 

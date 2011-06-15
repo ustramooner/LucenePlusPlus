@@ -5,16 +5,15 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <boost/thread/thread.hpp>
 #include "LuceneObject.h"
 #include "StringUtils.h"
 
 namespace Lucene
 {
-
     LuceneObject::LuceneObject()
     {
     }
+
     LuceneObject::~LuceneObject()
     {
     }

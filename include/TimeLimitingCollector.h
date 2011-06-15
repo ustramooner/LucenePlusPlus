@@ -8,7 +8,6 @@
 #define TIMELIMITINGCOLLECTOR_H
 
 #include "Collector.h"
-#include "LuceneThread.h"
 
 namespace Lucene
 {
@@ -93,7 +92,6 @@ namespace Lucene
 		
 		friend class TimerThread;
 	};
-	
 }
 
 #endif

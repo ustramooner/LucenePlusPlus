@@ -32,8 +32,7 @@ namespace Lucene
 		
 		/// An empty {@code DocIdSet} instance for easy use, eg. in Filters that hit no documents.
 		static DocIdSetPtr EMPTY_DOCIDSET();
-	};
-	
+	};	
 }
 
 #endif

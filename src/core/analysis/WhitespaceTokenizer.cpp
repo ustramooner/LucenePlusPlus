@@ -7,7 +7,6 @@
 #include "LuceneInc.h"
 #include "WhitespaceTokenizer.h"
 #include "UnicodeUtils.h"
-#include <locale>
 
 namespace Lucene
 {

@@ -5,13 +5,10 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "TestInc.h"
-#include <boost/thread/thread.hpp>
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "IndexWriter.h"
-#include "MiscUtils.h"
 #include "IndexReader.h"
-#include "FileUtils.h"
 #include "LuceneThread.h"
 #include "Document.h"
 #include "Field.h"
@@ -20,7 +17,8 @@
 #include "MockRAMDirectory.h"
 #include "FSDirectory.h"
 #include "Random.h"
-
+#include "MiscUtils.h"
+#include "FileUtils.h"
 
 using namespace Lucene;
 
@@ -42,10 +40,10 @@ protected:
     RandomPtr random;
 
 public:
-    virtual bool testPoint(const wchar_t* name)
+    virtual bool testPoint(const String& name)
     {
         if (random->nextInt(4) == 2)
-            boost::this_thread::yield();
+            LuceneThread::threadYield();
         return true;
     }
 };

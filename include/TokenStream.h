@@ -58,6 +58,7 @@ namespace Lucene
 		
 		LUCENE_CLASS(TokenStream);
 	
+    public:
 		/// Consumers (ie., {@link IndexWriter}) use this method to advance the stream to the next token. Implementing 
 		/// classes must implement this method and update the appropriate {@link Attribute}s with the attributes of
 		/// the next token.

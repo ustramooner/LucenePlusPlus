@@ -7,8 +7,6 @@
 #include "TestInc.h"
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
-
-#include "FileUtils.h"
 #include "FSDirectory.h"
 #include "IndexWriter.h"
 #include "StandardAnalyzer.h"
@@ -16,6 +14,7 @@
 #include "Field.h"
 #include "DefaultSimilarity.h"
 #include "IndexReader.h"
+#include "FileUtils.h"
 
 using namespace Lucene;
 

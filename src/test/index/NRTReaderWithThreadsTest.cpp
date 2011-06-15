@@ -5,11 +5,8 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "TestInc.h"
-#include <boost/thread/thread.hpp>
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
-#include "MiscUtils.h"
-
 #include "MockRAMDirectory.h"
 #include "IndexWriter.h"
 #include "WhitespaceAnalyzer.h"
@@ -20,6 +17,7 @@
 #include "Field.h"
 #include "TermDocs.h"
 #include "Random.h"
+#include "MiscUtils.h"
 
 using namespace Lucene;
 
@@ -176,7 +174,7 @@ BOOST_AUTO_TEST_CASE(testIndexing)
     int64_t startTime = MiscUtils::currentTimeMillis();
     int64_t duration = 5 * 1000;
     while (((int64_t)MiscUtils::currentTimeMillis() - startTime) < duration)
-        boost::this_thread::sleep(boost::posix_time::milliseconds(100));
+        LuceneThread::threadSleep(100);
     int32_t delCount = 0;
     int32_t addCount = 0;
     for (int32_t x = 0; x < indexThreads.size(); ++x)

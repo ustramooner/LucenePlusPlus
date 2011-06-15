@@ -14,7 +14,6 @@
 #include "Field.h"
 #include "IndexReader.h"
 
-
 using namespace Lucene;
 
 BOOST_FIXTURE_TEST_SUITE(IndexWriterMergingTest, LuceneTestFixture)

@@ -19,6 +19,7 @@ namespace Lucene
 	{
 	protected:
 		PayloadFunction();
+
 	public:
 		virtual ~PayloadFunction();
 		LUCENE_CLASS(PayloadFunction);

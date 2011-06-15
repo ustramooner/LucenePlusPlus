@@ -8,7 +8,6 @@
 #define CHARFOLDER_H
 
 #include "LuceneObject.h"
-#include <limits.h>
 
 namespace Lucene
 {

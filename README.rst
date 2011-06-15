@@ -11,10 +11,10 @@ Components
 
 - liblucene++ library
 - liblucene_contrib library
-- lucene_tester
-- deletefiles
-- indexfiles
-- searchfiles
+- lucene_tester (unit tester)
+- deletefiles (demo)
+- indexfiles (demo)
+- searchfiles (demo)
 
 
 Useful Resources
@@ -28,31 +28,23 @@ http://www.boost.org/doc/libs/1_44_0/libs/test/doc/html/utf/user-guide/runtime-c
 
 Build Instructions using CMake
 ------------------------------
+
 You'll need boost installed somewhere.
 
 On Debian systems, the following packages are required:
-libboost-date-time-dev libboost-filesystem-dev libboost-regex-dev libboost-thread-dev libboost-iostreams-dev libboost-test-dev
 
-On Windows, you'll need boost installed. http://www.boostpro.com/ has some precompiled windows packages.
-You'll need the following extras installed. Y
-- boost::system
-- boost::thread
-- boost::filesystem
-- boost::regex
-- boost::date_time
-- boost::iostreams
-- boost::unit_test_framework
+- libboost-date-time-dev
+- libboost-filesystem-dev
+- libboost-regex-dev
+- libboost-thread-dev
+- libboost-iostreams-dev
+- libboost-test-dev
 
-Building Performance
---------------------
-Use of ccache will speed up build times a lot. I found it easiest to add the /usr/lib/ccache directory to the beginning of your paths. This works for most common compilers.
 
-PATH=/usr/lib/ccache:$PATH
+Build Instructions using Waf
+------------------------------
 
-Build Instructions for POSIX systems
-------------------------------------
-
-We use `Waf <http://code.google.com/p/waf/>`_ to drive the build. Waf requires that you have a recent version of `Python <http://python.org>`_ installed on your system.  
+Alternatively you can use `Waf <http://code.google.com/p/waf/>`_ to drive the build. Waf requires that you have a recent version of `Python <http://python.org>`_ installed on your system.  
 
 To build the library the following commands should be issued::
 
@@ -62,11 +54,11 @@ To build the library the following commands should be issued::
 
 Additionally static builds of the following libraries are required for a successful build:
 
-- boost::system
-- boost::thread
+- boost::date_time
 - boost::filesystem
 - boost::regex
-- boost::date_time
+- boost::thread
+- boost::system
 - boost::unit_test_framework
 
 The libraries and headers should be made available at a standard prefix (/usr/local for example).
@@ -79,13 +71,33 @@ Open solution lucene++.sln located in the *msvc* folder into Visual Studio 2008 
 
 **Note: "BOOST_ROOT" environment variable must be defined to point to the boost library directory (eg. c:\\boost_1_44_0)**
 
+You'll need boost installed. 
+
+`BoostPro <http://www.boostpro.com>`_ has some precompiled windows packages. You'll need the following extras installed::
+
+- boost::system
+- boost::thread
+- boost::filesystem
+- boost::regex
+- boost::date_time
+- boost::iostreams
+- boost::unit_test_framework
+
+
+Building Performance
+--------------------
+
+Use of ccache will speed up build times a lot. I found it easiest to add the /usr/lib/ccache directory to the beginning of your paths. This works for most common compilers.
+
+PATH=/usr/lib/ccache:$PATH
+
 
 To run unit test suite
 ----------------------
 
 lucene_tester is built using the `Boost Unit Test Framework <http://www.boost.org/doc/libs/1_44_0/libs/test/doc/html/index.html>`_ and is launched by the following command::
 
-    $ bin/default/lucene_tester --test_dir=./test/testfiles --show_progress=yes
+    $ bin/lucene_tester --test_dir=./test/testfiles --show_progress=yes
 
 Other `command options <http://www.boost.org/doc/libs/1_44_0/libs/test/doc/html/utf/user-guide/runtime-config/reference.html>`_ can be supplied.
 

@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <boost/bind/protect.hpp>
 #include "IndexWriter.h"
 #include "_IndexWriter.h"
 #include "Directory.h"
@@ -133,7 +132,6 @@ namespace Lucene
     {
         messageID = -1;
         messageIDLock = newInstance<Synchronize>();
-        optimizeMaxNumSegments = 0;
         setMessageID(defaultInfoStream);
         this->writeLockTimeout = WRITE_LOCK_TIMEOUT;
         this->segmentInfos = newLucene<SegmentInfos>();
@@ -3611,7 +3609,7 @@ namespace Lucene
         return OutOfMemoryError();
     }
     
-    bool IndexWriter::testPoint(const wchar_t* name)
+    bool IndexWriter::testPoint(const String& name)
     {
         return true;
     }

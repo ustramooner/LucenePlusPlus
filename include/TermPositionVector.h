@@ -17,6 +17,7 @@ namespace Lucene
 	{
 	protected:
 		TermPositionVector();
+
 	public:
 		virtual ~TermPositionVector();
 		LUCENE_INTERFACE(TermPositionVector);

@@ -51,6 +51,7 @@ namespace Lucene
     QueryParserConstants::QueryParserConstants()
     {
     }
+
     QueryParserConstants::~QueryParserConstants()
     {
     }

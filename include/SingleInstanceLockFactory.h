@@ -8,7 +8,6 @@
 #define SINGLEINSTANCELOCKFACTORY_H
 
 #include "LockFactory.h"
-#include "Lock.h"
 
 namespace Lucene
 {
@@ -40,7 +39,6 @@ namespace Lucene
 		/// @param lockName name of the lock to be cleared.
 		virtual void clearLock(const String& lockName);
 	};
-	
 }
 
 #endif

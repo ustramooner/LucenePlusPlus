@@ -7,19 +7,18 @@
 #include "TestInc.h"
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
-#include "FileUtils.h"
 #include "DefaultSimilarity.h"
 #include "StandardAnalyzer.h"
 #include "FSDirectory.h"
 #include "IndexWriter.h"
-#include "_SegmentReader.h"
 #include "Document.h"
 #include "Field.h"
 #include "MockRAMDirectory.h"
 #include "LogDocMergePolicy.h"
 #include "WhitespaceAnalyzer.h"
 #include "SegmentReader.h"
-
+#include "_SegmentReader.h"
+#include "FileUtils.h"
 
 using namespace Lucene;
 

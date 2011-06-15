@@ -5,11 +5,10 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <boost/blank.hpp>
 #include "DocValues.h"
 #include "Explanation.h"
-#include "StringUtils.h"
 #include "MiscUtils.h"
+#include "StringUtils.h"
 #include "VariantUtils.h"
 
 namespace Lucene

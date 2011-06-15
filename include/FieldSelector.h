@@ -17,6 +17,7 @@ namespace Lucene
 	{
 	protected:
 	  FieldSelector();
+
 	public:
 		virtual ~FieldSelector();
 		

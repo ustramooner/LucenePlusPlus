@@ -8,7 +8,6 @@
 #define CONCURRENTMERGESCHEDULER_H
 
 #include "MergeScheduler.h"
-#include "LuceneThread.h"
 
 namespace Lucene
 {
@@ -95,8 +94,7 @@ namespace Lucene
 		virtual void addMyself();
 		
 		friend class MergeThread;
-	};
-	
+	};	
 }
 
 #endif

@@ -19,6 +19,7 @@ namespace Lucene
 	{
 	protected:
 		TermFreqVector();
+
 	public:
 		virtual ~TermFreqVector();		
 		LUCENE_INTERFACE(TermFreqVector);

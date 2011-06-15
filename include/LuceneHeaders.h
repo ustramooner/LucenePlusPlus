@@ -46,6 +46,7 @@
 #include "LogMergePolicy.h"
 #include "MergeScheduler.h"
 #include "MultiReader.h"
+#include "ParallelReader.h"
 #include "Term.h"
 #include "TermDocs.h"
 #include "TermEnum.h"
@@ -55,9 +56,22 @@
 #include "QueryParser.h"
 
 // Include most common files: search
+#include "BooleanClause.h"
+#include "BooleanQuery.h"
+#include "DocIdSet.h"
+#include "DocIdSetIterator.h"
 #include "Explanation.h"
 #include "IndexSearcher.h"
+#include "MatchAllDocsQuery.h"
+#include "MultiPhraseQuery.h"
 #include "MultiSearcher.h"
+#include "MultiTermQuery.h"
+#include "NumericRangeFilter.h"
+#include "NumericRangeQuery.h"
+#include "ParallelMultiSearcher.h"
+#include "PhraseQuery.h"
+#include "PrefixFilter.h"
+#include "PrefixQuery.h"
 #include "ScoreDoc.h"
 #include "Scorer.h"
 #include "Searcher.h"
@@ -70,6 +84,12 @@
 #include "TopFieldCollector.h"
 #include "TopScoreDocCollector.h"
 #include "Weight.h"
+#include "WildcardQuery.h"
+#include "SpanFirstQuery.h"
+#include "SpanNearQuery.h"
+#include "SpanNotQuery.h"
+#include "SpanOrQuery.h"
+#include "SpanQuery.h"
 
 // Include most common files: store
 #include "FSDirectory.h"
@@ -78,7 +98,16 @@
 #include "SimpleFSDirectory.h"
 
 // Include most common files: util
+#include "MiscUtils.h"
+#include "StringUtils.h"
+#include "BufferedReader.h"
+#include "DocIdBitSet.h"
 #include "FileReader.h"
 #include "InfoStream.h"
+#include "LuceneThread.h"
+#include "OpenBitSet.h"
+#include "OpenBitSetDISI.h"
+#include "OpenBitSetIterator.h"
+#include "StringReader.h"
 
 #endif

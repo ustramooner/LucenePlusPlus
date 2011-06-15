@@ -8,7 +8,6 @@
 #define FIELDCACHETERMSFILTER_H
 
 #include "Filter.h"
-#include "DocIdSet.h"
 
 namespace Lucene
 {
@@ -61,7 +60,6 @@ namespace Lucene
 		
 		virtual DocIdSetPtr getDocIdSet(IndexReaderPtr reader);
 	};
-	
 }
 
 #endif

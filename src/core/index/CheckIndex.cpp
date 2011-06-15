@@ -6,7 +6,6 @@
 
 #include "LuceneInc.h"
 #include <iostream>
-#include <boost/thread/thread.hpp>
 #include "CheckIndex.h"
 #include "_CheckIndex.h"
 #include "SegmentInfos.h"
@@ -14,8 +13,8 @@
 #include "SegmentReader.h"
 #include "Directory.h"
 #include "IndexInput.h"
-#include "Term.h"
 #include "BitVector.h"
+#include "Term.h"
 #include "TermEnum.h"
 #include "TermPositions.h"
 #include "Document.h"
@@ -646,7 +645,7 @@ namespace Lucene
                 std::wcout << L" docs from the index. THIS IS YOUR LAST CHANCE TO CTRL+C!\n";
                 for (int32_t sec = 0; sec < 5; ++sec)
                 {
-                    boost::this_thread::sleep(boost::posix_time::milliseconds(1000));
+                    LuceneThread::threadSleep(1000);
                     std::wcout << L"  " << (5 - sec) << L"...\n";
                 }
                 std::wcout << L"Writing...\n";

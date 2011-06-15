@@ -6,11 +6,11 @@
 
 #include "LuceneInc.h"
 #include "QueryParserTokenManager.h"
-#include "StringUtils.h"
 #include "QueryParserCharStream.h"
 #include "QueryParserToken.h"
 #include "QueryParseError.h"
 #include "InfoStream.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

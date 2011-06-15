@@ -5,10 +5,10 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
+#include "FieldCacheSanityChecker.h"
 #include "_FieldCacheSanityChecker.h"
 #include "FieldCache.h"
 #include "IndexReader.h"
-#include "MiscUtils.h"
 #include "StringUtils.h"
 #include "VariantUtils.h"
 

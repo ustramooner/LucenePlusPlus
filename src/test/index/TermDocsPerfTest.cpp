@@ -7,7 +7,6 @@
 #include "TestInc.h"
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
-#include "MiscUtils.h"
 #include "RAMDirectory.h"
 #include "IndexReader.h"
 #include "TermEnum.h"
@@ -20,6 +19,7 @@
 #include "Field.h"
 #include "IndexWriter.h"
 #include "Random.h"
+#include "MiscUtils.h"
 
 using namespace Lucene;
 

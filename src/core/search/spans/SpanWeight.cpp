@@ -7,11 +7,11 @@
 #include "LuceneInc.h"
 #include "SpanWeight.h"
 #include "SpanScorer.h"
-#include "StringUtils.h"
 #include "SpanQuery.h"
 #include "IndexReader.h"
 #include "ComplexExplanation.h"
 #include "Similarity.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

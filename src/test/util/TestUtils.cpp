@@ -9,11 +9,11 @@
 #include "test_lucene.h"
 #include "TestUtils.h"
 #include "CheckIndex.h"
-#include "FileUtils.h"
-#include "MiscUtils.h"
 #include "ConcurrentMergeScheduler.h"
 #include "IndexWriter.h"
 #include "Random.h"
+#include "MiscUtils.h"
+#include "FileUtils.h"
 
 namespace Lucene
 {

@@ -8,8 +8,6 @@
 #define SIMPLEFSDIRECTORY_H
 
 #include "FSDirectory.h"
-#include "BufferedIndexInput.h"
-#include "BufferedIndexOutput.h"
 
 namespace Lucene
 {
@@ -35,7 +33,6 @@ namespace Lucene
 		/// Creates an IndexInput for the file with the given name.
 		virtual IndexInputPtr openInput(const String& name, int32_t bufferSize);
 	};
-	
 }
 
 #endif

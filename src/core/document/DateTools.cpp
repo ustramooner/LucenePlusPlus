@@ -111,7 +111,6 @@ namespace Lucene
                                                 boost::posix_time::seconds(boost::posix_time::time_duration(date.time_of_day()).seconds()));
             case RESOLUTION_MILLISECOND:
                 return date;
-                
             case RESOLUTION_NULL:
                 //silence static analyzers
                 break;

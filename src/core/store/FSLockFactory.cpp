@@ -11,7 +11,6 @@ namespace Lucene
 {
     FSLockFactory::FSLockFactory()
     {
-	//private
     }
 
     FSLockFactory::~FSLockFactory()

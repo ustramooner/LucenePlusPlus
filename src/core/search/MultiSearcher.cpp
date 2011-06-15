@@ -7,7 +7,6 @@
 #include "LuceneInc.h"
 #include "MultiSearcher.h"
 #include "_MultiSearcher.h"
-#include "VariantUtils.h"
 #include "Term.h"
 #include "ReaderUtil.h"
 #include "HitQueue.h"
@@ -18,6 +17,7 @@
 #include "SortField.h"
 #include "TopFieldDocs.h"
 #include "FieldDoc.h"
+#include "VariantUtils.h"
 
 namespace Lucene
 {

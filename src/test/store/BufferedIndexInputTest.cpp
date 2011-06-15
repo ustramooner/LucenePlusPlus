@@ -5,13 +5,13 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "TestInc.h"
+#include <fstream>
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "BufferedIndexInput.h"
-#include "FileUtils.h"
-#include "MiscUtils.h"
 #include "_SimpleFSDirectory.h"
 #include "MockFSDirectory.h"
+#include "FSDirectory.h"
 #include "IndexWriter.h"
 #include "IndexReader.h"
 #include "IndexSearcher.h"
@@ -23,6 +23,8 @@
 #include "ScoreDoc.h"
 #include "TopDocs.h"
 #include "Random.h"
+#include "MiscUtils.h"
+#include "FileUtils.h"
 
 using namespace Lucene;
 

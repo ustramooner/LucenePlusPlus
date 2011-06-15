@@ -19,9 +19,8 @@
 #include "ByteSliceReader.h"
 #include "RawPostingList.h"
 #include "FieldInvertState.h"
-#include "UnicodeUtils.h"
-#include <boost/bind.hpp>
 #include "UTF8Stream.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

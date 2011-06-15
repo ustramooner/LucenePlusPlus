@@ -7,11 +7,11 @@
 #include "LuceneInc.h"
 #include "ParallelReader.h"
 #include "_ParallelReader.h"
-#include "StringUtils.h"
 #include "Document.h"
 #include "FieldSelector.h"
 #include "Term.h"
 #include "FieldCache.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

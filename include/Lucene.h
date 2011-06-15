@@ -9,39 +9,20 @@
 
 #include "Config.h"
 
-//general includes...
+#include <wctype.h>
+#include <wchar.h>
+#include <sys/types.h>
 #include <sstream>
+#include <string>
+#include <algorithm>
+#include <limits>
 #include <stdexcept>
 
-//shared pointers used in this header and LuceneObject
-#include <vector>
-#include <map>
-#include <set>
-#include <list>
-#include <boost/shared_ptr.hpp>
-#include <boost/make_shared.hpp>
-#include <boost/weak_ptr.hpp>
-#include <boost/enable_shared_from_this.hpp>
-//standard intger types used here in header
 #include <boost/cstdint.hpp>
-
-//typdefs used in this header
 #include <boost/variant.hpp>
+#include <boost/shared_ptr.hpp>
+#include <boost/weak_ptr.hpp>
 
-namespace boost {
-	struct blank;
-	class thread;
-	namespace interprocess{
-		class file_lock;
-	}
-}
-
-
-#define DECLARE_SHARED_PTR(Type) \
-	class Type; \
-	typedef boost::shared_ptr<Type> Type##Ptr; \
-	typedef boost::weak_ptr<Type> Type##WeakPtr;
-	
 using boost::int8_t;
 using boost::uint8_t;
 using boost::int16_t;
@@ -49,11 +30,6 @@ using boost::uint16_t;
 using boost::int32_t;
 using boost::uint32_t;
 using boost::int64_t;
-#include <boost/regex.hpp>
-#include <boost/dynamic_bitset.hpp>
-#include <boost/unordered_map.hpp>
-#include <boost/unordered_set.hpp>
-#include <boost/enable_shared_from_this.hpp>
 using boost::uint64_t;
 
 #define SIZEOF_ARRAY(arr) (sizeof(arr) / sizeof((arr)[0]))
@@ -61,13 +37,30 @@ using boost::uint64_t;
 #include "LuceneTypes.h"
 #include "Allocator.h"
 
+namespace boost
+{
+    struct blank;
+    class thread;
+    class any;
+    template < typename Signature > class function;
+    namespace interprocess
+    {
+        class file_lock;
+    }
+    namespace posix_time
+    {
+        class ptime;
+    }
+}
+
 namespace Lucene
 {
 	typedef std::basic_string< char, std::char_traits<char>, Allocator<char> > SingleString;
 	typedef std::basic_ostringstream< char, std::char_traits<char>, Allocator<char> > SingleStringStream;
 	typedef std::basic_string< wchar_t, std::char_traits<wchar_t>, Allocator<wchar_t> > String;
-	const std::basic_string< wchar_t, std::char_traits<wchar_t>, Allocator<wchar_t> > EmptyString;
 	typedef std::basic_ostringstream< wchar_t, std::char_traits<wchar_t>, Allocator<wchar_t> > StringStream;
+
+	const std::basic_string< wchar_t, std::char_traits<wchar_t>, Allocator<wchar_t> > EmptyString;
 
 	typedef boost::shared_ptr<boost::interprocess::file_lock> filelockPtr;
 	typedef boost::shared_ptr<boost::thread> threadPtr;
@@ -77,15 +70,15 @@ namespace Lucene
 	typedef boost::shared_ptr<std::locale> localePtr;
 }
 
-
 #include "LuceneFactory.h"
+#include "LuceneException.h"
 #include "Array.h"
+#include "Collection.h"
 #include "Map.h"
 #include "Set.h"
 #include "HashMap.h"
 #include "HashSet.h"
-#include "Collection.h"
-#include "LuceneException.h"
+#include "Constants.h"
 
 namespace Lucene
 {	
@@ -204,31 +197,31 @@ namespace Lucene
 	typedef HashMap< IndexReaderPtr, HashSet<String>, luceneHash<IndexReaderPtr>, luceneEquals<IndexReaderPtr> > MapIndexReaderSetString;
 	typedef HashMap< TermPtr, int32_t, luceneHash<TermPtr>, luceneEquals<TermPtr> > MapTermInt;
 	typedef HashMap< QueryPtr, int32_t, luceneHash<QueryPtr>, luceneEquals<QueryPtr> > MapQueryInt;
+    typedef HashMap< EntryPtr, boost::any, luceneHash<EntryPtr>, luceneEquals<EntryPtr> > MapEntryAny;
 	typedef HashMap< PhrasePositionsPtr, LuceneObjectPtr, luceneHash<PhrasePositionsPtr>, luceneEquals<PhrasePositionsPtr> > MapPhrasePositionsLuceneObject;
 	typedef HashMap< ReaderFieldPtr, SetReaderField, luceneHash<ReaderFieldPtr>, luceneEquals<ReaderFieldPtr> > MapReaderFieldSetReaderField;
 	
 	typedef WeakHashMap< LuceneObjectWeakPtr, LuceneObjectPtr, luceneWeakHash<LuceneObjectWeakPtr>, luceneWeakEquals<LuceneObjectWeakPtr> > WeakMapObjectObject;
+    typedef WeakHashMap< LuceneObjectWeakPtr, MapEntryAny, luceneWeakHash<LuceneObjectWeakPtr>, luceneWeakEquals<LuceneObjectWeakPtr> > WeakMapLuceneObjectMapEntryAny;
 	
 	typedef Map< String, AttributePtr > MapStringAttribute;
     typedef Map< int64_t, DocumentsWriterThreadStatePtr > MapThreadDocumentsWriterThreadState;
 	typedef Map< String, IndexReaderPtr > MapStringIndexReader;
 	typedef Map< TermPtr, NumPtr, luceneCompare<TermPtr> > MapTermNum;
 	
+    typedef boost::function<bool (const TermVectorEntryPtr&, const TermVectorEntryPtr&)> TermVectorEntryComparator;
+    
     template < class KEY, class VALUE, class HASH = boost::hash<KEY>, class EQUAL = std::equal_to<KEY> > class SimpleLRUCache;
     typedef SimpleLRUCache< TermPtr, TermInfoPtr, luceneHash<TermPtr>, luceneEquals<TermPtr> > TermInfoCache;
 	typedef boost::shared_ptr<TermInfoCache> TermInfoCachePtr;
 }
 
-#ifdef LPP_USE_CYCLIC_CHECK
-  #include "CycleCheck.h"
-#endif
-#include "Synchronize.h" //SyncLock used throughout...
-
+#include "Synchronize.h"
+#include "CycleCheck.h"
 #if defined(LPP_BUILDING_LIB) || defined(LPP_EXPOSE_INTERNAL)
 	#define INTERNAL public
 #else
 	#define INTERNAL protected
 #endif
-
 
 #endif

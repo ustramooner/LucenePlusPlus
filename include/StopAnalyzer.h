@@ -8,7 +8,6 @@
 #define STOPANALYZER_H
 
 #include "Analyzer.h"
-#include "Constants.h"
 
 namespace Lucene
 {
@@ -48,7 +47,6 @@ namespace Lucene
 		virtual TokenStreamPtr tokenStream(const String& fieldName, ReaderPtr reader);
 		virtual TokenStreamPtr reusableTokenStream(const String& fieldName, ReaderPtr reader);
 	};
-	
 }
 
 #endif

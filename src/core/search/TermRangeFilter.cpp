@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <boost/blank.hpp>
 #include "TermRangeFilter.h"
 #include "TermRangeQuery.h"
 #include "VariantUtils.h"

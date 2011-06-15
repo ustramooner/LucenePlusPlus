@@ -82,8 +82,7 @@ namespace Lucene
 		void addInt(int32_t nextInt);
 		
 		friend class SortedDocIdSetIterator;
-	};
-	
+	};	
 }
 
 #endif

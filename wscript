@@ -15,35 +15,29 @@ import Task
 APPNAME='Lucene++'
 VERSION='3.0.3.4'
 
-srcdir = '.'
-blddir = 'bin'
+top = '.'
+out = 'bin'
 
 source_patterns = [
-    '*.c',
-    '*.cpp'
+    '**/*.c',
+    '**/*.cpp'
 ]
 
 lucene_source_dirs = [
-  'src/core/analysis',
-  'src/core/analysis/standard',
-  'src/core/analysis/tokenattributes',
-  'src/core/document',
-  'src/core/index',
-  'src/core/queryparser',
-  'src/core/search',
-  'src/core/search/function',
-  'src/core/search/payloads',
-  'src/core/search/spans',
-  'src/core/store',
-  'src/core/util',
-  'src/core/util/md5',
-  'src/core/util/nedmalloc',
-  'src/core/util/unicode',
-
+    'src/core/analysis',
+    'src/core/document',
+    'src/core/index',
+    'src/core/queryparser',
+    'src/core/search',
+    'src/core/store',
+    'src/core/util'
 ]
 
 lucene_contrib_source_dirs = [
-    'src/contrib'
+    'src/contrib/analyzers',
+    'src/contrib/highlighter',
+    'src/contrib/memory',
+    'src/contrib/snowball'
 ]
 
 lucene_include_dirs = [
@@ -57,39 +51,15 @@ lucene_include_dirs = [
 ]
 
 tester_source_dirs = [
-  'src/test/',
-  'src/test/analysis',
-  'src/test/analysis/standard',
-  'src/test/analysis/tokenattributes',
-  'src/test/contrib',
-  'src/test/contrib/analyzers',
-  'src/test/contrib/analyzers/common',
-  'src/test/contrib/analyzers/common/analysis',
-  'src/test/contrib/analyzers/common/analysis/ar',
-  'src/test/contrib/analyzers/common/analysis/br',
-  'src/test/contrib/analyzers/common/analysis/cjk',
-  'src/test/contrib/analyzers/common/analysis/cn',
-  'src/test/contrib/analyzers/common/analysis/cz',
-  'src/test/contrib/analyzers/common/analysis/de',
-  'src/test/contrib/analyzers/common/analysis/el',
-  'src/test/contrib/analyzers/common/analysis/fa',
-  'src/test/contrib/analyzers/common/analysis/fr',
-  'src/test/contrib/analyzers/common/analysis/nl',
-  'src/test/contrib/analyzers/common/analysis/reverse',
-  'src/test/contrib/analyzers/common/analysis/ru',
-  'src/test/contrib/highlighter',
-  'src/test/contrib/memory',
-  'src/test/contrib/snowball',
-  'src/test/document',
-  'src/test/include',
-  'src/test/index',
-  'src/test/queryparser',
-  'src/test/search',
-  'src/test/search/function',
-  'src/test/search/payloads',
-  'src/test/search/spans',
-  'src/test/store',
-  'src/test/util'
+    'src/test/analysis',
+    'src/test/contrib',
+    'src/test/document',
+    'src/test/index',
+    'src/test/queryparser',
+    'src/test/search',
+    'src/test/store',
+    'src/test/util',
+    'src/test/main'
 ]
 
 tester_include_dirs = [
@@ -100,17 +70,18 @@ tester_include_dirs = [
 ]
 
 
-def set_options(opt):
+def options(opt):
     opt.tool_options("boost")
     opt.tool_options('compiler_cxx')
     opt.tool_options('clang', tooldir = 'build')
+    opt.tool_options('gch', tooldir = 'build')
     opt.add_option(
         '--debug', 
         default = False,
         action = "store_true",
         help ='debug build no optimization, etc.', 
         dest = 'debug')
-    
+
     opt.add_option(
         '--static', 
         default = False,
@@ -122,9 +93,11 @@ def set_options(opt):
 def configure(conf):
     conf.check_tool('g++')
     conf.check_tool('gcc')
+    conf.check_cc(lib = 'z', mandatory = True)
     conf.check_cc(lib = 'pthread', mandatory = True)
     conf.check_tool('boost')
     conf.check_tool('clang', 'build')
+    conf.check_tool('gch', 'build')
     conf.check_boost(
         static = 'onlystatic',
         lib = ['filesystem', 'thread', 'regex', 'system', 'date_time', 'iostreams', 'unit_test_framework']
@@ -132,20 +105,12 @@ def configure(conf):
 
             
 def build(bld):
-    if Options.options.static :
-      target_type = 'cstaticlib'
-    else:
-      target_type = 'cshlib'
-    if Options.options.debug:
-      debug_define = '_DEBUG'
-    else:
-      debug_define = 'NDEBUG'
-    
+    target_type = 'cstlib' if Options.options.static else 'cshlib'
+    debug_define = '_DEBUG' if Options.options.debug else 'NDEBUG'
     if Options.options.debug:
          compile_flags = ['-O0', '-g'] 
     else:
          compile_flags = ['-O2']
-    
     lucene_sources = []
     for source_dir in lucene_source_dirs:
         source_dir = bld.path.find_dir(source_dir)
@@ -153,14 +118,15 @@ def build(bld):
     
     bld(
         name = 'lucene++',
-        features = ['cxx', 'cc'] + [target_type],
+        features = ['cxx', 'c'] + [target_type],
         source = [source.relpath_gen(bld.path) for source in lucene_sources],
         target = 'lucene++',
+        pch = 'src/core/include/LuceneInc.h',
         includes = lucene_include_dirs + bld.env["CPPPATH_BOOST"],
-        ccflags = compile_flags,
+        cflags = compile_flags,
         cxxflags = compile_flags,
         defines = ['LPP_BUILDING_LIB', 'LPP_HAVE_GXXCLASSVISIBILITY'] + [debug_define],
-        uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD'
+        uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD Z'
         )
     
     lucene_contrib_sources = []
@@ -170,15 +136,16 @@ def build(bld):
     
     bld(
         name = 'lucene_contrib',
-        features = ['cxx', 'cc'] + [target_type],
+        features = ['cxx', 'c'] + [target_type],
         source = [source.relpath_gen(bld.path) for source in lucene_contrib_sources],
         target = 'lucene_contrib',
+        pch = 'src/contrib/include/ContribInc.h',
         includes = lucene_include_dirs + bld.env["CPPPATH_BOOST"],
-        ccflags = compile_flags,
+        cflags = compile_flags,
         cxxflags = compile_flags,
         defines = ['LPP_BUILDING_LIB', 'LPP_HAVE_GXXCLASSVISIBILITY'] + [debug_define],
-        uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD',
-        uselib_local = 'lucene++'
+        uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD Z',
+        use = 'lucene++'
         )
     
     tester_sources = []
@@ -188,52 +155,54 @@ def build(bld):
     
     bld(
         name = 'lucene_tester',
-        features = ['cxx', 'cc', 'cprogram'],
+        features = ['cxx', 'c', 'cprogram'],
         source = [source.relpath_gen(bld.path) for source in tester_sources],
         target = 'lucene_tester',
+        pch = 'src/test/include/TestInc.h',
         includes = tester_include_dirs + bld.env["CPPPATH_BOOST"],
-        ccflags = compile_flags,
+        cflags = compile_flags,
         cxxflags = compile_flags,
         defines = ['LPP_HAVE_GXXCLASSVISIBILITY'] + ['LPP_EXPOSE_INTERNAL'] + [debug_define],
-        uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS BOOST_UNIT_TEST_FRAMEWORK PTHREAD',
-        uselib_local = 'lucene++ lucene_contrib'
+        uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS BOOST_UNIT_TEST_FRAMEWORK PTHREAD Z',
+        use = 'lucene++ lucene_contrib'
         )
     
     bld(
         name = 'deletefiles',
-        features = ['cxx', 'cc', 'cprogram'],
+        features = ['cxx', 'c', 'cprogram'],
         source = bld.path.find_resource('src/demo/deletefiles/main.cpp').relpath_gen(bld.path),
         target = 'deletefiles',
         includes = ['include'] + bld.env["CPPPATH_BOOST"],
-        ccflags = compile_flags,
+        cflags = compile_flags,
         cxxflags = compile_flags,
         defines = ['LPP_HAVE_GXXCLASSVISIBILITY'] + [debug_define],
-        uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD',
-        uselib_local = 'lucene++'
+        uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD Z',
+        use = 'lucene++'
         )
 
     bld(
         name = 'indexfiles',
-        features = ['cxx', 'cc', 'cprogram'],
+        features = ['cxx', 'c', 'cprogram'],
         source = bld.path.find_resource('src/demo/indexfiles/main.cpp').relpath_gen(bld.path),
         target = 'indexfiles',
         includes = ['include'] + bld.env["CPPPATH_BOOST"],
-        ccflags = compile_flags,
+        cflags = compile_flags,
         cxxflags = compile_flags,
         defines = ['LPP_HAVE_GXXCLASSVISIBILITY'] + [debug_define],
-        uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD',
-        uselib_local = 'lucene++'
+        uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD Z',
+        use = 'lucene++'
         )
 
     bld(
         name = 'searchfiles',
-        features = ['cxx', 'cc', 'cprogram'],
+        features = ['cxx', 'c', 'cprogram'],
         source = bld.path.find_resource('src/demo/searchfiles/main.cpp').relpath_gen(bld.path),
         target = 'searchfiles',
         includes = ['include'] + bld.env["CPPPATH_BOOST"],
-        ccflags = compile_flags,
+        cflags = compile_flags,
         cxxflags = compile_flags,
         defines = ['LPP_HAVE_GXXCLASSVISIBILITY'] + [debug_define],
-        uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD',
-        uselib_local = 'lucene++'
+        uselib = 'BOOST_FILESYSTEM BOOST_THREAD BOOST_REGEX BOOST_SYSTEM BOOST_DATE_TIME BOOST_IOSTREAMS PTHREAD Z',
+        use = 'lucene++'
         )
+

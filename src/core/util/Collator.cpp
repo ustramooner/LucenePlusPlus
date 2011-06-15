@@ -5,8 +5,9 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include "Collator.h"
 #include <locale>
+#include "Collator.h"
+
 namespace Lucene
 {
     Collator::Collator(std::locale locale) : collate(std::use_facet< std::collate<wchar_t> >(locale))

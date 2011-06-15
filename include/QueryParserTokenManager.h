@@ -22,6 +22,7 @@ namespace Lucene
 		
 		LUCENE_CLASS(QueryParserTokenManager);
 	
+    public:
 		/// Debug output.
 		InfoStreamPtr debugStream;
 		

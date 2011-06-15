@@ -4,27 +4,29 @@
 // or the GNU Lesser General Public License.
 /////////////////////////////////////////////////////////////////////////////
 
-#pragma once
-#include "ScorerDocQueue.h"
+#ifndef _SCORERDOCQUEUE_H
+#define _SCORERDOCQUEUE_H
 
+#include "LuceneObject.h"
 
 namespace Lucene
 {
-	class HeapedScorerDoc : public LuceneObject
-	{
-	public:
-		HeapedScorerDoc(ScorerPtr scorer);
-		HeapedScorerDoc(ScorerPtr scorer, int32_t doc);
-		virtual ~HeapedScorerDoc();
-	
-		LUCENE_CLASS(HeapedScorerDoc);
-	
-	public:
-		ScorerPtr scorer;
-		int32_t doc;
-	
-	public:
-		void adjust();
-	};
+    class HeapedScorerDoc : public LuceneObject
+    {
+    public:
+        HeapedScorerDoc(ScorerPtr scorer);
+        HeapedScorerDoc(ScorerPtr scorer, int32_t doc);
+        virtual ~HeapedScorerDoc();
+    
+        LUCENE_CLASS(HeapedScorerDoc);
+    
+    public:
+        ScorerPtr scorer;
+        int32_t doc;
+    
+    public:
+        void adjust();
+    };
 }
 
+#endif

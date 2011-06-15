@@ -6,7 +6,6 @@
 
 #include "TestInc.h"
 #include "QueryUtils.h"
-#include "MiscUtils.h"
 #include "Query.h"
 #include "CheckHits.h"
 #include "IndexSearcher.h"
@@ -22,6 +21,7 @@
 #include "Weight.h"
 #include "DocIdSetIterator.h"
 #include "ReaderUtil.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

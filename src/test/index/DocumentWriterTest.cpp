@@ -16,6 +16,7 @@
 #include "StandardAnalyzer.h"
 #include "IndexWriter.h"
 #include "SegmentInfo.h"
+#include "SegmentReader.h"
 #include "_SegmentReader.h"
 #include "Field.h"
 #include "FieldInfo.h"

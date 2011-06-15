@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <limits.h>
 #include "MultiLevelSkipListReader.h"
 #include "BufferedIndexInput.h"
 #include "MiscUtils.h"

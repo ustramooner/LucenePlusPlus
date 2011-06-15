@@ -12,6 +12,7 @@ namespace Lucene
     FieldSelector::FieldSelector()
     {
     }
+
     FieldSelector::~FieldSelector()
     {
     }

@@ -21,10 +21,9 @@
 #include "RAMDirectory.h"
 #include "IndexWriter.h"
 #include "QueryParser.h"
-#include "FileUtils.h"
-#include "MiscUtils.h"
 #include "TopDocs.h"
 #include "Random.h"
+#include "FileUtils.h"
 
 using namespace Lucene;
 

@@ -5,9 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "TestInc.h"
-#include <boost/date_time/gregorian/gregorian.hpp>
-#include <boost/date_time/posix_time/posix_time_duration.hpp>
-#include "MiscUtils.h"
 #include "LuceneTestFixture.h"
 #include "QueryParser.h"
 #include "WhitespaceAnalyzer.h"
@@ -40,6 +37,7 @@
 #include "StopFilter.h"
 #include "MatchAllDocsQuery.h"
 #include "IndexReader.h"
+#include "MiscUtils.h"
 
 using namespace Lucene;
 using namespace boost::posix_time;

@@ -8,9 +8,6 @@
 #define CUSTOMSCOREQUERY_H
 
 #include "Query.h"
-#include "Weight.h"
-#include "Scorer.h"
-#include "CustomScoreProvider.h"
 
 namespace Lucene
 {
@@ -129,8 +126,7 @@ namespace Lucene
 		
 		friend class CustomWeight;
 		friend class CustomScorer;
-	};
-	
+	};	
 }
 
 #endif

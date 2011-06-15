@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "TestInc.h"
-#include <boost/thread/thread.hpp>
 #include "LuceneTestFixture.h"
 #include "LuceneThread.h"
 #include "RAMDirectory.h"
@@ -71,7 +70,7 @@ public:
     {
         int32_t docId = doc + docBase;
         if (slowdown > 0)
-            boost::this_thread::sleep(boost::posix_time::milliseconds(slowdown));
+            LuceneThread::threadSleep(slowdown);
         if (docId < 0)
             BOOST_FAIL("Invalid doc");
         bits->set(docId);

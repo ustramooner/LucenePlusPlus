@@ -8,13 +8,13 @@
 #include <iostream>
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
-#include "MiscUtils.h"
 #include "ByteBlockPool.h"
 #include "DocumentsWriter.h"
 #include "ByteSliceWriter.h"
 #include "ByteSliceReader.h"
 #include "IndexWriter.h"
 #include "Random.h"
+#include "MiscUtils.h"
 
 using namespace Lucene;
 

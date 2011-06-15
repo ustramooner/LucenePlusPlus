@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <cmath>
 #include "DefaultSimilarity.h"
 #include "FieldInvertState.h"
 

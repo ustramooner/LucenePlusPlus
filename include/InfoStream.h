@@ -17,6 +17,7 @@ namespace Lucene
 	{
 	protected:
 		InfoStream();
+
 	public:
 		virtual ~InfoStream();
 		LUCENE_CLASS(InfoStream);

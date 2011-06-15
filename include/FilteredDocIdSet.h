@@ -8,7 +8,6 @@
 #define FILTEREDDOCIDSET_H
 
 #include "DocIdSet.h"
-#include "FilteredDocIdSetIterator.h"
 
 namespace Lucene
 {
@@ -50,7 +49,6 @@ namespace Lucene
 		
 		friend class DefaultFilteredDocIdSetIterator;
 	};
-	
 }
 
 #endif

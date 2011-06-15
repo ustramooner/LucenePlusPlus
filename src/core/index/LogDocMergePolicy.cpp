@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <limits.h>
 #include "LogDocMergePolicy.h"
 
 namespace Lucene

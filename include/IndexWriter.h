@@ -89,6 +89,9 @@ namespace Lucene
 	/// IndexFileDeleter keeps track of the last non commit checkpoint.
 	class LPPAPI IndexWriter : public LuceneObject
 	{
+	protected:
+		IndexWriter(DirectoryPtr d, AnalyzerPtr a, bool create, IndexDeletionPolicyPtr deletionPolicy, int32_t mfl, IndexingChainPtr indexingChain, IndexCommitPtr commit);
+
 	public:
 		IndexWriter(DirectoryPtr d, AnalyzerPtr a, bool create, int32_t mfl);
 		IndexWriter(DirectoryPtr d, AnalyzerPtr a, int32_t mfl);
@@ -98,10 +101,8 @@ namespace Lucene
 		virtual ~IndexWriter();
 		
 		LUCENE_CLASS(IndexWriter);
-			
-	protected:
-		IndexWriter(DirectoryPtr d, AnalyzerPtr a, bool create, IndexDeletionPolicyPtr deletionPolicy, int32_t mfl, IndexingChainPtr indexingChain, IndexCommitPtr commit);
-		
+
+    protected:			
 		int64_t writeLockTimeout;
 		
 		/// The normal read buffer size defaults to 1024, but increasing this during merging seems to 
@@ -948,7 +949,7 @@ namespace Lucene
 		///   startApplyDeletes
 		///   startMergeInit
 		///   startMergeInit
-		virtual bool testPoint(const wchar_t* name);
+        virtual bool testPoint(const String& name);
 		
 		virtual bool nrtIsCurrent(SegmentInfosPtr infos);
 		virtual bool isClosed();

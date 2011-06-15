@@ -6,7 +6,6 @@
 
 #include "TestInc.h"
 #include "LuceneTestFixture.h"
-#include "MiscUtils.h"
 #include "TestUtils.h"
 #include "IndexWriter.h"
 #include "LuceneThread.h"
@@ -19,7 +18,7 @@
 #include "IndexReader.h"
 #include "ConcurrentMergeScheduler.h"
 #include "Random.h"
-
+#include "MiscUtils.h"
 
 using namespace Lucene;
 
@@ -158,11 +157,10 @@ protected:
     RandomPtr r;
 
 public:
-    virtual bool testPoint(const wchar_t* name)
+    virtual bool testPoint(const String& name)
     {
-        if (doFail.get() && wcscmp(name, L"startDoFlush") != 0 && r->nextInt(20) == 17){
-            boost::throw_exception(RuntimeException(String(L"intentionally failing at ") + name));
-        }
+        if (doFail.get() && name != L"startDoFlush" && r->nextInt(20) == 17)
+            boost::throw_exception(RuntimeException(L"intentionally failing at " + name));
         return true;
     }
 };
@@ -225,7 +223,7 @@ BOOST_AUTO_TEST_CASE(testRandomExceptionsThreads)
     for (int32_t i = 0; i < NUM_THREADS; ++i)
     {
         if (!threads[i]->failure.isNull())
-            BOOST_FAIL(String(L"thread hit unexpected failure: ") + threads[i]->failure.getError());
+            BOOST_FAIL("thread hit unexpected failure: " << threads[i]->failure.getError());
     }
     
     writer->commit();

@@ -16,7 +16,6 @@
 #include "PayloadAttribute.h"
 #include "Payload.h"
 #include "IndexWriter.h"
-#include "MiscUtils.h"
 #include "Document.h"
 #include "Field.h"
 #include "PayloadTermQuery.h"
@@ -32,6 +31,7 @@
 #include "BooleanClause.h"
 #include "BooleanQuery.h"
 #include "PayloadHelper.h"
+#include "MiscUtils.h"
 
 using namespace Lucene;
 
@@ -234,7 +234,7 @@ BOOST_AUTO_TEST_CASE(testSetup)
     BOOST_CHECK_EQUAL(hits->totalHits, 100);
 
     // they should all have the exact same score, because they all contain seventy once, and we set all the other similarity factors to be 1
-    BOOST_CHECK_EQUAL(hits->maxScore, 1);
+    BOOST_CHECK_EQUAL(hits->getMaxScore(), 1);
     for (int32_t i = 0; i < hits->scoreDocs.size(); ++i)
     {
         ScoreDocPtr doc = hits->scoreDocs[i];
@@ -267,7 +267,7 @@ BOOST_AUTO_TEST_CASE(testMultipleMatchesPerDoc)
     BOOST_CHECK_EQUAL(hits->totalHits, 100);
 
     // they should all have the exact same score, because they all contain seventy once, and we set all the other similarity factors to be 1
-    BOOST_CHECK_EQUAL(hits->maxScore, 4.0);
+    BOOST_CHECK_EQUAL(hits->getMaxScore(), 4.0);
     
     // there should be exactly 10 items that score a 4, all the rest should score a 2
     // The 10 items are: 70 + i*100 where i in [0-9]
@@ -307,7 +307,7 @@ BOOST_AUTO_TEST_CASE(testIgnoreSpanScorer)
     BOOST_CHECK_EQUAL(hits->totalHits, 100);
 
     // they should all have the exact same score, because they all contain seventy once, and we set all the other similarity factors to be 1
-    BOOST_CHECK_EQUAL(hits->maxScore, 4.0);
+    BOOST_CHECK_EQUAL(hits->getMaxScore(), 4.0);
     
     // there should be exactly 10 items that score a 4, all the rest should score a 2
     // The 10 items are: 70 + i*100 where i in [0-9]

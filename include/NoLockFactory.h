@@ -8,7 +8,6 @@
 #define NOLOCKFACTORY_H
 
 #include "LockFactory.h"
-#include "Lock.h"
 
 namespace Lucene
 {
@@ -36,7 +35,6 @@ namespace Lucene
 		/// are certain this lock is no longer in use.
 		virtual void clearLock(const String& lockName);
 	};
-	
 }
 
 #endif

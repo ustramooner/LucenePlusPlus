@@ -1,5 +1,4 @@
 /////////////////////////////////////////////////////////////////////////////
-#include "LuceneHeaders.h"
 // Copyright (c) 2009-2011 Alan Wright. All rights reserved.
 // Distributable under the terms of either the Apache License (Version 2.0)
 // or the GNU Lesser General Public License.
@@ -8,9 +7,8 @@
 #define NOMINMAX
 
 #include "targetver.h"
-#include "LuceneHeaders.h"
 #include <iostream>
-#include "StringUtils.h"
+#include "LuceneHeaders.h"
 
 using namespace Lucene;
 

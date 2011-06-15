@@ -31,7 +31,7 @@
 #endif
 
 // Define LPPAPI for dll builds
-#if defined(LPP_HAVE_DLL)
+#ifdef LPP_HAVE_DLL
   #ifdef LPP_BUILDING_LIB
     #define LPPAPI LPP_EXPORT
     #define LPPCONTRIBAPI LPP_EXPORT
@@ -45,7 +45,7 @@
 #endif
 
 // Check windows
-#if defined(_WIN32)
+#if defined(_WIN32) || defined(_WIN64)
   #define LPP_UNICODE_CHAR_SIZE_2
   #if defined(_WIN64)
     #define LPP_BUILD_64
@@ -87,13 +87,7 @@
 // Make internal bitset storage public
 #define BOOST_DYNAMIC_BITSET_DONT_USE_FRIENDS
 
-//use tr1 for hash map & hash set
-//#define USE_TR1
-#ifdef USE_TR1
-	#define USE_TR1_PREFIX std::tr1
-#else
-	#define USE_TR1_PREFIX boost
-#endif
+// Force boost file-system version 2 for later boost versions > 1.46
+#define BOOST_FILESYSTEM_VERSION 2
 
 #endif
-

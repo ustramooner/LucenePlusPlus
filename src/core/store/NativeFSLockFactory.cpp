@@ -6,12 +6,12 @@
 
 #include "LuceneInc.h"
 #include <fstream>
+#include <boost/interprocess/sync/file_lock.hpp>
 #include "NativeFSLockFactory.h"
 #include "_NativeFSLockFactory.h"
 #include "Random.h"
-#include "StringUtils.h"
 #include "FileUtils.h"
-#include <boost/interprocess/sync/file_lock.hpp>
+#include "StringUtils.h"
 
 namespace Lucene
 {

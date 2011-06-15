@@ -6,8 +6,6 @@
 
 #include "LuceneInc.h"
 #include "SegmentMerger.h"
-#include "_SegmentReader.h"
-#include "StringUtils.h"
 #include "IndexWriter.h"
 #include "IndexOutput.h"
 #include "FieldInfos.h"
@@ -17,19 +15,21 @@
 #include "IndexFileNames.h"
 #include "CompoundFileWriter.h"
 #include "SegmentReader.h"
+#include "_SegmentReader.h"
 #include "Directory.h"
 #include "TermPositions.h"
 #include "TermVectorsReader.h"
 #include "TermVectorsWriter.h"
 #include "FormatPostingsDocsConsumer.h"
 #include "FormatPostingsFieldsWriter.h"
-#include "TestPoint.h"
 #include "FormatPostingsPositionsConsumer.h"
 #include "FormatPostingsTermsConsumer.h"
 #include "SegmentMergeInfo.h"
 #include "SegmentMergeQueue.h"
 #include "SegmentWriteState.h"
+#include "TestPoint.h"
 #include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

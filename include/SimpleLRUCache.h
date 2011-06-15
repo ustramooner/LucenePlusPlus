@@ -7,12 +7,8 @@
 #ifndef SIMPLELRUCACHE_H
 #define SIMPLELRUCACHE_H
 
+#include <list>
 #include "LuceneObject.h"
-#include <boost/multi_index_container.hpp>
-#include <boost/multi_index/hashed_index.hpp>
-#include <boost/multi_index/identity.hpp>
-#include <boost/multi_index/member.hpp> 
-#include <boost/multi_index/sequenced_index.hpp>
 
 namespace Lucene
 {
@@ -77,7 +73,7 @@ namespace Lucene
 
         int32_t size() const
         {
-            return cacheList.size();
+            return (int32_t)cacheList.size();
 		}
 
         const_iterator begin() const

@@ -7,13 +7,13 @@
 #include "LuceneInc.h"
 #include "AttributeSource.h"
 #include "Attribute.h"
-#include "CycleCheck.h"
 
 namespace Lucene
 {
     AttributeFactory::AttributeFactory()
     {
     }
+
     AttributeFactory::~AttributeFactory()
     {
     }

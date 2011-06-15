@@ -21,7 +21,6 @@
 #include "IndexInput.h"
 #include "IndexOutput.h"
 
-
 using namespace Lucene;
 
 BOOST_FIXTURE_TEST_SUITE(IndexFileDeleterTest, LuceneTestFixture)

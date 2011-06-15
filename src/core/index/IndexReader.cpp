@@ -5,17 +5,17 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include "IndexReader.h"
 #include "_IndexReader.h"
 #include "DirectoryReader.h"
 #include "IndexDeletionPolicy.h"
-#include "FileUtils.h"
 #include "FSDirectory.h"
 #include "FieldSelector.h"
 #include "Similarity.h"
 #include "CompoundFileReader.h"
+#include "FileUtils.h"
 #include "StringUtils.h"
 
 namespace Lucene

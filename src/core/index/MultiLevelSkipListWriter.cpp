@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <cmath>
 #include "MultiLevelSkipListWriter.h"
 #include "RAMOutputStream.h"
 

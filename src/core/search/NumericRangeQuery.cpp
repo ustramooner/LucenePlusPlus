@@ -5,12 +5,11 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <limits.h>
-#include "VariantUtils.h"
 #include "NumericRangeQuery.h"
 #include "_NumericRangeQuery.h"
 #include "Term.h"
 #include "IndexReader.h"
+#include "VariantUtils.h"
 
 namespace Lucene
 {

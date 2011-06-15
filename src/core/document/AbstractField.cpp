@@ -5,10 +5,9 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <boost/blank.hpp>
-#include "VariantUtils.h"
 #include "AbstractField.h"
 #include "Field.h"
+#include "VariantUtils.h"
 
 namespace Lucene
 {

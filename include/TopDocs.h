@@ -26,6 +26,7 @@ namespace Lucene
 	
 		LUCENE_CLASS(TopDocs);
 	
+    public:
 		/// The total number of hits for the query.
 		int32_t totalHits;
 		
@@ -35,12 +36,13 @@ namespace Lucene
 		/// Stores the maximum score value encountered, needed for normalizing.
 		double maxScore;
 
-    /// Returns the maximum score value encountered. Note that in case scores are not tracked, 
-    /// this returns NaN.
-    double getMaxScore();
-    
-    /// Sets the maximum score value encountered.
-    void setMaxScore(double maxScore);
+    public:
+		/// Returns the maximum score value encountered. Note that in case scores are not tracked, 
+		/// this returns NaN.
+		double getMaxScore();
+		
+		/// Sets the maximum score value encountered.
+		void setMaxScore(double maxScore);
 	};
 }
 

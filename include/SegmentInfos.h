@@ -178,50 +178,6 @@ namespace Lucene
 
 		friend class FindSegmentsFile;
 	};
-	
-	/// Utility class for executing code that needs to do something with the current segments file.
-	class LPPAPI FindSegmentsFile : public LuceneObject
-	{
-	public:
-		FindSegmentsFile(SegmentInfosPtr infos, DirectoryPtr directory);
-		virtual ~FindSegmentsFile();
-		
-		LUCENE_CLASS(FindSegmentsFile);
-			
-	protected:
-		SegmentInfosWeakPtr _segmentInfos;
-		DirectoryPtr directory;
-	
-	public:
-		void doRun(IndexCommitPtr commit = IndexCommitPtr());		
-		virtual void runBody(const String& segmentFileName) = 0;
-	};
-	
-	template <class TYPE>
-	class FindSegmentsFileT : public FindSegmentsFile
-	{
-	public:
-		FindSegmentsFileT(SegmentInfosPtr infos, DirectoryPtr directory) : FindSegmentsFile(infos, directory) {}
-		virtual ~FindSegmentsFileT() {}
-		
-	protected:
-		TYPE result;
-			
-	public:
-		virtual TYPE run(IndexCommitPtr commit = IndexCommitPtr())
-		{
-			doRun(commit);
-			return result;
-		}
-		
-		virtual void runBody(const String& segmentFileName)
-		{
-			result = doBody(segmentFileName);
-		}
-		
-		virtual TYPE doBody(const String& segmentFileName) = 0;
-	};
-	
 }
 
 #endif

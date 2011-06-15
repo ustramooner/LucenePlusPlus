@@ -19,10 +19,12 @@ namespace Lucene
 	class LPPAPI TermDocs
 	{
 	protected:
-		TermDocs(){}
+		TermDocs();
+
 	public:
 		LUCENE_INTERFACE(TermDocs);
 				
+    public:
 		/// Sets this to the data for a term.  The enumeration is reset to the start of the data for this term.
 		virtual void seek(TermPtr term) = 0;
 		

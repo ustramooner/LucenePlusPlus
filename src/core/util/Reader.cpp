@@ -13,7 +13,6 @@ namespace Lucene
     
     Reader::Reader()
     {
-	//private
     }
 
     Reader::~Reader()

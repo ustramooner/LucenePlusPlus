@@ -6,13 +6,13 @@
 
 #include "LuceneInc.h"
 #include "PayloadNearQuery.h"
-#include "StringUtils.h"
 #include "AveragePayloadFunction.h"
 #include "IndexReader.h"
 #include "NearSpansOrdered.h"
 #include "NearSpansUnordered.h"
 #include "Similarity.h"
 #include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

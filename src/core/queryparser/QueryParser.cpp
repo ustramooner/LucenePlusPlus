@@ -6,10 +6,8 @@
 
 #include "LuceneInc.h"
 #include <iostream>
-#include <boost/thread/thread.hpp>
 #include <boost/algorithm/string.hpp>
 #include "QueryParser.h"
-#include "StringUtils.h"
 #include "QueryParserTokenManager.h"
 #include "QueryParserToken.h"
 #include "QueryParseError.h"
@@ -32,6 +30,7 @@
 #include "SimpleAnalyzer.h"
 #include "DateField.h"
 #include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {
@@ -760,7 +759,8 @@ namespace Lucene
             return c - L'a' + 10;
         else if (L'A' <= c && c <= L'F')
             return c - L'A' + 10;
-        else{
+        else
+        {
             boost::throw_exception(QueryParserError(L"None-hex character in unicode escape sequence: " + StringUtils::toString(c)));
             return 0;
         }

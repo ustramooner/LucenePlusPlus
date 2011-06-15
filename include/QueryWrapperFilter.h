@@ -8,7 +8,6 @@
 #define QUERYWRAPPERFILTER_H
 
 #include "Filter.h"
-#include "DocIdSet.h"
 
 namespace Lucene
 {
@@ -37,7 +36,6 @@ namespace Lucene
 		virtual bool equals(LuceneObjectPtr other);
 		virtual int32_t hashCode();
 	};
-	
 }
 
 #endif

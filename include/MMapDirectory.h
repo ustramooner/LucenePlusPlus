@@ -8,8 +8,6 @@
 #define MMAPDIRECTORY_H
 
 #include "FSDirectory.h"
-#include "IndexInput.h"
-#include <boost/iostreams/device/mapped_file.hpp>
 
 namespace Lucene
 {
@@ -42,7 +40,6 @@ namespace Lucene
 		/// Creates an IndexOutput for the file with the given name.
 		virtual IndexOutputPtr createOutput(const String& name);
 	};
-	
 }
 
 #endif

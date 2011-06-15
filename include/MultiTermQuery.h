@@ -175,7 +175,6 @@ namespace Lucene
 		virtual int32_t hashCode();
 		virtual bool equals(LuceneObjectPtr other);
 	};
-	
 }
 
 #endif

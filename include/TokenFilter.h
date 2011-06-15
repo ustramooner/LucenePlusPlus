@@ -17,19 +17,20 @@ namespace Lucene
 	/// @see TokenStream
 	class LPPAPI TokenFilter : public TokenStream
 	{
-	public:
-		virtual ~TokenFilter();
-		
-		LUCENE_CLASS(TokenFilter);
-	
 	protected:
 		/// Construct a token stream filtering the given input.
 		TokenFilter(TokenStreamPtr input);
 
-		/// The source of tokens for this filter.
-		TokenStreamPtr input;
-	
 	public:
+		virtual ~TokenFilter();
+		
+		LUCENE_CLASS(TokenFilter);
+
+    protected:
+        /// The source of tokens for this filter.
+        TokenStreamPtr input;
+    
+    public:
 		/// Performs end-of-stream operations, if any, and calls then end() on the input TokenStream.
 		/// NOTE: Be sure to call TokenFilter::end() first when overriding this method.
 		virtual void end();

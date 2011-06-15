@@ -20,9 +20,8 @@
 #include "TermVectorMapper.h"
 #include "Similarity.h"
 #include "FieldInvertState.h"
-#include "CycleCheck.h"
-#include "MiscUtils.h"
 #include "Document.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

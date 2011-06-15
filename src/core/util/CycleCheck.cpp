@@ -5,8 +5,8 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include "CycleCheck.h"
 #include <iostream>
+#include "CycleCheck.h"
 
 namespace Lucene
 {

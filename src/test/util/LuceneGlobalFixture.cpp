@@ -9,7 +9,6 @@
 #include "TestUtils.h"
 #include "TestPoint.h"
 #include "FileUtils.h"
-#include "CycleCheck.h"
 
 namespace Lucene
 {

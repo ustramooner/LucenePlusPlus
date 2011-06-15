@@ -7,9 +7,8 @@
 #ifndef COLLECTION_H
 #define COLLECTION_H
 
+#include <vector>
 #include "LuceneSync.h"
-#include <set>
-#include <map>
 
 namespace Lucene
 {

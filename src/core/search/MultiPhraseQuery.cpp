@@ -7,18 +7,18 @@
 #include "LuceneInc.h"
 #include "MultiPhraseQuery.h"
 #include "_MultiPhraseQuery.h"
-#include "Similarity.h"
 #include "Searcher.h"
-#include "StringUtils.h"
 #include "Term.h"
 #include "TermQuery.h"
 #include "MultipleTermPositions.h"
 #include "ExactPhraseScorer.h"
 #include "SloppyPhraseScorer.h"
+#include "Similarity.h"
 #include "IndexReader.h"
 #include "ComplexExplanation.h"
 #include "BooleanQuery.h"
 #include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

@@ -7,13 +7,12 @@
 #include "LuceneInc.h"
 #include "Similarity.h"
 #include "_Similarity.h"
-#include "StringUtils.h"
 #include "DefaultSimilarity.h"
-#include "CycleCheck.h"
 #include "FieldInvertState.h"
 #include "Searcher.h"
 #include "Term.h"
 #include "SmallDouble.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

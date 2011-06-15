@@ -7,9 +7,10 @@
 #ifndef VARIANTUTILS_H
 #define VARIANTUTILS_H
 
-#include "StringUtils.h"
-#include "MiscUtils.h"
 #include <boost/any.hpp>
+#include "Lucene.h"
+#include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

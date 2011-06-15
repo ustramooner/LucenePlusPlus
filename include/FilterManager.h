@@ -66,7 +66,6 @@ namespace Lucene
 		
 		friend class FilterCleaner;
 	};
-	
 }
 
 #endif

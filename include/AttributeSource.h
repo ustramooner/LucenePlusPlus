@@ -15,6 +15,7 @@ namespace Lucene
 	{
 	protected:
 	  AttributeFactory();
+
 	public:
 		virtual ~AttributeFactory();
 		

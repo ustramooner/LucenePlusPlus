@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "TestInc.h"
-#include <boost/blank.hpp>
 #include "BaseTestRangeFilterFixture.h"
 #include "IndexReader.h"
 #include "IndexSearcher.h"
@@ -15,8 +14,8 @@
 #include "TermQuery.h"
 #include "Term.h"
 #include "RAMDirectory.h"
-#include "VariantUtils.h"
 #include "Collator.h"
+#include "VariantUtils.h"
 
 using namespace Lucene;
 

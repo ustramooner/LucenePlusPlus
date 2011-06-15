@@ -7,7 +7,6 @@
 #include "LuceneInc.h"
 #include "PhraseQuery.h"
 #include "_PhraseQuery.h"
-#include "StringUtils.h"
 #include "Similarity.h"
 #include "Term.h"
 #include "TermPositions.h"
@@ -17,6 +16,7 @@
 #include "SloppyPhraseScorer.h"
 #include "Explanation.h"
 #include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

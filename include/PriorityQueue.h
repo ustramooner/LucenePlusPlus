@@ -8,8 +8,7 @@
 #define PRIORITYQUEUE_H
 
 #include "LuceneObject.h"
-#include <limits.h>
-#include <MiscUtils.h>
+#include "MiscUtils.h"
 
 namespace Lucene
 {

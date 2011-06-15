@@ -8,7 +8,6 @@
 #define NEARSPANSUNORDERED_H
 
 #include "Spans.h"
-#include "PriorityQueue.h"
 
 namespace Lucene
 {
@@ -67,7 +66,6 @@ namespace Lucene
 		
 		friend class SpansCell;
 	};
-	
 }
 
 #endif

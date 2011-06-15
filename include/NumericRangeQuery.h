@@ -183,8 +183,7 @@ namespace Lucene
 		virtual FilteredTermEnumPtr getEnum(IndexReaderPtr reader);
 		
 		friend class NumericRangeTermEnum;
-	};
-	
+	};	
 }
 
 #endif

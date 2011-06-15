@@ -8,8 +8,6 @@
 #define MATCHALLDOCSQUERY_H
 
 #include "Query.h"
-#include "Weight.h"
-#include "Scorer.h"
 
 namespace Lucene
 {
@@ -39,7 +37,6 @@ namespace Lucene
 		
 		friend class MatchAllDocsWeight;
 	};
-	
 }
 
 #endif

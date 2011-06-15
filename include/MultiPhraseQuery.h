@@ -8,7 +8,6 @@
 #define MULTIPHRASEQUERY_H
 
 #include "Query.h"
-#include "Weight.h"
 
 namespace Lucene
 {
@@ -76,7 +75,6 @@ namespace Lucene
 		
 		friend class MultiPhraseWeight;
 	};
-	
 }
 
 #endif

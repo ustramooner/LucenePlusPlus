@@ -6,8 +6,8 @@
 
 #include "LuceneInc.h"
 #include "MiscUtils.h"
-#include <boost/date_time/gregorian/gregorian.hpp>
-#include <boost/date_time/posix_time/posix_time_types.hpp>
+#include "LuceneObject.h"
+
 namespace Lucene
 {
     const uint32_t MiscUtils::SINGLE_EXPONENT_MASK = 0x7f800000;

@@ -73,8 +73,6 @@ namespace Lucene
 		/// @return rewritten queries
 		virtual WeightPtr createWeight(QueryPtr query);
 	};
-	
-	
 }
 
 #endif

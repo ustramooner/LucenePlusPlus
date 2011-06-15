@@ -8,8 +8,6 @@
 #define SPANORQUERY_H
 
 #include "SpanQuery.h"
-#include "PriorityQueue.h"
-#include "Spans.h"
 
 namespace Lucene
 {
@@ -44,7 +42,6 @@ namespace Lucene
 		
 		friend class OrSpans;
 	};
-	
 }
 
 #endif

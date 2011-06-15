@@ -8,7 +8,6 @@
 #include <boost/algorithm/string.hpp>
 #include "BaseTokenStreamFixture.h"
 #include "TestUtils.h"
-#include "MiscUtils.h"
 #include "TeeSinkTokenFilter.h"
 #include "WhitespaceTokenizer.h"
 #include "TokenStream.h"
@@ -19,6 +18,7 @@
 #include "StandardFilter.h"
 #include "StandardTokenizer.h"
 #include "PositionIncrementAttribute.h"
+#include "MiscUtils.h"
 
 using namespace Lucene;
 

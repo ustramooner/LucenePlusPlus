@@ -8,7 +8,6 @@
 #include <boost/algorithm/string.hpp>
 #include "SegmentReader.h"
 #include "_SegmentReader.h"
-#include "StringUtils.h"
 #include "IndexFileNames.h"
 #include "DirectoryReader.h"
 #include "CompoundFileReader.h"
@@ -29,6 +28,7 @@
 #include "DefaultSimilarity.h"
 #include "FieldCache.h"
 #include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

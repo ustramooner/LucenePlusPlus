@@ -8,7 +8,6 @@
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "RAMFile.h"
-#include "FileUtils.h"
 #include "RAMOutputStream.h"
 #include "RAMInputStream.h"
 #include "FSDirectory.h"
@@ -22,6 +21,7 @@
 #include "Field.h"
 #include "MockRAMDirectory.h"
 #include "LuceneThread.h"
+#include "FileUtils.h"
 
 using namespace Lucene;
 

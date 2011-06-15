@@ -6,10 +6,9 @@
 
 #include "LuceneInc.h"
 #include "IndexInput.h"
-#include "UnicodeUtils.h"
-#include "StringUtils.h"
 #include "UTF8Stream.h"
 #include "Reader.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

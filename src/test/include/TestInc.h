@@ -16,4 +16,3 @@
 #endif
 
 #include "test_lucene.h"
-

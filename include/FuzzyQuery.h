@@ -8,7 +8,6 @@
 #define FUZZYQUERY_H
 
 #include "MultiTermQuery.h"
-#include "PriorityQueue.h"
 
 namespace Lucene
 {
@@ -74,7 +73,6 @@ namespace Lucene
 		
 		virtual FilteredTermEnumPtr getEnum(IndexReaderPtr reader);
 	};
-	
 }
 
 #endif

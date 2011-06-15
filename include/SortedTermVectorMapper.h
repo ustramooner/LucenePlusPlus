@@ -7,13 +7,11 @@
 #ifndef SORTEDTERMVECTORMAPPER_H
 #define SORTEDTERMVECTORMAPPER_H
 
-#include "TermVectorMapper.h"
 #include <boost/function.hpp>
+#include "TermVectorMapper.h"
 
 namespace Lucene
 {
-	typedef boost::function<bool (const TermVectorEntryPtr&, const TermVectorEntryPtr&)> TermVectorEntryComparator;
-
 	/// Store a sorted collection of {@link TermVectorEntry}s.  Collects all term information into a single, 
 	/// sorted set.
 	///

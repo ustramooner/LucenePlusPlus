@@ -14,7 +14,6 @@
 #include "FlagsAttribute.h"
 #include "TypeAttribute.h"
 #include "MiscUtils.h"
-#include "CycleCheck.h"
 #include "StringUtils.h"
 
 namespace Lucene

@@ -6,7 +6,6 @@
 
 #include "TestInc.h"
 #include "LuceneTestFixture.h"
-#include "MiscUtils.h"
 #include "RAMDirectory.h"
 #include "IndexWriter.h"
 #include "WhitespaceAnalyzer.h"
@@ -20,6 +19,7 @@
 #include "Filter.h"
 #include "DocIdSetIterator.h"
 #include "DocIdSet.h"
+#include "MiscUtils.h"
 
 using namespace Lucene;
 

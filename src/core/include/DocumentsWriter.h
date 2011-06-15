@@ -151,6 +151,7 @@ namespace Lucene
 		static const int32_t INT_BLOCK_MASK;
 		
 		static const int32_t PER_DOC_BLOCK_SIZE;
+
 	INTERNAL:
   		IndexWriterWeakPtr _writer;
 		DirectoryPtr directory;
@@ -373,7 +374,7 @@ namespace Lucene
 	
 	public:
 		/// Only called by asserts
-		virtual bool testPoint(const wchar_t* name);
+        virtual bool testPoint(const String& name);
 		
 		void clear();
 	};

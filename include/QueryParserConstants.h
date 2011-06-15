@@ -16,6 +16,7 @@ namespace Lucene
 	{
 	protected:
 		QueryParserConstants();
+
 	public:
 		virtual ~QueryParserConstants();
 		LUCENE_INTERFACE(QueryParserConstants);

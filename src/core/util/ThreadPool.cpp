@@ -6,7 +6,6 @@
 
 #include "LuceneInc.h"
 #include "ThreadPool.h"
-#include "CycleCheck.h"
 
 namespace Lucene
 {

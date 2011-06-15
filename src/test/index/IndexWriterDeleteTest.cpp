@@ -21,7 +21,6 @@
 #include "IndexFileDeleter.h"
 #include "TestPoint.h"
 
-
 using namespace Lucene;
 
 BOOST_FIXTURE_TEST_SUITE(IndexWriterDeleteTest, LuceneTestFixture)

@@ -8,8 +8,6 @@
 #define RANDOM_H
 
 #include "LuceneObject.h"
-#include "MiscUtils.h"
-#include <limits.h>
 
 namespace Lucene
 {
@@ -17,7 +15,9 @@ namespace Lucene
 	class LPPAPI Random : public LuceneObject
 	{
 		public:
-			Random(int64_t seed = (int64_t)MiscUtils::currentTimeMillis());
+            Random();
+            Random(int64_t seed);
+
 			virtual ~Random();
 
 		protected:

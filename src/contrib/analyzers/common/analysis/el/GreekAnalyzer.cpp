@@ -8,8 +8,8 @@
 #include "GreekAnalyzer.h"
 #include "StandardTokenizer.h"
 #include "GreekLowerCaseFilter.h"
-#include "StringUtils.h"
 #include "StopFilter.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

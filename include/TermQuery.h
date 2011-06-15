@@ -8,7 +8,6 @@
 #define TERMQUERY_H
 
 #include "Query.h"
-#include "Weight.h"
 
 namespace Lucene
 {
@@ -45,7 +44,6 @@ namespace Lucene
 		
 		friend class TermWeight;
 	};
-	
 }
 
 #endif

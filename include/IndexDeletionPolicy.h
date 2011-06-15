@@ -28,6 +28,7 @@ namespace Lucene
 	{
 	protected:
 	  IndexDeletionPolicy();
+
 	public:
 		virtual ~IndexDeletionPolicy();
 		

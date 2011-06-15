@@ -8,7 +8,6 @@
 #define SNAPSHOTDELETIONPOLICY_H
 
 #include "IndexDeletionPolicy.h"
-#include "IndexCommit.h"
 
 namespace Lucene
 {
@@ -49,7 +48,6 @@ namespace Lucene
 		
 		friend class MyCommitPoint;
 	};
-	
 }
 
 #endif

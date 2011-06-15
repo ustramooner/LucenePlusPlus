@@ -5,11 +5,11 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include "VariantUtils.h"
 #include "FieldDocSortedHitQueue.h"
 #include "FieldDoc.h"
 #include "SortField.h"
 #include "Collator.h"
+#include "VariantUtils.h"
 
 namespace Lucene
 {

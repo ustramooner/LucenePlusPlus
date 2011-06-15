@@ -7,7 +7,6 @@
 #include "TestInc.h"
 #include "LuceneTestFixture.h"
 #include "TermQuery.h"
-#include "MiscUtils.h"
 #include "Term.h"
 #include "Sort.h"
 #include "SortField.h"
@@ -34,6 +33,7 @@
 #include "IndexReader.h"
 #include "TopFieldCollector.h"
 #include "BooleanQuery.h"
+#include "MiscUtils.h"
 
 using namespace Lucene;
 

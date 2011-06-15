@@ -5,11 +5,9 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <limits>
 #include "TopDocsCollector.h"
 #include "TopDocs.h"
 #include "HitQueueBase.h"
-#include "CycleCheck.h"
 
 namespace Lucene
 {

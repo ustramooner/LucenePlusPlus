@@ -42,8 +42,7 @@ namespace Lucene
 	
 	protected:
 		SpanFilterResultPtr getCachedResult(IndexReaderPtr reader);
-	};
-	
+	};	
 }
 
 #endif

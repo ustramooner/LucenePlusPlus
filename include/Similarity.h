@@ -610,8 +610,7 @@ namespace Lucene
 		/// @param length The length in the array
 		/// @return An implementation dependent float to be used as a scoring factor
 		virtual double scorePayload(int32_t docId, const String& fieldName, int32_t start, int32_t end, ByteArray payload, int32_t offset, int32_t length);
-	};
-	
+	};	
 }
 
 #endif

@@ -8,7 +8,6 @@
 #define CLOSEABLETHREADLOCAL_H
 
 #include "LuceneThread.h"
-#include "Synchronize.h"
 
 namespace Lucene
 {

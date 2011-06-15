@@ -5,13 +5,12 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <limits.h>
 #include "SegmentTermEnum.h"
-#include "StringUtils.h"
 #include "TermInfosWriter.h"
 #include "IndexInput.h"
 #include "TermBuffer.h"
 #include "TermInfo.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

@@ -6,8 +6,8 @@
 
 #include "LuceneInc.h"
 #include "QueryParseError.h"
-#include "StringUtils.h"
 #include "QueryParserToken.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

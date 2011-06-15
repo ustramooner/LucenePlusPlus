@@ -553,7 +553,6 @@ namespace Lucene
 		friend class DirectoryReader;
 		friend class ParallelReader;
 	};
-	
 }
 
 #endif

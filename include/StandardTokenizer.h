@@ -8,7 +8,6 @@
 #define STANDARDTOKENIZER_H
 
 #include "Tokenizer.h"
-#include "Constants.h"
 
 namespace Lucene
 {

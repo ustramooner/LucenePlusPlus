@@ -6,8 +6,8 @@
 
 #include "LuceneInc.h"
 #include "TermAttribute.h"
-#include "StringUtils.h"
 #include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

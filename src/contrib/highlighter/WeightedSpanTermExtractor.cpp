@@ -29,7 +29,6 @@
 #include "SpanOrQuery.h"
 #include "MemoryIndex.h"
 #include "MiscUtils.h"
-#include "CycleCheck.h"
 
 namespace Lucene
 {

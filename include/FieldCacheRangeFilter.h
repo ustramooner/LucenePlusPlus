@@ -109,7 +109,6 @@ namespace Lucene
 		/// Returns the current numeric parser
 		virtual ParserPtr getParser();
 	};
-	
 }
 
 #endif

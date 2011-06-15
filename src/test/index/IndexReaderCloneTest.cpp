@@ -7,9 +7,7 @@
 #include "TestInc.h"
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
-#include "MiscUtils.h"
 #include "IndexReader.h"
-#include "_SegmentReader.h"
 #include "MockRAMDirectory.h"
 #include "IndexWriter.h"
 #include "WhitespaceAnalyzer.h"
@@ -20,10 +18,11 @@
 #include "ReadOnlySegmentReader.h"
 #include "ReadOnlyDirectoryReader.h"
 #include "ParallelReader.h"
+#include "_SegmentReader.h"
 #include "Similarity.h"
 #include "Term.h"
 #include "MultiReader.h"
-
+#include "MiscUtils.h"
 
 using namespace Lucene;
 

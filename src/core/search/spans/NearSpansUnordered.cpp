@@ -8,8 +8,8 @@
 #include "NearSpansUnordered.h"
 #include "_NearSpansUnordered.h"
 #include "NearSpansOrdered.h"
-#include "StringUtils.h"
 #include "SpanNearQuery.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

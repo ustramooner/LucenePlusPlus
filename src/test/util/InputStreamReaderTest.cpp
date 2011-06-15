@@ -8,9 +8,9 @@
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "FileReader.h"
-#include "FileUtils.h"
 #include "InputStreamReader.h"
 #include "BufferedReader.h"
+#include "FileUtils.h"
 
 using namespace Lucene;
 

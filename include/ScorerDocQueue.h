@@ -71,8 +71,7 @@ namespace Lucene
 		
 		void upHeap();
 		void downHeap();
-	};
-	
+	};	
 }
 
 #endif

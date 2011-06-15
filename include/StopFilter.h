@@ -8,7 +8,6 @@
 #define STOPFILTER_H
 
 #include "TokenFilter.h"
-#include "Constants.h"
 
 namespace Lucene
 {

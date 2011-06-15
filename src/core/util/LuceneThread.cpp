@@ -5,8 +5,8 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include "LuceneThread.h"
 #include <boost/thread/thread.hpp>
+#include "LuceneThread.h"
 
 namespace Lucene
 {
@@ -110,5 +110,15 @@ namespace Lucene
         #else
           return pthread_self();
         #endif
+    }
+    
+    void LuceneThread::threadSleep(int32_t time)
+    {
+        boost::this_thread::sleep(boost::posix_time::milliseconds(time));
+    }
+    
+    void LuceneThread::threadYield()
+    {
+        boost::this_thread::yield();
     }
 }

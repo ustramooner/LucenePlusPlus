@@ -46,8 +46,7 @@ namespace Lucene
 		
 		friend class ConstantWeight;
 		friend class ConstantScorer;
-	};
-	
+	};	
 }
 
 #endif

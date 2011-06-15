@@ -8,8 +8,6 @@
 #define PAYLOADTERMQUERY_H
 
 #include "SpanTermQuery.h"
-#include "SpanWeight.h"
-#include "SpanScorer.h"
 
 namespace Lucene
 {
@@ -42,7 +40,6 @@ namespace Lucene
 		friend class PayloadTermWeight;
 		friend class PayloadTermSpanScorer;
 	};
-		
 }
 
 #endif

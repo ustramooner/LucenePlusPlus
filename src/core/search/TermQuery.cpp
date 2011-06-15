@@ -8,13 +8,13 @@
 #include "TermQuery.h"
 #include "_TermQuery.h"
 #include "TermScorer.h"
-#include "StringUtils.h"
 #include "IndexReader.h"
 #include "ComplexExplanation.h"
 #include "Term.h"
 #include "TermDocs.h"
 #include "Similarity.h"
 #include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

@@ -1,17 +1,27 @@
-#pragma once
-#include "IndexReader.h"
+/////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 2009-2011 Alan Wright. All rights reserved.
+// Distributable under the terms of either the Apache License (Version 2.0)
+// or the GNU Lesser General Public License.
+/////////////////////////////////////////////////////////////////////////////
 
-namespace Lucene {
-	class FindSegmentsModified : public FindSegmentsFileT<uint64_t>
-	{
-	public:
-		FindSegmentsModified(SegmentInfosPtr infos, DirectoryPtr directory);
-		virtual ~FindSegmentsModified();
-		
-		LUCENE_CLASS(FindSegmentsModified);
-				
-	public:
-		virtual uint64_t doBody(const String& segmentFileName);
-	};
+#ifndef _INDEXREADER_H
+#define _INDEXREADER_H
+
+#include "_SegmentInfos.h"
+
+namespace Lucene
+{
+    class FindSegmentsModified : public FindSegmentsFileT<uint64_t>
+    {
+    public:
+        FindSegmentsModified(SegmentInfosPtr infos, DirectoryPtr directory);
+        virtual ~FindSegmentsModified();
+        
+        LUCENE_CLASS(FindSegmentsModified);
+                
+    public:
+        virtual uint64_t doBody(const String& segmentFileName);
+    };
 }
 
+#endif

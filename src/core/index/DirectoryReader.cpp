@@ -6,8 +6,8 @@
 
 #include "LuceneInc.h"
 #include <boost/algorithm/string.hpp>
+#include "_DirectoryReader.h"
 #include "Directory.h"
-#include "DirectoryReader.h"
 #include "ReadOnlyDirectoryReader.h"
 #include "IndexWriter.h"
 #include "_IndexWriter.h"

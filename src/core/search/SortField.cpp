@@ -5,12 +5,11 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include "StringUtils.h"
-#include "CycleCheck.h"
 #include "SortField.h"
 #include "FieldCache.h"
 #include "FieldComparator.h"
 #include "FieldComparatorSource.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

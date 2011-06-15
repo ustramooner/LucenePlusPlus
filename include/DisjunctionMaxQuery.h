@@ -8,7 +8,6 @@
 #define DISJUNCTIONMAXQUERY_H
 
 #include "Query.h"
-#include "Weight.h"
 
 namespace Lucene
 {
@@ -94,7 +93,6 @@ namespace Lucene
 		
 		friend class DisjunctionMaxWeight;
 	};
-	
 }
 
 #endif

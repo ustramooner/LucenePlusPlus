@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <limits>
 #include "BooleanScorer2.h"
 #include "ReqOptSumScorer.h"
 #include "ReqExclScorer.h"

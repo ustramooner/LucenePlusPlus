@@ -8,7 +8,6 @@
 #include "MultiTermQuery.h"
 #include "_MultiTermQuery.h"
 #include "ConstantScoreQuery.h"
-#include "CycleCheck.h"
 #include "MultiTermQueryWrapperFilter.h"
 #include "QueryWrapperFilter.h"
 #include "BooleanQuery.h"

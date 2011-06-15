@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "TestInc.h"
-#include "MiscUtils.h"
 #include "LuceneTestFixture.h"
 #include "MockRAMDirectory.h"
 #include "IndexWriter.h"
@@ -18,7 +17,7 @@
 #include "TermQuery.h"
 #include "Term.h"
 #include "NumericRangeFilter.h"
-#include "_FieldCacheRangeFilter.h"
+#include "FieldCacheRangeFilter.h"
 #include "OpenBitSet.h"
 #include "DocIdSet.h"
 #include "OpenBitSetDISI.h"
@@ -29,6 +28,7 @@
 #include "ScoreDoc.h"
 #include "MatchAllDocsQuery.h"
 #include "ConstantScoreQuery.h"
+#include "MiscUtils.h"
 
 using namespace Lucene;
 

@@ -8,9 +8,9 @@
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "IndexWriter.h"
-#include "FileUtils.h"
 #include "FSDirectory.h"
 #include "StandardAnalyzer.h"
+#include "FileUtils.h"
 
 using namespace Lucene;
 

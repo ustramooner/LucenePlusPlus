@@ -6,7 +6,6 @@
 
 #ifndef CHECKINDEX_H
 #define CHECKINDEX_H
-#include "LuceneObject.h"
 
 namespace Lucene
 {

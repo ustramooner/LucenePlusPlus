@@ -5,12 +5,11 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
-#include <limits.h>
 #include "RAMInputStream.h"
-#include "StringUtils.h"
 #include "RAMFile.h"
 #include "RAMOutputStream.h"
 #include "MiscUtils.h"
+#include "StringUtils.h"
 
 namespace Lucene
 {

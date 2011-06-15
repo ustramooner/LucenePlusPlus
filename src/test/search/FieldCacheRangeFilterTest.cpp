@@ -12,13 +12,14 @@
 #include "IndexSearcher.h"
 #include "TermQuery.h"
 #include "Term.h"
-#include "_FieldCacheRangeFilter.h"
+#include "FieldCacheRangeFilter.h"
 #include "ScoreDoc.h"
 #include "TopDocs.h"
 #include "IndexWriter.h"
 #include "SimpleAnalyzer.h"
 #include "Document.h"
 #include "Field.h"
+#include "DocIdSet.h"
 
 using namespace Lucene;
 

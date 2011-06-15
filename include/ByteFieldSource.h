@@ -8,7 +8,6 @@
 #define BYTEFIELDSOURCE_H
 
 #include "FieldCacheSource.h"
-#include "DocValues.h"
 
 namespace Lucene
 {
@@ -40,7 +39,6 @@ namespace Lucene
 		virtual bool cachedFieldSourceEquals(FieldCacheSourcePtr other);
 		virtual int32_t cachedFieldSourceHashCode();
 	};
-	
 }
 
 #endif

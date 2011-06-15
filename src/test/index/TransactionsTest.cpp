@@ -8,7 +8,6 @@
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
 #include "IndexWriter.h"
-#include "MiscUtils.h"
 #include "WhitespaceAnalyzer.h"
 #include "ConcurrentMergeScheduler.h"
 #include "Document.h"
@@ -17,6 +16,7 @@
 #include "IndexReader.h"
 #include "MockRAMDirectory.h"
 #include "Random.h"
+#include "MiscUtils.h"
 
 using namespace Lucene;
 

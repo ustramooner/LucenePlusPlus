@@ -7,14 +7,15 @@
 #include "TestInc.h"
 #include "LuceneTestFixture.h"
 #include "TestUtils.h"
-#include "FileUtils.h"
-#include "MiscUtils.h"
+#include "SimpleFSDirectory.h"
+#include "_SimpleFSDirectory.h"
 #include "IndexOutput.h"
 #include "IndexInput.h"
 #include "CompoundFileWriter.h"
 #include "CompoundFileReader.h"
-#include "_SimpleFSDirectory.h"
 #include "Random.h"
+#include "MiscUtils.h"
+#include "FileUtils.h"
 
 using namespace Lucene;
 

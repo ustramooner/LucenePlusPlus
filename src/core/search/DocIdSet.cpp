@@ -7,7 +7,6 @@
 #include "LuceneInc.h"
 #include "DocIdSet.h"
 #include "_DocIdSet.h"
-#include "CycleCheck.h"
 
 namespace Lucene
 {

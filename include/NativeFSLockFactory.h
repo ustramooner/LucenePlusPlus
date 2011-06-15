@@ -8,7 +8,6 @@
 #define NATIVEFSLOCKFACTORY_H
 
 #include "FSLockFactory.h"
-#include "Lock.h"
 
 namespace Lucene
 {
@@ -43,7 +42,6 @@ namespace Lucene
 		/// call takes zero time).
 		void acquireTestLock();
 	};
-	
 }
 
 #endif

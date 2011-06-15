@@ -26,6 +26,7 @@ namespace Lucene
 	public:
 		LUCENE_INTERFACE(Searchable);
 	
+    public:
 		/// Lower-level search API.
 		///
 		/// {@link Collector#collect(int32_t)} is called for every document.  Collector-based access to remote 

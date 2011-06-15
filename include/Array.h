@@ -7,8 +7,8 @@
 #ifndef ARRAY_H
 #define ARRAY_H
 
-#include "Lucene.h"
 #include <cstring>
+#include "Lucene.h"
 
 namespace Lucene
 {

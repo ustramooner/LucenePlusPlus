@@ -9,7 +9,6 @@
 #include "TestUtils.h"
 #include "MockIndexInput.h"
 
-
 using namespace Lucene;
 
 BOOST_FIXTURE_TEST_SUITE(IndexInputTest, LuceneTestFixture)

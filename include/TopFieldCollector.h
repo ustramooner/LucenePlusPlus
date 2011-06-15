@@ -68,8 +68,6 @@ namespace Lucene
 		
 		virtual TopDocsPtr newTopDocs(Collection<ScoreDocPtr> results, int32_t start);
 	};
-	
-	
 }
 
 #endif

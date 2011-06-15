@@ -34,8 +34,8 @@ namespace Lucene
 		LUCENE_CLASS(FieldCacheSanityChecker);
 	
 	public:
-		typedef MapOfSets< int32_t, USE_TR1_PREFIX::hash<int32_t>, std::equal_to<int32_t>, FieldCacheEntryPtr, luceneHash<FieldCacheEntryPtr>, luceneEquals<FieldCacheEntryPtr> > MapSetIntFieldCacheEntry;
-		typedef MapOfSets< ReaderFieldPtr, luceneHash<ReaderFieldPtr>, luceneEquals<ReaderFieldPtr>, int32_t, USE_TR1_PREFIX::hash<int32_t>, std::equal_to<int32_t> > MapSetReaderFieldInt;
+        typedef MapOfSets< int32_t, boost::hash<int32_t>, std::equal_to<int32_t>, FieldCacheEntryPtr, luceneHash<FieldCacheEntryPtr>, luceneEquals<FieldCacheEntryPtr> > MapSetIntFieldCacheEntry;
+        typedef MapOfSets< ReaderFieldPtr, luceneHash<ReaderFieldPtr>, luceneEquals<ReaderFieldPtr>, int32_t, boost::hash<int32_t>, std::equal_to<int32_t> > MapSetReaderFieldInt;
 		typedef MapOfSets< ReaderFieldPtr, luceneHash<ReaderFieldPtr>, luceneEquals<ReaderFieldPtr>, ReaderFieldPtr, luceneHash<ReaderFieldPtr>, luceneEquals<ReaderFieldPtr> > MapSetReaderFieldReaderField;
 		
 		/// An Enumeration of the different types of "insane" behaviour that may be detected in a FieldCache.
