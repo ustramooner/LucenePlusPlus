@@ -11,18 +11,18 @@
 
 namespace Lucene
 {
-	/// Load the First field and break.
-	/// See {@link FieldSelectorResult#LOAD_AND_BREAK}
-	class LPPAPI LoadFirstFieldSelector : public FieldSelector
-	{
-	public:
-		virtual ~LoadFirstFieldSelector();
-		
-		LUCENE_CLASS(LoadFirstFieldSelector);
-	
-	public:
-		virtual FieldSelectorResult accept(const String& fieldName);
-	};
+    /// Load the First field and break.
+    /// See {@link FieldSelectorResult#LOAD_AND_BREAK}
+    class LPPAPI LoadFirstFieldSelector : public FieldSelector
+    {
+    public:
+        virtual ~LoadFirstFieldSelector();
+        
+        LUCENE_CLASS(LoadFirstFieldSelector);
+    
+    public:
+        virtual FieldSelectorResult accept(const String& fieldName);
+    };
 }
 
 #endif

@@ -70,7 +70,7 @@ namespace Lucene
     IndexReaderPtr IndexSearcher::getIndexReader()
     {
         return reader;
-    }	
+    }
     
     void IndexSearcher::close()
     {

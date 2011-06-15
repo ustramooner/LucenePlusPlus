@@ -140,7 +140,7 @@ public:
                 else
                     payloadAtt->setPayload(newLucene<Payload>(payloadMultiField2));
                 ++numSeen;
-            }			
+            }
             return true;
         }
         else

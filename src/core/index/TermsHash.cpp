@@ -131,21 +131,21 @@ namespace Lucene
         int64_t bytesFreed = 0;
         {
             SyncLock syncLock(this);
-        int32_t numToFree = postingsFreeCount >= postingsFreeChunk ? postingsFreeChunk : postingsFreeCount;
+            int32_t numToFree = postingsFreeCount >= postingsFreeChunk ? postingsFreeChunk : postingsFreeCount;
             any = (numToFree > 0);
-        if (any)
-        {
-            MiscUtils::arrayFill(postingsFreeList.begin(), postingsFreeCount - numToFree, postingsFreeCount, RawPostingListPtr());
-            postingsFreeCount -= numToFree;
-            postingsAllocCount -= numToFree;
+            if (any)
+            {
+                MiscUtils::arrayFill(postingsFreeList.begin(), postingsFreeCount - numToFree, postingsFreeCount, RawPostingListPtr());
+                postingsFreeCount -= numToFree;
+                postingsAllocCount -= numToFree;
                 bytesFreed = -numToFree * bytesPerPosting;
-            any = true;
-        }
+                any = true;
+            }
         }
         
         if (any)
             DocumentsWriterPtr(_docWriter)->bytesAllocated(bytesFreed);
-        
+
         if (nextTermsHash && nextTermsHash->freeRAM())
             any = true;
         

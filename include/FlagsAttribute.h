@@ -11,37 +11,37 @@
 
 namespace Lucene
 {
-	/// This attribute can be used to pass different flags down the tokenizer chain, eg from one TokenFilter 
-	/// to another one. 
-	class LPPAPI FlagsAttribute : public Attribute
-	{
-	public:
-		FlagsAttribute();
-		virtual ~FlagsAttribute();
-		
-		LUCENE_CLASS(FlagsAttribute);
-	
-	protected:
-		int32_t flags;
-		
-	public:
-		virtual String toString();
-		
-		/// Get the bitset for any bits that have been set.  This is completely distinct from {@link 
-		/// TypeAttribute#type()}, although they do share similar purposes.  The flags can be used to encode 
-		/// information about the token for use by other {@link TokenFilter}s.
-		virtual int32_t getFlags();
-		
-		/// @see #getFlags()
-		virtual void setFlags(int32_t flags);
-		
-		virtual void clear();
-		
-		virtual bool equals(LuceneObjectPtr other);
-		virtual int32_t hashCode();
-		virtual void copyTo(AttributePtr target);
-		virtual LuceneObjectPtr clone(LuceneObjectPtr other = LuceneObjectPtr());
-	};
+    /// This attribute can be used to pass different flags down the tokenizer chain, eg from one TokenFilter 
+    /// to another one. 
+    class LPPAPI FlagsAttribute : public Attribute
+    {
+    public:
+        FlagsAttribute();
+        virtual ~FlagsAttribute();
+        
+        LUCENE_CLASS(FlagsAttribute);
+    
+    protected:
+        int32_t flags;
+        
+    public:
+        virtual String toString();
+        
+        /// Get the bitset for any bits that have been set.  This is completely distinct from {@link 
+        /// TypeAttribute#type()}, although they do share similar purposes.  The flags can be used to encode 
+        /// information about the token for use by other {@link TokenFilter}s.
+        virtual int32_t getFlags();
+        
+        /// @see #getFlags()
+        virtual void setFlags(int32_t flags);
+        
+        virtual void clear();
+        
+        virtual bool equals(LuceneObjectPtr other);
+        virtual int32_t hashCode();
+        virtual void copyTo(AttributePtr target);
+        virtual LuceneObjectPtr clone(LuceneObjectPtr other = LuceneObjectPtr());
+    };
 }
 
 #endif

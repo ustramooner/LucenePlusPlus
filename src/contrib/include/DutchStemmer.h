@@ -12,18 +12,18 @@
 
 namespace Lucene
 {
-	/// A stemmer for Dutch words.
-	///
-	/// The algorithm is an implementation of the 
-	/// <a href="http://snowball.tartarus.org/algorithms/dutch/stemmer.html">dutch stemming</a>
-	/// algorithm in Martin Porter's snowball project.
-	class LPPCONTRIBAPI DutchStemmer : public LuceneObject
-	{
-	public:
-	    DutchStemmer();
-	    virtual ~DutchStemmer();
-	    
-	    LUCENE_CLASS(DutchStemmer);
+    /// A stemmer for Dutch words.
+    ///
+    /// The algorithm is an implementation of the 
+    /// <a href="http://snowball.tartarus.org/algorithms/dutch/stemmer.html">dutch stemming</a>
+    /// algorithm in Martin Porter's snowball project.
+    class LPPCONTRIBAPI DutchStemmer : public LuceneObject
+    {
+    public:
+        DutchStemmer();
+        virtual ~DutchStemmer();
+        
+        LUCENE_CLASS(DutchStemmer);
     
     protected:
         /// Buffer for the terms while stemming them.
@@ -87,7 +87,7 @@ namespace Lucene
         void reStoreYandI();
         
         bool isVowel(wchar_t c);
-	};
+    };
 }
 
 #endif

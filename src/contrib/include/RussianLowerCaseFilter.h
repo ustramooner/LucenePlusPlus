@@ -12,22 +12,22 @@
 
 namespace Lucene
 {
-	/// Normalizes token text to lower case.
-	class LPPCONTRIBAPI RussianLowerCaseFilter : public TokenFilter
-	{
-	public:
-		RussianLowerCaseFilter(TokenStreamPtr input);
-		
-		virtual ~RussianLowerCaseFilter();
-		
-		LUCENE_CLASS(RussianLowerCaseFilter);
+    /// Normalizes token text to lower case.
+    class LPPCONTRIBAPI RussianLowerCaseFilter : public TokenFilter
+    {
+    public:
+        RussianLowerCaseFilter(TokenStreamPtr input);
+        
+        virtual ~RussianLowerCaseFilter();
+        
+        LUCENE_CLASS(RussianLowerCaseFilter);
     
     protected:
         TermAttributePtr termAtt;
     
     public:
         virtual bool incrementToken();
-	};
+    };
 }
 
 #endif

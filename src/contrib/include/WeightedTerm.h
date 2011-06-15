@@ -12,32 +12,32 @@
 
 namespace Lucene
 {
-	/// Lightweight class to hold term and a weight value used for scoring this term
-	class LPPCONTRIBAPI WeightedTerm : public LuceneObject
-	{
-	public:
-	    WeightedTerm(double weight, const String& term);
-		virtual ~WeightedTerm();
-		
-		LUCENE_CLASS(WeightedTerm);
-	
-	public:
+    /// Lightweight class to hold term and a weight value used for scoring this term
+    class LPPCONTRIBAPI WeightedTerm : public LuceneObject
+    {
+    public:
+        WeightedTerm(double weight, const String& term);
+        virtual ~WeightedTerm();
+        
+        LUCENE_CLASS(WeightedTerm);
+    
+    public:
         double weight; // multiplier
         String term; // stemmed form
-	
-	public:
-	    /// @return the term value (stemmed)
-	    String getTerm();
-	    
-	    /// @return the weight associated with this term
-	    double getWeight();
-	    
-	    /// @param term the term value (stemmed)
-	    void setTerm(const String& term);
-	    
-	    /// @param weight the weight associated with this term
-	    void setWeight(double weight);
-	};
+    
+    public:
+        /// @return the term value (stemmed)
+        String getTerm();
+        
+        /// @return the weight associated with this term
+        double getWeight();
+        
+        /// @param term the term value (stemmed)
+        void setTerm(const String& term);
+        
+        /// @param weight the weight associated with this term
+        void setWeight(double weight);
+    };
 }
 
 #endif

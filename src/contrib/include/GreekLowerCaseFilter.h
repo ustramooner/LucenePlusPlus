@@ -12,15 +12,15 @@
 
 namespace Lucene
 {
-	/// Normalizes token text to lower case, removes some Greek diacritics, and standardizes 
-	/// final sigma to sigma. 
-	class LPPCONTRIBAPI GreekLowerCaseFilter : public TokenFilter
-	{
-	public:
-		GreekLowerCaseFilter(TokenStreamPtr input);
-		virtual ~GreekLowerCaseFilter();
-		
-		LUCENE_CLASS(GreekLowerCaseFilter);
+    /// Normalizes token text to lower case, removes some Greek diacritics, and standardizes 
+    /// final sigma to sigma. 
+    class LPPCONTRIBAPI GreekLowerCaseFilter : public TokenFilter
+    {
+    public:
+        GreekLowerCaseFilter(TokenStreamPtr input);
+        virtual ~GreekLowerCaseFilter();
+        
+        LUCENE_CLASS(GreekLowerCaseFilter);
     
     protected:
         TermAttributePtr termAtt;
@@ -30,7 +30,7 @@ namespace Lucene
     
     protected:
         wchar_t lowerCase(wchar_t codepoint);
-	};
+    };
 }
 
 #endif

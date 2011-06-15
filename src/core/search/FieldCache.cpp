@@ -179,7 +179,7 @@ namespace Lucene
         BOOST_ASSERT(false);
         return InfoStreamPtr(); // override
     }
-        
+    
     CreationPlaceholder::~CreationPlaceholder()
     {
     }

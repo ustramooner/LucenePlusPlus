@@ -11,22 +11,22 @@
 
 namespace Lucene
 {
-	/// Base class for span-based queries.
-	class LPPAPI SpanQuery : public Query
-	{
-	public:
-		virtual ~SpanQuery();
-		LUCENE_CLASS(SpanQuery);
-	
-	public:
-		/// Returns the matches for this query in an index.  Used internally to search for spans.
-		virtual SpansPtr getSpans(IndexReaderPtr reader) = 0;
-		
-		/// Returns the name of the field matched by this query.
-		virtual String getField() = 0;
-		
-		virtual WeightPtr createWeight(SearcherPtr searcher);
-	};
+    /// Base class for span-based queries.
+    class LPPAPI SpanQuery : public Query
+    {
+    public:
+        virtual ~SpanQuery();
+        LUCENE_CLASS(SpanQuery);
+    
+    public:
+        /// Returns the matches for this query in an index.  Used internally to search for spans.
+        virtual SpansPtr getSpans(IndexReaderPtr reader) = 0;
+        
+        /// Returns the name of the field matched by this query.
+        virtual String getField() = 0;
+        
+        virtual WeightPtr createWeight(SearcherPtr searcher);
+    };
 }
 
 #endif

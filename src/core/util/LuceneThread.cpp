@@ -10,16 +10,16 @@
 
 namespace Lucene
 {
-  #if defined(_WIN32) || defined(_WIN64)
-	const int32_t LuceneThread::MAX_PRIORITY = THREAD_PRIORITY_HIGHEST;
-	const int32_t LuceneThread::NORM_PRIORITY = THREAD_PRIORITY_NORMAL;
-	const int32_t LuceneThread::MIN_PRIORITY = THREAD_PRIORITY_LOWEST;
-	#else
-	const int32_t LuceneThread::MAX_PRIORITY = 2;
-	const int32_t LuceneThread::NORM_PRIORITY = 0;
-	const int32_t LuceneThread::MIN_PRIORITY = -2;
-	#endif
-	
+    #if defined(_WIN32) || defined(_WIN64)
+    const int32_t LuceneThread::MAX_PRIORITY = THREAD_PRIORITY_HIGHEST;
+    const int32_t LuceneThread::NORM_PRIORITY = THREAD_PRIORITY_NORMAL;
+    const int32_t LuceneThread::MIN_PRIORITY = THREAD_PRIORITY_LOWEST;
+    #else
+    const int32_t LuceneThread::MAX_PRIORITY = 2;
+    const int32_t LuceneThread::NORM_PRIORITY = 0;
+    const int32_t LuceneThread::MIN_PRIORITY = -2;
+    #endif
+
     LuceneThread::LuceneThread()
     {
         running = false;
@@ -106,9 +106,9 @@ namespace Lucene
     int64_t LuceneThread::currentId()
     {
         #if defined(_WIN32) || defined(_WIN64)
-          return GetCurrentThreadId();
+        return GetCurrentThreadId();
         #else
-          return pthread_self();
+        return pthread_self();
         #endif
     }
     

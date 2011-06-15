@@ -82,7 +82,7 @@ namespace Lucene
         BOOST_CHECK(!q2->equals(q1));
         
         // possible this test can fail on a hash collision... if that happens, please change 
-        // test to use a different example.		
+        // test to use a different example.
         BOOST_CHECK_NE(q1->hashCode(), q2->hashCode());
     }
     
@@ -373,7 +373,7 @@ namespace Lucene
             Collection<IndexReaderPtr> lastReader;
             
             ScorerPtr scorer;
-            IndexReaderPtr reader;			
+            IndexReaderPtr reader;
         
         public:
             virtual void setScorer(ScorerPtr scorer)

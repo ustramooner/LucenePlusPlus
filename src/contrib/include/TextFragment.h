@@ -12,16 +12,16 @@
 
 namespace Lucene
 {
-	/// Low-level class used to record information about a section of a document with a score.
-	class LPPCONTRIBAPI TextFragment : public LuceneObject
-	{
-	public:
-	    TextFragment(StringBufferPtr markedUpText, int32_t textStartPos, int32_t fragNum);
-		virtual ~TextFragment();
-		
-		LUCENE_CLASS(TextFragment);
-	
-	public:
+    /// Low-level class used to record information about a section of a document with a score.
+    class LPPCONTRIBAPI TextFragment : public LuceneObject
+    {
+    public:
+        TextFragment(StringBufferPtr markedUpText, int32_t textStartPos, int32_t fragNum);
+        virtual ~TextFragment();
+        
+        LUCENE_CLASS(TextFragment);
+    
+    public:
         StringBufferPtr markedUpText;
         int32_t fragNum;
         int32_t textStartPos;
@@ -43,14 +43,14 @@ namespace Lucene
         
         /// Returns the marked-up text for this text fragment
         virtual String toString();
-	};
-	
-	/// Utility class to store a string buffer that contains text fragment
-	class LPPCONTRIBAPI StringBuffer : public LuceneObject
-	{
-	public:
-	    virtual ~StringBuffer();
-	    LUCENE_CLASS(StringBuffer);
+    };
+    
+    /// Utility class to store a string buffer that contains text fragment
+    class LPPCONTRIBAPI StringBuffer : public LuceneObject
+    {
+    public:
+        virtual ~StringBuffer();
+        LUCENE_CLASS(StringBuffer);
     
     protected:
         StringStream buffer;
@@ -60,7 +60,7 @@ namespace Lucene
         virtual int32_t length();
         virtual void append(const String& str);
         virtual void clear();
-	};
+    };
 }
 
 #endif

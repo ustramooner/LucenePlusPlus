@@ -12,14 +12,14 @@
 
 namespace Lucene
 {
-	/// A {@link TokenFilter} that applies {@link PersianNormalizer} to normalize the orthography.
-	class LPPCONTRIBAPI PersianNormalizationFilter : public TokenFilter
-	{
-	public:
-		PersianNormalizationFilter(TokenStreamPtr input);
-		virtual ~PersianNormalizationFilter();
-		
-		LUCENE_CLASS(PersianNormalizationFilter);
+    /// A {@link TokenFilter} that applies {@link PersianNormalizer} to normalize the orthography.
+    class LPPCONTRIBAPI PersianNormalizationFilter : public TokenFilter
+    {
+    public:
+        PersianNormalizationFilter(TokenStreamPtr input);
+        virtual ~PersianNormalizationFilter();
+        
+        LUCENE_CLASS(PersianNormalizationFilter);
     
     protected:
         PersianNormalizerPtr normalizer;
@@ -27,7 +27,7 @@ namespace Lucene
     
     public:
         virtual bool incrementToken();
-	};
+    };
 }
 
 #endif

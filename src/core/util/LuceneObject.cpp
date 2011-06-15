@@ -17,7 +17,7 @@ namespace Lucene
     LuceneObject::~LuceneObject()
     {
     }
-
+    
     void LuceneObject::initialize()
     {
         // override

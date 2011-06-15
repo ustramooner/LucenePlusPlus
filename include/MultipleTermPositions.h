@@ -11,45 +11,45 @@
 
 namespace Lucene
 {
-	/// Allows you to iterate over the {@link TermPositions} for multiple {@link Term}s as a single 
-	/// {@link TermPositions}.
-	class LPPAPI MultipleTermPositions : public TermPositions, public LuceneObject
-	{
-	public:
-		MultipleTermPositions(IndexReaderPtr indexReader, Collection<TermPtr> terms);
-		virtual ~MultipleTermPositions();
-		
-		LUCENE_CLASS(MultipleTermPositions);
-			
-	protected:
-		int32_t _doc;
-		int32_t _freq;
-		TermPositionsQueuePtr termPositionsQueue;
-		IntQueuePtr posList;
-	
-	public:
-		virtual bool next();
-		virtual int32_t nextPosition();
-		virtual bool skipTo(int32_t target);
-		virtual int32_t doc();
-		virtual int32_t freq();
-		virtual void close();
-		
-		/// Not implemented.
-		virtual void seek(TermPtr term);
-		
-		/// Not implemented.
-		virtual void seek(TermEnumPtr termEnum);
-		
-		/// Not implemented.
-		virtual int32_t read(Collection<int32_t> docs, Collection<int32_t> freqs);
-		
-		/// Not implemented.
-		virtual ByteArray getPayload(ByteArray data, int32_t offset);
-		
-		/// @return false
-		virtual bool isPayloadAvailable();
-	};
+    /// Allows you to iterate over the {@link TermPositions} for multiple {@link Term}s as a single 
+    /// {@link TermPositions}.
+    class LPPAPI MultipleTermPositions : public TermPositions, public LuceneObject
+    {
+    public:
+        MultipleTermPositions(IndexReaderPtr indexReader, Collection<TermPtr> terms);
+        virtual ~MultipleTermPositions();
+        
+        LUCENE_CLASS(MultipleTermPositions);
+            
+    protected:
+        int32_t _doc;
+        int32_t _freq;
+        TermPositionsQueuePtr termPositionsQueue;
+        IntQueuePtr posList;
+    
+    public:
+        virtual bool next();
+        virtual int32_t nextPosition();
+        virtual bool skipTo(int32_t target);
+        virtual int32_t doc();
+        virtual int32_t freq();
+        virtual void close();
+        
+        /// Not implemented.
+        virtual void seek(TermPtr term);
+        
+        /// Not implemented.
+        virtual void seek(TermEnumPtr termEnum);
+        
+        /// Not implemented.
+        virtual int32_t read(Collection<int32_t> docs, Collection<int32_t> freqs);
+        
+        /// Not implemented.
+        virtual ByteArray getPayload(ByteArray data, int32_t offset);
+        
+        /// @return false
+        virtual bool isPayloadAvailable();
+    };
 }
 
 #endif

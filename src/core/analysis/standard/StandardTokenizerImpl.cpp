@@ -92,7 +92,7 @@ namespace Lucene
     };
     
     const int32_t StandardTokenizerImpl::ZZ_ACTION_LENGTH = 51;
-	const int32_t StandardTokenizerImpl::ZZ_ACTION_PACKED_LENGTH = 50;
+    const int32_t StandardTokenizerImpl::ZZ_ACTION_PACKED_LENGTH = 50;
     
     const wchar_t StandardTokenizerImpl::ZZ_ROWMAP_PACKED_0[] = 
     {
@@ -173,7 +173,7 @@ namespace Lucene
     };
     
     const int32_t StandardTokenizerImpl::ZZ_ATTRIBUTE_LENGTH = 51;
-	const int32_t StandardTokenizerImpl::ZZ_ATTRIBUTE_PACKED_LENGTH = 30;
+    const int32_t StandardTokenizerImpl::ZZ_ATTRIBUTE_PACKED_LENGTH = 30;
     
     /// This character denotes the end of file
     const int32_t StandardTokenizerImpl::YYEOF = -1;

@@ -12,14 +12,14 @@
 
 namespace Lucene
 {
-	/// A {@link TokenFilter} that applies {@link ArabicStemmer} to stem Arabic words.
-	class LPPCONTRIBAPI ArabicStemFilter : public TokenFilter
-	{
-	public:
-		ArabicStemFilter(TokenStreamPtr input);
-		virtual ~ArabicStemFilter();
-		
-		LUCENE_CLASS(ArabicStemFilter);
+    /// A {@link TokenFilter} that applies {@link ArabicStemmer} to stem Arabic words.
+    class LPPCONTRIBAPI ArabicStemFilter : public TokenFilter
+    {
+    public:
+        ArabicStemFilter(TokenStreamPtr input);
+        virtual ~ArabicStemFilter();
+        
+        LUCENE_CLASS(ArabicStemFilter);
     
     protected:
         ArabicStemmerPtr stemmer;
@@ -27,7 +27,7 @@ namespace Lucene
     
     public:
         virtual bool incrementToken();
-	};
+    };
 }
 
 #endif

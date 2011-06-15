@@ -12,19 +12,19 @@
 
 namespace Lucene
 {
-	/// Processes terms found in the original text, typically by applying some form of mark-up to highlight 
-	/// terms in HTML search results pages.
-	class LPPCONTRIBAPI Formatter
-	{
-	public:
-		virtual ~Formatter();
-		LUCENE_INTERFACE(Formatter);
-	
-	public:
-	    /// @param originalText The section of text being considered for markup
-	    /// @param tokenGroup contains one or several overlapping Tokens along with their scores and positions.
-		virtual String highlightTerm(const String& originalText, TokenGroupPtr tokenGroup);
-	};
+    /// Processes terms found in the original text, typically by applying some form of mark-up to highlight 
+    /// terms in HTML search results pages.
+    class LPPCONTRIBAPI Formatter
+    {
+    public:
+        virtual ~Formatter();
+        LUCENE_INTERFACE(Formatter);
+    
+    public:
+        /// @param originalText The section of text being considered for markup
+        /// @param tokenGroup contains one or several overlapping Tokens along with their scores and positions.
+        virtual String highlightTerm(const String& originalText, TokenGroupPtr tokenGroup);
+    };
 }
 
 #endif

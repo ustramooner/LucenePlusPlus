@@ -12,17 +12,17 @@
 
 namespace Lucene
 {
-	/// A stemmer for German words.
-	///
-	/// The algorithm is based on the report "A Fast and Simple Stemming Algorithm for German Words" by J&ouml;rg
-	/// Caumanns (joerg.caumanns at isst.fhg.de).
-	class LPPCONTRIBAPI GermanStemmer : public LuceneObject
-	{
-	public:
-	    GermanStemmer();
-	    virtual ~GermanStemmer();
-	    
-	    LUCENE_CLASS(GermanStemmer);
+    /// A stemmer for German words.
+    ///
+    /// The algorithm is based on the report "A Fast and Simple Stemming Algorithm for German Words" by J&ouml;rg
+    /// Caumanns (joerg.caumanns at isst.fhg.de).
+    class LPPCONTRIBAPI GermanStemmer : public LuceneObject
+    {
+    public:
+        GermanStemmer();
+        virtual ~GermanStemmer();
+        
+        LUCENE_CLASS(GermanStemmer);
     
     protected:
         /// Buffer for the terms while stemming them.
@@ -67,7 +67,7 @@ namespace Lucene
         /// Undoes the changes made by substitute(). That are character pairs and character combinations. 
         /// Umlauts will remain as their corresponding vowel, as "ß" remains as "ss".
         void resubstitute();
-	};
+    };
 }
 
 #endif

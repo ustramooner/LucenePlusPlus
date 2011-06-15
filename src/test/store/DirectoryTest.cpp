@@ -50,7 +50,7 @@ void TestInstantiationPair(FSDirectory1& first, FSDirectory2& second, const Stri
     
     // don't test read on MMapDirectory, since it can't really be closed and will cause a failure to delete the file.
     if (!first.isMMapDirectory())
-    {		
+    {
         IndexInputPtr input = first.openInput(fileName);
         BOOST_CHECK_EQUAL(input->readByte(), 123);
         BOOST_CHECK_NO_THROW(input->close());
@@ -61,7 +61,7 @@ void TestInstantiationPair(FSDirectory1& first, FSDirectory2& second, const Stri
     BOOST_CHECK_EQUAL(second.fileLength(fileName), 1);
     
     if (!second.isMMapDirectory())
-    {		
+    {
         IndexInputPtr input = second.openInput(fileName);
         BOOST_CHECK_EQUAL(input->readByte(), 123);
         BOOST_CHECK_NO_THROW(input->close());
@@ -93,7 +93,7 @@ namespace TestDirectInstantiation
     public:
         TestableSimpleFSDirectory(const String& path) : SimpleFSDirectory(path) {}
         virtual ~TestableSimpleFSDirectory() {}
-        using SimpleFSDirectory::ensureOpen;	
+        using SimpleFSDirectory::ensureOpen;
         bool isMMapDirectory() { return false; }
     };
 
@@ -118,7 +118,7 @@ BOOST_AUTO_TEST_CASE(testDirectInstantiation)
     mmapDir.ensureOpen();
 
     TestInstantiationPair(fsDir, mmapDir, L"foo.0", L"foo0.lck");
-    TestInstantiationPair(mmapDir, fsDir, L"foo.1", L"foo1.lck");	
+    TestInstantiationPair(mmapDir, fsDir, L"foo.1", L"foo1.lck");
 }
 
 BOOST_AUTO_TEST_CASE(testDontCreate)

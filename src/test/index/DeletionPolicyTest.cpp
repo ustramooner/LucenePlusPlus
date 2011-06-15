@@ -403,7 +403,7 @@ BOOST_AUTO_TEST_CASE(testOpenPriorSnapshot)
     {
         addDoc(writer);
         if ((1 + i) % 2 == 0)
-            writer->commit();		
+            writer->commit();
     }
     writer->close();
 

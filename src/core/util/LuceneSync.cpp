@@ -14,7 +14,7 @@ namespace Lucene
     LuceneSync::~LuceneSync()
     {
     }
-    
+
     SynchronizePtr LuceneSync::getSync()
     {
         Synchronize::createSync(objectLock);

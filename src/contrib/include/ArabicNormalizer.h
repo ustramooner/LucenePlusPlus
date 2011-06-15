@@ -12,24 +12,24 @@
 
 namespace Lucene
 {
-	/// Normalizer for Arabic.
-	///
-	/// Normalization is done in-place for efficiency, operating on a termbuffer.
-	///
-	/// Normalization is defined as:
-	/// <ul>
-	/// <li> Normalization of hamza with alef seat to a bare alef.
-	/// <li> Normalization of teh marbuta to heh
-	/// <li> Normalization of dotless yeh (alef maksura) to yeh.
-	/// <li> Removal of Arabic diacritics (the harakat)
-	/// <li> Removal of tatweel (stretching character).
-	/// </ul>
-	class LPPCONTRIBAPI ArabicNormalizer : public LuceneObject
-	{
-	public:
-	    virtual ~ArabicNormalizer();
-	    
-	    LUCENE_CLASS(ArabicNormalizer);
+    /// Normalizer for Arabic.
+    ///
+    /// Normalization is done in-place for efficiency, operating on a termbuffer.
+    ///
+    /// Normalization is defined as:
+    /// <ul>
+    /// <li> Normalization of hamza with alef seat to a bare alef.
+    /// <li> Normalization of teh marbuta to heh
+    /// <li> Normalization of dotless yeh (alef maksura) to yeh.
+    /// <li> Removal of Arabic diacritics (the harakat)
+    /// <li> Removal of tatweel (stretching character).
+    /// </ul>
+    class LPPCONTRIBAPI ArabicNormalizer : public LuceneObject
+    {
+    public:
+        virtual ~ArabicNormalizer();
+        
+        LUCENE_CLASS(ArabicNormalizer);
     
     public:
         static const wchar_t ALEF;
@@ -67,7 +67,7 @@ namespace Lucene
         /// @param len length of input buffer
         /// @return length of input buffer after deletion
         int32_t deleteChar(wchar_t* s, int32_t pos, int32_t len);
-	};
+    };
 }
 
 #endif

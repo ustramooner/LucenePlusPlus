@@ -62,7 +62,7 @@ BOOST_AUTO_TEST_CASE(testNullOrSubScorer)
     IndexSearcherPtr s = newLucene<IndexSearcher>(r);
     BooleanQueryPtr q = newLucene<BooleanQuery>();
     q->add(newLucene<TermQuery>(newLucene<Term>(L"field", L"a")), BooleanClause::SHOULD);
-
+    
     double score = s->search(q, 10)->getMaxScore();
     QueryPtr subQuery = newLucene<TermQuery>(newLucene<Term>(L"field", L"not_in_index"));
     subQuery->setBoost(0);

@@ -292,12 +292,12 @@ namespace Lucene
     
     void SegmentReader::commitChanges(MapStringString commitUserData)
     {
-            if (deletedDocsDirty) // re-write deleted
-            {
-                si->advanceDelGen();
-                
-                // We can write directly to the actual name (vs to a .tmp & renaming it) because the file 
-                // is not live until segments file is written
+        if (deletedDocsDirty) // re-write deleted
+        {
+            si->advanceDelGen();
+            
+            // We can write directly to the actual name (vs to a .tmp & renaming it) because the file 
+            // is not live until segments file is written
             String delFileName(si->getDelFileName());
             
             bool success = false;
@@ -323,29 +323,29 @@ namespace Lucene
                 }
             }
             finally.throwException();
-                
-                si->setDelCount(si->getDelCount() + pendingDeleteCount);
-                pendingDeleteCount = 0;
-                BOOST_ASSERT(deletedDocs->count() == si->getDelCount()); // delete count mismatch during commit?
-            }
-            else
-            {
-                BOOST_ASSERT(pendingDeleteCount == 0);
-            }
             
-            if (normsDirty) // re-write norms
-            {
-                si->setNumFields(core->fieldInfos->size());
-                for (MapStringNorm::iterator norm = _norms.begin(); norm != _norms.end(); ++norm)
-                {
-                    if (norm->second->dirty)
-                        norm->second->reWrite(si);
-                }
-            }
-            deletedDocsDirty = false;
-            normsDirty = false;
-            _hasChanges = false;
+            si->setDelCount(si->getDelCount() + pendingDeleteCount);
+            pendingDeleteCount = 0;
+            BOOST_ASSERT(deletedDocs->count() == si->getDelCount()); // delete count mismatch during commit?
         }
+        else
+        {
+            BOOST_ASSERT(pendingDeleteCount == 0);
+        }
+        
+        if (normsDirty) // re-write norms
+        {
+            si->setNumFields(core->fieldInfos->size());
+            for (MapStringNorm::iterator norm = _norms.begin(); norm != _norms.end(); ++norm)
+            {
+                if (norm->second->dirty)
+                    norm->second->reWrite(si);
+            }
+        }
+        deletedDocsDirty = false;
+        normsDirty = false;
+        _hasChanges = false;
+    }
     
     FieldsReaderPtr SegmentReader::getFieldsReader()
     {
@@ -1308,7 +1308,7 @@ namespace Lucene
         // Only the origNorm will actually readBytes from in
         cloneNorm->in.reset();
         
-        return cloneNorm;		
+        return cloneNorm;
     }
     
     void Norm::reWrite(SegmentInfoPtr si)
@@ -1326,14 +1326,14 @@ namespace Lucene
         {
             try
             {
-            out->writeBytes(_bytes.get(), reader->maxDoc());
-        }
-        catch (LuceneException& e)
-        {
-            finally = e;
-        }
-        out->close();
-        finally.throwException();
+                out->writeBytes(_bytes.get(), reader->maxDoc());
+            }
+            catch (LuceneException& e)
+            {
+                finally = e;
+            }
+            out->close();
+            finally.throwException();
             success = true;
         }
         catch (LuceneException& e)

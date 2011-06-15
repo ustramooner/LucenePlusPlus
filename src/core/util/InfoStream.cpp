@@ -51,5 +51,4 @@ namespace Lucene
     {
         return *this;
     }
-    }
-    
+}

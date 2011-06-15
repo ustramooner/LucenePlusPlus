@@ -11,22 +11,22 @@
 
 namespace Lucene
 {
-	/// {@link IndexWriter} uses an instance implementing this interface to execute the merges
-	/// selected by a {@link MergePolicy}.  The default MergeScheduler is {@link ConcurrentMergeScheduler}.
-	class LPPAPI MergeScheduler : public LuceneObject
-	{
-	public:
-		virtual ~MergeScheduler();
-		
-		LUCENE_CLASS(MergeScheduler);
-	
-	public:
-		/// Run the merges provided by {@link IndexWriter#getNextMerge()}.
-		virtual void merge(IndexWriterPtr writer) = 0;
-		
-		/// Close this MergeScheduler.
-		virtual void close() = 0;
-	};
+    /// {@link IndexWriter} uses an instance implementing this interface to execute the merges
+    /// selected by a {@link MergePolicy}.  The default MergeScheduler is {@link ConcurrentMergeScheduler}.
+    class LPPAPI MergeScheduler : public LuceneObject
+    {
+    public:
+        virtual ~MergeScheduler();
+        
+        LUCENE_CLASS(MergeScheduler);
+    
+    public:
+        /// Run the merges provided by {@link IndexWriter#getNextMerge()}.
+        virtual void merge(IndexWriterPtr writer) = 0;
+        
+        /// Close this MergeScheduler.
+        virtual void close() = 0;
+    };
 }
 
 #endif

@@ -35,13 +35,13 @@
 namespace Lucene
 {
     const int32_t QueryParser::CONJ_NONE = 0;
-	const int32_t QueryParser::CONJ_AND = 1;
-	const int32_t QueryParser::CONJ_OR = 2;
-	
-	const int32_t QueryParser::MOD_NONE = 0;
-	const int32_t QueryParser::MOD_NOT = 10;
-	const int32_t QueryParser::MOD_REQ = 11;
-	
+    const int32_t QueryParser::CONJ_AND = 1;
+    const int32_t QueryParser::CONJ_OR = 2;
+
+    const int32_t QueryParser::MOD_NONE = 0;
+    const int32_t QueryParser::MOD_NOT = 10;
+    const int32_t QueryParser::MOD_REQ = 11;
+
     const int32_t QueryParser::jj_la1_0[] =
     {
         0x300, 0x300, 0x1c00, 0x1c00, 0x3ed3f00, 0x90000, 0x20000, 0x3ed2000, 0x2690000, 0x100000, 0x100000, 0x20000,
@@ -101,7 +101,7 @@ namespace Lucene
         for (int32_t i = 0; i < 23; ++i)
             jj_la1[i] = -1;
         for (int32_t i = 0; i < jj_2_rtns.size(); ++i)
-            jj_2_rtns[i] = newInstance<JJCalls>();		
+            jj_2_rtns[i] = newInstance<JJCalls>();
         jj_expentries = Collection< Collection<int32_t> >::newInstance();
         jj_kind = -1;
         jj_lasttokens = Collection<int32_t>::newInstance(100);
@@ -981,7 +981,7 @@ namespace Lucene
             {
             }
         }
-        return q;		
+        return q;
     }
     
     QueryPtr QueryParser::ParseTerm(const String& field)
@@ -1540,7 +1540,7 @@ namespace Lucene
                         jj_lastpos = jj_scanpos;
                         jj_3_1();
                     }
-                    p = p->next;		
+                    p = p->next;
                 }
                 while (p);
             }

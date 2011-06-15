@@ -88,7 +88,7 @@ namespace Lucene
         else
         {
             // the buffer does not have enough data, first serve all we've got
-            int32_t available = bufferLength - bufferPosition;			
+            int32_t available = bufferLength - bufferPosition;
             if (available > 0)
             {
                 MiscUtils::arrayCopy(buffer.get(), bufferPosition, b, offset, available);
@@ -128,7 +128,7 @@ namespace Lucene
                 bufferStart = after;
                 bufferPosition = 0;
                 bufferLength = 0; // trigger refill() on read
-            }		
+            }
         }
     }
     

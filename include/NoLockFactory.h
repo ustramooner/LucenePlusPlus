@@ -11,30 +11,30 @@
 
 namespace Lucene
 {
-	/// Use this {@link LockFactory} to disable locking entirely.  Only one instance of this lock is created.  
-	/// You should call {@link #getNoLockFactory()} to get the instance.
-	///
-	/// @see LockFactory
-	class LPPAPI NoLockFactory : public LockFactory
-	{
-	public:
-		virtual ~NoLockFactory();
-		
-		LUCENE_CLASS(NoLockFactory);
-			
-	private:
-		static NoLockPtr getSingletonLock();
+    /// Use this {@link LockFactory} to disable locking entirely.  Only one instance of this lock is created.  
+    /// You should call {@link #getNoLockFactory()} to get the instance.
+    ///
+    /// @see LockFactory
+    class LPPAPI NoLockFactory : public LockFactory
+    {
+    public:
+        virtual ~NoLockFactory();
+        
+        LUCENE_CLASS(NoLockFactory);
+            
+    private:
+        static NoLockPtr getSingletonLock();
 
-	public:
-		static NoLockFactoryPtr getNoLockFactory();
-		
-		/// Return a new Lock instance identified by lockName.
-		virtual LockPtr makeLock(const String& lockName);
-		
-		/// Attempt to clear (forcefully unlock and remove) the specified lock.  Only call this at a time when you 
-		/// are certain this lock is no longer in use.
-		virtual void clearLock(const String& lockName);
-	};
+    public:
+        static NoLockFactoryPtr getNoLockFactory();
+        
+        /// Return a new Lock instance identified by lockName.
+        virtual LockPtr makeLock(const String& lockName);
+        
+        /// Attempt to clear (forcefully unlock and remove) the specified lock.  Only call this at a time when you 
+        /// are certain this lock is no longer in use.
+        virtual void clearLock(const String& lockName);
+    };
 }
 
 #endif

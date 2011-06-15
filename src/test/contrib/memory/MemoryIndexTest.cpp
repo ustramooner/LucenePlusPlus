@@ -106,7 +106,7 @@ public:
     {
         StringStream fooField;
         StringStream termField;
-    
+        
         // add up to 250 terms to field "foo"
         int32_t fieldCount = random->nextInt(250) + 1;
         for (int32_t i = 0; i < fieldCount; ++i)
@@ -140,7 +140,7 @@ public:
         IndexSearcherPtr mem = memory->createSearcher();
         QueryParserPtr qp = newLucene<QueryParser>(LuceneVersion::LUCENE_CURRENT, L"foo", analyzer);
         for (HashSet<String>::iterator query = queries.begin(); query != queries.end(); ++query)
-    {
+        {
             TopDocsPtr ramDocs = ram->search(qp->parse(*query), 1);
             TopDocsPtr memDocs = mem->search(qp->parse(*query), 1);
             BOOST_CHECK_EQUAL(ramDocs->totalHits, memDocs->totalHits);
@@ -158,12 +158,12 @@ public:
             default:
                 return newLucene<StandardAnalyzer>(LuceneVersion::LUCENE_CURRENT);
         }
-        }
+    }
     
     /// half of the time, returns a random term from TEST_TERMS.
     /// the other half of the time, returns a random unicode string.
     String randomTerm()
-        {
+    {
         if (random->nextInt() % 2 == 1)
         {
             // return a random TEST_TERM
@@ -178,16 +178,16 @@ public:
     
     /// Return a random unicode term, like StressIndexingTest.
     String randomString()
-        {
+    {
         int32_t end = random->nextInt(20);
         if (buffer.size() < 1 + end)
             buffer.resize((int32_t)((double)(1 + end) * 1.25));
-            
+        
         for (int32_t i = 0; i < end; ++i)
         {
             int32_t t = random->nextInt(5);
             if (t == 0 && i < end - 1)
-        {
+            {
                 #ifdef LPP_UNICODE_CHAR_SIZE_2
                 // Make a surrogate pair
                 // High surrogate
@@ -197,7 +197,7 @@ public:
                 #else
                 buffer[i] = (wchar_t)nextInt(0xdc00, 0xe000);
                 #endif
-        }
+            }
             else if (t <= 1)
                 buffer[i] = (wchar_t)nextInt(0x01, 0x80);
             else if (t == 2)
@@ -223,7 +223,7 @@ BOOST_FIXTURE_TEST_SUITE(MemoryIndexTest, MemoryIndexTestFixture)
 
 /// runs random tests, up to ITERATIONS times.
 BOOST_AUTO_TEST_CASE(testRandomQueries)
-                        {
+{
     for (int32_t i = 0; i < ITERATIONS; ++i)
         checkAgainstRAMDirectory();
 }

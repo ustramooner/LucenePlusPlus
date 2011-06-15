@@ -12,7 +12,7 @@ namespace Lucene
     LuceneException::LuceneException(const String& error, ExceptionType type) throw()
     {
         this->error = error;
-        this->type = type;		
+        this->type = type;
     }
     
     LuceneException::~LuceneException() throw()
@@ -93,7 +93,7 @@ namespace Lucene
             case LuceneException::UnsupportedOperation:
                 boost::throw_exception(UnsupportedOperationException(error, type));
             case LuceneException::Null:
-                //silence static analyzer
+                // silence static analyzer
                 break;
         }
     }

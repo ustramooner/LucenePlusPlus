@@ -56,16 +56,16 @@ namespace Lucene
     void BaseCharFilter::addOffCorrectMap(int32_t off, int32_t cumulativeDiff)
     {
         if (!offsets)
-    {
+        {
             offsets = IntArray::newInstance(64);
             diffs = IntArray::newInstance(64);
-    }
+        }
         else if (size == offsets.size())
-    {
+        {
             offsets.resize(MiscUtils::getNextSize(offsets.size()));
             diffs.resize(MiscUtils::getNextSize(diffs.size()));
-    }
-    
+        }
+
         offsets[size] = off;
         diffs[size++] = cumulativeDiff; 
     }

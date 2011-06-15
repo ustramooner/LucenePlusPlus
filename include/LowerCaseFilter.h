@@ -11,21 +11,21 @@
 
 namespace Lucene
 {
-	/// Normalizes token text to lower case.
-	class LPPAPI LowerCaseFilter : public TokenFilter
-	{
-	public:
-		LowerCaseFilter(TokenStreamPtr input);
-		virtual ~LowerCaseFilter();
-		
-		LUCENE_CLASS(LowerCaseFilter);
-	
-	protected:
-		TermAttributePtr termAtt;
-	
-	public:
-		virtual bool incrementToken();
-	};
+    /// Normalizes token text to lower case.
+    class LPPAPI LowerCaseFilter : public TokenFilter
+    {
+    public:
+        LowerCaseFilter(TokenStreamPtr input);
+        virtual ~LowerCaseFilter();
+        
+        LUCENE_CLASS(LowerCaseFilter);
+    
+    protected:
+        TermAttributePtr termAtt;
+    
+    public:
+        virtual bool incrementToken();
+    };
 }
 
 #endif

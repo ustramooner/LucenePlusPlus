@@ -11,20 +11,20 @@
 
 namespace Lucene
 {
-	/// Calculates the minimum payload seen
-	class LPPAPI MinPayloadFunction : public PayloadFunction
-	{
-	public:
-		virtual ~MinPayloadFunction();
-		LUCENE_CLASS(MinPayloadFunction);
-	
-	public:
-		virtual double currentScore(int32_t docId, const String& field, int32_t start, int32_t end, int32_t numPayloadsSeen, 
-									double currentScore, double currentPayloadScore);
-		virtual double docScore(int32_t docId, const String& field, int32_t numPayloadsSeen, double payloadScore);
-		virtual int32_t hashCode();
-		virtual bool equals(LuceneObjectPtr other);
-	};
+    /// Calculates the minimum payload seen
+    class LPPAPI MinPayloadFunction : public PayloadFunction
+    {
+    public:
+        virtual ~MinPayloadFunction();
+        LUCENE_CLASS(MinPayloadFunction);
+    
+    public:
+        virtual double currentScore(int32_t docId, const String& field, int32_t start, int32_t end, int32_t numPayloadsSeen, 
+                                    double currentScore, double currentPayloadScore);
+        virtual double docScore(int32_t docId, const String& field, int32_t numPayloadsSeen, double payloadScore);
+        virtual int32_t hashCode();
+        virtual bool equals(LuceneObjectPtr other);
+    };
 }
 
 #endif

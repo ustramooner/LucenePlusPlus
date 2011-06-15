@@ -73,7 +73,7 @@ namespace Lucene
     {
         this->wlen = numWords;
     }
-        
+    
     bool OpenBitSet::get(int32_t index)
     {
         int32_t i = index >> 6; // div 64
@@ -409,7 +409,7 @@ namespace Lucene
             return (i << 6) + subIndex + BitUtil::ntz(word);
 
         while (++i < wlen)
-    {
+        {
             word = bits[i];
             if (word != 0)
                 return (i << 6) + BitUtil::ntz(word);
@@ -459,7 +459,7 @@ namespace Lucene
         while (--pos >= 0)
             thisArr[pos] &= otherArr[pos];
         if (this->wlen > newLen)
-    {
+        {
             // fill zeros from the new shorter length to the old length
             MiscUtils::arrayFill(bits.get(), newLen, this->wlen, 0LL);
         }

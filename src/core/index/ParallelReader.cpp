@@ -169,7 +169,7 @@ namespace Lucene
             }
             pr->decrefOnClose = newDecrefOnClose;
             pr->incRefReaders = incRefReaders;
-            return pr;			
+            return pr;
         }
         else
         {
@@ -502,7 +502,7 @@ namespace Lucene
     {
         if (termEnum)
             termEnum->close();
-    }	
+    }
     
     ParallelTermDocs::ParallelTermDocs(ParallelReaderPtr reader)
     {
@@ -563,7 +563,7 @@ namespace Lucene
     {
         if (termDocs)
             termDocs->close();
-    }	
+    }
     
     ParallelTermPositions::ParallelTermPositions(ParallelReaderPtr reader) : ParallelTermDocs(reader)
     {

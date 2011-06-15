@@ -12,22 +12,22 @@
 
 namespace Lucene
 {
-	/// Normalizer for Persian.
-	///
-	/// Normalization is done in-place for efficiency, operating on a termbuffer.
-	///
-	/// Normalization is defined as:
-	/// <ul>
-	/// <li> Normalization of various heh + hamza forms and heh goal to heh.
-	/// <li> Normalization of farsi yeh and yeh barree to arabic yeh.
-	/// <li> Normalization of persian keheh to arabic kaf.
-	/// </ul>
-	class LPPCONTRIBAPI PersianNormalizer : public LuceneObject
-	{
-	public:
-	    virtual ~PersianNormalizer();
-	    
-	    LUCENE_CLASS(PersianNormalizer);
+    /// Normalizer for Persian.
+    ///
+    /// Normalization is done in-place for efficiency, operating on a termbuffer.
+    ///
+    /// Normalization is defined as:
+    /// <ul>
+    /// <li> Normalization of various heh + hamza forms and heh goal to heh.
+    /// <li> Normalization of farsi yeh and yeh barree to arabic yeh.
+    /// <li> Normalization of persian keheh to arabic kaf.
+    /// </ul>
+    class LPPCONTRIBAPI PersianNormalizer : public LuceneObject
+    {
+    public:
+        virtual ~PersianNormalizer();
+        
+        LUCENE_CLASS(PersianNormalizer);
     
     public:
         static const wchar_t YEH;
@@ -53,7 +53,7 @@ namespace Lucene
         /// @param len length of input buffer
         /// @return length of input buffer after deletion
         int32_t deleteChar(wchar_t* s, int32_t pos, int32_t len);
-	};
+    };
 }
 
 #endif

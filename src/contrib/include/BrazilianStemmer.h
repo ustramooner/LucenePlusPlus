@@ -12,13 +12,13 @@
 
 namespace Lucene
 {
-	/// A stemmer for Brazilian Portuguese words.
-	class LPPCONTRIBAPI BrazilianStemmer : public LuceneObject
-	{
-	public:
-	    virtual ~BrazilianStemmer();
-	    
-	    LUCENE_CLASS(BrazilianStemmer);
+    /// A stemmer for Brazilian Portuguese words.
+    class LPPCONTRIBAPI BrazilianStemmer : public LuceneObject
+    {
+    public:
+        virtual ~BrazilianStemmer();
+        
+        LUCENE_CLASS(BrazilianStemmer);
     
     protected:
         String TERM;
@@ -111,7 +111,7 @@ namespace Lucene
         ///
         /// Or if the word ends ç remove the cedilha.
         void step5();
-	};
+    };
 }
 
 #endif

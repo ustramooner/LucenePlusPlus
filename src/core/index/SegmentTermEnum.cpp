@@ -20,7 +20,7 @@ namespace Lucene
         termBuffer = newLucene<TermBuffer>();
         prevBuffer = newLucene<TermBuffer>();
         scanBuffer = newLucene<TermBuffer>();
-        _termInfo = newLucene<TermInfo>();		
+        _termInfo = newLucene<TermInfo>();
         formatM1SkipInterval = 0;
         size = 0;
         position = -1;
@@ -98,7 +98,7 @@ namespace Lucene
             
             BOOST_ASSERT(indexInterval > 0); // must not be negative
             BOOST_ASSERT(skipInterval > 0); // must not be negative
-        }		
+        }
         if (format > TermInfosWriter::FORMAT_VERSION_UTF8_LENGTH_IN_BYTES)
         {
             termBuffer->setPreUTF8Strings();

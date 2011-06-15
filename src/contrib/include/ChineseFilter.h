@@ -12,19 +12,19 @@
 
 namespace Lucene
 {
-	/// A {@link TokenFilter} with a stop word table.  
-	/// <ul>
-	/// <li> Numeric tokens are removed.
-	/// <li> English tokens must be larger than 1 character.
-	/// <li> One Chinese character as one Chinese word.
-	/// </ul>
-	class LPPCONTRIBAPI ChineseFilter : public TokenFilter
-	{
-	public:
-		ChineseFilter(TokenStreamPtr input);
-		virtual ~ChineseFilter();
-		
-		LUCENE_CLASS(ChineseFilter);
+    /// A {@link TokenFilter} with a stop word table.  
+    /// <ul>
+    /// <li> Numeric tokens are removed.
+    /// <li> English tokens must be larger than 1 character.
+    /// <li> One Chinese character as one Chinese word.
+    /// </ul>
+    class LPPCONTRIBAPI ChineseFilter : public TokenFilter
+    {
+    public:
+        ChineseFilter(TokenStreamPtr input);
+        virtual ~ChineseFilter();
+        
+        LUCENE_CLASS(ChineseFilter);
     
     public:
         /// Only English now, Chinese to be added later.
@@ -36,7 +36,7 @@ namespace Lucene
             
     public:
         virtual bool incrementToken();
-	};
+    };
 }
 
 #endif

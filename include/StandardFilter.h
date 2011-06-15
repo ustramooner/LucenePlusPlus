@@ -11,31 +11,31 @@
 
 namespace Lucene
 {
-	/// Normalizes tokens extracted with {@link StandardTokenizer}.
-	class LPPAPI StandardFilter : public TokenFilter
-	{
-	public:
-		/// Construct filtering input.
-		StandardFilter(TokenStreamPtr input);
-		virtual ~StandardFilter();
-		
-		LUCENE_CLASS(StandardFilter);
-	
-	protected:
-		TypeAttributePtr typeAtt;
-		TermAttributePtr termAtt;
-	
-	protected:
+    /// Normalizes tokens extracted with {@link StandardTokenizer}.
+    class LPPAPI StandardFilter : public TokenFilter
+    {
+    public:
+        /// Construct filtering input.
+        StandardFilter(TokenStreamPtr input);
+        virtual ~StandardFilter();
+        
+        LUCENE_CLASS(StandardFilter);
+    
+    protected:
+        TypeAttributePtr typeAtt;
+        TermAttributePtr termAtt;
+    
+    protected:
         static const String& APOSTROPHE_TYPE();
         static const String& ACRONYM_TYPE();
-	
-	public:
-		/// Returns the next token in the stream, or null at EOS.
-		///
-		/// Removes <tt>'s</tt> from the end of words.
-		/// Removes dots from acronyms.
-		virtual bool incrementToken();
-	};
+    
+    public:
+        /// Returns the next token in the stream, or null at EOS.
+        ///
+        /// Removes <tt>'s</tt> from the end of words.
+        /// Removes dots from acronyms.
+        virtual bool incrementToken();
+    };
 }
 
 #endif

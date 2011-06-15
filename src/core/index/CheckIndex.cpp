@@ -334,8 +334,8 @@ namespace Lucene
             {
                 if (reader->hasNorms(*fieldName))
                 {
-                  reader->norms(*fieldName, b, 0);
-                  ++status->totFields;			
+                    reader->norms(*fieldName, b, 0);
+                    ++status->totFields;
                 }
             }
             

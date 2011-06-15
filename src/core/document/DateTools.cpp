@@ -47,7 +47,7 @@ namespace Lucene
                 return StringUtils::toUnicode(std::string(timeString.substr(0, 8) + timeString.substr(9, 6) + fraction).c_str());
             }
             case RESOLUTION_NULL:
-                //silence static analyzers
+                // silence static analyzers
                 break;
         }
         
@@ -112,7 +112,7 @@ namespace Lucene
             case RESOLUTION_MILLISECOND:
                 return date;
             case RESOLUTION_NULL:
-                //silence static analyzers
+                // silence static analyzers
                 break;
         }
         
@@ -199,8 +199,8 @@ namespace Lucene
                 dateFormats.add(L"%y" + delimiter + L"%B" + delimiter + L"%d");
                 break;
             case DATEORDER_LOCALE:
-              //silence static analyzers
-              break;
+                // silence static analyzers
+                break;
         }
         
         boost::date_time::format_date_parser<boost::gregorian::date, wchar_t> parser(L"", locale);

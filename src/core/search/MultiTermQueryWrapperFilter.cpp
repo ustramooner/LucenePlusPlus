@@ -114,7 +114,7 @@ namespace Lucene
             finally = e;
         }
         enumerator->close();
-        finally.throwException();		
+        finally.throwException();
         return bitSet;
     }
 }

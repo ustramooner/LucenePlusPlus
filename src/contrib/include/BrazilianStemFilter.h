@@ -12,16 +12,16 @@
 
 namespace Lucene
 {
-	/// A {@link TokenFilter} that applies {@link BrazilianStemmer}.
-	class LPPCONTRIBAPI BrazilianStemFilter : public TokenFilter
-	{
-	public:
-		BrazilianStemFilter(TokenStreamPtr input);
-		BrazilianStemFilter(TokenStreamPtr input, HashSet<String> exclusiontable);
-		
-		virtual ~BrazilianStemFilter();
-		
-		LUCENE_CLASS(BrazilianStemFilter);
+    /// A {@link TokenFilter} that applies {@link BrazilianStemmer}.
+    class LPPCONTRIBAPI BrazilianStemFilter : public TokenFilter
+    {
+    public:
+        BrazilianStemFilter(TokenStreamPtr input);
+        BrazilianStemFilter(TokenStreamPtr input, HashSet<String> exclusiontable);
+        
+        virtual ~BrazilianStemFilter();
+        
+        LUCENE_CLASS(BrazilianStemFilter);
     
     protected:
         /// {@link BrazilianStemmer} in use by this filter.
@@ -32,7 +32,7 @@ namespace Lucene
     
     public:
         virtual bool incrementToken();
-	};
+    };
 }
 
 #endif

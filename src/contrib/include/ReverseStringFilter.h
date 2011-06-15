@@ -11,34 +11,34 @@
 
 namespace Lucene
 {
-	/// Reverse token string, for example "country" => "yrtnuoc".
-	///
-	/// If marker is supplied, then tokens will be also prepended by that character. For example, with a 
-	/// marker of &#x5C;u0001, "country" => "&#x5C;u0001yrtnuoc". This is useful when implementing efficient 
-	/// leading wildcards search.
-	class LPPCONTRIBAPI ReverseStringFilter : public TokenFilter
-	{
-	public:
-	    /// Create a new ReverseStringFilter that reverses all tokens in the supplied {@link TokenStream}.
-	    /// 
-	    /// The reversed tokens will not be marked. 
-		ReverseStringFilter(TokenStreamPtr input);
-		
-		/// Create a new ReverseStringFilter that reverses and marks all tokens in the supplied {@link 
-		/// TokenStream}.
-		///
-		/// The reversed tokens will be prepended (marked) by the marker character.
-		ReverseStringFilter(TokenStreamPtr input, wchar_t marker);
-		
-		virtual ~ReverseStringFilter();
-		
-		LUCENE_CLASS(ReverseStringFilter);
-	
-	protected:
-		TermAttributePtr termAtt;
-		wchar_t marker;
-		
-		static const wchar_t NOMARKER;
+    /// Reverse token string, for example "country" => "yrtnuoc".
+    ///
+    /// If marker is supplied, then tokens will be also prepended by that character. For example, with a 
+    /// marker of &#x5C;u0001, "country" => "&#x5C;u0001yrtnuoc". This is useful when implementing efficient 
+    /// leading wildcards search.
+    class LPPCONTRIBAPI ReverseStringFilter : public TokenFilter
+    {
+    public:
+        /// Create a new ReverseStringFilter that reverses all tokens in the supplied {@link TokenStream}.
+        /// 
+        /// The reversed tokens will not be marked. 
+        ReverseStringFilter(TokenStreamPtr input);
+        
+        /// Create a new ReverseStringFilter that reverses and marks all tokens in the supplied {@link 
+        /// TokenStream}.
+        ///
+        /// The reversed tokens will be prepended (marked) by the marker character.
+        ReverseStringFilter(TokenStreamPtr input, wchar_t marker);
+        
+        virtual ~ReverseStringFilter();
+        
+        LUCENE_CLASS(ReverseStringFilter);
+    
+    protected:
+        TermAttributePtr termAtt;
+        wchar_t marker;
+        
+        static const wchar_t NOMARKER;
     
     public:
         /// Example marker character: U+0001 (START OF HEADING) 
@@ -55,7 +55,7 @@ namespace Lucene
     
     public:
         virtual bool incrementToken();
-	};
+    };
 }
 
 #endif

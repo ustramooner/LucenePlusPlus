@@ -114,7 +114,7 @@ protected:
         writer->close();
         searcher = newLucene<IndexSearcher>(directory, true);
     }
-    
+        
 public:
     /// test for both constant score and boolean query, the other tests only use the constant score mode
     void testRange(int32_t precisionStep)

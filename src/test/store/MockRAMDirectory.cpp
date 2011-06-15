@@ -78,7 +78,7 @@ namespace Lucene
         openFilesDeleted = HashSet<String>::newInstance();
         HashSet<String> crashFiles(unSyncedFiles);
         unSyncedFiles.clear();
-        int32_t count = 0;		
+        int32_t count = 0;
         for (HashSet<String>::iterator it = crashFiles.begin(); it != crashFiles.end(); ++it)
         {
             RAMFilePtr file(fileMap.get(*it));
@@ -179,7 +179,7 @@ namespace Lucene
             if (openFiles.contains(name))
             {
                 openFilesDeleted.add(name);
-            boost::throw_exception(IOException(L"MockRAMDirectory: file \"" + name + L"\" is still open: cannot delete"));
+                boost::throw_exception(IOException(L"MockRAMDirectory: file \"" + name + L"\" is still open: cannot delete"));
             }
             else
                 openFilesDeleted.remove(name);

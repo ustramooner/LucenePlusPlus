@@ -91,7 +91,7 @@ namespace Lucene
         {
             _termBuffer = CharArray::newInstance(MiscUtils::getNextSize(MIN_BUFFER_SIZE));
             _termLength = 0;
-        }	
+        }
     }
     
     int32_t TermAttribute::termLength()

@@ -12,15 +12,15 @@
 
 namespace Lucene
 {
-	/// Russian stemming algorithm implementation (see http://snowball.sourceforge.net for 
-	/// detailed description).
-	class LPPCONTRIBAPI RussianStemmer : public LuceneObject
-	{
-	public:
-	    RussianStemmer();
-	    virtual ~RussianStemmer();
-	    
-	    LUCENE_CLASS(RussianStemmer);
+    /// Russian stemming algorithm implementation (see http://snowball.sourceforge.net for 
+    /// detailed description).
+    class LPPCONTRIBAPI RussianStemmer : public LuceneObject
+    {
+    public:
+        RussianStemmer();
+        virtual ~RussianStemmer();
+        
+        LUCENE_CLASS(RussianStemmer);
     
     protected:
         /// positions of RV, R1 and R2 respectively
@@ -120,7 +120,7 @@ namespace Lucene
         
         /// Verb endings.
         bool verb(String& stemmingZone);
-	};
+    };
 }
 
 #endif

@@ -11,21 +11,21 @@
 
 namespace Lucene
 {
-	/// Filename filter that accept filenames and extensions only created by Lucene.
-	class LPPAPI IndexFileNameFilter : public LuceneObject
-	{
-	public:
-		/// Returns true if this is a file known to be a Lucene index file.
-		static bool accept(const String& directory, const String& name);
-		
-		/// Returns true if this is a file that would be contained in a CFS file.  
-		/// This function should only be called on files that pass the 
-		/// {@link #accept} (ie, are already known to be a Lucene index file).
-		static bool isCFSFile(const String& name);
-		
-		/// Return singleton IndexFileNameFilter
-		static IndexFileNameFilterPtr getFilter();
-	};
+    /// Filename filter that accept filenames and extensions only created by Lucene.
+    class LPPAPI IndexFileNameFilter : public LuceneObject
+    {
+    public:
+        /// Returns true if this is a file known to be a Lucene index file.
+        static bool accept(const String& directory, const String& name);
+        
+        /// Returns true if this is a file that would be contained in a CFS file.  
+        /// This function should only be called on files that pass the 
+        /// {@link #accept} (ie, are already known to be a Lucene index file).
+        static bool isCFSFile(const String& name);
+        
+        /// Return singleton IndexFileNameFilter
+        static IndexFileNameFilterPtr getFilter();
+    };
 }
 
 #endif

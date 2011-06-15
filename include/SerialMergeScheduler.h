@@ -11,22 +11,22 @@
 
 namespace Lucene
 {
-	/// A {@link MergeScheduler} that simply does each merge sequentially, using the current thread.
-	class LPPAPI SerialMergeScheduler : public MergeScheduler
-	{
-	public:
-		virtual ~SerialMergeScheduler();
-		
-		LUCENE_CLASS(SerialMergeScheduler);
-			
-	public:
-		/// Just do the merges in sequence. We do this "synchronized" so that even if the application is using
-		/// multiple threads, only one merge may run at a time.
-		virtual void merge(IndexWriterPtr writer);
-		
-		/// Close this MergeScheduler.
-		virtual void close();
-	};
+    /// A {@link MergeScheduler} that simply does each merge sequentially, using the current thread.
+    class LPPAPI SerialMergeScheduler : public MergeScheduler
+    {
+    public:
+        virtual ~SerialMergeScheduler();
+        
+        LUCENE_CLASS(SerialMergeScheduler);
+            
+    public:
+        /// Just do the merges in sequence. We do this "synchronized" so that even if the application is using
+        /// multiple threads, only one merge may run at a time.
+        virtual void merge(IndexWriterPtr writer);
+        
+        /// Close this MergeScheduler.
+        virtual void close();
+    };
 }
 
 #endif

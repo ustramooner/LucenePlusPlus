@@ -385,7 +385,7 @@ public:
                 if (noErrors)
                     BOOST_FAIL("Unexpected exception");
                 break;
-            }			
+            }
         }
     }
 };
@@ -2006,7 +2006,7 @@ namespace TestMaxThreadPriority
         {
         }
         
-        LUCENE_CLASS(MyMergeScheduler);	
+        LUCENE_CLASS(MyMergeScheduler);
     
     public:
         virtual void merge(IndexWriterPtr writer)
@@ -4164,7 +4164,7 @@ BOOST_AUTO_TEST_CASE(testOutOfMemoryErrorCausesCloseToFail)
     MockRAMDirectoryPtr dir = newLucene<MockRAMDirectory>();
     IndexWriterPtr writer = newLucene<TestOutOfMemoryErrorCausesCloseToFail::MemoryIndexWriter>(dir, newLucene<StandardAnalyzer>(LuceneVersion::LUCENE_CURRENT), true, IndexWriter::MaxFieldLengthUNLIMITED);
     writer->setInfoStream(newLucene<InfoStreamNull>());
-
+    
     BOOST_CHECK_EXCEPTION(writer->close(), OutOfMemoryError, check_exception(LuceneException::OutOfMemory));
 
     writer->close();
@@ -4847,7 +4847,7 @@ BOOST_AUTO_TEST_CASE(testFutureCommit)
     commitData.put(L"tag", L"fourth");
     r->commit(commitData);
     r->close();
-
+    
     // make sure "third" commit is still there
     commit.reset();
     commits = IndexReader::listCommits(dir);

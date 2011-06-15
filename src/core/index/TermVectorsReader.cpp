@@ -323,7 +323,7 @@ namespace Lucene
             if (format >= FORMAT_VERSION)
                 number = tvd->readVInt();
             else
-                number += tvd->readVInt();			
+                number += tvd->readVInt();
             fields[i] = fieldInfos->fieldName(number);
         }
         
@@ -478,7 +478,7 @@ namespace Lucene
                 if (charBuffer.size() < totalLength)
                     charBuffer.resize((int32_t)(1.5 * (double)totalLength));
                 totalLength = start + tvf->readChars(charBuffer.get(), start, deltaLength);
-                term.append(charBuffer.get(), totalLength);					
+                term.append(charBuffer.get(), totalLength);
             }
             else
             {
@@ -534,7 +534,7 @@ namespace Lucene
                     {
                         tvf->readVInt();
                         tvf->readVInt();
-                    }				
+                    }
                 }
             }
             mapper->map(term, freq, offsets, positions);

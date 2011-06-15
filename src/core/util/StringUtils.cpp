@@ -36,8 +36,8 @@ namespace Lucene
             unicodeResult->length = 0;
         else
         {
-            if ( length > unicodeResult->result.size() )
-              unicodeResult->result.resize(length);
+            if (length > unicodeResult->result.size())
+                unicodeResult->result.resize(length);
             unicodeResult->length = toUnicode(utf8, length, unicodeResult->result);
         }
         return unicodeResult->length;
@@ -72,8 +72,8 @@ namespace Lucene
             utf8Result->length = 0;
         else
         {
-            if ( length * MAX_ENCODING_UTF8_SIZE > utf8Result->result.size() )
-              utf8Result->result.resize(length * MAX_ENCODING_UTF8_SIZE);
+            if (length * MAX_ENCODING_UTF8_SIZE > utf8Result->result.size())
+                utf8Result->result.resize(length * MAX_ENCODING_UTF8_SIZE);
             utf8Result->length = toUTF8(unicode, length, utf8Result->result);
         }
         return utf8Result->length;

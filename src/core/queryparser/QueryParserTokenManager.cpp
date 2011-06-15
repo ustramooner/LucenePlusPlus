@@ -781,7 +781,7 @@ namespace Lucene
                     }
                 }
                 while (i != startsAt);
-            }			
+            }
             if (kind != 0x7fffffff)
             {
                 jjmatchedKind = kind;
@@ -804,7 +804,7 @@ namespace Lucene
     
     int32_t QueryParserTokenManager::jjMoveStringLiteralDfa0_0()
     {
-        return jjMoveNfa_0(0, 0);	
+        return jjMoveNfa_0(0, 0);
     }
     
     int32_t QueryParserTokenManager::jjMoveNfa_0(int32_t startState, int32_t curPos)
