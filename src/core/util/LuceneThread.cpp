@@ -103,13 +103,9 @@ namespace Lucene
         return true;
     }
     
-    int64_t LuceneThread::currentId()
+    boost::thread::id LuceneThread::currentId()
     {
-        #if defined(_WIN32) || defined(_WIN64)
-        return GetCurrentThreadId();
-        #else
-        return pthread_self();
-        #endif
+        boost::this_thread::get_id();
     }
     
     void LuceneThread::threadSleep(int32_t time)

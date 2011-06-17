@@ -147,7 +147,7 @@ namespace Lucene
         lastCommitChangeCount = 0;
         poolReaders = false;
         readCount = 0;
-        writeThread = 0;
+        writeThread = boost::thread::id();
         upgradeCount = 0;
         readerTermsIndexDivisor = IndexReader::DEFAULT_TERMS_INDEX_DIVISOR;
         readerPool = newLucene<ReaderPool>(shared_from_this());
@@ -342,7 +342,7 @@ namespace Lucene
     {
         SyncLock syncLock(this);
         BOOST_ASSERT(writeThread != LuceneThread::currentId());
-        while (writeThread != 0 || readCount > 0)
+        while (writeThread != boost::thread::id() || readCount > 0)
             doWait();
         
         // we could have been closed while we were waiting
@@ -355,15 +355,15 @@ namespace Lucene
     {
         SyncLock syncLock(this);
         BOOST_ASSERT(writeThread == LuceneThread::currentId());
-        writeThread = 0;
+        writeThread = boost::thread::id();
         notifyAll();
     }
     
     void IndexWriter::acquireRead()
     {
         SyncLock syncLock(this);
-        int64_t current = LuceneThread::currentId();
-        while (writeThread != 0 && writeThread != current)
+        boost::thread::id current = LuceneThread::currentId();
+        while (writeThread != boost::thread::id() && writeThread != current)
             doWait();
         ++readCount;
     }
@@ -373,7 +373,7 @@ namespace Lucene
         SyncLock syncLock(this);
         BOOST_ASSERT(readCount > 0);
         ++upgradeCount;
-        while (readCount > upgradeCount || writeThread != 0)
+        while (readCount > upgradeCount || writeThread != boost::thread::id())
             doWait();
         writeThread = LuceneThread::currentId();
         --readCount;

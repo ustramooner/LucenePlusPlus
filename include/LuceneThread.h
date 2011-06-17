@@ -63,7 +63,7 @@ namespace Lucene
         virtual void run() = 0;
         
         /// Return representation of current execution thread.
-        static int64_t currentId();
+        static boost::thread::id currentId();
         
         /// Suspends current execution thread for a given time.
         static void threadSleep(int32_t time);

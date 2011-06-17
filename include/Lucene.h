@@ -205,7 +205,7 @@ namespace Lucene
     typedef WeakHashMap< LuceneObjectWeakPtr, MapEntryAny, luceneWeakHash<LuceneObjectWeakPtr>, luceneWeakEquals<LuceneObjectWeakPtr> > WeakMapLuceneObjectMapEntryAny;
     
     typedef Map< String, AttributePtr > MapStringAttribute;
-    typedef Map< int64_t, DocumentsWriterThreadStatePtr > MapThreadDocumentsWriterThreadState;
+    typedef Map< boost::thread::id, DocumentsWriterThreadStatePtr > MapThreadDocumentsWriterThreadState;
     typedef Map< String, IndexReaderPtr > MapStringIndexReader;
     typedef Map< TermPtr, NumPtr, luceneCompare<TermPtr> > MapTermNum;
     
