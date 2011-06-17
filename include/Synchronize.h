@@ -20,7 +20,7 @@ namespace Lucene
 	
 	protected:
     boost::recursive_timed_mutex mutexSynchronize;
-		int64_t lockThread;
+		boost::thread::id lockThread;
 		int32_t recursionCount;
 	
 	public:

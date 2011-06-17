@@ -22,6 +22,7 @@
 #include <boost/variant.hpp>
 #include <boost/shared_ptr.hpp>
 #include <boost/weak_ptr.hpp>
+#include <boost/thread.hpp>
 
 using boost::int8_t;
 using boost::uint8_t;
@@ -40,7 +41,6 @@ using boost::uint64_t;
 namespace boost
 {
     struct blank;
-    class thread;
     class any;
     template < typename Signature > class function;
     namespace interprocess

@@ -13,7 +13,7 @@ namespace Lucene
 {
     Synchronize::Synchronize()
     {
-        lockThread = 0;
+        lockThread = boost::thread::id();
         recursionCount = 0;
     }
     
@@ -42,7 +42,7 @@ namespace Lucene
     void Synchronize::unlock()
     {
         if (--recursionCount == 0)
-            lockThread = 0;
+            lockThread = boost::thread::id();
         mutexSynchronize.unlock();        
     }
     
