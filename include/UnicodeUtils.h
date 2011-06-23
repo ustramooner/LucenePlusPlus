@@ -8,6 +8,7 @@
 #define UNICODEUTILS_H
 
 #include "LuceneObject.h"
+#include "MiscUtils.h"
 
 namespace Lucene
 {

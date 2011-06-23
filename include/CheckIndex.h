@@ -7,6 +7,8 @@
 #ifndef CHECKINDEX_H
 #define CHECKINDEX_H
 
+#include "LuceneObject.h"
+
 namespace Lucene
 {
 	/// Basic tool and API to check the health of an index and write a new segments file that removes reference to
